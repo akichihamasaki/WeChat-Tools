@@ -1,0 +1,15 @@
+<toaster-container toaster-options="{'close-button': true, 'tap-to-dismiss': false, 'toaster-id': 1}"></toaster-container>
+<div class="wrapper-md" ng-controller="BreedingRemindCtrl">
+  <div class="m-b-md">
+    <div class="btn-group">
+      <button type="button" class="btn btn-info btn-sm" ng-click="gm.openModal('edit')" ng-disabled="gm.disableDelete"><i class="fa fa-pencil"></i> 修改</button>
+      <button type="button" class="btn btn-primary btn-sm" ng-click="gm.openModal('view')" ng-disabled="gm.disableDelete"><i class="fa fa-file-text"></i> 查看</button>
+    </div>
+  </div>
+  <div class="m-b-md">
+    <div class="pos-rlt" ui-grid="gm.gridOptions" ui-grid-selection ui-grid-resize-columns ui-grid-auto-resize></div>
+  </div>
+  <script type="text/ng-template" id="breedingRemindModal">
+    <div ng-include="'modules/germplasm/client/views/breedingremind.modal.client.view.html'"></div>
+  </script>
+</div>

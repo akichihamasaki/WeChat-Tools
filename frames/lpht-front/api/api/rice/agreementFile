@@ -1,0 +1,20 @@
+{
+  "agreementFile": [
+    {
+      "id" : "001",
+      "filename": "试验点协议文件.doc"
+    },
+    {
+      "id" : "002",
+      "filename": "试验点协议文件试验点协议文件.doc"
+    },
+    {
+      "id" : "003",
+      "filename": "试验点xxxxxxxxx协议文件.doc"
+    },
+    {
+      "id" : "004",
+      "filename": "xxxxxxx试验点协议文件.doc"
+    }
+  ]
+}

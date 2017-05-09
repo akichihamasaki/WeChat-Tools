@@ -1,0 +1,310 @@
+<div class="modal-header" ng-switch="pop.modalTitle">
+    <h4 class="modal-title" ng-switch-when="add">新增</h4>
+    <h4 class="modal-title" ng-switch-when="edit">修改</h4>
+    <h4 class="modal-title" ng-switch-when="view">查看详情</h4>
+</div>
+<div class="modal-body ">
+    <div class="panel panel-default">
+      <div class="panel-heading">基础属性</div>
+      <div class="panel-body">
+        <form class="form-horizontal  form-validation" name="characterForm">
+          <fieldset ng-disabled="pop.formDisabled">
+            <div class="row">
+              <div class="col-sm-12">
+                  <div class="form-group has-feedback">
+                      <label class="control-label col-sm-2 text-sm">性状名</label>
+                      <div class="col-sm-10">
+                          <input type="text" class="form-control input-sm" ng-model="pop.rowEntity.charactersName" name="characterName" required placeholder="性状名" maxlength="50">
+                          <span class="fa fa-exclamation-circle form-control-feedback" ng-show="characterForm.characterName.$error.required"></span>
+                          <div ng-messages="characterForm.characterName.$dirty && characterForm.characterName.$error">
+                              <p class="help-block text-sm" ng-message="required">请填写性状名</p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6">
+                  <div class="form-group ">
+                      <label class="control-label col-sm-4 text-sm">数据类型</label>
+                      <div class="col-sm-8">
+                        <select class="form-control input-sm" ng-model="pop.rowEntity.dataType" name="selType" required ng-change="pop.dataTypeChange()">
+                          <option value="">请选择</option>
+                          <option ng-repeat="x in ps.sm.dataType" value="{{x.code}}" >{{x.message}}</option>
+
+                        </select>
+                        <div ng-messages="characterForm.selType.$dirty && characterForm.selType.$error">
+                            <p class="help-block text-sm" ng-message="required">请选择数据类型</p>
+                        </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-sm-6">
+                  <div class="form-group ">
+                      <label class="control-label col-sm-4 text-sm">性状组</label>
+                      <div class="col-sm-8">
+                          <select class="form-control input-sm" ng-model="pop.rowEntity.groupId" name="characterGroup"  required>
+                            <option value="">请选择</option>
+                            <option ng-repeat="x in ps.sm.characterGroup" value='{{x.groupId}}'>{{x.groupName}}</option>
+                          </select>
+                          <div ng-messages="characterForm.characterGroup.$dirty && characterForm.characterGroup.$error">
+                            <p class="help-block text-sm" ng-message="required">请填写性状组</p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+            </div>
+            <div class="row" ng-hide="pop.rowEntity.dataType !='01'">
+                <div class="col-sm-6">
+                    <div class="form-group ">
+                        <label class="control-label col-sm-4 text-sm">单位</label>
+                        <div class="col-sm-8">
+                          <select class="form-control input-sm" ng-model="pop.rowEntity.unitId" >
+                            <option value="">请选择</option>
+                            <option ng-repeat="x in pop.unit" value="{{x.unitId}}">{{x.unitName}}</option>
+                          </select>
+                          <!-- <input type="text" class="form-control input-sm" ng-model="pop.rowEntity.unit" name="unit" placeholder="单位"> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="control-label col-sm-4 text-sm">数据精度</label>
+                        <div class="col-sm-8">
+                          <select class="form-control input-sm" ng-model="pop.rowEntity.dataPrecision" >
+                            <option value="">请选择</option>
+                            <option ng-repeat="x in pop.dataPrecision" value="{{x.code}}" >{{x.message}}</option>
+                            <!-- <option value="0">#</option>
+                            <option value="1">#.0</option>
+                            <option value="2">#.00</option>
+                            <option value="3">#.000</option>
+                            <option value="4">#.0000</option> -->
+                          </select>
+                            <!-- <input type="text" class="form-control input-sm" ng-model="pop.rowEntity.precision" name="precision" placeholder="数据精度"> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row" ng-hide="pop.rowEntity.dataType !='01'">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="control-label col-sm-4 text-sm">最小值</label>
+                        <div class="col-sm-8">
+                            <input type="number" class="form-control input-sm" ng-model="pop.rowEntity.minValue" placeholder="最小值">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="control-label col-sm-4 text-sm">最大值</label>
+                        <div class="col-sm-8">
+                            <input type="number" class="form-control input-sm" ng-model="pop.rowEntity.maxValue" placeholder="最大值">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+          </fieldset>
+        </form>
+        <form class="form-horizontal" name="characterFormEnum">
+            <fieldset ng-disabled="pop.formDisabled">
+              <div class="row">
+                <div class="col-sm-12">
+                  <div class="form-group m-b-none has-feedback" ng-hide="pop.rowEntity.dataType !='02'">
+                    <label class="control-label col-sm-2 text-sm">枚举值</label>
+                    <div class="col-sm-10">
+                      <table class="table  table-bordered table-hover table-condensed">
+                          <thead>
+                              <tr class="text-sm">
+                                  <th>性状数据</th>
+                                  <th>对应颜色</th>
+                                  <th style="width:30px;">操作</th>
+                              </tr>
+                          </thead>
+                          <tbody>
+                            <tr  class="text-sm" ng-repeat="x in pop.rowEntity.charactersValueEnumList">
+                              <td>
+                                <input type="text" class="form-control input-sm " ng-model="x.attributeName" readonly maxlength="25">
+                              </td>
+                              <td>
+                                <input type="color" class="form-control input-sm " ng-model="x.color" readonly maxlength="10">
+                              </td>
+                              <td style="width:30px;">
+                                <button class="btn btn-sm btn-danger" type="button" ng-click="pop.delEnum(x)"><i class="fa fa-times-circle"></i></button>
+                              </td>
+                            </tr>
+                            <tr  class="text-sm">
+                              <td>
+                                <input type="text" class="form-control input-sm " name="newEnum"  ng-model="pop.enum.newEnumKey" required ng-change="pop.enumChange()" maxlength="25">
+                                <div ng-messages="characterFormEnum.newEnum.$dirty && characterFormEnum.newEnum.$error" >
+                                  <p class="help-block text-sm" ng-message = "required">请填写枚举值</p>
+                                </div>
+                                <span ng-show="pop.exitEnum && !characterFormEnum.newEnum.invalid">该枚举值已存在</span>
+
+                              </td>
+                              <td>
+                                <input type="color" class="form-control input-sm " ng-model="pop.enum.newEnumColor" readonly placeholder="推荐使用google选取颜色" maxlength="10">
+                              </td>
+                              <td style="width:30px;">
+                                <button class="btn btn-sm btn-success" type="button" ng-click="pop.addEnum(pop.enum)"
+                                ng-disabled="characterFormEnum.$invalid"><i class="fa fa-plus-circle"></i></button>
+                              </td>
+                            </tr>
+
+                          </tbody>
+                      </table>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+        </form>
+      </div>
+    </div>
+    <div class="panel panel-default" ng-hide="pop.rowEntity.dataType !='01'&&pop.rowEntity.dataType !='02'">
+      <div class="panel-heading">公式</div>
+      <div class="panel-body">
+        <form class="form-horizontal" name="calculationFormulasForm">
+          <fieldset ng-disabled="pop.formDisabled">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label text-sm">公式</label>
+                        <div class="col-sm-10">
+                            <textarea class="form-control input-sm" ng-model="pop.rowEntity.calculationFormulas" ng-dblclick='pop.mathEditor()' placeholder="双击该区域进行公式编辑" readonly maxlength="500"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </fieldset>
+        </form>
+
+      </div>
+    </div>
+    <div class="panel panel-default" ng-hide="pop.rowEntity.dataType !='01'&&pop.rowEntity.dataType !='02'">
+      <div class="panel-heading">量化</div>
+      <div class="panel-body">
+        <form class="form-horizontal form-validation" name="QuantizationForm">
+          <fieldset ng-disabled="pop.formDisabled">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="control-label col-sm-4 text-sm">是否量化</label>
+                        <div class="col-sm-8">
+                          <select class="form-control input-sm" ng-model="pop.rowEntity.isQuantization"  name="quantization" required>
+                              <option value="">请选择</option>
+                              <option ng-repeat="x in ps.sm.isQuantization" value="{{x.code}}" >{{x.message}}</option>
+                          </select>
+                          <div ng-messages="QuantizationForm.quantization.$dirty && QuantizationForm.quantization.$error">
+                            <p class="help-block text-sm" ng-message="required">请选择是否量化</p>
+                          </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" ng-hide="pop.rowEntity.isQuantization!='1' || pop.rowEntity.dataType!='01'">
+                <label class="control-label col-sm-2 text-sm">量化等级</label>
+                <div class="col-sm-10">
+
+                    <table class="table  table-bordered table-hover table-condensed">
+                        <thead>
+                            <tr class="text-sm">
+                                <th>起始值</th>
+                                <th>结束值</th>
+                                <th>对应分值</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                          <tr ng-repeat="x in pop.rowEntity.charactersValueRangeList" class="text-sm">
+                              <td>
+                                <input type="number" class="form-control input-sm"  ng-model="x.beginNum" readonly >
+                              </td>
+                              <td>
+                                <input type="number" class="form-control input-sm"  ng-model="x.endNum"  readonly>
+                              </td>
+                              <td>
+                                <input type="number" class="form-control input-sm "  ng-model="x.score"  readonly>
+                              </td>
+                              <td style="width:30px;">
+                                <button class="btn btn-sm btn-danger" type="button" ng-click="pop.delNumRow(x)"><i class="fa fa-times-circle"></i></button>
+                              </td>
+                          </tr>
+                          <tr class="text-sm">
+                              <td>
+                                <input type="number" class="form-control input-sm" name="low"  ng-model="pop.num.low" min="0"  required>
+                                <div ng-messages="QuantizationForm.low.$dirty && QuantizationForm.low.$error" >
+                                  <p class="help-block text-sm" ng-message = "required">请填写数值</p>
+                                  <p class="help-block text-sm" ng-message = "min">初始值不能小于0</p>
+                                </div>
+                              </td>
+                              <td>
+                                <input type="number" class="form-control input-sm" name="up"  ng-model="pop.num.up" min="{{QuantizationForm.low.$modelValue+1}}" required>
+                                <div ng-messages="QuantizationForm.up.$dirty && QuantizationForm.up.$error" >
+                                  <p class="help-block text-sm" ng-message = "required">请填写数值</p>
+                                  <p class="help-block text-sm" ng-message = "min">结束值不小于初始值</p>
+                                </div>
+                              </td>
+                              <td>
+                                <input type="number" class="form-control input-sm " name="value"  min="0" ng-model="pop.num.value" required>
+                                <div ng-messages="QuantizationForm.value.$dirty && QuantizationForm.value.$error" >
+                                  <p class="help-block text-sm" ng-message = "required">请填写分值</p>
+                                  <p class="help-block text-sm" ng-message = "min">分值不能小于0</p>
+                                 </div>
+                              </td>
+                              <td style="width:30px;">
+                                <button class="btn btn-sm btn-success" type="button" ng-disabled="QuantizationForm.$invalid" ng-click="pop.addNumRow()"><i class="fa fa-plus-circle"></i></button>
+                              </td>
+                          </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="form-group" ng-hide="pop.rowEntity.isQuantization!='1' || pop.rowEntity.dataType!='02'">
+                <label class="control-label col-sm-2 text-sm">量化等级</label>
+                <div class="col-sm-10">
+                    <table class="table  table-bordered table-hover table-condensed">
+                        <thead>
+                            <tr class="text-sm">
+                                <th>枚举值</th>
+                                <th>对应颜色</th>
+                                <th>对应分值</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="x in pop.rowEntity.charactersValueEnumList" class="text-sm">
+                                <td>
+                                  <input type="text" class="form-control input-sm " ng-model="x.attributeName" readonly>
+                                </td>
+                                <td>
+                                  <input type="color" class="form-control input-sm " ng-model="x.color" readonly>
+                                </td>
+                                <td>
+                                  <input type="text" class="form-control input-sm " ng-model="x.score" min="0">
+                                </td>
+                                <!-- <td> {{ x.enumKey }} </td>
+                                <td> {{ x.value }} </td> -->
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-primary btn-sm" ng-click="pop.save()" ng-hide="pop.formDisabled" ng-disabled ="characterForm.characterName.$invalid || characterForm.characterGroup.$invalid || characterForm.selType.$invalid || QuantizationForm.quantization.$invalid">确定</button>
+  <button type="button" class="btn btn-info btn-sm" ng-click="pop.edit()" ng-show="pop.formDisabled">编辑</button>
+  <button type="button" class="btn btn-default btn-sm" ng-click="pop.close()">取消</button>
+</div>
+<script type="text/ng-template" id="mathEditorModal">
+  <div ng-include="'modules/rice/client/views/charactermath.client.view.html'"></div>
+</script>
+<script type="text/ng-template" id="quantizationEditorModal">
+  <div ng-include="'modules/rice/client/views/characterquantization.client.view.html'"></div>
+</script>

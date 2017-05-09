@@ -1,0 +1,38 @@
+{
+	"useType": [
+		{
+			"typecodeId": "1",
+			"typecodeName": "亲本品种"
+		},
+		{
+			"typecodeId": "2",
+			"typecodeName": "育种品种"
+		},
+		{
+			"typecodeId": "3",
+			"typecodeName": "试验品种"
+		},
+		{
+			"typecodeId": "4",
+			"typecodeName": "对照品种"
+		}
+	],
+	"groupYear": [
+		{
+			"typecodeId": "1",
+			"typecodeName": "2016年"
+		},
+		{
+			"typecodeId": "2",
+			"typecodeName": "2015年"
+		},
+		{
+			"typecodeId": "3",
+			"typecodeName": "2014年"
+		},
+		{
+			"typecodeId": "4",
+			"typecodeName": "2013年"
+		}
+	]
+}

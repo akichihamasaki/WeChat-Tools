@@ -1,0 +1,85 @@
+<!-- 操作提示框 -->
+<toaster-container toaster-options="{'close-button': true, 'tap-to-dismiss': false, 'toaster-id': 1}"></toaster-container>
+<div class="wrapper-md" ng-controller="MessagePublishCtrl" ui-jq="sortable" ui-options="{items:'.m-b-md', handle:'.panel-heading', connectWith:'.wrapper-md'}">
+  <!-- 搜索框 -->
+  <div class="panel panel-default m-b-md">
+    <div class="panel-heading font-bold">查询条件</div>
+    <div class="panel-body">
+      <form class="form-horizontal">
+        <div class="row">
+          <div class="col-lg-3 col-sm-6">
+            <div class="form-group">
+              <lable class="col-lg-6 control-label text-sm">信息类型</lable>
+              <div class="col-lg-6">
+                <select class="form-control input-sm" ng-options="o.code as o.message for o in sm.selectData.infoType" ng-model="sm.searchData.infoType" ng-change="sm.changeInfoType()">
+                  <option value="">请选择</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6">
+            <div class="form-group">
+              <lable class="col-lg-6 control-label text-sm">通知类型</lable>
+              <div class="col-lg-6">
+                <select class="form-control input-sm" ng-options="o.code as o.message for o in sm.selectData.noticeType" ng-model="sm.searchData.noticeType" ng-disabled="sm.searchData.infoType !== '01'">
+                  <option value="">请选择</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6">
+            <div class="form-group">
+              <lable class="col-lg-6 control-label text-sm">信息标题</lable>
+              <div class="col-lg-6">
+                <input type="text" class="form-control input-sm" placeholder="信息标题" ng-model="sm.searchData.infoTitle">
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6">
+            <div class="form-group">
+              <lable class="col-lg-6 control-label text-sm">发布日期</lable>
+              <div class="col-lg-6">
+                <div class="input-group input-group-sm">
+                  <input type="text" class="form-control input-sm" uib-datepicker-popup="yyyy-MM-dd" ng-model="sm.searchData.publishDate" is-open="sm.isPublishDateOpen" current-text="今天" clear-text="清除" close-text="关闭" placeholder="发布日期" readonly/>
+                  <span class="input-group-btn">
+                    <button type="button" class="btn btn-default btn-sm" ng-click="sm.isPublishDateOpen = true"><i class="glyphicon glyphicon-calendar"></i></button>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="panel-footer">
+      <div class="text-right">
+        <button type="button" class="btn btn-default btn-sm m-r-sm" ng-click="sm.search()" autofocus><i class="fa fa-search"></i> 查询</button>
+        <button type="button" class="btn btn-default btn-sm m-r-sm" ng-click="sm.reset()"><i class="fa fa-refresh"></i> 重置</button>
+      </div>
+    </div>
+  </div>
+  <!-- 搜索框 -->
+  <!-- 操作按钮 -->
+  <div class="m-b-md">
+    <div class="btn-group">
+      <button type="button" class="btn btn-success btn-sm" ng-click="gm.openModal('add')"><i class="fa fa-plus-circle"></i> 新增</button>
+      <button type="button" class="btn btn-info btn-sm" ng-click="gm.openModal('edit')" ng-disabled="gm.buttonDisable.edit"><i class="fa fa-pencil"></i> 修改</button>
+      <button type="button" class="btn btn-primary btn-sm" ng-click="gm.openModal('view')" ng-disabled="gm.buttonDisable.view"><i class="fa fa-file-text"></i> 查看</button>
+      <button type="button" class="btn btn-success btn-sm" ng-click="gm.openDialog('publish')" ng-disabled="gm.buttonDisable.publish"><i class="fa fa-send"></i> 发布</button>
+      <button type="button" class="btn btn-warning btn-sm" ng-click="gm.openDialog('cancel')" ng-disabled="gm.buttonDisable.cancel"><i class="fa fa-reply"></i> 撤销</button>
+      <button type="button" class="btn btn-danger btn-sm" ng-click="gm.openDialog('delete')" ng-disabled="gm.buttonDisable.delete"><i class="fa fa-times-circle"></i> 删除</button>
+    </div>
+    <div class="btn-group pull-right">
+      <button type="button" class="btn btn-info btn-sm" ng-model="gm.radioModel" uib-btn-radio="'sm'"><i class="fa fa-th-list"></i> 缩小</button>
+      <button type="button" class="btn btn-info btn-sm" ng-model="gm.radioModel" uib-btn-radio="'lg'"><i class="fa fa-list"></i> 放大</button>
+    </div>
+  </div>
+  <!-- 操作按钮 -->
+  <div class="m-b-md">
+    <div class="pos-rlt" ng-style="{'height': gm.radioModel == 'sm' ? '381' : '681'}" ui-grid="gm.gridOptions" ui-grid-pagination ui-grid-selection ui-grid-resize-columns ui-grid-auto-resize></div>
+  </div>
+  <!-- 新增/修改/查看模态框   -->
+  <script type="text/ng-template" id="messagepublishModalCtrl">
+    <div ng-include="'modules/lpht/client/views/messagepublish.modal.client.view.html'"></div>
+  </script>
+</div>

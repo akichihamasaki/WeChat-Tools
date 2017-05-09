@@ -1,0 +1,65 @@
+<div class="modal-header">
+  <h4>修改存放位置</h4>
+</div>
+<div class="modal-body">
+  <form class="form-horizontal" >
+    <div class="row">
+      <div class="col-sm-6">
+          <div class="form-group has-feedback">
+            <label class="col-sm-4 control-label text-sm">仓库</label>
+            <div class="col-sm-8">
+              <input type="text" class="form-control input-sm" name="address" readonly ng-model="cl.rowEntity.storage">
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="form-group has-feedback">
+            <label class="col-sm-4 control-label text-sm">库房</label>
+            <div class="col-sm-8">
+              <input type="text" class="form-control input-sm" name="address" readonly  ng-model="cl.rowEntity.room">
+            </div>
+          </div>
+        </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6">
+          <div class="form-group has-feedback">
+            <label class="col-sm-4 control-label text-sm">库区</label>
+            <div class="col-sm-8">
+              <input type="text" class="form-control input-sm" name="address" placeholder="库区" ng-model="cl.rowEntity.kuqu" >
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="form-group has-feedback">
+            <label class="col-sm-4 control-label text-sm">货架</label>
+            <div class="col-sm-8">
+              <input type="text" class="form-control input-sm" name="address" placeholder="货架" ng-model="cl.rowEntity.huojia" >
+            </div>
+          </div>
+        </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6">
+          <div class="form-group has-feedback">
+            <label class="col-sm-4 control-label text-sm">货柜</label>
+            <div class="col-sm-8">
+              <input type="text" class="form-control input-sm" name="address" placeholder="货柜" ng-model="cl.rowEntity.huogui" >
+            </div>
+          </div>
+      </div>
+      <div class="col-sm-6">
+          <div class="form-group has-feedback">
+            <label class="col-sm-4 control-label text-sm">货位</label>
+            <div class="col-sm-8">
+              <input type="text" class="form-control input-sm" name="address" placeholder="货位" ng-model="cl.rowEntity.huowei" >
+            </div>
+          </div>
+      </div>
+    </div>
+  </form>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-primary btn-sm" ng-click="cl.ok()" >分配位置</button>
+  <button type="button" class="btn btn-default btn-sm" ng-click="cl.cancel()">取消</button>
+</div>

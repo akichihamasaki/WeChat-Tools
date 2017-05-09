@@ -1,0 +1,31 @@
+<div class="modal-header" ng-switch="vm.modalType">
+    <h4 class="modal-title" ng-switch-when="add">新增</h4>
+    <h4 class="modal-title" ng-switch-when="edit">修改</h4>
+    <h4 class="modal-title" ng-switch-when="view">查看详情</h4>
+</div>
+<div class="modal-body">
+    <form class="form-horizontal" name="experimenttypeForm">
+        <fieldset ng-disabled="vm.modalType == 'view'">
+            <div class="form-group has-feedback form-validation">
+                <label class="col-lg-2 control-label text-sm">测试类型{{$parent.vm.dota}}</label>
+                <div class="col-lg-10">
+                    <input type="text" class="form-control input-sm" name="testType" placeholder="测试类型" ng-model="vm.rowEntity.typename" required>
+                    <span class="fa fa-exclamation-circle form-control-feedback" ng-show="experimenttypeForm.testType.$error.required"></span>
+                    <div ng-messages="experimenttypeForm.testType.$dirty && experimenttypeForm.testType.$error">
+                        <p class="help-block text-sm" ng-message="required">请填写测试类型</p>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-lg-2 control-label text-sm">备注</label>
+                <div class="col-lg-10">
+                    <input type="text" class="form-control input-sm" placeholder="备注" ng-model="vm.rowEntity.remark">
+                </div>
+            </div>
+        </fieldset>
+    </form>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-primary btn-sm" ng-click="vm.ok()" ng-hide="vm.modalType == 'view'" ng-disabled="experimenttypeForm.$invalid">确定</button>
+    <button type="button" class="btn btn-default btn-sm" ng-click="vm.cancel()">取消</button>
+</div>

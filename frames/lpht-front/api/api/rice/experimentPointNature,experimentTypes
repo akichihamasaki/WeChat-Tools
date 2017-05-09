@@ -1,0 +1,22 @@
+{
+  "experimentPointNature": [
+  	{
+      "id": "1",
+      "name": "自建"
+    },
+    {
+      "id": "2",
+      "name": "合作共建"
+    }
+  ],
+  "experimentTypes": [
+    {
+      "id": "1",
+      "name": "田间测试"
+    },
+    {
+      "id": "2",
+      "name": "特性测试"
+    }
+  ]
+}

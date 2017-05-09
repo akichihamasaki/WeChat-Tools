@@ -1,0 +1,32 @@
+<div class="modal-header" ng-switch="vm.modalType">
+  <h4 class="modal-title" ng-switch-when="add">新增</h4>
+  <h4 class="modal-title" ng-switch-when="edit">修改</h4>
+  <h4 class="modal-title" ng-switch-when="view">查看详情</h4>
+</div>
+<div class="modal-body">
+  <form class="form-horizontal form-validation" name="cropForm">
+    <fieldset ng-disabled="vm.formDisabled">
+      <div class="form-group has-feedback">
+        <label class="col-lg-2 control-label text-sm">单位名称</label>
+        <div class="col-lg-10">
+          <input type="text" class="form-control input-sm" name="cropName" placeholder="单位名称" ng-model="vm.character.unitName" required maxlength="10">
+          <span class="fa fa-exclamation-circle form-control-feedback" ng-show="cropForm.cropName.$error.required"></span>
+          <div ng-messages="cropForm.cropName.$dirty && cropForm.cropName.$error">
+            <p class="help-block text-sm" ng-message="required">请填单位名称</p>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-lg-2 control-label text-sm">单位简写</label>
+        <div class="col-lg-10">
+          <input type="text" class="form-control input-sm" placeholder="单位简写" ng-model="vm.character.shorthand" maxlength="10">
+        </div>
+      </div>
+    </fieldset>
+  </form>
+</div>
+<div class="modal-footer">
+  <button class="btn btn-primary btn-sm" ng-click="vm.ok()" ng-hide="vm.formDisabled" ng-disabled="cropForm.$invalid">确定</button>
+  <button class="btn btn-info btn-sm" ng-click="vm.edit()" ng-show="vm.formDisabled" >编辑</button>
+  <button type="button" class="btn btn-default btn-sm" ng-click="vm.cancel()">取消</button>
+</div>

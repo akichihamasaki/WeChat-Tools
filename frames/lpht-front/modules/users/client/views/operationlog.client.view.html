@@ -1,0 +1,43 @@
+<toaster-container toaster-options="{'close-button': true, 'tap-to-dismiss': false, 'toaster-id': 1}"></toaster-container>
+<div class="wrapper-md" ng-controller="operationLogController">
+    <div class="panel panel-default m-b-md">
+        <div class="panel-heading font-bold">查询条件</div>
+        <div class="panel-body">
+            <form class="form-horizontal">
+                <div class="row">
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="form-group">
+                            <label class="col-lg-6 control-label text-sm">开始日期</label>
+                            <div class="col-lg-6 input-group">
+                                <input type="text" class="form-control input-sm" uib-datepicker-popup="{{format}}" ng-model="vm.startDateValue" is-open="vm.startDate.opened" datepicker-options="dateOptions" ng-required="true" current-text="今天" clear-text="清除" close-text="关闭" alt-input-formats="altInputFormats" placeholder="开始日期" />
+                                <span class="input-group-btn">
+          <button type="button" class="btn btn-default btn-sm" ng-click="vm.startDateOpen()"><i class="glyphicon glyphicon-calendar"></i></button>
+        </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="form-group">
+                            <label class="col-lg-6 control-label text-sm">结束日期</label>
+                            <div class="col-lg-6 input-group">
+                                <input type="text" class="form-control input-sm" uib-datepicker-popup="{{format}}" ng-model="vm.endDateValue" is-open="vm.endDate.opened" datepicker-options="dateOptions" ng-required="true" current-text="今天" clear-text="清除" close-text="关闭" alt-input-formats="altInputFormats" placeholder="结束日期" />
+                                <span class="input-group-btn">
+          <button type="button" class="btn btn-default btn-sm" ng-click="vm.endDateOpen()"><i class="glyphicon glyphicon-calendar"></i></button>
+        </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="panel-footer">
+            <div class="text-right">
+                <button type="button" class="btn btn-default btn-sm m-r-sm" ng-click="vm.search()" autofocus><i class="fa fa-search"></i> 查询</button>
+                <button type="button" class="btn btn-default btn-sm m-r-sm" ng-click="vm.reset()"><i class="fa fa-refresh"></i> 重置</button>
+            </div>
+        </div>
+    </div>
+    <div class="m-t-md">
+        <div class="pos-rlt" ui-grid="vm.grid" ui-grid-pagination ui-grid-exporter></div>
+    </div>
+</div>

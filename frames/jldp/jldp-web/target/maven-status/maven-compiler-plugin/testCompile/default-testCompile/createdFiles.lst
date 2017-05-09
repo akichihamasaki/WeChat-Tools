@@ -1,0 +1,5 @@
+jldp\portal\modules\security\dao\BaseOrganizationTest.class
+jldp\portal\modules\security\dao\BaseMenuRepositoryTest.class
+jldp\portal\modules\security\dao\BaseLogsRepositoryTest.class
+jldp\portal\modules\demo\dao\BaseLogsMapperTest.class
+jldp\portal\modules\security\dao\BaseMenuRepositoryTest$1.class

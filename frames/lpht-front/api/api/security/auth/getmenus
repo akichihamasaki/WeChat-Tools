@@ -1,0 +1,1137 @@
+[
+  {
+    "id": "100",
+    "name": null,
+    "title": "水稻",
+    "label": "水稻",
+    "url": null,
+    "description": null,
+    "orderno": 0,
+    "data": {
+      "id": "100",
+      "name": "水稻",
+      "code": null,
+      "orderno": 0,
+      "parentId": null,
+      "url": null,
+      "config": null,
+      "children": [],
+      "label": "水稻"
+    },
+    "components": [
+      {
+        "id": "100100",
+        "name": null,
+        "title": "基础数据",
+        "label": "基础数据",
+        "url": "app.security",
+        "description": "glyphicon glyphicon-cog icon text-primary-dker",
+        "orderno": 0,
+        "data": {
+          "id": "100100",
+          "name": "基础数据",
+          "code": null,
+          "orderno": 0,
+          "parentId": "100",
+          "url": "app.security",
+          "config": "",
+          "children": [],
+          "label": "基础数据"
+        },
+        "components": [
+          {
+            "id": "100100100",
+            "name": null,
+            "title": "数据字典",
+            "label": "数据字典",
+            "url": "app.lpht.lpht.basehelptypecode",
+            "description": null,
+            "orderno": 1,
+            "data": {
+              "id": "100100100",
+              "name": "数据字典",
+              "code": null,
+              "orderno": 1,
+              "parentId": "100100",
+              "url": "app.lpht.lpht.basehelptypecode",
+              "config": null,
+              "children": [],
+              "label": "数据字典"
+            },
+            "components": [],
+            "parentId": "100100"
+          },
+          {
+            "id": "100100100",
+            "name": null,
+            "title": "熟期",
+            "label": "熟期",
+            "url": "app.lpht.rice.cropmaturity",
+            "description": null,
+            "orderno": 1,
+            "data": {
+              "id": "100100100",
+              "name": "熟期",
+              "code": null,
+              "orderno": 1,
+              "parentId": "100100",
+              "url": "app.lpht.rice.cropmaturity",
+              "config": null,
+              "children": [],
+              "label": "熟期"
+            },
+            "components": [],
+            "parentId": "100100"
+          },
+          {
+            "id": "100100100",
+            "name": null,
+            "title": "播种季节",
+            "label": "播种季节",
+            "url": "app.lpht.rice.seedtime",
+            "description": null,
+            "orderno": 1,
+            "data": {
+              "id": "100100100",
+              "name": "播种季节",
+              "code": null,
+              "orderno": 1,
+              "parentId": "100100",
+              "url": "app.lpht.rice.seedtime",
+              "config": null,
+              "children": [],
+              "label": "播种季节"
+            },
+            "components": [],
+            "parentId": "100100"
+          },
+          {
+            "id": "100100200",
+            "name": null,
+            "title": "产季",
+            "label": "产季",
+            "url": "app.lpht.rice.productseason",
+            "description": null,
+            "orderno": 2,
+            "data": {
+              "id": "100100200",
+              "name": "产季",
+              "code": null,
+              "orderno": 2,
+              "parentId": "100100",
+              "url": "app.lpht.rice.productseason",
+              "config": null,
+              "children": [],
+              "label": "产季"
+            },
+            "components": [],
+            "parentId": "100100"
+          },
+          {
+            "id": "100100300",
+            "name": null,
+            "title": "作物亚型",
+            "label": "作物亚型",
+            "url": "app.lpht.rice.cropsubtype",
+            "description": null,
+            "orderno": 3,
+            "data": {
+              "id": "100100300",
+              "name": "作物亚型",
+              "code": null,
+              "orderno": 3,
+              "parentId": "100100",
+              "url": "app.lpht.rice.cropsubtype",
+              "config": null,
+              "children": [],
+              "label": "作物亚型"
+            },
+            "components": [],
+            "parentId": "100100"
+          },
+          {
+            "id": "100100600",
+            "name": null,
+            "title": "性状管理",
+            "label": "性状管理",
+            "url": "",
+            "description": null,
+            "orderno": 6,
+            "data": {
+              "id": "100100600",
+              "name": "性状",
+              "code": null,
+              "orderno": 6,
+              "parentId": "100100",
+              "url": "app.lpht.rice.character",
+              "config": null,
+              "children": [],
+              "label": "性状"
+            },
+            "components": [
+              {
+                "id": "100100600",
+                "name": null,
+                "title": "性状",
+                "label": "性状",
+                "url": "app.lpht.rice.character",
+                "description": null,
+                "orderno": 6,
+                "data": {
+                  "id": "100100600",
+                  "name": "性状",
+                  "code": null,
+                  "orderno": 6,
+                  "parentId": "100100",
+                  "url": "app.lpht.rice.character",
+                  "config": null,
+                  "children": [],
+                  "label": "性状"
+                },
+                "components": [],
+                "parentId": "100100"
+              },
+              {
+                "id": "100100100",
+                "name": null,
+                "title": "性状分类",
+                "label": "性状分类",
+                "url": "app.lpht.rice.characterclassify",
+                "description": null,
+                "orderno": 1,
+                "data": {
+                  "id": "100100100",
+                  "name": "性状分类",
+                  "code": null,
+                  "orderno": 1,
+                  "parentId": "100100",
+                  "url": "app.lpht.rice.characterclassify",
+                  "config": null,
+                  "children": [],
+                  "label": "性状分类"
+                },
+                "components": [],
+                "parentId": "100100"
+              },
+              {
+                "id": "100100500",
+                "name": null,
+                "title": "性状组",
+                "label": "性状组",
+                "url": "app.lpht.rice.charactergroup",
+                "description": null,
+                "orderno": 5,
+                "data": {
+                  "id": "100100500",
+                  "name": "性状组",
+                  "code": null,
+                  "orderno": 5,
+                  "parentId": "100100",
+                  "url": "app.lpht.rice.charactergroup",
+                  "config": null,
+                  "children": [],
+                  "label": "性状组"
+                },
+                "components": [],
+                "parentId": "100100"
+              },
+              {
+                "id": "100100400",
+                "name": null,
+                "title": "性状单位",
+                "label": "性状单位",
+                "url": "app.lpht.rice.charactermanager",
+                "description": null,
+                "orderno": 4,
+                "data": {
+                  "id": "100100400",
+                  "name": "性状单位",
+                  "code": null,
+                  "orderno": 4,
+                  "parentId": "100100",
+                  "url": "app.lpht.rice.charactermanager",
+                  "config": null,
+                  "children": [],
+                  "label": "性状单位"
+                },
+                "components": [],
+                "parentId": "100100"
+              }
+            ],
+            "parentId": "100100"
+          },
+          {
+            "id": "100100700",
+            "name": null,
+            "title": "调查项目",
+            "label": "调查项目",
+            "url": "app.lpht.rice.experimentproject",
+            "description": null,
+            "orderno": 7,
+            "data": {
+              "id": "100100700",
+              "name": "调查项目",
+              "code": null,
+              "orderno": 7,
+              "parentId": "100100",
+              "url": "app.lpht.rice.experimentproject",
+              "config": null,
+              "children": [],
+              "label": "调查项目"
+            },
+            "components": [],
+            "parentId": "100100"
+          },
+          {
+            "id": "100100800",
+            "name": null,
+            "title": "阶段/项目",
+            "label": "阶段/项目",
+            "description": null,
+            "url": "app.lpht.rice.stageandproject",
+            "orderno": 8,
+            "data": {
+              "id": "100100800",
+              "name": "阶段/项目",
+              "code": null,
+              "orderno": 8,
+              "parentId": "100100",
+              "url": "app.lpht.rice.stageandproject",
+              "config": null,
+              "children": [],
+              "label": "阶段/项目"
+            },
+            "components": [],
+            "parentId": "100100"
+          },
+          {
+            "id": "1001001000",
+            "name": null,
+            "title": "试验点类型",
+            "label": "试验点类型",
+            "url": "app.lpht.rice.experimenttype",
+            "description": null,
+            "orderno": 10,
+            "data": {
+              "id": "1001001000",
+              "name": "试验点类型",
+              "code": null,
+              "orderno": 10,
+              "parentId": "100100",
+              "url": "app.lpht.rice.experimenttype",
+              "config": null,
+              "children": [],
+              "label": "试验点类型"
+            },
+            "components": [],
+            "parentId": "100100"
+          },
+          {
+            "id": "1001001100",
+            "name": null,
+            "title": "试验点",
+            "label": "试验点",
+            "url": "app.lpht.rice.experimentpoint",
+            "description": null,
+            "orderno": 11,
+            "data": {
+              "id": "1001001100",
+              "name": "试验点",
+              "code": null,
+              "orderno": 11,
+              "parentId": "100100",
+              "url": "app.lpht.rice.experimentpoint",
+              "config": null,
+              "children": [],
+              "label": "试验点"
+            },
+            "components": [],
+            "parentId": "100100"
+          },
+          {
+            "id": "1001001300",
+            "name": null,
+            "title": "数据采集",
+            "label": "数据采集",
+            "url": "app.lpht.rice.datacollection",
+            "description": null,
+            "orderno": 13,
+            "data": {
+              "id": "1001001300",
+              "name": "数据采集",
+              "code": null,
+              "orderno": 13,
+              "parentId": "100100",
+              "url": "app.lpht.rice.datacollection",
+              "config": null,
+              "children": [],
+              "label": "数据采集"
+            },
+            "components": [],
+            "parentId": "100100"
+          },
+          {
+            "id": "1001001400",
+            "name": null,
+            "title": "试验阶段",
+            "label": "试验阶段",
+            "url": "app.lpht.rice.experimentstage",
+            "description": null,
+            "orderno": 14,
+            "data": {
+              "id": "1001001400",
+              "name": "试验阶段",
+              "code": null,
+              "orderno": 14,
+              "parentId": "100100",
+              "url": "app.lpht.rice.experimentstage",
+              "config": null,
+              "children": [],
+              "label": "试验阶段"
+            },
+            "components": [],
+            "parentId": "100100"
+          },
+          {
+            "id": "1001001500",
+            "name": null,
+            "title": "生态区",
+            "label": "生态区",
+            "url": "app.lpht.rice.ecotope",
+            "description": null,
+            "orderno": 15,
+            "data": {
+              "id": "1001001400",
+              "name": "试验阶段",
+              "code": null,
+              "orderno": 14,
+              "parentId": "100200",
+              "url": "app.lpht.rice.ecotope",
+              "config": null,
+              "children": [],
+              "label": "生态区"
+            },
+            "components": [],
+            "parentId": "100100"
+          }
+        ],
+        "parentId": "100"
+      }
+    ],
+    "parentId": null
+  },
+  {
+    "id": "102",
+    "name": null,
+    "title": "种质实物",
+    "label": "种质实物",
+    "url": null,
+    "description": null,
+    "orderno": 0,
+    "data": {
+      "id": "102",
+      "name": "种质实物",
+      "code": null,
+      "orderno": 0,
+      "parentId": null,
+      "url": null,
+      "config": null,
+      "children": [],
+      "label": "种质实物"
+    },
+    "components": [
+      {
+        "id": "100101",
+        "name": null,
+        "title": "种质资源",
+        "label": "种质资源",
+        "url": "app.security",
+        "description": "glyphicon glyphicon-cog icon text-primary-dker",
+        "orderno": 0,
+        "data": {
+          "id": "100101",
+          "name": "种质资源",
+          "code": null,
+          "orderno": 0,
+          "parentId": "100",
+          "url": "app.security",
+          "config": "",
+          "children": [],
+          "label": "种质资源"
+        },
+        "components": [
+          {
+            "id": "100101100",
+            "name": null,
+            "title": "育种材料",
+            "label": "育种材料",
+            "url": "app.lpht.germplasm.breedingdata",
+            "description": null,
+            "orderno": 1,
+            "data": {
+              "id": "100101100",
+              "name": "育种材料",
+              "code": null,
+              "orderno": 1,
+              "parentId": "100101",
+              "url": "app.lpht.germplasm.breedingdata",
+              "config": null,
+              "children": [],
+              "label": "育种材料"
+            },
+            "components": [],
+            "parentId": "100101"
+          },
+          {
+            "id": "100101206",
+            "name": null,
+            "title": "品种组合",
+            "label": "品种组合",
+            "url": "app.lpht.germplasm.breedconbination",
+            "description": null,
+            "orderno": 4,
+            "data": {
+              "id": "100101206",
+              "name": "品种组合",
+              "code": null,
+              "orderno": 4,
+              "parentId": "100101",
+              "url": "app.lpht.germplasm.breedconbination",
+              "config": null,
+              "children": [],
+              "label": "品种组合"
+            },
+            "components": [],
+            "parentId": "100101"
+          }
+        ],
+        "parentId": "100"
+      },
+      {
+        "id": "100101",
+        "name": null,
+        "title": "实物仓储",
+        "label": "实物仓储",
+        "url": "app.security",
+        "description": "glyphicon glyphicon-cog icon text-primary-dker",
+        "orderno": 0,
+        "data": {
+          "id": "100101",
+          "name": "仓储",
+          "code": null,
+          "orderno": 0,
+          "parentId": "100",
+          "url": "app.security",
+          "config": "",
+          "children": [],
+          "label": "仓储"
+        },
+        "components": [
+          {
+            "id": "100101200",
+            "name": null,
+            "title": "库存查询",
+            "label": "库存查询",
+            "url": "app.lpht.germplasm.stockquery",
+            "description": null,
+            "orderno": 6,
+            "data": {
+              "id": "100101200",
+              "name": "库存查询",
+              "code": null,
+              "orderno": 6,
+              "parentId": "100101",
+              "url": "app.lpht.germplasm.stockquery",
+              "config": null,
+              "children": [],
+              "label": "库存查询"
+            },
+            "components": [],
+            "parentId": "100101"
+          },
+          {
+            "id": "100101200",
+            "name": null,
+            "title": "实物淘汰",
+            "label": "实物淘汰",
+            "url": "app.lpht.germplasm.stockquery",
+            "description": null,
+            "orderno": 6,
+            "data": {
+              "id": "100101200",
+              "name": "实物淘汰",
+              "code": null,
+              "orderno": 6,
+              "parentId": "100101",
+              "url": "",
+              "config": null,
+              "children": [],
+              "label": "实物淘汰"
+            },
+            "components": [
+              {
+                "id": "100101204",
+                "name": null,
+                "title": "实物淘汰清单",
+                "label": "实物淘汰清单",
+                "url": "app.lpht.germplasm.obsoletelist",
+                "description": null,
+                "orderno": 4,
+                "data": {
+                  "id": "100101204",
+                  "name": "实物淘汰清单",
+                  "code": null,
+                  "orderno": 4,
+                  "parentId": "100101",
+                  "url": "app.lpht.germplasm.obsoletelist",
+                  "config": null,
+                  "children": [],
+                  "label": "实物淘汰清单"
+                },
+                "components": [],
+                "parentId": "100101"
+              },
+              {
+                "id": "100101205",
+                "name": null,
+                "title": "实物淘汰确认",
+                "label": "实物淘汰确认",
+                "url": "app.lpht.germplasm.obsoleteaffirm",
+                "description": null,
+                "orderno": 4,
+                "data": {
+                  "id": "100101205",
+                  "name": "实物淘汰确认",
+                  "code": null,
+                  "orderno": 4,
+                  "parentId": "100101",
+                  "url": "app.lpht.germplasm.obsoleteaffirm",
+                  "config": null,
+                  "children": [],
+                  "label": "实物淘汰确认"
+                },
+                "components": [],
+                "parentId": "100101"
+              }
+            ],
+            "parentId": "100101"
+          },
+          {
+            "id": "100101207",
+            "name": null,
+            "title": "入库",
+            "label": "入库",
+            "url": "app.lpht.germplasm.instockform",
+            "description": null,
+            "orderno": 4,
+            "data": {
+              "id": "100101207",
+              "name": "入库申请",
+              "code": null,
+              "orderno": 4,
+              "parentId": "100101",
+              "url": "app.lpht.germplasm.instockform",
+              "config": null,
+              "children": [],
+              "label": "入库申请"
+            },
+            "components": [
+              {
+                "id": "100101207",
+                "name": null,
+                "title": "入库申请",
+                "label": "入库申请",
+                "url": "app.lpht.germplasm.instockform",
+                "description": null,
+                "orderno": 4,
+                "data": {
+                  "id": "100101207",
+                  "name": "入库申请",
+                  "code": null,
+                  "orderno": 4,
+                  "parentId": "100101",
+                  "url": "app.lpht.germplasm.instockform",
+                  "config": null,
+                  "children": [],
+                  "label": "入库申请"
+                },
+                "components": [],
+                "parentId": "100101"
+              },
+              {
+                "id": "100101208",
+                "name": null,
+                "title": "入库申请审核",
+                "label": "入库申请审核",
+                "url": "app.lpht.germplasm.instockformcheck",
+                "description": null,
+                "orderno": 4,
+                "data": {
+                  "id": "100101208",
+                  "name": "入库申请审核",
+                  "code": null,
+                  "orderno": 4,
+                  "parentId": "100101",
+                  "url": "app.lpht.germplasm.instockformcheck",
+                  "config": null,
+                  "children": [],
+                  "label": "入库申请审核"
+                },
+                "components": [],
+                "parentId": "100101"
+              }
+            ],
+            "parentId": "100101"
+          },
+          {
+            "id": "100101209",
+            "name": null,
+            "title": "出库",
+            "label": "出库",
+            "url": "app.lpht.germplasm.outstockform",
+            "description": null,
+            "orderno": 4,
+            "data": {
+              "id": "100101209",
+              "name": "出库",
+              "code": null,
+              "orderno": 4,
+              "parentId": "100101",
+              "url": "app.lpht.germplasm.outstockform",
+              "config": null,
+              "children": [],
+              "label": "出库"
+            },
+            "components": [
+              {
+                "id": "100101209",
+                "name": null,
+                "title": "出库申请",
+                "label": "出库申请",
+                "url": "app.lpht.germplasm.outstockform",
+                "description": null,
+                "orderno": 4,
+                "data": {
+                  "id": "100101209",
+                  "name": "出库申请",
+                  "code": null,
+                  "orderno": 4,
+                  "parentId": "100101",
+                  "url": "app.lpht.germplasm.outstockform",
+                  "config": null,
+                  "children": [],
+                  "label": "出库申请"
+                },
+                "components": [],
+                "parentId": "100101"
+              },
+              {
+                "id": "100101209",
+                "name": null,
+                "title": "出库申请审批",
+                "label": "出库申请审批",
+                "url": "app.lpht.germplasm.outstockformcheck",
+                "description": null,
+                "orderno": 4,
+                "data": {
+                  "id": "100101209",
+                  "name": "出库申请审批",
+                  "code": null,
+                  "orderno": 4,
+                  "parentId": "100101",
+                  "url": "app.lpht.germplasm.outstockformcheck",
+                  "config": null,
+                  "children": [],
+                  "label": "出库申请审批"
+                },
+                "components": [],
+                "parentId": "100101"
+              },
+              {
+                "id": "100101210",
+                "name": null,
+                "title": "出库",
+                "label": "出库",
+                "url": "app.lpht.germplasm.outstock",
+                "description": null,
+                "orderno": 4,
+                "data": {
+                  "id": "100101210",
+                  "name": "出库",
+                  "code": null,
+                  "orderno": 4,
+                  "parentId": "100101",
+                  "url": "app.lpht.germplasm.outstock",
+                  "config": null,
+                  "children": [],
+                  "label": "出库"
+                },
+                "components": [],
+                "parentId": "100101"
+              }
+            ],
+            "parentId": "100101"
+          },
+          {
+            "id": "100101201",
+            "name": null,
+            "title": "盘点",
+            "label": "盘点",
+            "url": "app.lpht.germplasm.checkbatch",
+            "description": null,
+            "orderno": 6,
+            "data": {
+              "id": "100100600",
+              "name": "盘点",
+              "code": null,
+              "orderno": 6,
+              "parentId": "100100",
+              "url": "app.lpht.germplasm.checkbatch",
+              "config": null,
+              "children": [],
+              "label": "盘点"
+            },
+            "components": [
+              {
+                "id": "100101201",
+                "name": null,
+                "title": "盘点批次",
+                "label": "盘点批次",
+                "url": "app.lpht.germplasm.checkbatch",
+                "description": null,
+                "orderno": 6,
+                "data": {
+                  "id": "100100600",
+                  "name": "盘点批次",
+                  "code": null,
+                  "orderno": 6,
+                  "parentId": "100100",
+                  "url": "app.lpht.germplasm.checkbatch",
+                  "config": null,
+                  "children": [],
+                  "label": "盘点批次"
+                },
+                "components": [],
+                "parentId": "100101"
+              },
+              {
+                "id": "100101201",
+                "name": null,
+                "title": "盘点数据录入",
+                "label": "盘点数据录入",
+                "url": "app.lpht.germplasm.dataentering",
+                "description": null,
+                "orderno": 6,
+                "data": {
+                  "id": "100100600",
+                  "name": "盘点数据录入",
+                  "code": null,
+                  "orderno": 6,
+                  "parentId": "100100",
+                  "url": "app.lpht.germplasm.dataentering",
+                  "config": null,
+                  "children": [],
+                  "label": "盘点数据录入"
+                },
+                "components": [],
+                "parentId": "100101"
+              },
+              {
+                "id": "100101201",
+                "name": null,
+                "title": "盘点数据审核",
+                "label": "盘点数据审核",
+                "url": "app.lpht.germplasm.dataverify",
+                "description": null,
+                "orderno": 6,
+                "data": {
+                  "id": "100100600",
+                  "name": "盘点数据审核",
+                  "code": null,
+                  "orderno": 6,
+                  "parentId": "100100",
+                  "url": "app.lpht.germplasm.dataverify",
+                  "config": null,
+                  "children": [],
+                  "label": "盘点数据审核"
+                },
+                "components": [],
+                "parentId": "100101"
+              }
+            ],
+            "parentId": "100101"
+          },
+          {
+            "id": "100101211",
+            "name": null,
+            "title": "仓库管理",
+            "label": "仓库管理",
+            "url": "app.lpht.germplasm.goodslocation",
+            "description": null,
+            "orderno": 7,
+            "data": {
+              "id": "100101211",
+              "name": "仓库管理",
+              "code": null,
+              "orderno": 7,
+              "parentId": "100100",
+              "url": "app.lpht.germplasm.goodslocation",
+              "config": null,
+              "children": [],
+              "label": "仓库管理"
+            },
+            "components": [],
+            "parentId": "100101"
+          }
+        ],
+        "parentId": "100"
+      },
+      {
+        "id": "100101",
+        "name": null,
+        "title": "基础数据",
+        "label": "基础数据",
+        "url": "app.security",
+        "description": "glyphicon glyphicon-cog icon text-primary-dker",
+        "orderno": 0,
+        "data": {
+          "id": "100101",
+          "name": "基础数据",
+          "code": null,
+          "orderno": 0,
+          "parentId": "100",
+          "url": "app.security",
+          "config": "",
+          "children": [],
+          "label": "基础数据"
+        },
+        "components": [
+          {
+            "id": "100101212",
+            "name": null,
+            "title": "材料分组",
+            "label": "材料分组",
+            "url": "app.lpht.germplasm.materialuse",
+            "description": null,
+            "orderno": 8,
+            "data": {
+              "id": "100101212",
+              "name": "材料分组",
+              "code": null,
+              "orderno": 8,
+              "parentId": "100100",
+              "url": "app.lpht.germplasm.materialuse",
+              "config": null,
+              "children": [],
+              "label": "材料分组"
+            },
+            "components": [],
+            "parentId": "100101"
+          },
+          {
+            "id": "100101213",
+            "name": null,
+            "title": "繁种警戒提醒",
+            "label": "繁种警戒提醒",
+            "url": "app.lpht.germplasm.breedingremind",
+            "description": null,
+            "orderno": 9,
+            "data": {
+              "id": "100101213",
+              "name": "繁种警戒提醒",
+              "code": null,
+              "orderno": 9,
+              "parentId": "100100",
+              "url": "app.lpht.germplasm.breedingremind",
+              "config": null,
+              "children": [],
+              "label": "繁种警戒提醒"
+            },
+            "components": [],
+            "parentId": "100101"
+          }
+        ],
+        "parentId": "100"
+      }
+    ],
+    "parentId": null
+  },
+  {
+    "id": "101",
+    "name": null,
+    "title": "系统",
+    "label": "系统",
+    "url": null,
+    "description": null,
+    "orderno": 0,
+    "data": {
+      "id": "100",
+      "name": "系统",
+      "code": null,
+      "orderno": 0,
+      "parentId": null,
+      "url": null,
+      "config": null,
+      "children": [],
+      "label": "系统"
+    },
+    "components": [
+      {
+        "id": "101100",
+        "name": null,
+        "title": "系统管理",
+        "label": "系统管理",
+        "url": "app.security",
+        "description": "glyphicon glyphicon-cog icon text-primary-dker",
+        "orderno": 0,
+        "data": {
+          "id": "101100",
+          "name": "系统管理",
+          "code": null,
+          "orderno": 0,
+          "parentId": "100",
+          "url": "app.security",
+          "config": "glyphicon glyphicon-cog icon text-primary-dker",
+          "children": [],
+          "label": "系统管理"
+        },
+        "components": [
+          {
+            "id": "101100100",
+            "name": null,
+            "title": "操作日志",
+            "label": "操作日志",
+            "url": "app.security.operationlog",
+            "description": null,
+            "orderno": 0,
+            "data": {
+              "id": "101100100",
+              "name": "操作日志",
+              "code": null,
+              "orderno": 0,
+              "parentId": "101100",
+              "url": "app.security.operationlog",
+              "config": null,
+              "children": [],
+              "label": "操作日志"
+            },
+            "components": [],
+            "parentId": "101100"
+          },
+          {
+            "id": "101100200",
+            "name": null,
+            "title": "数据字典",
+            "label": "数据字典",
+            "description": null,
+            "url": "app.security.basecode",
+            "orderno": 1,
+            "data": {
+              "id": "101100200",
+              "name": "数据字典",
+              "code": null,
+              "orderno": 1,
+              "parentId": "101100",
+              "url": "app.security.basecode",
+              "config": null,
+              "children": [],
+              "label": "数据字典"
+            },
+            "components": [],
+            "parentId": "101100"
+          },
+          {
+            "id": "101100300",
+            "name": null,
+            "title": "机构人员",
+            "label": "机构人员",
+            "url": "app.security.orgmanager",
+            "description": null,
+            "orderno": 2,
+            "data": {
+              "id": "101100300",
+              "name": "机构人员",
+              "code": null,
+              "orderno": 2,
+              "parentId": "101100",
+              "url": "app.security.orgmanager",
+              "config": null,
+              "children": [],
+              "label": "机构人员"
+            },
+            "components": [],
+            "parentId": "101100"
+          },
+          {
+            "id": "101100400",
+            "name": null,
+            "title": "用户管理",
+            "label": "用户管理",
+            "url": "app.security.usermanager",
+            "description": null,
+            "orderno": 3,
+            "data": {
+              "id": "101100400",
+              "name": "用户管理",
+              "code": null,
+              "orderno": 3,
+              "parentId": "101100",
+              "url": "app.security.usermanager",
+              "config": null,
+              "children": [],
+              "label": "用户管理"
+            },
+            "components": [],
+            "parentId": "101100"
+          },
+          {
+            "id": "101100500",
+            "name": null,
+            "title": "角色管理",
+            "label": "角色管理",
+            "url": "app.security.rolemanager",
+            "description": null,
+            "orderno": 4,
+            "data": {
+              "id": "101100500",
+              "name": "角色管理",
+              "code": null,
+              "orderno": 3,
+              "parentId": "101100",
+              "url": "app.security.rolemanager",
+              "config": null,
+              "children": [],
+              "label": "角色管理"
+            },
+            "components": [],
+            "parentId": "101100"
+          },
+          {
+            "id": "101100600",
+            "name": null,
+            "title": "菜单管理",
+            "label": "菜单管理",
+            "url": "app.security.menumanager",
+            "description": null,
+            "orderno": 5,
+            "data": {
+              "id": "101100600",
+              "name": "菜单管理",
+              "code": null,
+              "orderno": 3,
+              "parentId": "101100",
+              "url": "app.security.menumanager",
+              "config": null,
+              "children": [],
+              "label": "菜单管理"
+            },
+            "components": [],
+            "parentId": "101100"
+          }
+        ],
+        "parentId": "101"
+      }
+    ],
+    "parentId": null
+  }
+]

@@ -1,0 +1,664 @@
+<div class="modal-header" ng-switch="vm.modalType">
+  <h4 class="modal-title" ng-switch-when="add">新增</h4>
+  <h4 class="modal-title" ng-switch-when="edit">修改</h4>
+  <h4 class="modal-title" ng-switch-when="view">查看详情</h4>
+</div>
+<div class="modal-body" ui-jq="slimScroll" ui-options="{height:'600px'}">
+  <div class="panel panel-default">
+    <div class="panel-heading font-bold">基本信息</div>
+    <div class="panel-body">
+      <div>
+        <form class="form-horizontal form-validation" name="essentialInfoForm">
+          <fieldset ng-disabled="vm.formDisabled">
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="form-group has-feedback">
+                  <label class="col-lg-4 control-label text-sm">试验点名称</label>
+                  <div class="col-lg-8">
+                    <input type="text" class="form-control input-sm" name="pointName" placeholder="试验点名称" ng-model="vm.rowEntity.pointName" required maxlength="50">
+                    <span class="fa fa-exclamation-circle form-control-feedback" ng-show="essentialInfoForm.pointName.$error.required"></span>
+                    <div ng-messages="essentialInfoForm.pointName.$dirty && essentialInfoForm.pointName.$error">
+                      <p class="help-block text-sm" ng-message="required">请填写试验点名称</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label class="col-lg-4 control-label text-sm">试验点类型</label>
+                  <div class="col-lg-8">
+                    <select class="form-control input-sm" name="pointTypeStr" ng-model="vm.rowEntity.pointType" ng-change="vm.changeExperimentType()" required>
+                      <option value="">请选择</option>
+                      <option ng-repeat="x in ps.sm.pointType" value='{{x.typecode}}'>{{x.typecodeName}}</option>
+                    </select>
+                    <div ng-messages="essentialInfoForm.pointTypeStr.$dirty && essentialInfoForm.pointTypeStr.$error">
+                      <p class="help-block text-sm" ng-message="required">请选择试验点类型</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="form-group has-feedback">
+                  <label class="col-lg-4 control-label text-sm">鉴定区域</label>
+                  <div class="col-lg-8">
+                    <input type="text" class="form-control input-sm" name="appraiseArea" placeholder="鉴定区域" ng-model="vm.rowEntity.appraiseArea" required maxlength="128">
+                    <span class="fa fa-exclamation-circle form-control-feedback" ng-show="essentialInfoForm.appraiseArea.$error.required"></span>
+                    <div ng-messages="essentialInfoForm.appraiseArea.$dirty && essentialInfoForm.appraiseArea.$error">
+                      <p class="help-block text-sm" ng-message="required">请填写鉴定区域</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group has-feedback">
+                  <label class="col-lg-4 control-label text-sm">调查项目</label>
+                  <div class="col-lg-8">
+                    <div class="input-group input-group-sm">
+                      <input type="text" class="form-control input-sm" name="testItem" placeholder="调查项目" ng-model="vm.rowEntity.testItem" readonly required>
+                      <input type="text" name="itemId" ng-model="vm.rowEntity.itemId" ng-hide="true">
+                      <span class="input-group-btn">
+                        <button class="btn btn-default" type="button" title="选择调查项目" ng-click="vm.openExperimentProjectModal()" ng-disabled="vm.rowEntity.pointType == 'TJ001'"><i class="glyphicon glyphicon-zoom-in"></i></button>
+                      </span>
+                    </div>
+                    <div ng-messages="essentialInfoForm.testItem.$dirty && essentialInfoForm.testItem.$error">
+                      <p class="help-block text-sm" ng-message="required">请选择调查项目</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label class="col-lg-4 control-label text-sm">试验点性质</label>
+                  <div class="col-lg-8">
+                    <select class="form-control input-sm" name="pointOwnerStr" ng-model="vm.rowEntity.pointOwner" required ng-change="vm.pointOwnerChange()">
+                      <option value="">请选择</option>
+                      <option ng-repeat="x in ps.sm.pointOwner" value="{{x.code}}">{{x.message}}</option>
+                    </select>
+                    <div ng-messages="essentialInfoForm.pointOwnerStr.$dirty && essentialInfoForm.pointOwnerStr.$error">
+                      <p class="help-block text-sm" ng-message="required">请选择试验点性质</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label class="col-lg-4 control-label text-sm">合作状态</label>
+                  <div class="col-lg-8">
+                    <select class="form-control input-sm" name="cooperationStatusStr" ng-model="vm.rowEntity.cooperationStatus" required ng-disabled="vm.rowEntity.pointOwner == 'ZJ'">
+                      <option value="">请选择</option>
+                      <option ng-repeat="x in ps.sm.cooperationStatus" value="{{x.code}}">{{x.message}}</option>
+                    </select>
+                    <div ng-messages="essentialInfoForm.cooperationStatusStr.$dirty && essentialInfoForm.cooperationStatusStr.$error">
+                      <p class="help-block text-sm" ng-message="required">请选择合作状态</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label class="col-lg-4 control-label text-sm">生态区</label>
+                  <div class="col-lg-8">
+                    <select class="form-control input-sm" name="regionId" ng-model="vm.rowEntity.regionsId" required>
+                      <option value="">请选择</option>
+                      <option ng-repeat="x in ps.sm.regions" value="{{x.regionId}}">{{x.regionsName}}</option>
+                    </select>
+                    <div ng-messages="essentialInfoForm.regionId.$dirty && essentialInfoForm.regionId.$error">
+                      <p class="help-block text-sm" ng-message="required">请填写生态区</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label class="col-lg-4 control-label text-sm">生态亚区</label>
+                  <div class="col-lg-8">
+                    <input type="text" class="form-control input-sm" name="subzone" placeholder="生态亚区" ng-model="vm.rowEntity.subzone" maxlength="50">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="form-group has-feedback">
+                  <label class="col-lg-4 control-label text-sm">经度</label>
+                  <div class="col-lg-8">
+                    <input type="text" class="form-control input-sm" name="longitude" placeholder="经度" ng-model="vm.rowEntity.longitude" maxlength="25">
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group has-feedback">
+                  <label class="col-lg-4 control-label text-sm">纬度</label>
+                  <div class="col-lg-8">
+                    <input type="text" class="form-control input-sm" name="latitude" placeholder="纬度" ng-model="vm.rowEntity.latitude" maxlength="25">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="form-group has-feedback">
+                  <label class="col-lg-4 control-label text-sm">海拔</label>
+                  <div class="col-lg-8">
+                    <input type="text" class="form-control input-sm" name="altitude" placeholder="海拔" ng-model="vm.rowEntity.altitude" maxlength="25">
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group has-feedback">
+                  <label class="col-lg-4 control-label text-sm">试验面积(平方米)</label>
+                  <div class="col-lg-8">
+                    <input type="number" class="form-control input-sm" name="area" placeholder="试验面积(平方米)" ng-model="vm.rowEntity.area" min='0' max='10000000000'>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="form-group has-feedback">
+                  <label class="col-lg-4 control-label text-sm">试验面积长(米)</label>
+                  <div class="col-lg-8">
+                    <input type="number" class="form-control input-sm" name="length" placeholder="试验面积长(米)" ng-model="vm.rowEntity.length" min='0' max="10000">
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group has-feedback">
+                  <label class="col-lg-4 control-label text-sm">试验面积宽(米)</label>
+                  <div class="col-lg-8">
+                    <input type="number" class="form-control input-sm" name="width" placeholder="试验面积宽(米)" ng-model="vm.rowEntity.width" min='0' max="10000">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label class="col-lg-4 control-label text-sm">土壤具有代表性</label>
+                  <div class="col-lg-8">
+                    <select class="form-control input-sm" ng-model="vm.rowEntity.typical" required>
+                      <option value="">请选择</option>
+                      <option ng-repeat="x in vm.Y_N" value='{{x.code}}'>{{x.message}}</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group has-feedback">
+                  <label class="col-lg-4 control-label text-sm">土壤质地</label>
+                  <div class="col-lg-8">
+                    <input type="text" class="form-control input-sm" name="soilTexture" placeholder="土壤质地" ng-model="vm.rowEntity.soilTexture" maxlength="50">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="form-group has-feedback">
+                  <label class="col-lg-4 control-label text-sm">排灌条件</label>
+                  <div class="col-lg-8">
+                    <input type="text" class="form-control input-sm" name="irrigationDrainage" placeholder="排灌条件" ng-model="vm.rowEntity.irrigationDrainage" maxlength="50">
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group has-feedback">
+                  <label class="col-lg-4 control-label text-sm">肥力情况</label>
+                  <div class="col-lg-8">
+                    <input type="text" class="form-control input-sm" name="fertility" placeholder="肥力情况" ng-model="vm.rowEntity.fertility" maxlength="50">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="form-group has-feedback">
+                  <label class="col-lg-4 control-label text-sm">有效积温</label>
+                  <div class="col-lg-8">
+                    <input type="number" class="form-control input-sm" name="effAccTemperature" placeholder="有效积温" ng-model="vm.rowEntity.effAccTemperature" min='0' max="1000">
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group has-feedback">
+                  <label class="col-lg-4 control-label text-sm">联系人</label>
+                  <div class="col-lg-8">
+                    <input type="text" class="form-control input-sm" name="contact" placeholder="联系人" ng-model="vm.rowEntity.contact" required maxlength="50">
+                    <span class="fa fa-exclamation-circle form-control-feedback" ng-show="essentialInfoForm.contact.$error.required"></span>
+                    <div ng-messages="essentialInfoForm.contact.$dirty && essentialInfoForm.contact.$error">
+                      <p class="help-block text-sm" ng-message="required">请填写联系人</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="form-group has-feedback">
+                  <label class="col-lg-4 control-label text-sm">电话</label>
+                  <div class="col-lg-8">
+                    <input type="text" class="form-control input-sm" name="tel" placeholder="电话" ng-model="vm.rowEntity.tel" required maxlength="20">
+                    <span class="fa fa-exclamation-circle form-control-feedback" ng-show="essentialInfoForm.tel.$error.required"></span>
+                    <div ng-messages="essentialInfoForm.tel.$dirty && essentialInfoForm.tel.$error">
+                      <p class="help-block text-sm" ng-message="required">请填写电话</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group has-feedback">
+                  <label class="col-lg-4 control-label text-sm">电子邮箱</label>
+                  <div class="col-lg-8">
+                    <input type="email" class="form-control input-sm" name="email" placeholder="电子邮箱" ng-model="vm.rowEntity.email" required maxlength="50">
+                    <span class="fa fa-exclamation-circle form-control-feedback" ng-show="essentialInfoForm.email.$error.required"></span>
+                    <div ng-messages="essentialInfoForm.email.$dirty && essentialInfoForm.email.$error">
+                      <p class="help-block text-sm" ng-message="required">请填写电子邮箱</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="form-group has-feedback">
+                  <label class="col-lg-2 control-label text-sm">试验点地址</label>
+                  <div class="col-lg-3">
+                    <select class="form-control input-sm" name="province" ng-model="vm.provinceCode" ng-change="vm.provinceChange()" required>
+                      <option value="">请选择</option>
+                      <option ng-repeat="x in vm.province" value='{{x.provinceCode}}'>{{x.provinceName}}</option>
+                    </select>
+                  </div>
+                  <div class="col-lg-3">
+                    <select class="form-control input-sm" name="city" ng-model="vm.cityCode" ng-change="vm.cityChange()" required>
+                      <option value="">请选择</option>
+                      <option ng-repeat="x in vm.city" value='{{x.cityCode}}'>{{x.cityName}}</option>
+                    </select>
+                  </div>
+                  <div class="col-lg-4">
+                    <select class="form-control input-sm" name="county" ng-model="vm.countyCode" required>
+                      <option value="">请选择</option>
+                      <option ng-repeat="x in vm.county" value='{{x.areaCode}}'>{{x.areaName}}</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="form-group has-feedback">
+                  <label class="col-lg-2 control-label text-sm">详细地址</label>
+                  <div class="col-lg-10">
+                    <input type="text" class="form-control input-sm" name="address" placeholder="详细地址" ng-model="vm.rowEntity.address" required maxlength="100">
+                    <span class="fa fa-exclamation-circle form-control-feedback" ng-show="essentialInfoForm.address.$error.required"></span>
+                    <div ng-messages="essentialInfoForm.address.$dirty && essentialInfoForm.address.$error">
+                      <p class="help-block text-sm" ng-message="required">请填写详细地址</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="form-group has-feedback">
+                  <label class="col-lg-2 control-label text-sm">试验点所在地区面积和承试点代表的区域</label>
+                  <div class="col-lg-10">
+                    <textarea class="form-control input-sm" rows="3" name="remark1" placeholder="试验点所在地区面积和承试点代表的区域" ng-model="vm.rowEntity.remark1" maxlength="500"></textarea>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="form-group has-feedback">
+                  <label class="col-lg-2 control-label text-sm">试验点所在地区气候等自然地理情况</label>
+                  <div class="col-lg-10">
+                    <textarea class="form-control input-sm" rows="3" name="remark2" placeholder="试验点所在地区气候等自然地理情况" ng-model="vm.rowEntity.remark2" maxlength="500"></textarea>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="form-group has-feedback">
+                  <label class="col-lg-2 control-label text-sm">评价与建议</label>
+                  <div class="col-lg-10">
+                    <textarea class="form-control input-sm" rows="3" name="evaluate" placeholder="评价与建议" ng-model="vm.rowEntity.evaluate" maxlength="500"></textarea>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default" >
+    <div class="panel-heading font-bold">公司信息</div>
+    <div class="panel-body">
+      <form class="form-horizontal form-validation" name="financeInfoForm">
+        <fieldset ng-disabled="vm.formDisabled||vm.rowEntity.pointOwner == 'ZJ'">
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label class="col-lg-4 control-label text-sm">公司类型</label>
+                <div class="col-lg-8">
+                  <select class="form-control input-sm" name="companyType" ng-model="vm.rowEntity.companyType" ng-required="vm.rowEntity.pointOwner != 'ZJ'" ng-change="vm.companyTypeChange()">
+                    <option value="">请选择</option>
+                    <option ng-repeat="x in vm.companyType" value="{{x.code}}">{{x.message}}</option>
+                  </select>
+                  <div ng-messages="financeInfoForm.companyType.$dirty && financeInfoForm.companyType.$error">
+                    <p class="help-block text-sm" ng-message="required">请选择公司类型</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6" ng-hide="vm.rowEntity.companyType == '03'">
+              <div class="form-group has-feedback" ">
+                <label class="col-lg-4 control-label text-sm ">公司名称</label>
+                <div class="col-lg-8 ">
+                  <input type="text " class="form-control input-sm " name="companyName " placeholder="公司名称 " ng-model="ci.pfInfo.companyName " ng-required="vm.rowEntity.companyType !='03' && vm.rowEntity.pointOwner != 'ZJ'" maxlength="50">
+                  <span class="fa fa-exclamation-circle form-control-feedback " ng-show="financeInfoForm.companyName.$error.required "></span>
+                  <div ng-messages="financeInfoForm.companyName.$dirty && financeInfoForm.companyName.$error ">
+                    <p class="help-block text-sm " ng-message="required ">请填写公司名称</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row ">
+            <div class="col-sm-6 ">
+              <div class="form-group has-feedback ">
+                <label class="col-lg-4 control-label text-sm ">法人代表</label>
+                <div class="col-lg-8 ">
+                  <input type="text " class="form-control input-sm " name="legalPersons " placeholder="法人代表 " ng-model="ci.pfInfo.legalPersons " ng-required="vm.rowEntity.pointOwner != 'ZJ'" maxlength="50">
+                  <span class="fa fa-exclamation-circle form-control-feedback " ng-show="financeInfoForm.legalPersons.$error.required "></span>
+                  <div ng-messages="financeInfoForm.legalPersons.$dirty && financeInfoForm.legalPersons.$error ">
+                    <p class="help-block text-sm " ng-message="required ">请填写法人代表</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 ">
+              <div class="form-group has-feedback ">
+                <label class="col-lg-4 control-label text-sm ">身份证号码</label>
+                <div class="col-lg-8 ">
+                  <input type="text " class="form-control input-sm " name="idNo " placeholder="身份证号码 " ng-model="ci.pfInfo.idNo " ng-required="vm.rowEntity.pointOwner != 'ZJ'" maxlength="20">
+                  <span class="fa fa-exclamation-circle form-control-feedback " ng-show="financeInfoForm.idNo.$error.required "></span>
+                  <div ng-messages="financeInfoForm.idNo.$dirty && financeInfoForm.idNo.$error ">
+                    <p class="help-block text-sm " ng-message="required ">请填写身份证号码</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row " ng-hide="vm.rowEntity.companyType=='03' ">
+              <div class="col-sm-6 ">
+                <div class="form-group has-feedback ">
+                  <label class="col-lg-4 control-label text-sm ">租赁年限从</label>
+                  <div class="col-lg-8 ">
+                    <div class="input-group input-group-sm ">
+                      <input type="text " class="form-control " name="date " ng-model="ci.pfInfo.leasesBegin " uib-datepicker-popup="yyyy-MM-dd " is-open="vm.rowEntity.isStartTimeOpen " current-text="今天 " clear-text="清除 " close-text="关闭 " readonly ng-required="vm.rowEntity.companyType !='03' && vm.rowEntity.pointOwner != 'ZJ'">
+                      <span class="input-group-btn ">
+                        <button type="button " class="btn btn-default " ng-click="vm.rowEntity.isStartTimeOpen=true "><i class="fa fa-calendar "></i></button>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 ">
+                <div class="form-group has-feedback ">
+                  <label class="col-lg-4 control-label text-sm ">到</label>
+                  <div class="col-lg-8 ">
+                    <div class="input-group input-group-sm ">
+                        <input type="text " class="form-control " name="date " ng-model="ci.pfInfo.leasesEnd " uib-datepicker-popup="yyyy-MM-dd " is-open="vm.rowEntity.isEndTimeOpen " current-text="今天 " clear-text="清除 " close-text="关闭 " readonly ng-required="vm.rowEntity.companyType !='03' && vm.rowEntity.pointOwner != 'ZJ'">
+                        <span class="input-group-btn ">
+                          <button type="button " class="btn btn-default " ng-click="vm.rowEntity.isEndTimeOpen=true " ng-hide="vm.rowEntity.companyType=='03' "><i class="fa fa-calendar "></i></button>
+                        </span>
+                      </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+          <div class="row ">
+            <div class="col-sm-6 ">
+              <div class="form-group has-feedback ">
+                <label class="col-lg-4 control-label text-sm ">公司地址</label>
+                <div class="col-lg-8 ">
+                  <input type="text " class="form-control input-sm " name="address " placeholder="公司地址 " ng-model="ci.pfInfo.address " ng-required="vm.rowEntity.pointOwner != 'ZJ'" maxlength="100">
+                  <span class="fa fa-exclamation-circle form-control-feedback " ng-show="financeInfoForm.address.$error.required "></span>
+                  <div ng-messages="financeInfoForm.address.$dirty && financeInfoForm.address.$error ">
+                    <p class="help-block text-sm " ng-message="required ">请填写公司地址</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 ">
+              <div class="form-group has-feedback ">
+                <label class="col-lg-4 control-label text-sm ">公司电话</label>
+                <div class="col-lg-8 ">
+                  <input type="text" class="form-control input-sm " name="tel " placeholder="公司电话 " ng-model="ci.pfInfo.tel " ng-required="vm.rowEntity.pointOwner != 'ZJ'" maxlength="20">
+                  <span class="fa fa-exclamation-circle form-control-feedback " ng-show="financeInfoForm.tel.$error.required "></span>
+                  <div ng-messages="financeInfoForm.tel.$dirty && financeInfoForm.tel.$error ">
+                    <p class="help-block text-sm " ng-message="required ">请填写公司电话</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row ">
+            <div class="col-sm-6 ">
+              <div class="form-group has-feedback ">
+                <label class="col-lg-4 control-label text-sm ">开户行</label>
+                <div class="col-lg-8 ">
+                  <input type="text " class="form-control input-sm " name="accountsBank " placeholder="开户行 " ng-model="ci.pfInfo.accountsBank " ng-required="vm.rowEntity.pointOwner != 'ZJ'" maxlength="50">
+                  <span class="fa fa-exclamation-circle form-control-feedback " ng-show="financeInfoForm.accountsBank.$error.required "></span>
+                  <div ng-messages="financeInfoForm.accountsBank.$dirty && financeInfoForm.accountsBank.$error ">
+                    <p class="help-block text-sm " ng-message="required ">请填写开户行</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 ">
+              <div class="form-group has-feedback ">
+                <label class="col-lg-4 control-label text-sm ">账号</label>
+                <div class="col-lg-8 ">
+                  <input type="text" class="form-control input-sm " name="account " placeholder="账号 " ng-model="ci.pfInfo.account " ng-required="vm.rowEntity.pointOwner != 'ZJ'" maxlength="30">
+                  <span class="fa fa-exclamation-circle form-control-feedback " ng-show="financeInfoForm.account.$error.required "></span>
+                  <div ng-messages="financeInfoForm.account.$dirty && financeInfoForm.account.$error ">
+                    <p class="help-block text-sm " ng-message="required ">请填写账号</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row ">
+            <div class="col-sm-12 " ng-hide="vm.rowEntity.companyType=='03' ">
+              <div class="form-group has-feedback ">
+                <label class="col-lg-2 control-label text-sm ">纳税人识别号</label>
+                <div class="col-lg-10 ">
+                  <input type="text " class="form-control input-sm " name="taxpayerIdNo " placeholder="纳税人识别号 " ng-model="ci.pfInfo.taxpayerIdNo " ng-required="vm.rowEntity.companyType !='03' && vm.rowEntity.pointOwner != 'ZJ'" maxlength="15">
+                  <span class="fa fa-exclamation-circle form-control-feedback " ng-show="financeInfoForm.taxpayerIdNo.$error.required "></span>
+                  <div ng-messages="financeInfoForm.taxpayerIdNo.$dirty && financeInfoForm.taxpayerIdNo.$error ">
+                    <p class="help-block text-sm " ng-message="required ">请填写纳税人识别号</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row " ng-hide="vm.rowEntity.companyType=='03' ">
+            <div class="col-sm-6 ">
+              <div class="form-group has-feedback ">
+                <label class="col-lg-4 control-label text-sm ">营业执照</label>
+                <div class="col-lg-8 ">
+                  <input type="text " class="form-control input-sm " placeholder="未选择任何文件 " ng-value="vm.bizFilesName " readonly ng-required="vm.rowEntity.companyType !='03' && vm.rowEntity.pointOwner != 'ZJ'">
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 ">
+              <div class="form-group has-feedback ">
+                <div class="col-lg-6 ">
+                  <button type="button " class="btn btn-success btn-sm btn-block " ng-model="vm.bizFiles " ngf-select="vm.getBizFilesName() " ngf-keep="false " ngf-multiple="true " ><i class="fa fa-file "></i> 选择文件</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row " ng-hide="vm.rowEntity.companyType=='03' ">
+            <div class="col-sm-6 ">
+              <div class="form-group has-feedback ">
+                <label class="col-lg-4 control-label text-sm ">承试人员资质</label>
+                <div class="col-lg-8 ">
+                  <input type="text " class="form-control input-sm " placeholder="未选择任何文件 " ng-value="vm.staffFilesName " readonly ng-required="vm.rowEntity.companyType !='03' && vm.rowEntity.pointOwner != 'ZJ'">
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 ">
+              <div class="form-group has-feedback ">
+                <div class="col-lg-6 ">
+                  <button type="button " class="btn btn-success btn-sm btn-block " ng-model="vm.staffFiles " ngf-select="vm.getStaffFilesName() " ngf-keep="false " ngf-multiple="true " ><i class="fa fa-file "></i> 选择文件</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row " ng-hide="vm.rowEntity.companyType=='03' ">
+            <div class="col-sm-6 ">
+              <div class="form-group has-feedback ">
+                <label class="col-lg-4 control-label text-sm ">法人代表身份证</label>
+                <div class="col-lg-8 ">
+                  <input type="text " class="form-control input-sm " placeholder="未选择任何文件 " ng-value="vm.legalFilesName " readonly ng-required="vm.rowEntity.companyType !='03' && vm.rowEntity.pointOwner != 'ZJ'">
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 ">
+              <div class="form-group has-feedback ">
+                <div class="col-lg-6 ">
+                  <button type="button " class="btn btn-success btn-sm btn-block " ng-model="vm.legalFiles " ngf-select="vm.getLegalFilesName() " ngf-keep="false " ngf-multiple="true " ngf-pattern=" 'image/*' " ngf-accept=" 'image/*' "><i class="fa fa-file "></i> 选择文件</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row " ng-show="vm.rowEntity.companyType=='03' ">
+            <div class="col-sm-6 ">
+              <div class="form-group has-feedback ">
+                <label class="col-lg-4 control-label text-sm ">个人身份证</label>
+                <div class="col-lg-8 ">
+                  <input type="text " class="form-control input-sm " ng-value="vm.personFilesName " placeholder="未选择任何文件 " readonly ng-required="vm.rowEntity.companyType =='03' && vm.rowEntity.pointOwner != 'ZJ'">
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 ">
+              <div class="form-group has-feedback ">
+                <div class="col-lg-6 ">
+                  <button type="button " class="btn btn-success btn-sm btn-block " ng-model="vm.personFiles " ngf-select="vm.getPersonFilesName() " ngf-keep="false " ngf-multiple="true " ngf-pattern=" 'image/*' " ngf-accept=" 'image/*' "><i class="fa fa-file "></i> 选择文件</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+  <div class="panel panel-default ">
+    <div class="panel-heading font-bold ">参与试验阶段</div>
+    <div class="panel-body ">
+      <form class="form-horizontal  " name="abilityInfoForm ">
+        <fieldset ng-disabled="vm.formDisabled ">
+          <div class="panel panel-default m-b-md " ng-hide="vm.formDisabled ">
+            <div class="panel-body ">
+              <div class="row ">
+                <div class="col-sm-6 ">
+                  <div class="form-group ">
+                    <label class="col-lg-4 control-label text-sm ">参与试验阶段</label>
+                    <div class="col-lg-8 ">
+                      <select class="form-control input-sm " name="stageCode " ng-options="o as o.typecodeName for o in ci.pointStage " ng-model="vm.abilityInfo.stageCode " required>
+                        <option value="">请选择</option>
+                        <!-- <option ng-repeat="x in ps.sm.pointStage " ng-value="x ">{{x.typecodeName}}</option> -->
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6 ">
+                  <div class="form-group has-feedback ">
+                    <label class="col-lg-4 control-label text-sm ">试验点能力1</label>
+                    <div class="col-lg-8 ">
+                      <div class="input-group input-group-sm ">
+                        <input type="number " class="form-control input-sm " name="ability1 " placeholder="试验点能力1 " ng-model="vm.abilityInfo.ability1 " required min='0' >
+                        <span class="input-group-addon ">组</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row ">
+                <div class="col-sm-6 ">
+                  <div class="form-group has-feedback ">
+                    <label class="col-lg-4 control-label text-sm ">试验点能力2(面积)</label>
+                    <div class="col-lg-8 ">
+                      <div class="input-group input-group-sm ">
+                        <input type="number " class="form-control input-sm " name="ability2 " placeholder="试验点能力2 " ng-model="vm.abilityInfo.ability2 " ng-blur="vm.muToSquareMeter() " required min='0' max="10000000">
+                        <span class="input-group-addon ">亩</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6 ">
+                  <div class="form-group has-feedback ">
+                    <label class="col-lg-4 control-label text-sm ">=</label>
+                    <div class="col-lg-8 ">
+                      <div class="input-group input-group-sm ">
+                        <input type="number " class="form-control input-sm " name="acreage " placeholder="试验点能力2 " ng-model="vm.abilityInfo.acreage " ng-blur="vm.squareMeterToMu() " required>
+                        <span class="input-group-addon ">平方米</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="panel-footer ">
+              <div class="text-right ">
+                <button type="button " class="btn btn-success btn-sm m-r-sm " ng-click="vm.saveAbilityInfo() " ng-disabled="abilityInfoForm.$invalid "><i class="fa fa-plus-circle"></i> 新增</button>
+                <button type="button " class="btn btn-default btn-sm m-r-sm " ng-click="vm.resetAbilityInfo() "><i class="fa fa-refresh "></i> 重置</button>
+              </div>
+            </div>
+          </div>
+          <div class="table-responsive ">
+            <table class="table table-striped table-bordered table-condensed table-hover ">
+              <thead>
+                <tr>
+                  <th>试验阶段</th>
+                  <th>试验点能力1(组)</th>
+                  <th>试验点能力2(面积 单位:亩)</th>
+                  <th>试验点能力2(面积 单位:平方米)</th>
+                  <th ng-hide="vm.formDisabled ">操作</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr ng-repeat="item in st.testPointStageList ">
+                  <td>{{item.stageCodeName}}</td>
+                  <td>{{item.ability1}}</td>
+                  <td>{{item.ability2}}</td>
+                  <td>{{item.acreage}}</td>
+                  <td ng-hide="vm.formDisabled ">
+                    <button type="button " class="btn btn-danger btn-sm btn-icon " ng-click="vm.removeAbility(item) " title="删除 ">
+                      <i class="fa fa-times-circle "></i>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+</div>
+<div class="modal-footer ">
+  <button type="button " class="btn btn-primary btn-sm " ng-click="vm.ok() " ng-hide="vm.formDisabled " ng-disabled="essentialInfoForm.$invalid || financeInfoForm.$invalid">确定</button>
+  <button type="button " class="btn btn-info btn-sm " ng-click="vm.edit() " ng-show="vm.formDisabled ">编辑</button>
+  <button type="button " class="btn btn-default btn-sm " ng-click="vm.cancel() ">取消</button>
+</div>

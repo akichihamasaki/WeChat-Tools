@@ -1,0 +1,92 @@
+<div class="modal-header" ng-switch="ep.modalType">
+    <h4 class="modal-title" ng-switch-when="add">新增</h4>
+    <h4 class="modal-title" ng-switch-when="edit">修改</h4>
+    <h4 class="modal-title" ng-switch-when="view">查看详情</h4>
+</div>
+<div class="modal-body">
+    <form class="form-horizontal" name="cropForm">
+        <fieldset ng-disabled="ep.formDisabled">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <lable class="col-lg-2 control-label text-sm">性状名称</lable>
+                        <div class="col-lg-10">
+                            <select class="form-control input-sm" ng-options=" v as v.charactersName for v in ep.charactersName" ng-model="ep.vetoAddData.characterName" ng-change="ep.selectValue()">
+                                <option value="">请选择</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group has-feedback">
+                        <lable class="col-lg-4 control-label text-sm">数据类型</lable>
+                        <div class="col-lg-8">
+                            <input type="text" class="form-control input-sm" name="dataType" readonly ng-model="ep.vetoAddData.characterName.dataType">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group has-feedback">
+                        <label class="col-lg-4 control-label text-sm">参数值单位</label>
+                        <div class="col-lg-8">
+                            <input type="text" class="form-control input-sm" name="dataUnit" readonly ng-model="ep.vetoAddData.characterName.unitName">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="col-lg-4 control-label text-sm">关系运算符</label>
+                        <div class="col-lg-8">
+                            <select class="form-control input-sm" ng-options="o as o.message for o in ep.operator" ng-model="ep.vetoAddData.operator" required>
+                                <option value="">请选择</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group has-feedback" ng-show="ep.inputShow">
+                        <label class="col-lg-4 control-label text-sm">参数值</label>
+                        <div class="col-lg-8">
+                            <input type="text" class="form-control input-sm" name="param" ng-model="ep.vetoAddData.compareValue" required>
+                            <span class="fa fa-exclamation-circle form-control-feedback" ng-show="cropForm.param.$error.required"></span>
+                        </div>
+                    </div>
+                    <div class="form-group has-feedback" ng-show="ep.selectShow">
+                        <label class="col-lg-4 control-label text-sm">参数值</label>
+                        <div class="col-lg-8" required>
+                            <select class="form-control input-sm" ng-options="o.code as o.message for o in ep.compareValue" ng-model="ep.vetoAddData.compareValue">
+                                <option value="">请选择</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group has-feedback" ng-show="ep.dateShow">
+                        <label class="col-lg-4 control-label text-sm">参数值</label>
+                        <div class="col-lg-8">
+                            <div class="input-group input-group-sm">
+                                <input type="text" class="form-control" uib-datepicker-popup="yyyy-MM-dd" ng-model="ep.vetoAddData.compareValue" is-open="sm.isPublishDateOpen" current-text="今天" clear-text="清除" close-text="关闭" placeholder="日期" readonly required>
+                                <span class="input-group-btn">
+                                    <button type="button" class="btn btn-default btn-sm" ng-click="sm.isPublishDateOpen = true"><i class="glyphicon glyphicon-calendar"></i>
+                                    </button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <label class="col-lg-2 control-label text-sm">描述</label>
+                <div class="col-lg-10">
+                    <textarea class="form-control input-sm" rows="3" ng-model="ep.vetoAddData.remark"></textarea>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-primary btn-sm" ng-click="ep.ok()" ng-hide="ep.formDisabled" ng-disabled="cropForm.$invalid">确定</button>
+    <button type="button" class="btn btn-default btn-sm" ng-click="ep.cancel()">取消</button>
+</div>

@@ -1,0 +1,25 @@
+[{
+  "name":"1",
+  "code": "基本苗",
+  "distribute": "数值型",
+  "description": "N",
+  "GIS":"基本苗",
+  "crop":"作物",
+  "remark":"备注"
+}, {
+  "name":"2",
+  "code": "分蘖时间",
+  "distribute": "日期型",
+  "description": "Y",
+  "GIS":"基本苗",
+  "crop":"作物",
+  "remark":"备注"
+}, {
+  "name":"3",
+  "code": "最高苗",
+  "distribute": "数值型",
+  "description": "Y",
+  "GIS":"分蘖时间",
+  "crop":"作物",
+  "remark":"备注"
+}]

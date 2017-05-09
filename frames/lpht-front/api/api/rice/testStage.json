@@ -1,0 +1,38 @@
+[
+  {
+    "serialNum": "1",
+    "stageName": "单点测试",
+    "projectInclude":"出苗、分叶",
+    "year":"2015",
+    "versionNum":"001"
+  },
+  {
+    "serialNum": "2",
+    "stageName": "多点测试",
+    "projectInclude":"出苗、成熟",
+    "year":"2015",
+    "versionNum":"001"
+  },
+  {
+    "serialNum": "3",
+    "stageName": "区域测试",
+    "projectInclude":"成熟、米质",
+    "year":"2015",
+    "versionNum":"001"
+  },
+  {
+    "serialNum": "4",
+    "stageName": "生产测试",
+    "projectInclude":"出苗、DUS",
+    "year":"2015",
+    "versionNum":"001"
+  },
+
+  {
+    "serialNum": "5",
+    "stageName": "其他",
+    "projectInclude":"出苗、分叶、成熟、米质、DUS",
+    "year":"2015",
+    "versionNum":"001"
+  }
+ ]

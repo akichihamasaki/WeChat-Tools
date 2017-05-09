@@ -1,0 +1,25 @@
+{
+	"data_type":
+	[
+        {
+            "code":"01",
+            "message":"数值型"            
+        },
+        {
+            "code":"02",
+            "message":"枚举型"            
+        },
+        {
+            "code":"03",
+            "message":"文件型"            
+        },
+        {
+            "code":"04",
+            "message":"文本型"         
+        },
+        {
+            "code":"05",
+            "message":"日期型"            
+        }
+	]
+}

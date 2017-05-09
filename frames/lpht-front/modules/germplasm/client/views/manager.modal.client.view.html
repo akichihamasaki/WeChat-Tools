@@ -1,0 +1,45 @@
+<div class="modal-header">
+  <h4 class="modal-title">选择管理员</h4>
+</div>
+<div class="modal-body">
+  <div class="btn btn-default btn-xs m-r-xs" ng-repeat="m in gm.manager">
+    <span>{{m.nodeName}}</span>
+    <span class="close text-base" ng-click="gm.delManager($index)">&nbsp;x</span>
+  </div>
+  <div class="line b-b"></div>
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <form class="form-horizontal">
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label class="col-lg-4 control-label text-sm">员工姓名</label>
+              <div class="col-lg-8">
+                <input type="text" class="form-control input-sm" placeholder="员工姓名" ng-model="gm.searchData.nodeName">
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label class="col-lg-4 control-label text-sm">机构/部门</label>
+              <div class="col-lg-8">
+                <input type="text" class="form-control input-sm" placeholder="机构/部门" ng-model="gm.searchData.pathNodeName">
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="panel-footer">
+      <div class="text-right">
+        <button type="button" class="btn btn-default btn-sm m-r-sm" ng-click="gm.search()" autofocus><i class="fa fa-search"></i> 查询</button>
+        <button type="button" class="btn btn-default btn-sm m-r-sm" ng-click="gm.reset()"><i class="fa fa-refresh"></i> 重置</button>
+      </div>
+    </div>
+  </div>
+  <div class="pos-rlt" ui-grid="gm.gridOptions" ui-grid-pagination ui-grid-selection ui-grid-resize-columns ui-grid-auto-resize></div>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-primary btn-sm" ng-click="gm.ok()">确定</button>
+  <button type="button" class="btn btn-default btn-sm" ng-click="gm.cancel()">取消</button>
+</div>

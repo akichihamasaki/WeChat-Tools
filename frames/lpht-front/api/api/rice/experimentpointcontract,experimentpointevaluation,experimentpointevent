@@ -1,0 +1,128 @@
+{
+  "experimentpointcontract": [
+    {
+      "id" : "001",
+      "contractName": "试验点1xxx合同.doc",
+      "uploadTime": "2016-8-23",
+      "opName": "张三",
+      "remark": "1"
+    },
+    {
+      "id" : "002",
+      "contractName": "xxx试验点xxx合同.doc",
+      "uploadTime": "2016-8-23",
+      "opName": "张三",
+      "remark": "2"
+    },
+    {
+      "id" : "003",
+      "contractName": "xxx试验点xxx合同.xls",
+      "uploadTime": "2016-8-23",
+      "opName": "张三",
+      "remark": "3"
+    }
+  ],
+  "experimentpointevaluation": [
+    {
+      "id": "1",
+      "evaluationMonth": "2016-9",
+      "evaluationResult": "优秀",
+      "enclosureName": "xxx.doc",
+      "evaluationDescribe": "1"
+    },
+    {
+      "id": "2",
+      "evaluationMonth": "2016-8",
+      "evaluationResult": "优秀",
+      "enclosureName": "xxx.doc",
+      "evaluationDescribe": "2"
+    },
+    {
+      "id": "3",
+      "evaluationMonth": "2016-7",
+      "evaluationResult": "优秀",
+      "enclosureName": "xxx.doc",
+      "evaluationDescribe": "3"
+    },
+    {
+      "id": "4",
+      "evaluationMonth": "2016-6",
+      "evaluationResult": "良好",
+      "enclosureName": "xxx.xls",
+      "evaluationDescribe": "4"
+    },
+    {
+      "id": "5",
+      "evaluationMonth": "2016-5",
+      "evaluationResult": "一般",
+      "enclosureName": "xxx.doc",
+      "evaluationDescribe": "5"
+    },
+    {
+      "id": "6",
+      "evaluationMonth": "2016-4",
+      "evaluationResult": "差",
+      "enclosureName": "xxx.doc",
+      "evaluationDescribe": "6"
+    },
+    {
+      "id": "7",
+      "evaluationMonth": "2016-3",
+      "evaluationResult": "优秀",
+      "enclosureName": "xxx.doc",
+      "evaluationDescribe": "7"
+    },
+    {
+      "id": "8",
+      "evaluationMonth": "2016-2",
+      "evaluationResult": "优秀",
+      "enclosureName": "xxx.doc",
+      "evaluationDescribe": "8"
+    },
+    {
+      "id": "9",
+      "evaluationMonth": "2016-1",
+      "evaluationResult": "优秀",
+      "enclosureName": "xxx.doc",
+      "evaluationDescribe": "9"
+    }
+  ],
+  "experimentpointevent": [
+    {
+      "id": "1",
+      "eventTitle": "特性测试",
+      "eventContent": "特性测试xxxxxxxxxxxxxxx",
+      "opName": "张三",
+      "opTime": "2016-9-1"
+    },
+    {
+      "id": "2",
+      "eventTitle": "特性测试",
+      "eventContent": "特性测试xxxxxxxxxxxxxxx",
+      "opName": "张三",
+      "opTime": "2016-9-2"
+    },
+    {
+      "id": "3",
+      "eventTitle": "特性测试",
+      "eventContent": "特性测试xxxxxxxxxxxxxxx",
+      "opName": "张三",
+      "opTime": "2016-9-3"
+    },
+    {
+      "id": "4",
+      "eventTitle": "特性测试",
+      "eventContent": "特性测试xxxxxxxxxxxxxxx",
+      "opName": "张三",
+      "opTime": "2016-9-4"
+    },
+    {
+      "id": "5",
+      "eventTitle": "特性测试",
+      "eventContent": "特性测试xxxxxxxxxxxxxxx",
+      "opName": "张三",
+      "opTime": "2016-9-5"
+    }
+  ]
+}
+

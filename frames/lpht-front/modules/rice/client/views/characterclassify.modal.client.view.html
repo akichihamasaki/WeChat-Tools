@@ -1,0 +1,36 @@
+<div class="modal-header" ng-switch="vm.modalType">
+    <h4 class="modal-title" ng-switch-when="add">新增</h4>
+    <h4 class="modal-title" ng-switch-when="edit">修改</h4>
+    <h4 class="modal-title" ng-switch-when="view">查看详情</h4>
+</div>
+<div class="modal-body">
+    <form class="form-horizontal form-validation" name="characterClassifyForm">
+        <fieldset ng-disabled="vm.formDisabled">
+            <div class="form-group has-feedback">
+                <label class="col-lg-2 control-label text-sm">性状分类</label>
+                <div class="col-lg-10">
+                    <input type="text" class="form-control input-sm" name="name" placeholder="生态区名称" ng-model="vm.rowEntity.name" required>
+                    <span class="fa fa-exclamation-circle  form-control-feedback" ng-show="characterClassifyForm.name.$error.required"></span>
+                    <div ng-messages="characterClassifyForm.name.$dirty && characterClassifyForm.name.$error">
+                        <p class="help-block text-sm" ng-message="required">请填写生态区名称</p>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group has-feedback">
+                <label class="col-lg-2 control-label text-sm">描述</label>
+                <div class="col-lg-10">
+                    <input type="text" class="form-control input-sm" name="code" placeholder="生态区编码" ng-model="vm.rowEntity.remark" required>
+                    <span class="fa fa-exclamation-circle form-control-feedback" ng-show="characterClassifyForm.code.$error.required"></span>
+                    <div ng-messages="characterClassifyForm.code.$dirty && characterClassifyForm.code.$error">
+                        <p class="help-block text-sm" ng-message="required">请填写生态区编码</p>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary btn-sm" ng-click="vm.ok()" ng-hide="vm.formDisabled" ng-disabled="characterClassifyForm.$invalid">确定</button>
+    <button class="btn btn-info btn-sm" ng-click="vm.edit()" ng-show="vm.formDisabled" >编辑</button>
+    <button type="button" class="btn btn-default btn-sm" ng-click="vm.cancel()">取消</button>
+</div>

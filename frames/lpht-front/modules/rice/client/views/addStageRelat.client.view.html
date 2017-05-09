@@ -1,0 +1,107 @@
+<div class="modal-header" ng-switch="vm.modalType">
+    <h4 class="modal-title" ng-switch-when="add">新增</h4>
+    <h4 class="modal-title" ng-switch-when="edit">修改</h4>
+    <h4 class="modal-title" ng-switch-when="view">查看详情</h4>
+</div>
+<div class="modal-body">
+    <div class="row m-b-sm">
+        <lable class="col-lg-2 control-label text-sm m-t-xs">测试阶段</lable>
+        <div class="col-lg-4">
+            <select class="form-control input-sm" ng-model="vm.stageSelectedTable" ng-change='vm.getStageTable()' ng-options="o.typecode as o.typecodeName for o in vm.experimentStage" ng-disabled="vm.stageDisabled">
+                <option value="">请选择</option>
+            </select>
+        </div>
+        <div class="col-sm-2">
+            <button type="button" class="btn btn-info btn-sm" ng-click="vm.maintain()" ng-disabled="vm.maintainDisabled ||vm.formDisabled" autofocus>维护</button>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading font-bold">田间</div>
+        <div class="panel-body">
+            <table class="table table-bordered table-hover table-condensed bg-white-only m-t-sm">
+                <thead>
+                    <tr>
+                        <th style="width:100px;">顺序号</th>
+                        <th style="width:180px;">调查项目</th>
+                        <th style="width:180px;">是否主线</th>
+                        <th style="width:200px;">前置条件</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="i in vm.projectInclude" ng-click="vm.getSelectParam(i)">
+                        <td style="width:100px;">{{$index+1}}</td>
+                        <td style="width:180px;">{{i.itemName}}</td>
+                        <td style="width:180px;">
+                            <select class="form-control input-sm" ng-options="o.code as o.message for o in vm.Y_N" ng-model="i.isTrunk" ng-disabled="vm.formDisabled" ng-change="vm.istrunk(i)">
+                            </select>
+                        </td>
+                        <td style="width:200px;">
+                            <select class="form-control input-sm" ng-options="o.itemId as o.itemName for o in i.prepose" ng-model="i.preCondition" ng-disabled="vm.formDisabled">
+                                <option value="">无</option>
+                            </select>
+                        </td>
+                        <td>
+                            <button class="btn btn-sm btn-success" ng-click="vm.fieldUpward($index)" title="上移" ng-disabled="$index==0 ||vm.formDisabled"><i class="fa fa-arrow-up"></i></button>
+                            <button type="button" class="btn btn-info btn-sm" ng-click="vm.fieldDownward($index)" title="下移" ng-disabled="$index==vm.projectInclude.length-1 ||vm.formDisabled"><i class="fa fa-arrow-down"></i></button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-bordered table-hover table-condensed bg-white-only m-t-sm">
+                <tbody>
+                    <tr ng-repeat="k in vm.projectIncludeBranch">
+                        <td style="width:100px;"></td>
+                        <td style="width:180px;">{{k.itemName}}</td>
+                        <td style="width:180px;">
+                            <select class="form-control input-sm" ng-options="o.code as o.message for o in vm.Y_N" ng-model="k.isTrunk" ng-disabled="vm.formDisabled" ng-change="vm.notrunk(k)">
+                            </select>
+                        </td>
+                        <td style="width:200px;">
+                            <select class="form-control input-sm" ng-options="o.itemId as o.itemName for o in k.prepose" ng-model="k.preCondition" ng-disabled="vm.formDisabled">
+                                <option value="">无</option>
+                            </select>
+                        </td>
+                        <td>
+                            <button class="btn btn-sm btn-success" title="上移" ng-disabled="true" ng-hide="true"><i class="fa fa-arrow-up"></i></button>
+                            <button type="button" class="btn btn-info btn-sm" title="下移" ng-disabled="true" ng-hide="true"><i class="fa fa-arrow-down"></i></button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading font-bold">特性</div>
+        <div class="panel-body">
+            <table class="table table-bordered table-hover table-condensed bg-white-only m-t-sm">
+                <thead>
+                    <tr>
+                        <th>顺序号</th>
+                        <th>调查项目</th>
+                        <th>前置条件</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="j in vm.projectCharacter" ng-click="vm.getSelectParam(j)">
+                        <td>{{$index+1}}</td>
+                        <td>{{j.itemName}}</td>
+                        <td>
+                            <select class="form-control input-sm" ng-options="o.itemId as o.itemName for o in j.prepose" ng-model="j.preCondition" ng-disabled=true>
+                                <option value="">无</option>
+                            </select>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-primary btn-sm" ng-click="vm.ok()" ng-hide="vm.formDisabled" ng-disabled="vm.projectInclude.length==0&&vm.projectIncludeBranch.length==0&&vm.projectCharacter.length==0">确定</button>
+    <button type="button" class="btn btn-info btn-sm" ng-click="vm.edit()" ng-show="vm.formDisabled">编辑</button>
+    <button type="button" class="btn btn-default btn-sm" ng-click="vm.cancel()">取消</button>
+</div>
+<script type="text/ng-template" id="relationModal">
+    <div ng-include="'modules/rice/client/views/projectrelation.modal.client.view.html'"></div>
+</script>

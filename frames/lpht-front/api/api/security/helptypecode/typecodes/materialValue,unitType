@@ -1,0 +1,18 @@
+{
+	"materialValue": [
+		{
+			"code": "1",
+			"message": "骨干"
+		}
+	],
+	"unitType": [
+		{
+			"code": "1",
+			"message": "克"
+		},
+		{
+			"code": "2",
+			"message": "粒"
+		}
+	]
+}

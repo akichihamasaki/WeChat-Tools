@@ -1,0 +1,161 @@
+<div class="modal-header" ng-switch="ep.modalType">
+    <h4 class="modal-title" ng-switch-when="add">新增</h4>
+    <h4 class="modal-title" ng-switch-when="edit">修改</h4>
+    <h4 class="modal-title" ng-switch-when="view">查看详情</h4>
+</div>
+<div class="modal-body" ui-jq="slimScroll" ui-options="{height:'600px'}">
+    <div class="panel panel-default">
+        <div class="panel-heading font-bold">基本信息</div>
+        <div class="panel-body">
+            <form class="form-horizontal form-validation m-t-md" name="form">
+                <fieldset ng-disabled="ep.formDisabled">
+                    <div class="col-sm-6">
+                        <div class="form-group has-feedback">
+                            <label class="col-lg-4 control-label text-sm">调查项目名称：</label>
+                            <div class="col-lg-8">
+                                <input type="text" class="form-control input-sm" name="epName" ng-model="ep.rowEntity.itemName" required>
+                                <span class="fa fa-exclamation-circle form-control-feedback" ng-show="form.epName.$error.required"></span>
+                            </div>
+                        </div>
+                        <div class="form-group has-feedback">
+                            <label class="col-lg-4 control-label text-sm">调查项目分类：</label>
+                            <div class="col-lg-8">
+                                <select class="form-control input-sm" ng-options="o.typecode as o.typecodeName for o in ps.ep.selectData.testclass" ng-model="ep.rowEntity.itemClass">
+                                    <option value="">请选择</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-4 control-label text-sm">应用试验点类型：</label>
+                            <div class="col-lg-8">
+                                <select class="form-control input-sm" ng-options="o.typecode as o.typecodeName for o in ps.ep.selectData.testtype" ng-model="ep.rowEntity.pointType">
+                                    <option value="">请选择</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-4 control-label text-sm">创建年份：</label>
+                            <div class="col-lg-8">
+                                <input type="number" class="form-control input-sm" name="testYear" ng-model="ep.rowEntity.testYear" required ng-pattern="/^[0-9]{4}$/ " oninput="if(value.length>4)value=value.slice(0,4)">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label class="col-lg-4 control-label text-sm">应用试验阶段：</label>
+                            <div class="col-lg-8">
+                                <div class="list-group list-group-sm" ui-jq="slimScroll" ui-options="{height:'165px'}">
+                                    <a ng-repeat="i in ep.teststage" class="list-group-item" ng-class="{active:i.isActive}" ui-toggle-class>{{i.typecodeName}}
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading font-bold">调查项目包含的性状</div>
+        <div class="panel-body">
+            <div class="btn-group m-b-sm" ng-hide="ep.formDisabled">
+                <button type="button" class="btn btn-success btn-sm" ng-click="ep.editCharacter('add')"><i class="fa fa-plus-circle"></i> 添加</button>
+            </div>
+            <div class="table-responsive" style="max-height:1200px;overflow-y:auto;">
+                <table class="table table-bordered table-hover table-condensed">
+                    <thead>
+                        <tr>
+                            <th style="white-space:nowrap;">操作</th>
+                            <th style="white-space:nowrap;">性状名称</th>
+                            <th style="white-space:nowrap;">数据类型</th>
+                            <th style="white-space:nowrap;">是否需要照片</th>
+                            <th style="white-space:nowrap;">是否必填</th>
+                            <th style="white-space:nowrap;">前置条件</th>
+                            <th style="white-space:nowrap;">重复试验是否单值</th>
+                            <th style="white-space:nowrap;">调查轮数</th>
+                            <th style="white-space:nowrap;">可否人工终止</th>
+                            <th style="white-space:nowrap;">每轮样本数</th>
+                            <th style="white-space:nowrap;">每轮结果</th>
+                            <th style="white-space:nowrap;">最终结果</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="i in ep.coverCharacters">
+                            <!-- ng-class="{true:'st-selected',false:'bg-primary'}[ep.active]" -->
+                            <td style="white-space:nowrap;">
+                                <button type="button" title="删除" class="btn btn-danger btn-sm" ng-click="ep.deleteCharacter($index)" ng-disabled="ep.formDisabled"><i class="fa fa-times-circle"></i></button>
+                                <button class="btn btn-sm btn-success" ng-click="ep.fieldUpward($index)" title="上移" ng-disabled="$index==0 ||ep.formDisabled"><i class="fa fa-arrow-up"></i></button>
+                                <button type="button" class="btn btn-info btn-sm" ng-click="ep.fieldDownward($index)" title="下移" ng-disabled="$index==ep.coverCharacters.length-1 ||ep.formDisabled"><i class="fa fa-arrow-down"></i></button>
+                            </td>
+                            <td style="white-space:nowrap;">{{i.charactersName}}</td>
+                            <td style="white-space:nowrap;">{{i.dataType}}</td>
+                            <td style="white-space:nowrap;">
+                                <select class="form-control input-sm" ng-disabled="ep.formDisabled" ng-options="o.code as o.message for o in ep.Y_N" ng-model="i.isMust">
+                                    <option value="">请选择</option>
+                                </select>
+                            </td>
+                            <td style="white-space:nowrap;">
+                                <select class="form-control input-sm" ng-disabled="ep.formDisabled" ng-options="o.code as o.message for o in ep.Y_N" ng-model="i.hasPhoto">
+                                    <option value="">请选择</option>
+                                </select>
+                            </td>
+                            <td style="white-space:nowrap;">
+                                <select class="form-control input-sm" ng-disabled="ep.formDisabled" ng-options="o.charactersId as o.charactersName for o in i.prepose" ng-model="i.preCondition">
+                                    <option value="">无</option>
+                                </select>
+                            </td>
+                            <td style="white-space:nowrap;">
+                                <select class="form-control input-sm" ng-disabled="ep.formDisabled" ng-options="o.code as o.message for o in ep.Y_N" ng-model="i.isMany">
+                                    <option value="">请选择</option>
+                                </select>
+                            </td>
+                            <td style="white-space:nowrap;">
+                                <input type="text" class="form-control input-sm" size="1" ng-disabled="ep.formDisabled" ng-model="i.checkRound" />
+                            </td>
+                            <td style="white-space:nowrap;">
+                                <select class="form-control input-sm" ng-disabled="ep.formDisabled" ng-options="o.code as o.message for o in ep.Y_N" ng-model="i.isEnd">
+                                    <option value="">请选择</option>
+                                </select>
+                            </td>
+                            <td style="white-space:nowrap;">
+                                <input type="text" class="form-control input-sm" size="1" ng-disabled="ep.formDisabled" ng-model="i.sampleNum" />
+                            </td>
+                            <td style="white-space:nowrap;">
+                                <select class="form-control input-sm" ng-disabled="ep.formDisabled" ng-options="o.code as o.message for o in ep.result" ng-model="i.onceResult">
+                                    <option value="">请选择</option>
+                                </select>
+                            </td>
+                            <td style="white-space:nowrap;">
+                                <select class="form-control input-sm" ng-disabled="ep.formDisabled" ng-options="o.code as o.message for o in ep.result" ng-model="i.endResult">
+                                    <option value="">请选择</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading font-bold">一次否决项</div>
+        <div class="panel-body">
+            <div class="btn-group m-b-sm" ng-hide="ep.formDisabled">
+                <button type="button" class="btn btn-success btn-sm" ng-click="ep.editVeto('add')" ng-disabled="ep.coverCharacters.length==0"><i class="fa fa-plus-circle"></i> 新增</button>
+                <button type="button" class="btn btn-info btn-sm" ng-click="ep.editVeto('edit')" ng-disabled="ep.disabledVeto"><i class="fa fa-pencil"></i> 修改</button>
+                <button type="button" class="btn btn-danger btn-sm" ng-click="ep.deleteVeto()" ng-disabled="ep.disabledVeto"><i class="fa fa-times-circle"></i> 删除</button>
+            </div>
+            <div ui-grid="ep.vetoGrid" ui-grid-selection ui-grid-resize-columns ui-grid-auto-resize></div>
+        </div>
+    </div>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-primary btn-sm" ng-click="ep.ok()" ng-hide="ep.formDisabled" ng-disabled="form.$invalid">确定</button>
+    <button type="button" class="btn btn-info btn-sm" ng-click="ep.edit()" ng-show="ep.formDisabled">编辑</button>
+    <button type="button" class="btn btn-default btn-sm" ng-click="ep.cancel()">取消</button>
+</div>
+<script type="text/ng-template" id="CharacterModal">
+    <div ng-include="'modules/rice/client/views/containcharacter.modal.client.view.html'"></div>
+</script>
+<script type="text/ng-template" id="VetoModal">
+    <div ng-include="'modules/rice/client/views/veto.modal.client.view.html'"></div>
+</script>

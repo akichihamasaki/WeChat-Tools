@@ -1,0 +1,42 @@
+{
+	"noticeMessageList": [
+		{
+			"publishId": "0bfc91d1-a6a6-4522-af39-db5622041843",
+			"infoTitle": "222",
+			"publishDate": "2016-10-17",
+			"readFlag": "0"
+		},
+		{
+			"publishId": "0bfc91d1-a6a6-4522-af39-db5622041843",
+			"infoTitle": "3333",
+			"publishDate": "2016-10-17",
+			"readFlag": "1"
+		},
+		{
+			"publishId": "0bfc91d1-a6a6-4522-af39-db5622041843",
+			"infoTitle": "444",
+			"publishDate": "2016-10-17",
+			"readFlag": "0"
+		},
+		{
+			"publishId": "0bfc91d1-a6a6-4522-af39-db5622041843",
+			"infoTitle": "555",
+			"publishDate": "2016-10-17",
+			"readFlag": "1"
+		}
+	],
+	"announceMessageList": [
+		{
+			"publishId": "0bfc91d1-a6a6-4522-af39-db5622041843",
+			"infoTitle": "666",
+			"publishDate": "2016-10-17",
+			"readFlag": "1"
+		},
+		{
+			"publishId": "0bfc91d1-a6a6-4522-af39-db5622041843",
+			"infoTitle": "777",
+			"publishDate": "2016-10-17",
+			"readFlag": "0"
+		}
+	]
+}

@@ -1,0 +1,29 @@
+[
+
+	{
+    "id":"1",
+		"projectName":"成熟",
+		"experimentCate":"田间",
+		"precondition":"分叶",
+		"showRow":1,
+		"showColumn":1
+	},
+	{
+    "id":"2",
+		"projectName":"米质",
+		"experimentCate":"田间",
+		"precondition":"成熟",
+		"showRow":1,
+		"showColumn":1,
+		"showRow":1,
+		"showColumn":1
+	},
+	{
+    "id":"3",
+		"projectName":"DUS",
+		"experimentCate":"田间",
+		"precondition":"米质",
+		"showRow":1,
+		"showColumn":1
+	}
+]

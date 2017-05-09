@@ -1,0 +1,102 @@
+<div class="modal-header" ng-switch="fm.modalType">
+  <h4 class="modal-title" ng-switch-when="edit">修改</h4>
+  <h4 class="modal-title" ng-switch-when="view">查看详情</h4>
+</div>
+<div class="modal-body">
+  <form class="form-horizontal form-validation" name="remindForm">
+    <fieldset ng-disabled="fm.formDisabled">
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label class="col-lg-4 control-label text-sm">作物名称</label>
+            <div class="col-lg-8">
+              <input type="text" class="form-control input-sm" name="cropTypeStr" placeholder="作物名称" ng-model="fm.rowEntity.cropTypeStr" readonly>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label class="col-lg-4 control-label text-sm">一级分类</label>
+            <div class="col-lg-8">
+              <input type="text" class="form-control input-sm" name="firClassStr" placeholder="一级分类" ng-model="fm.rowEntity.firClassStr" readonly>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label class="col-lg-4 control-label text-sm">二级分类</label>
+            <div class="col-lg-8">
+              <input type="text" class="form-control input-sm" name="secClassStr" placeholder="二级分类" ng-model="fm.rowEntity.secClassStr" readonly>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label class="col-lg-4 control-label text-sm">材料价值</label>
+            <div class="col-lg-8">
+              <select class="form-control input-sm" name="gpValue" ng-options="o.code as o.message for o in fm.materialData" ng-model="fm.rowEntity.gpValue" required>
+                <option value="">请选择</option>
+              </select>
+              <div ng-messages="remindForm.gpValue.$dirty && remindForm.gpValue.$error">
+                <p class="help-block text-sm" ng-message="required">请填写材料价值</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label class="col-lg-4 control-label text-sm">关系运算符</label>
+            <div class="col-lg-8">
+              <input type="text" class="form-control input-sm" name="signType" placeholder="关系运算符" ng-model="fm.rowEntity.signType" readonly>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="form-group has-feedback">
+            <label class="col-lg-4 control-label text-sm">繁种警戒数量</label>
+            <div class="col-lg-8">
+              <input type="text" class="form-control input-sm" name="remindNumber" placeholder="繁种警戒数量" ng-model="fm.rowEntity.remindNumber" ng-pattern="/^[1-9]\d*|0$/" required>
+              <span class="fa fa-exclamation-circle form-control-feedback" ng-show="remindForm.remindNumber.$error.required"></span>
+              <div ng-messages="remindForm.remindNumber.$dirty && remindForm.remindNumber.$error">
+                <p class="help-block text-sm" ng-message = "required">请填写繁种警戒数量</p>
+                <p class="help-block text-sm" ng-message = "pattern">请填写正确的数值</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label class="col-lg-4 control-label text-sm">单位</label>
+            <div class="col-lg-8">
+              <select class="form-control input-sm" name="unit" ng-options="o.code as o.message for o in fm.unitData" ng-model="fm.rowEntity.unit" required>
+                <option value="">请选择</option>
+              </select>
+              <div ng-messages="remindForm.unit.$dirty && remindForm.unit.$error">
+                <p class="help-block text-sm" ng-message="required">请选择单位</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="form-group has-feedback">
+            <label class="col-lg-4 control-label text-sm">描述</label>
+            <div class="col-lg-8">
+              <input type="text" class="form-control input-sm" name="remark" placeholder="描述" ng-model="fm.rowEntity.remark">
+            </div>
+          </div>
+        </div>
+      </div>
+    </fieldset>
+  </form>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-primary btn-sm" ng-click="fm.ok()" ng-hide="fm.formDisabled" ng-disabled="remindForm.$invalid">确定</button>
+  <button type="button" class="btn btn-info btn-sm" ng-click="fm.edit()" ng-show="fm.formDisabled">编辑</button>
+  <button type="button" class="btn btn-default btn-sm" ng-click="fm.cancel()">取消</button>
+</div>

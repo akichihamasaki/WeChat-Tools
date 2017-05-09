@@ -1,0 +1,12 @@
+{
+	"serviceType": [
+		{
+			"code": "1",
+			"message": "大田作物"
+		},
+		{
+			"code": "2",
+			"message": "小田作物"
+		}
+	]
+}

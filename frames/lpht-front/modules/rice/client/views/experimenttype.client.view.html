@@ -1,0 +1,47 @@
+<toaster-container toaster-options="{'time-out': 5000, 'close-button': true, 'limit': 1, 'tap-to-dismiss': false}"></toaster-container>
+<div class="wrapper-md" ng-controller="ExperimentTypeCtrl" ui-jq="sortable" ui-options="{items:'.m-b-md', handle:'.panel-heading', connectWith:'.wrapper-md'}">
+    <!-- 搜索框 -->
+    <div class="panel panel-default m-b-md">
+        <div class="panel-heading font-bold">查询条件</div>
+        <div class="panel-body">
+            <form class="form-horizontal">
+                <div class="row">
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="form-group">
+                            <lable class="col-lg-6 control-label text-sm">试验类型名称</lable>
+                            <div class="col-lg-6">
+                                <input type="text" class="form-control input-sm" placeholder="试验类型名称" ng-model="vm.searchData.typename">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="panel-footer">
+            <div class="text-right">
+                <button type="button" class="btn btn-default btn-sm m-r-sm" ng-click="vm.search()" autofocus><i class="fa fa-search"></i> 查询</button>
+                <button type="button" class="btn btn-default btn-sm m-r-sm" ng-click="vm.reset()"><i class="fa fa-refresh"></i> 重置</button>
+                <!-- <button type="button" class="btn btn-default btn-sm m-r-sm" ng-click="vm.isCollapsed = !vm.isCollapsed"><i class="fa" ng-class="{'fa-expand':vm.isCollapsed, 'fa-compress':!vm.isCollapsed}"></i> 更多</button> -->
+            </div>
+        </div>
+    </div>
+    <!-- 搜索框 -->
+    <!-- 操作按钮 -->
+    <div class="m-b-md">
+        <div class="btn-group">
+            <button type="button" class="btn btn-success btn-sm" ng-click="vm.openDetail('add')"><i class="fa fa-plus-circle"></i> 新增</button>
+            <!-- <button type="button" class="btn btn-info btn-sm" ng-click="vm.openDetail('edit')" ng-disabled="vm.gridApi.selection.getSelectedRows().length != 1"><i class="glyphicon glyphicon-edit"></i> 修改</button> -->
+            <button type="button" class="btn btn-danger btn-sm" ng-click="vm.openDialog()" ng-disabled="vm.gridApi.selection.getSelectedRows().length <= 0"><i class="fa fa-times-circle"></i> 删除</button>
+            <!-- <button type="button" class="btn btn-primary btn-sm" ng-click="vm.openDetail('view')" ng-disabled="vm.gridApi.selection.getSelectedRows().length != 1"><i class="glyphicon glyphicon-search"></i> 查看详情</button> -->
+        </div>
+    </div>
+    <!-- 操作按钮 -->
+    <div class="m-b-md">
+        <div class="pos-rlt" ui-grid="vm.gridOptions" ui-grid-pagination ui-grid-selection ui-grid-resize-columns ui-grid-auto-resize ui-grid-pinning ui-grid-exporter></div>
+    </div>
+    <!-- 新增/修改/查看模态框   -->
+    <script type="text/ng-template" id="experimentTypeModal">
+        <div ng-include="'modules/rice/client/views/experimenttype.modal.client.view.html'"></div>
+    </script>
+    <!-- 操作提示框 -->
+</div>

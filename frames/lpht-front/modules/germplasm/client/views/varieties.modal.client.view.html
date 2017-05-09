@@ -1,0 +1,15 @@
+<div class="modal-header">
+    <h4 class="modal-title">选择品种</h4>
+</div>
+<div class="modal-body">
+    <div class="btn btn-default btn-xs m-r-xs" ng-repeat="m in cb.check">
+        <span>{{m.varietiesName}}</span>
+        <span class="close text-base" ng-click="cb.delManager($index)">&nbsp;x</span>
+    </div>
+    <div class="line b-b"></div>
+    <div class="pos-rlt" ui-grid="cb.varietiesGrid" ui-grid-pagination ui-grid-selection ui-grid-resize-columns ui-grid-auto-resize ui-grid-pinning></div>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-primary btn-sm" ng-click="cb.ok()" ng-disabled="cropForm.$invalid">确定</button>
+    <button type="button" class="btn btn-default btn-sm" ng-click="cb.cancel()">取消</button>
+</div>

@@ -1,0 +1,35 @@
+<div class="modal-header">
+  <h4 class="modal-title">选择调查项目</h4>
+</div>
+<div class="modal-body">
+  <form class="form-horizontal">
+      <div class="form-group">
+        <label class="col-xs-2 control-label text-sm text-right">调查项目</label>
+        <div class="col-xs-4">
+          <input type="text" class="form-control input-sm" placeholder="试验项目" ng-model="vm.testItemName">
+        </div>
+        <div class="col-xs-3">
+          <button type="button" class="btn btn-default btn-sm m-r-sm" ng-click="vm.itemNameSearch()">查询</button>
+          <button type="button" class="btn btn-default btn-sm m-r-sm" ng-click="vm.itemNameReset()">重置</button>
+        </div>
+      </div>
+      <div class="row m-t-sm">
+        <div class="col-xs-5">
+          <div ui-grid="vm.LeftTestItemGrid" ui-grid-selection ui-grid-resize-columns ui-grid-auto-resize></div>
+        </div>
+        <div class="col-xs-2 btn-group-vertical" style="margin-top:110px;">
+          <button type="button" class="btn btn-default btn-sm" ng-disabled="vm.rightAll" ng-click="vm.turnRightAll()"><i class="glyphicon glyphicon-forward"></i></button>
+          <button type="button" class="btn btn-default btn-sm" ng-disabled="vm.rightSelect" ng-click="vm.turnRightSelect()"><i class="glyphicon glyphicon-chevron-right"></i></button>
+          <button type="button" class="btn btn-default btn-sm" ng-disabled="vm.leftSelect" ng-click="vm.turnLeftSelect()"><i class="glyphicon glyphicon-chevron-left"></i></button>
+          <button type="button" class="btn btn-default btn-sm" ng-disabled="vm.leftAll" ng-click="vm.turnLeftAll()"><i class="glyphicon glyphicon-backward"></i></button>
+        </div>
+        <div class="col-xs-5">
+          <div ui-grid="vm.rightTestItemGrid" ui-grid-selection ui-grid-resize-columns ui-grid-auto-resize></div>
+        </div>
+      </div>
+  </form>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-primary btn-sm" ng-click="vm.ok()">确定</button>
+  <button type="button" class="btn btn-default btn-sm" ng-click="vm.cancel()">取消</button>
+</div>

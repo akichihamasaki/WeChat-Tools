@@ -1,0 +1,148 @@
+<toaster-container toaster-options="{'close-button': true, 'tap-to-dismiss': false, 'toaster-id': 1}"></toaster-container>
+<div class="wrapper-md" ng-controller="ExperimentPointCtrl" ui-jq="sortable" ui-options="{items:'.m-b-md', handle:'.panel-heading', connectWith:'.wrapper-md'}">
+  <div class="panel panel-default m-b-md">
+    <div class="panel-heading font-bold">查询条件</div>
+    <div class="panel-body">
+      <form class="form-horizontal">
+        <div class="row">
+          <div class="col-lg-3 col-sm-6">
+            <div class="form-group">
+              <lable class="col-lg-6 control-label text-sm">试验点名称</lable>
+              <div class="col-lg-6">
+                <input type="text" class="form-control input-sm" placeholder="试验点名称" ng-model="sm.searchData.pointName">
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6">
+            <div class="form-group">
+              <label class="col-lg-6 control-label text-sm">参与试验阶段</label>
+              <div class="col-lg-6">
+                <select class="form-control input-sm" ng-model="sm.searchData.stageCode">
+                  <option value="">请选择</option>
+                  <option ng-repeat="x in sm.pointStage" value="{{x.typecode}}" >{{x.typecodeName}}</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6">
+            <div class="form-group">
+              <label class="col-lg-6 control-label text-sm">试验点性质</label>
+              <div class="col-lg-6">
+                <select class="form-control input-sm" ng-model="sm.searchData.pointOwner">
+                  <option value="">请选择</option>
+                  <option ng-repeat="x in sm.pointOwner" value="{{x.code}}" >{{x.message}}</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6">
+            <div class="form-group">
+              <label class="col-lg-6 control-label text-sm">试验点类型</label>
+              <div class="col-lg-6">
+                <select class="form-control input-sm" ng-model="sm.searchData.pointType">
+                  <option value="">请选择</option>
+                  <option ng-repeat="x in sm.pointType" value="{{x.typecode}}" >{{x.typecodeName}}</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row" uib-collapse="sm.isCollapsed">
+          <div class="col-lg-3 col-sm-6">
+            <div class="form-group">
+              <label class="col-lg-6 control-label text-sm">调查项目</label>
+              <div class="col-lg-6">
+                <input type="text" class="form-control input-sm" placeholder="调查项目" ng-model="sm.searchData.itemName">
+                <!-- <select class="form-control input-sm" ng-model="sm.searchData.testItem">
+                  <option value="">请选择</option>
+                  <option ng-repeat="x in sm.testItem" value="{{x.itemId}}" >{{x.itemName}}</option>
+                </select> -->
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6">
+            <div class="form-group">
+              <label class="col-lg-6 control-label text-sm">合作状态</label>
+              <div class="col-lg-6">
+                <select class="form-control input-sm" ng-model="sm.searchData.cooperationStatus">
+                  <option value="">请选择</option>
+                  <option ng-repeat="x in sm.cooperationStatus" value="{{x.code}}" >{{x.message}}</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6">
+            <div class="form-group">
+              <label class="col-lg-6 control-label text-sm">生态区</label>
+              <div class="col-lg-6">
+                <select class="form-control input-sm" ng-model="sm.searchData.regionsId">
+                  <option value="">请选择</option>
+                  <option ng-repeat="x in sm.regions" value="{{x.regionId}}" >{{x.regionsName}}</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6">
+            <div class="form-group">
+              <label class="col-lg-6 control-label text-sm">生态亚区</label>
+              <div class="col-lg-6">
+                <input type="text" class="form-control input-sm" placeholder="生态亚区" ng-model="sm.searchData.subzone">
+                <!-- <select class="form-control input-sm" ng-options="o.id as o.name for o in sm.riceArea" ng-model="sm.searchData.ricearea">
+                  <option value="">请选择</option>
+                </select> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="panel-footer">
+      <div class="text-right">
+        <button type="button" class="btn btn-default btn-sm m-r-sm" ng-click="sm.search()" autofocus><i class="fa fa-search"></i> 查询</button>
+        <button type="button" class="btn btn-default btn-sm m-r-sm" ng-click="sm.reset()"><i class="fa fa-refresh"></i> 重置</button>
+        <button type="button" class="btn btn-default btn-sm m-r-sm" ng-click="sm.isCollapsed = !sm.isCollapsed"><i class="fa" ng-class="{'fa-expand':sm.isCollapsed, 'fa-compress':!sm.isCollapsed}"></i> 更多</button>
+      </div>
+    </div>
+  </div>
+  <div class="m-b-md">
+    <div class="btn-group">
+      <button type="button" class="btn btn-success btn-sm" ng-click="gm.openDetail('add')"><i class="fa fa-plus-circle"></i> 新增</button>
+      <button type="button" class="btn btn-info btn-sm" ng-click="gm.openDetail('edit')" ng-disabled="gm.disableDelete"><i class="fa fa-pencil"></i> 修改</button>
+      <button type="button" class="btn btn-danger btn-sm" ng-click="gm.openDialog()" ng-disabled="gm.disableDelete"><i class="fa fa-times-circle"></i> 删除</button>
+      <button type="button" class="btn btn-primary btn-sm" ng-click="gm.openDetail('view')" ng-disabled="gm.disableDelete"><i class="fa fa-file-text"></i> 查看</button>
+      <button type="button" class="btn btn-info btn-sm" ng-click="gm.openGrid('contract')" ng-disabled="gm.disableDelete"><i class="fa fa-table"></i> 合同</button>
+      <button type="button" class="btn btn-success btn-sm" ng-click="gm.openGrid('evaluation')" ng-disabled="gm.disableDelete"><i class="fa fa-table"></i> 考评记录</button>
+      <button type="button" class="btn btn-primary btn-sm" ng-click="gm.openGrid('event')" ng-disabled="gm.disableDelete"><i class="fa fa-table"></i> 事件记录</button>
+      <!-- <button type="button" class="btn btn-primary btn-sm" ng-click="gm.import()"><i class="fa fa-reply"></i> 导入</button>
+      <button type="button" class="btn btn-info btn-sm" ng-click="gm.export()"><i class="fa fa-share"></i> 导出</button> -->
+    </div>
+    <div class="btn-group pull-right">
+      <button type="button" class="btn btn-info btn-sm" ng-model="gm.radioModel" uib-btn-radio="'sm'"><i class="fa fa-th-list"></i> 缩小</button>
+      <button type="button" class="btn btn-info btn-sm" ng-model="gm.radioModel" uib-btn-radio="'lg'"><i class="fa fa-list"></i> 放大</button>
+    </div>
+  </div>
+  <div class="m-b-md">
+    <div class="pos-rlt" ng-style="{'height': gm.radioModel == 'sm' ? '381' : '681'}" ui-grid="gm.gridOptions" ui-grid-pagination ui-grid-selection ui-grid-resize-columns ui-grid-auto-resize ui-grid-pinning></div>
+  </div>
+  <script type="text/ng-template" id="experimentPointModal">
+    <div ng-include="'modules/rice/client/views/experimentpoint.modal.client.view.html'"></div>
+  </script>
+  <script type="text/ng-template" id="contractModal">
+    <div ng-include="'modules/rice/client/views/contract.modal.client.view.html'"></div>
+  </script>
+  <script type="text/ng-template" id="evaluationModal">
+    <div ng-include="'modules/rice/client/views/evaluation.modal.client.view.html'"></div>
+  </script>
+  <script type="text/ng-template" id="eventModal">
+    <div ng-include="'modules/rice/client/views/event.modal.client.view.html'"></div>
+  </script>
+  <script type="text/ng-template" id="experimentProjectModal">
+    <div ng-include="'modules/rice/client/views/experimentpointproject.modal.client.view.html'"></div>
+  </script>
+  <script type="text/ng-template" id="experimentOtherModal">
+    <div ng-include="'modules/rice/client/views/experimentpointother.modal.client.view.html'"></div>
+  </script>
+  <!-- <script type="text/ng-template" id="fileUploadModal">
+    <div ng-include="'modules/rice/client/views/experimentpointfileupload.modal.client.view.html'"></div>
+  </script> -->
+</div>

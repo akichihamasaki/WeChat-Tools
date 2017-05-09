@@ -1,0 +1,144 @@
+<toaster-container toaster-options="{'close-button': true, 'tap-to-dismiss': false, 'toaster-id': 1}"></toaster-container>
+<div class="wrapper-md" ng-controller="OutStockCtrl">
+  <div class="panel panel-default">
+    <div class="panel-heading  h-s">
+        <b>查询条件</b>
+    </div>
+    <div class="panel-body">
+      <div class="form-horizontal ">
+        <div class="row">
+          <div class="col-lg-3 col-sm-6 ">
+            <div class="form-group ">
+              <label class="control-label text-sm col-lg-6" >出库单类型</label>
+              <div class="col-lg-6">
+                <input type="text"  class=" form-control input-sm" ng-model="sm.search.outstockType" placeholder="出库类型">
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6 ">
+            <div class="form-group ">
+                <label class="control-label text-sm col-lg-6" >出库单状态</label>
+                <div class="col-lg-6">
+                  <input type="text"  class="form-control input-sm" ng-model="sm.search.outstockState" placeholder="出库单状态">
+                </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-sm-6 ">
+            <div class="form-group ">
+              <label class="control-label text-sm col-lg-6" >出库开始时间</label>
+              <div class="col-lg-6">
+                <div class="input-group input-group-sm">
+                  <input type="text" class="form-control"  ng-model="sm.search.startTime" uib-datepicker-popup="yyyy-MM-dd" is-open="sm.search.startTimeOpen" current-text="今天" clear-text="清除" close-text="关闭" readonly>
+                  <span class="input-group-btn">
+                    <button type="button" class="btn btn-default" ng-click="sm.search.startTimeOpen = true"><i class="fa fa-calendar"></i></button>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6 ">
+            <div class="form-group ">
+              <label class="control-label text-sm col-lg-6" >出库结束时间</label>
+              <div class="col-lg-6">
+                <div class="input-group input-group-sm">
+                  <input type="text" class="form-control"  ng-model="sm.search.endTime" uib-datepicker-popup="yyyy-MM-dd" is-open="sm.search.endTimeOpen" current-text="今天" clear-text="清除" close-text="关闭" readonly>
+                  <span class="input-group-btn">
+                    <button type="button" class="btn btn-default" ng-click="sm.search.endTimeOpen = true"><i class="fa fa-calendar"></i></button>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div uib-collapse="sm.isCollapsed" class="row">
+          <div class="col-lg-3 col-sm-6 ">
+              <div class="form-group ">
+                  <label class="control-label text-sm col-lg-6">出库申请人</label>
+                  <div class="col-lg-6">
+                      <input type="text" class="form-control input-sm" ng-model="sm.search.outstockApplicator" placeholder="出库申请人">
+                  </div>
+              </div>
+          </div>
+          <div class="col-lg-3 col-sm-6 ">
+              <div class="form-group ">
+                  <label class="control-label text-sm col-lg-6">库管员</label>
+                  <div class="col-lg-6">
+                      <input type="text" class="form-control input-sm" ng-model="sm.search.storageArea" placeholder="库管员">
+                  </div>
+              </div>
+          </div>
+          <div class="col-lg-3 col-sm-6 ">
+              <div class="form-group has-feedback">
+                <label class="control-label text-sm col-lg-6" >仓库</label>
+                <div class="col-lg-6">
+                  <select class="form-control input-sm" ng-model="pop.rowEntity.experimentstage">
+                    <option value="">请选择</option>
+                    <option value="安徽">安徽</option>
+                    <option value="湖南">湖南</option>
+                  </select>
+                </div>
+              </div>
+          </div>
+          <div class="col-lg-3 col-sm-6 ">
+              <div class="form-group has-feedback">
+                <label class="control-label text-sm col-lg-6" >库房</label>
+                <div class="col-lg-6">
+                  <select class="form-control input-sm" ng-model="pop.rowEntity.experimentstage">
+                    <option value="">请选择</option>
+                    <option value="长期库">长期库</option>
+                    <option value="中期库">中期库</option>
+                    <option value="工作库">工作库</option>
+                  </select>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="panel-footer">
+      <div class="text-right">
+        <button type="button" class="btn btn-default btn-sm m-r-sm" ng-click="sm.prodSearch()" autofocus><i class="fa fa-search"></i> 查询</button>
+        <button type="button" class="btn btn-default btn-sm m-r-sm" ng-click="sm.reset()"><i class="fa fa-refresh"></i> 重置</button>
+        <button type="button" class="btn btn-default btn-sm m-r-sm" ng-click="sm.isCollapsed = !sm.isCollapsed"><i class="fa fa-expand " ng-class="{'fa-expand':sm.isCollapsed, 'fa-compress':!sm.isCollapsed}"></i> 更多</button>
+      </div>
+    </div>
+  </div>
+  <div class="m-b-md">
+    <div class="btn-group" uib-dropdown>
+      <button type="button" class="btn btn-danger btn-sm" ng-click="gm.openPrintModal()" ng-disabled="gm.disableDelete"><i class="glyphicon  glyphicon-print"></i> 打印出库单</button>
+      <button type="button" class="btn btn-primary btn-sm" ng-click="gm.openCheckModal()" ng-disabled="gm.disableDelete"><i class="glyphicon glyphicon-compressed"></i> 出库确认</button>
+      <button type="button" class="btn btn-warning btn-sm" ng-click="gm.openViewDetail()" ng-disabled="gm.disableDelete"><i class="fa fa-file-text"></i> 查看出库明细</button>
+      <button type="button" class="btn btn-info btn-sm" ng-click="gm.openCheckView()" ng-disabled="gm.disableDelete"><i class="fa fa-file-text-o"></i> 查看审核意见</button>
+    </div>
+    <div class="btn-group pull-right">
+      <button type="button" class="btn btn-info btn-sm" ng-model="gm.radioModel" uib-btn-radio="'sm'"><i class="fa fa-th-list"></i> 缩小</button>
+      <button type="button" class="btn btn-info btn-sm" ng-model="gm.radioModel" uib-btn-radio="'lg'"><i class="fa fa-list"></i> 放大</button>
+    </div>
+  </div>
+
+  <div class="m-b-md">
+    <div class="pos-rlt" ng-style="{'height': gm.radioModel == 'sm' ? '364' : '664'}" ui-grid="gm.grid" ui-grid-pagination ui-grid-selection ui-grid-resize-columns ui-grid-auto-resize ></div>
+  </div>
+
+
+  <!-- 打印出库单 -->
+  <script type="text/ng-template" id="outStockPrintModal">
+    <div ng-include="'modules/germplasm/client/views/outstock.printmodal.client.view.html'"></div>
+  </script>
+  <!-- 出库意见 -->
+  <script type="text/ng-template" id="outStockCheckModal">
+    <div ng-include="'modules/germplasm/client/views/outstock.checkmodal.client.view.html'"></div>
+  </script>
+  <!-- 出库明细 -->
+  <script type="text/ng-template" id="popOutStockFormDetailModal">
+    <div ng-include="'modules/germplasm/client/views/outstockform.detailmodal.client.view.html'"></div>
+  </script>
+
+  <!-- 查看审核意见 -->
+  <script type="text/ng-template" id="popOutStockFormCheckViewModal">
+    <div ng-include="'modules/germplasm/client/views/outstockform.checkviewmodal.client.view.html'"></div>
+  </script>
+
+<div>

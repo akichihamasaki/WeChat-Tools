@@ -1,0 +1,50 @@
+[
+	{
+		"id": "1",
+		"cropType": "1",
+		"cropTypeStr":"水稻",
+		"firClass":"1",
+		"firClassStr":"育种材料",
+		"secClass":"1",
+		"secClassStr":"稳定材料",
+		"gpValue":"1",
+		"gpValueStr":"骨干",
+		"signType": "<=",
+		"remindNumber":34,
+		"unit":"2",
+		"unitStr":"粒",
+		"remark": "小于等于条件时，提醒低于繁种警戒值"
+	},
+	{
+		"id": "2",
+		"cropType": "1",
+		"cropTypeStr":"水稻",
+		"firClass":"1",
+		"firClassStr":"育种材料",
+		"secClass":"1",
+		"secClassStr":"稳定材料",
+		"gpValue":"1",
+		"gpValueStr":"骨干",
+		"signType": "<=",
+		"remindNumber":34,
+		"unit":"2",
+		"unitStr":"粒",
+		"remark": "小于等于条件时，提醒低于繁种警戒值"
+	},
+	{
+		"id": "3",
+		"cropType": "1",
+		"cropTypeStr":"水稻",
+		"firClass":"1",
+		"firClassStr":"育种材料",
+		"secClass":"1",
+		"secClassStr":"稳定材料",
+		"gpValue":"1",
+		"gpValueStr":"骨干",
+		"signType": "<=",
+		"remindNumber":34,
+		"unit":"2",
+		"unitStr":"粒",
+		"remark": "小于等于条件时，提醒低于繁种警戒值"
+	}
+]

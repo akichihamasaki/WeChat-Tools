@@ -1,0 +1,23 @@
+<div class="modal-header">
+    <h4 class="modal-title">关系维护</h4>
+</div>
+<div class="modal-body">
+    <div class="row m-t-sm">
+        <div class="col-md-5">
+            <div ui-grid="vm.leftProjectGrid" ui-grid-selection ui-grid-resize-columns ui-grid-auto-resize></div>
+        </div>
+        <div class="col-md-1 btn-group-vertical" style="margin-top:90px;">
+            <button type="button" class="btn btn-default btn-sm" ng-disabled="vm.formDisabled" ng-click="vm.turnRightAll()"><i class="glyphicon glyphicon-forward"></i></button>
+            <button type="button" class="btn btn-default btn-sm" ng-disabled="vm.turnRight" ng-click="vm.turnRightSelect()"><i class="glyphicon glyphicon-chevron-right"></i></button>
+            <button type="button" class="btn btn-default btn-sm" ng-disabled="vm.turnLeft" ng-click="vm.turnLeftSelect()"><i class="glyphicon glyphicon-chevron-left"></i></button>
+            <button type="button" class="btn btn-default btn-sm" ng-disabled="vm.formDisabled" ng-click="vm.turnLeftAll()"><i class="glyphicon glyphicon-backward"></i></button>
+        </div>
+        <div class="col-md-6">
+            <div ui-grid="vm.rightProjectGrid" ui-grid-selection ui-grid-resize-columns ui-grid-auto-resize></div>
+        </div>
+    </div>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-primary btn-sm" ng-click="vm.ok()" ng-hide="vm.formDisabled">确定</button>
+    <button type="button" class="btn btn-default btn-sm" ng-click="vm.cancel()">取消</button>
+</div>

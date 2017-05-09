@@ -1,0 +1,325 @@
+<div class="modal-header" ng-switch="bd.modalType">
+    <h4 class="modal-title" ng-switch-when="add">新增</h4>
+    <h4 class="modal-title" ng-switch-when="edit">修改</h4>
+    <h4 class="modal-title" ng-switch-when="view">查看详情</h4>
+</div>
+<div class="modal-body">
+    <form class="form-horizontal" name="dataForm">
+        <fieldset ng-disabled="bd.formDisabled">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group has-feedback">
+                        <label class="col-lg-4 control-label text-sm">作物</label>
+                        <div class="col-lg-8">
+                            <select class="form-control input-sm" name="row" ng-options="o.id as o.name for o in ps.bd.selectData.row" ng-model="bd.rowEntity.cropType" required>
+                                <option value="">请选择</option>
+                            </select>
+                            <div ng-messages="dataForm.row.$dirty && dataForm.row.$error">
+                                <p class="help-block text-sm" ng-message="required">请选择作物</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group has-feedback">
+                        <label class="col-lg-4 control-label text-sm">材料类型</label>
+                        <div class="col-lg-8">
+                            <select class="form-control input-sm" name="row" ng-options="o.id as o.name for o in ps.bd.selectData.row" ng-model="bd.rowEntity.row" required>
+                                <option value="">请选择</option>
+                            </select>
+                            <div ng-messages="dataForm.row.$dirty && dataForm.row.$error">
+                                <p class="help-block text-sm" ng-message="required">请选择材料类型</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group has-feedback">
+                        <label class="col-lg-4 control-label text-sm">材料编号</label>
+                        <div class="col-lg-8">
+                            <input type="text" class="form-control input-sm" name="materialCode" placeholder="材料编号" ng-model="bd.rowEntity.materialCode" required>
+                            <span class="fa fa-exclamation-circle form-control-feedback" ng-show="dataForm.materialCode.$error.required"></span>
+                            <div ng-messages="dataForm.materialCode.$dirty && dataForm.materialCode.$error">
+                                <p class="help-block text-sm" ng-message="required">请填写材料编号</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group has-feedback">
+                        <label class="col-lg-4 control-label text-sm">材料名称</label>
+                        <div class="col-lg-8">
+                            <input type="text" class="form-control input-sm" name="materialName" placeholder="材料名称" ng-model="bd.rowEntity.materialName" required>
+                            <span class="fa fa-exclamation-circle form-control-feedback" ng-show="dataForm.materialName.$error.required"></span>
+                            <div ng-messages="dataForm.materialName.$dirty && dataForm.materialName.$error">
+                                <p class="help-block text-sm" ng-message="required">请填写材料名称</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group has-feedback">
+                        <label class="col-lg-4 control-label text-sm">母本名称</label>
+                        <div class="col-lg-8">
+                            <input type="text" class="form-control input-sm" name="femaleNo" placeholder="母本名称" ng-model="bd.rowEntity.femaleNo" required>
+                            <span class="fa fa-exclamation-circle form-control-feedback" ng-show="dataForm.femaleNo.$error.required"></span>
+                            <div ng-messages="dataForm.femaleNo.$dirty && dataForm.femaleNo.$error">
+                                <p class="help-block text-sm" ng-message="required">请填写母本名称</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group has-feedback">
+                        <label class="col-lg-4 control-label text-sm">父本名称</label>
+                        <div class="col-lg-8">
+                            <input type="text" class="form-control input-sm" name="maleNo" placeholder="父本名称" ng-model="bd.rowEntity.maleNo" required>
+                            <span class="fa fa-exclamation-circle form-control-feedback" ng-show="dataForm.maleNo.$error.required"></span>
+                            <div ng-messages="dataForm.maleNo.$dirty && dataForm.maleNo.$error">
+                                <p class="help-block text-sm" ng-message="required">请填写父本名称</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group has-feedback">
+                        <label class="col-lg-4 control-label text-sm">世代号</label>
+                        <div class="col-lg-8">
+                            <input type="text" class="form-control input-sm" name="genertionNo" placeholder="世代号" ng-model="bd.rowEntity.genertionNo" required>
+                            <span class="fa fa-exclamation-circle form-control-feedback" ng-show="dataForm.genertionNo.$error.required"></span>
+                            <div ng-messages="dataForm.genertionNo.$dirty && dataForm.genertionNo.$error">
+                                <p class="help-block text-sm" ng-message="required">请填写世代号</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group has-feedback">
+                        <label class="col-lg-4 control-label text-sm">株号</label>
+                        <div class="col-lg-8">
+                            <input type="text" class="form-control input-sm" name="cropsNo" placeholder="株号" ng-model="bd.rowEntity.cropsNo" required>
+                            <span class="fa fa-exclamation-circle form-control-feedback" ng-show="dataForm.cropsNo.$error.required"></span>
+                            <div ng-messages="dataForm.cropsNo.$dirty && dataForm.cropsNo.$error">
+                                <p class="help-block text-sm" ng-message="required">请填写株号</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group has-feedback">
+                        <label class="col-lg-4 control-label text-sm">评价结果</label>
+                        <div class="col-lg-8">
+                            <select class="form-control input-sm" name="useType" ng-options="o.id as o.name for o in ps.bd.selectData.row" ng-model="bd.rowEntity.useType" required>
+                                <option value="">请选择</option>
+                            </select>
+                            <div ng-messages="dataForm.useType.$dirty && dataForm.useType.$error">
+                                <p class="help-block text-sm" ng-message="required">请填写评价结果</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group has-feedback">
+                        <label class="col-lg-4 control-label text-sm">种质用途分类</label>
+                        <div class="col-lg-8">
+                            <select class="form-control input-sm" name="useType" ng-options="o.id as o.name for o in ps.bd.selectData.row" ng-model="bd.rowEntity.useType" required>
+                                <option value="">请选择</option>
+                            </select>
+                            <div ng-messages="dataForm.useType.$dirty && dataForm.useType.$error">
+                                <p class="help-block text-sm" ng-message="required">请选择种质用途分类</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group has-feedback">
+                        <label class="col-lg-4 control-label text-sm">种质用途分组</label>
+                        <div class="col-lg-8">
+                            <select class="form-control input-sm" name="groupId" ng-options="o.id as o.name for o in ps.bd.selectData.groupId" ng-model="bd.rowEntity.groupId" required>
+                                <option value="">请选择</option>
+                            </select>
+                            <div ng-messages="dataForm.groupId.$dirty && dataForm.groupId.$error">
+                                <p class="help-block text-sm" ng-message="required">请选择种质用途分组</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group has-feedback">
+                        <label class="col-lg-4 control-label text-sm">种质价值</label>
+                        <div class="col-lg-8">
+                            <input type="text" class="form-control input-sm" name="gpValue" placeholder="种质价值" ng-model="bd.rowEntity.gpValue" required>
+                            <span class="fa fa-exclamation-circle form-control-feedback" ng-show="dataForm.gpValue.$error.required"></span>
+                            <div ng-messages="dataForm.gpValue.$dirty && dataForm.gpValue.$error">
+                                <p class="help-block text-sm" ng-message="required">请填写种质价值</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group has-feedback">
+                        <label class="col-lg-4 control-label text-sm">种质类型</label>
+                        <div class="col-lg-8">
+                            <select class="form-control input-sm" name="gpType" ng-options="o.id as o.name for o in ps.bd.selectData.row" ng-model="bd.rowEntity.gpType" required>
+                                <option value="">请选择</option>
+                            </select>
+                            <div ng-messages="dataForm.gpType.$dirty && dataForm.gpType.$error">
+                                <p class="help-block text-sm" ng-message="required">请选择种质类型</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group has-feedback">
+                        <label class="col-lg-4 control-label text-sm">种质属性</label>
+                        <div class="col-lg-8">
+                            <select class="form-control input-sm" name="row" ng-options="o.id as o.name for o in ps.bd.selectData.gpAttribute" ng-model="bd.rowEntity.gpAttribute" required>
+                                <option value="">请选择</option>
+                            </select>
+                            <div ng-messages="dataForm.gpAttribute.$dirty && dataForm.gpAttribute.$error">
+                                <p class="help-block text-sm" ng-message="required">请选择评价结果</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group has-feedback">
+                        <label class="col-lg-4 control-label text-sm">数量</label>
+                        <div class="col-lg-8">
+                            <input type="text" class="form-control input-sm" name="name" placeholder="数量" ng-model="bd.rowEntity.areaCode" required>
+                            <span class="fa fa-exclamation-circle form-control-feedback" ng-show="dataForm.name.$error.required"></span>
+                            <div ng-messages="dataForm.name.$dirty && dataForm.name.$error">
+                                <p class="help-block text-sm" ng-message="required">请填写数量</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group has-feedback">
+                        <label class="col-lg-4 control-label text-sm">单位</label>
+                        <div class="col-lg-8">
+                            <select class="form-control input-sm" name="row" ng-options="o.id as o.name for o in ps.bd.selectData.row" ng-model="bd.rowEntity.useType" required>
+                                <option value="">请选择</option>
+                            </select>
+                            <div ng-messages="dataForm.row.$dirty && dataForm.row.$error">
+                                <p class="help-block text-sm" ng-message="required">请选择单位</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group has-feedback">
+                        <label class="col-lg-4 control-label text-sm">存放位置</label>
+                        <div class="col-lg-8">
+                            <input type="text" class="form-control input-sm" name="name" placeholder="存放位置" ng-model="bd.rowEntity.areaCode" required>
+                            <span class="fa fa-exclamation-circle form-control-feedback" ng-show="dataForm.name.$error.required"></span>
+                            <div ng-messages="dataForm.name.$dirty && dataForm.name.$error">
+                                <p class="help-block text-sm" ng-message="required">请填写存放位置</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group has-feedback">
+                        <label class="col-lg-4 control-label text-sm">年份</label>
+                        <div class="col-lg-8">
+                            <input type="text" class="form-control input-sm" name="tie" placeholder="年份" ng-model="bd.rowEntity.tie" required>
+                            <span class="fa fa-exclamation-circle form-control-feedback" ng-show="dataForm.tie.$error.required"></span>
+                            <div ng-messages="dataForm.tie.$dirty && dataForm.tie.$error">
+                                <p class="help-block text-sm" ng-message="required">请填写年份</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group has-feedback">
+                        <label class="col-lg-4 control-label text-sm">小区号</label>
+                        <div class="col-lg-8">
+                            <input type="text" class="form-control input-sm" name="tie" placeholder="小区号" ng-model="bd.rowEntity.tie" required>
+                            <span class="fa fa-exclamation-circle form-control-feedback" ng-show="dataForm.tie.$error.required"></span>
+                            <div ng-messages="dataForm.tie.$dirty && dataForm.tie.$error">
+                                <p class="help-block text-sm" ng-message="required">请填写小区号</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group has-feedback">
+                        <label class="col-lg-4 control-label text-sm">上级材料编码</label>
+                        <div class="col-lg-8">
+                            <input type="text" class="form-control input-sm" name="superiorNo" placeholder="上级材料编码" ng-model="bd.rowEntity.superiorNo" required>
+                            <span class="fa fa-exclamation-circle form-control-feedback" ng-show="dataForm.superiorNo.$error.required"></span>
+                            <div ng-messages="dataForm.superiorNo.$dirty && dataForm.superiorNo.$error">
+                                <p class="help-block text-sm" ng-message="required">请填写上级材料编码</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group has-feedback">
+                        <label class="col-lg-4 control-label text-sm">上级材料名称</label>
+                        <div class="col-lg-8">
+                            <input type="text" class="form-control input-sm" name="superiorName" placeholder="上级材料名称" ng-model="bd.rowEntity.superiorName" required>
+                            <span class="fa fa-exclamation-circle form-control-feedback" ng-show="dataForm.superiorName.$error.required"></span>
+                            <div ng-messages="dataForm.superiorName.$dirty && dataForm.superiorName.$error">
+                                <p class="help-block text-sm" ng-message="required">请填写上级材料名称</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group has-feedback">
+                        <label class="col-lg-4 control-label text-sm">育种家</label>
+                        <div class="col-lg-8">
+                            <input type="text" class="form-control input-sm" name="tie" placeholder="育种家" ng-model="bd.rowEntity.tie" required>
+                            <span class="fa fa-exclamation-circle form-control-feedback" ng-show="dataForm.tie.$error.required"></span>
+                            <div ng-messages="dataForm.tie.$dirty && dataForm.tie.$error">
+                                <p class="help-block text-sm" ng-message="required">请填写育种家</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group has-feedback">
+                        <label class="col-lg-4 control-label text-sm">育种方法</label>
+                        <div class="col-lg-8">
+                            <select class="form-control input-sm" name="breedMethod" ng-options="o.id as o.name for o in ps.bd.selectData.row" ng-model="bd.rowEntity.breedMethod" required>
+                                <option value="">请选择</option>
+                            </select>
+                            <div ng-messages="dataForm.breedMethod.$dirty && dataForm.breedMethod.$error">
+                                <p class="help-block text-sm" ng-message="required">请选择育种方法</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-primary btn-sm" ng-click="bd.ok()" ng-hide="bd.formDisabled" ng-disabled="cropForm.$invalid">确定</button>
+    <button type="button" class="btn btn-info btn-sm" ng-click="bd.edit()" ng-show="bd.formDisabled" ng-disabled="cropForm.$invalid">编辑</button>
+    <button type="button" class="btn btn-default btn-sm" ng-click="bd.cancel()">取消</button>
+</div>

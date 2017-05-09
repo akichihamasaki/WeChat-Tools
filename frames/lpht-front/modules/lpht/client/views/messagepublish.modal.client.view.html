@@ -1,0 +1,116 @@
+<div class="modal-header" ng-switch="mm.modalType">
+  <h4 class="modal-title" ng-switch-when="add">新增</h4>
+  <h4 class="modal-title" ng-switch-when="edit">修改</h4>
+  <h4 class="modal-title" ng-switch-when="view">查看详情</h4>
+</div>
+<div class="modal-body">
+  <form class="form-horizontal form-validation" name="messageForm">
+    <fieldset ng-disabled="mm.formDisabled">
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label class="col-lg-4 control-label text-sm">信息类型</label>
+            <div class="col-lg-8">
+              <select class="form-control input-sm" ng-options="o.code as o.message for o in mm.selectData.infoType" name="infoType" ng-model="mm.rowEntity.infoType" ng-change="mm.changeInfoType()"required>
+                <option value="">请选择</option>
+              </select>
+              <div ng-messages="messageForm.infoType.$dirty && messageForm.infoType.$error">
+                <p class="help-block text-sm" ng-message="required">请选择信息类型</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label class="col-lg-4 control-label text-sm">通知类型</label>
+            <div class="col-lg-8">
+              <select class="form-control input-sm" ng-options="o.code as o.message for o in mm.selectData.noticeType" name="noticeType" ng-model="mm.rowEntity.noticeType" ng-required="mm.rowEntity.infoType === '01'" ng-disabled="mm.rowEntity.infoType !== '01'">
+                <option value="">请选择</option>
+              </select>
+              <div ng-messages="messageForm.noticeType.$dirty && messageForm.noticeType.$error">
+                <p class="help-block text-sm" ng-message="required">请选择通知类型</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="form-group has-feedback">
+            <label class="col-lg-4 control-label text-sm">信息标题</label>
+            <div class="col-lg-8">
+              <input type="text" class="form-control input-sm" name="infoTitle" placeholder="信息标题" ng-model="mm.rowEntity.infoTitle" required>
+              <span class="fa fa-exclamation-circle form-control-feedback" ng-show="messageForm.infoTitle.$error.required"></span>
+              <div ng-messages="messageForm.infoTitle.$dirty && messageForm.infoTitle.$error">
+                <p class="help-block text-sm" ng-message="required">请填写信息标题</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label class="col-lg-4 control-label text-sm">发布对象类型</label>
+            <div class="col-lg-8">
+              <select class="form-control input-sm" ng-options="o.code as o.message for o in mm.selectData.publishObjectType" name="publishObjectType" ng-model="mm.rowEntity.publishObjectType" ng-change="mm.changeShowFlag()" required>
+                <option value="">请选择</option>
+              </select>
+              <div ng-messages="messageForm.publishObjectType.$dirty && messageForm.publishObjectType.$error">
+                <p class="help-block text-sm" ng-message="required">请选择发布对象类型</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="form-group has-feedback">
+            <label class="col-lg-2 control-label text-sm">信息内容</label>
+            <div class="col-lg-10">
+              <textarea class="form-control input-sm" rows="3" name="text" placeholder="请填写信息内容" ng-model="mm.rowEntity.infoContent" required></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="form-group has-feedback">
+            <label class="col-lg-4 control-label text-sm">信息附件</label>
+            <div class="col-lg-8">
+              <input type="text" class="form-control input-sm" placeholder="未选择任何文件" ng-value="mm.rowEntity.attachName" readonly>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="form-group has-feedback">
+            <div class="col-lg-6">
+              <button type="button" class="btn btn-success btn-sm btn-block" ng-model="mm.rowEntity.file" ngf-select="mm.getAttachName()" ngf-keep="false" ngf-multiple="false"><i class="fa fa-file "></i> 选择文件</button>
+            </div>
+          </div>
+        </div>
+        <!--    <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="col-lg-4 control-label text-sm">推送方式</label>
+                        <div class="col-lg-8">
+                            <ui-select multiple name="pushType" ng-model="mm.rowEntity.pushType" close-on-select="false" required >
+                                <ui-select-match><small>{{$item.type}}</small></ui-select-match>
+                                <ui-select-choices repeat="pt in mm.pushType">
+                                    <small>{{pt.type}}</small>
+                                </ui-select-choices>
+                            </ui-select>
+                            <div ng-messages="messageForm.pushType.$dirty && messageForm.pushType.$error">
+                                <p class="help-block text-sm" ng-message="required">请选择推送方式</p>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+      </div>
+    </fieldset>
+  </form>
+  <div class="pos-rlt" ng-show="mm.showFlag" ng-disabled="true" ui-grid="gm.gridOptions" ui-grid-pagination ui-grid-selection ui-grid-resize-columns ui-grid-auto-resize>
+  </div>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-primary btn-sm" ng-click="mm.ok()" ng-hide="mm.formDisabled" ng-disabled="messageForm.$invalid">确定</button>
+  <button type="button" class="btn btn-info btn-sm" ng-click="mm.edit()" ng-show="mm.formDisabled" ng-disabled="mm.editDisabled">编辑</button>
+  <button type="button" class="btn btn-default btn-sm" ng-click="mm.cancel()">取消</button>
+</div>

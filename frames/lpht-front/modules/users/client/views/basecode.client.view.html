@@ -1,0 +1,145 @@
+<div class="m-t-md" ng-controller="BaseCodeController">
+    <div class="col-md-6">
+        <div class="row">
+            <div class="col-lg-8 col-md-6 col-sm-6">
+                <input class="form-control input-sm" placeholder="分类名称" ng-model="baseCode.typeName">
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <button type="button" class="btn btn-default btn-sm m-r-sm" ng-click="baseCode.searchMain()"><i class="fa fa-search"></i> 搜索</button>
+                <button type="button" class="btn btn-default btn-sm m-r-sm" ng-click="baseCode.resetMain()"><i class="fa fa-refresh"></i> 重置</button>
+            </div>
+        </div>
+        <div class="table-responsive m-t-sm ">
+            <div class="pos-rlt" ui-grid="baseCode.gridOptionsLeft" ui-grid-pagination ui-grid-selection ui-grid-exporter></div>
+        </div>
+        <div class="panel panel-default m-t-sm">
+            <div class="panel-heading"><strong>字典分类详情</strong></div>
+            <div class="panel-body">
+                <form name="typeForm" class="form-horizontal form-validation" novalidate>
+                    <div class="col-lg-6 col-md-12">
+                        <div class="form-group">
+                            <label class="col-sm-4 timeline control-label">分类编码:</label>
+                            <div class="col-sm-8">
+                                <input class="form-control input-sm" required ng-model="baseCode.typeCodeInfo.typeCode" ng-disabled="baseCode.typeCodeMainPK" maxlength="10">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-12">
+                        <div class="form-group required">
+                            <label class="col-md-4 col-sm-4 timeline control-label">分类名称:</label>
+                            <div class="col-md-8 col-sm-8">
+                                <input class="form-control input-sm" required ng-model="baseCode.typeCodeInfo.typeName" ng-disabled="baseCode.typeCodeMain">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-12">
+                        <div class="form-group required">
+                            <label class="col-md-4 col-sm-4 timeline control-label">顺序:</label>
+                            <div class="col-md-8 col-sm-8">
+                                <input type="number" class="form-control input-sm" required ng-model="baseCode.typeCodeInfo.orderNo" ng-disabled="baseCode.typeCodeMain">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-12">
+                        <div class="form-group required">
+                            <label class="col-md-4 col-sm-4 timeline control-label">备注:</label>
+                            <div class="col-md-8 col-sm-8">
+                                <input class="form-control input-sm" ng-model="baseCode.typeCodeInfo.remark" ng-disabled="baseCode.typeCodeMain">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="panel-footer">
+                <div class="text-right">
+                    <div ng-show="baseCode.buttonOpera1">
+                        <button type="button" class="btn btn-success btn-sm" ng-click="baseCode.addType()"><i class="fa fa-plus-circle"></i> 新增</button>
+                        <button type="button" class="btn btn-info btn-sm" ng-click="baseCode.editType()" ng-disabled="baseCode.editTypeDisabled"><i class="fa fa-pencil"></i> 修改</button>
+                        <button type="button" class="btn  btn-danger btn-sm" ng-click="baseCode.deleteType()" ng-disabled="baseCode.editTypeDisabled"><i class="fa fa-times-circle"></i> 删除</button>
+                    </div>
+                    <div ng-show="baseCode.buttonShow1">
+                        <button type="submit" class="btn btn-primary btn-sm" ng-click="baseCode.typeSubmit()" ng-disabled="typeForm.$invalid">
+                            确定
+                        </button>
+                        <button type="submit" class="btn  btn-default btn-sm" ng-click="baseCode.typeCancel()">
+                            取消
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="row required">
+            <div class="col-lg-8 col-md-6 col-sm-6">
+                <input class="form-control input-sm" placeholder="字典名称" ng-model="baseCode.message">
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <button type="button" class="btn btn-default btn-sm m-r-sm" ng-click="baseCode.search()" autofocus><i class="fa fa-search"></i> 搜索</button>
+                <button type="button" class="btn btn-default btn-sm m-r-sm" ng-click="baseCode.reset()"><i class="fa fa-refresh"></i> 重置</button>
+            </div>
+        </div>
+        <div class="table-responsive m-t-sm">
+            <div class="pos-rlt" ui-grid="gridOptionsRight" ui-grid-pagination ui-grid-selection ui-grid-exporter></div>
+        </div>
+        <div class="panel panel-default m-t-sm">
+            <div class="panel-heading"><strong>字典详情</strong></div>
+            <div class="panel-body">
+                <form name="form" class="form-horizontal form-validation">
+                    <div class="col-lg-6 col-md-12 ">
+                        <div class="form-group">
+                            <label class="col-sm-4 timeline control-label">字典编码:</label>
+                            <div class="col-md-8 col-sm-8">
+                                <input class="form-control input-sm" required ng-model="codeInfo.code" ng-disabled="baseCode.typeCodePK" maxlength="10">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-12">
+                        <div class="form-group required">
+                            <label class="col-sm-4 timeline control-label">字典名称:</label>
+                            <div class="col-sm-8">
+                                <input class="form-control input-sm" required ng-model="codeInfo.message" ng-disabled="baseCode.typeCode">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-12">
+                        <div class="form-group required">
+                            <label class="col-sm-4 timeline control-label">顺序:</label>
+                            <div class="col-sm-8">
+                                <input class="form-control input-sm" required ng-model="codeInfo.orderNo" ng-disabled="baseCode.typeCode">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-12">
+                        <div class="form-group required">
+                            <label class="col-md-4 col-sm-4 timeline control-label">备注:</label>
+                            <div class="col-md-8 col-sm-8">
+                                <input class="form-control input-sm" ng-model="codeInfo.remark" ng-disabled="baseCode.typeCode">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="panel-footer">
+                <div class="text-right">
+                    <div ng-show="baseCode.buttonOpera2">
+                        <button type="button" class="btn btn-success btn-sm" ng-click="baseCode.addCode()" ng-disabled="baseCode.addCodeDisabled"><i class="fa fa-plus-circle"></i> 新增</button>
+                        <button type="button" class="btn btn-info btn-sm" ng-click="baseCode.editCode()" ng-disabled="baseCode.editCodeDisabled"><i class="fa fa-pencil"></i> 修改</button>
+                        <button type="button" class="btn  btn-danger btn-sm" ng-click="baseCode.deleteCode()" ng-disabled="baseCode.editCodeDisabled"><i class="fa fa-times-circle"></i> 删除</button>
+                    </div>
+                    <div ng-show="baseCode.buttonShow2">
+                        <button type="button" class="btn btn-primary btn-sm" ng-click="baseCode.codeSubmit()" ng-disabled="form.$invalid">
+                            确定
+                        </button>
+                        <button type="button" class="btn btn-default btn-sm" ng-click="baseCode.codeCancel()">
+                            取消
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/ng-template" id="warningModalContent.html">
+        <div ng-include="'modules/users/client/views/modal.warning.client.view.html'"></div>
+    </script>
+</div>

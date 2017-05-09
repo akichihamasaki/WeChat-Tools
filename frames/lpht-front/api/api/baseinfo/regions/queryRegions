@@ -1,0 +1,21 @@
+{
+	"content": [
+		{
+			"regionsName": "12",
+			"regionsCode": "34",
+			"regionsDist": "56",
+			"regionsDesc": "78",
+			"coordinates": "90",
+			"remark": "00"
+		},
+		{
+			"regionsName": "22",
+			"regionsCode": "24",
+			"regionsDist": "26",
+			"regionsDesc": "28",
+			"coordinates": "20",
+			"remark": "20"
+		}
+	],
+	"totalElements": 2
+}

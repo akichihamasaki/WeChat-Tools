@@ -1,0 +1,116 @@
+{
+  "experimentPointNature": [
+  	{
+      "id": "1",
+      "name": "自建"
+    },
+    {
+      "id": "2",
+      "name": "合作共建"
+    }
+  ],
+  "experimentTypes": [
+    {
+      "id": "1",
+      "name": "田间测试"
+    },
+    {
+      "id": "2",
+      "name": "特性测试"
+    }
+  ],
+  "experimentPhase": [
+    {
+      "id": "1",
+      "name": "单点"
+    },
+    {
+      "id": "2",
+      "name": "多点"
+    }
+  ],
+  "experimentProject": [
+    {
+      "id": "1",
+      "name": "播种期",
+      "type": "田间",
+      "stage": "单点试验",
+      "class": "大田作物"
+    }, 
+    {
+      "id": "2",
+      "name": "移栽期",
+      "type": "田间",
+      "stage": "多点试验",
+      "class": "大田作物"
+    }, 
+    {
+      "id": "3",
+      "name": "始穗期",
+      "type": "特性",
+      "stage": "单点试验",
+      "class": "大田作物"
+    }, 
+    {
+      "id": "4",
+      "name": "齐穗期",
+      "type": "特性",
+      "stage": "区试试验",
+      "class": "大田作物"
+    }, 
+    {
+      "id": "5",
+      "name": "成熟期",
+      "type": "田间",
+      "stage": "生产试验",
+      "class": "大田作物"
+    }, 
+    {
+      "id": "6",
+      "name": "叶瘟",
+      "type": "特性",
+      "stage": "区试试验",
+      "class": "大田作物"
+    }
+  ],
+  "riceArea": [
+    {
+      "id": "1",
+      "name": "华南"
+    },
+    {
+      "id": "2",
+      "name": "洞庭湖稻区"
+    }
+  ],
+  "cooperationState": [
+    {
+      "id": "1",
+      "name": "进行中"
+    },
+    {
+      "id": "2",
+      "name": "终止"
+    }
+  ],
+  "ecotope": [
+    {
+      "id": "1",
+      "name": "长江中下游"
+    },
+    {
+      "id": "2",
+      "name": "东北大平原"
+    }
+  ],
+  "isPepresentative": [
+    {
+      "id": "1",
+      "name": "是"
+    },
+    {
+      "id": "0",
+      "name": "否"
+    }
+  ]
+}

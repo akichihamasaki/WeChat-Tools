@@ -1,0 +1,33 @@
+<div class="modal-header">
+  <h4 class="modal-title">货柜管理</h4>
+</div>
+<div class="modal-body">
+  <form class="form-horizontal form-validation" name="dataForm">
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="form-group has-feedback">
+          <label class="col-lg-4 control-label text-sm">货柜名称</label>
+          <div class="col-lg-8">
+            <input type="text" class="form-control input-sm" name="cabinetName" placeholder="货柜名称" ng-model="fm.cabinetItem.cabinetName" required>
+            <span class="fa fa-exclamation-circle form-control-feedback" ng-show="dataForm.cabinetName.$error.required"></span>
+            <div ng-messages="dataForm.cabinetName.$dirty && dataForm.cabinetName.$error">
+              <p class="help-block text-sm" ng-message = "required">请填写货柜名称</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="form-group">
+          <label class="col-lg-4 control-label text-sm">描述</label>
+          <div class="col-lg-8">
+            <input type="text" class="form-control input-sm" name="remark" placeholder="描述" ng-model="fm.cabinetItem.remark">
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-primary btn-sm" ng-click="fm.ok()" ng-disabled="dataForm.$invalid">确定</button>
+  <button type="button" class="btn btn-default btn-sm" ng-click="fm.cancel()">取消</button>
+</div>

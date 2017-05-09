@@ -1,0 +1,46 @@
+<toaster-container toaster-options="{'close-button': true, 'tap-to-dismiss': false, 'toaster-id': 1}"></toaster-container>
+<div class="wrapper-md" ng-controller="CropMaturityCtrl" ui-jq="sortable" ui-options="{items:'.m-b-md', handle:'.panel-heading', connectWith:'.wrapper-md'}">
+  <div class="panel panel-default m-b-md">
+    <div class="panel-heading font-bold">查询条件</div>
+    <div class="panel-body">
+      <form class="form-horizontal">
+        <div class="row">
+          <div class="col-lg-3 col-sm-6">
+            <div class="form-group">
+              <label class="col-lg-6 control-label text-sm">熟期名称</label>
+              <div class="col-lg-6">
+                <input type="text"  class=" form-control input-sm" ng-model="vm.searchData.name"  placeholder="熟期名称">
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6 ">
+            <div class="form-group ">
+                <label class="control-label text-sm col-lg-6" >描述</label>
+                <div class="col-lg-6">
+                  <input type="text"  class="form-control input-sm" ng-model="vm.searchData.no" placeholder="描述">
+                </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="panel-footer">
+      <div class="text-right">
+        <button type="button" class="btn btn-default btn-sm m-r-sm" ng-click="vm.search()" autofocus><i class="fa fa-search"></i> 查询</button>
+        <button type="button" class="btn btn-default btn-sm m-r-sm" ng-click="vm.reset()"><i class="fa fa-refresh"></i> 重置</button>
+      </div>
+    </div>
+  </div>
+  <div class="m-b-md">
+    <div class="btn-group">
+      <button type="button" class="btn btn-success btn-sm" ng-click="vm.open('add')"><i class="fa fa-plus-circle"></i> 新增</button>
+      <button type="button" class="btn btn-danger btn-sm" ng-click="vm.openDialog()" ng-disabled="vm.disableDelete"><i class="fa fa-times-circle"></i> 删除</button>
+    </div>
+  </div>
+  <div class="m-b-md">
+    <div class="pos-rlt" ui-grid="vm.gridOptions" ui-grid-pagination ui-grid-selection ui-grid-resize-columns ui-grid-auto-resize ui-grid-exporter></div>
+  </div>
+  <script type="text/ng-template" id="cropMaturityModal">
+    <div ng-include="'modules/rice/client/views/cropmaturity.modal.client.view.html'"></div>
+  </script>
+</div>

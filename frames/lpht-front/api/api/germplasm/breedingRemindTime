@@ -1,0 +1,32 @@
+[
+	{
+		"id": "1",
+		"cropType": "玉米",
+		"roomType": "长期库",
+		"signType": ">=",
+		"amount": "20",
+		"unit": 1,
+		"unitText": "月",
+		"remark": "大于等于条件时，提醒高于繁种警戒值"
+	},
+	{
+		"id": "2",
+		"cropType": "黄瓜",
+		"roomType": "长期库",
+		"signType": ">=",
+		"amount": "100",
+		"unit": 1,
+		"unitText": "月",
+		"remark": "大于等于条件时，提醒高于繁种警戒值"
+	},
+	{
+		"id": "3",
+		"cropType": "水稻",
+		"roomType": "长期库",
+		"signType": ">=",
+		"amount": "0",
+		"unit": 1,
+		"unitText": "月",
+		"remark": "大于等于条件时，提醒高于繁种警戒值"
+	}
+]

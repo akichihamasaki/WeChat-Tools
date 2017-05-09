@@ -1,0 +1,19 @@
+{
+	"content": [
+		{
+			"subtypesName": "籼稻",
+			"subtypesCode": "001",
+			"serviceType": "1",
+			"serviceTypeStr": "大田作物",
+			"remark": "籼稻，栽培稻的一个亚种，高100厘米左右，叶色淡绿"
+		},
+		{
+			"subtypesName": "粳稻",
+			"subtypesCode": "002",
+			"serviceType": "2",
+			"serviceTypeStr": "小田作物",
+			"remark": "粳稻，稻的一种，茎杆较矮，叶子较窄，深绿色"
+		}
+	],
+	"totalElements": 2
+}

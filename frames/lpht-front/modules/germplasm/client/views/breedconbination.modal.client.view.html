@@ -1,0 +1,228 @@
+<div class="modal-header" ng-switch="pop.modalType">
+    <h4 class="modal-title" ng-switch-when="add">新增</h4>
+    <h4 class="modal-title" ng-switch-when="edit">修改</h4>
+    <h4 class="modal-title" ng-switch-when="view">查看详情</h4>
+</div>
+<div class="modal-body">
+    <form class="form-horizontal" name="dataForm">
+        <fieldset ng-disabled="pop.formDisabled">
+            <div class="row">
+              <div class=" col-sm-6 ">
+                  <div class="form-group has-feedback">
+                    <label class="control-label text-sm col-lg-4" >作物</label>
+                    <div class="col-lg-8">
+                      <select class="form-control input-sm" ng-model="pop.rowEntity.experimentstage">
+                        <option value="">请选择</option>
+                        <option value="玉米">玉米</option>
+                        <option value="黄瓜">黄瓜</option>
+                        <option value="水稻">水稻</option>
+                      </select>
+                    </div>
+                  </div>
+              </div>
+              <div class=" col-sm-6 ">
+                  <div class="form-group has-feedback">
+                      <label class="control-label text-sm col-lg-4" >品种名称</label>
+                      <div class="col-lg-8">
+                        <input type="text"  class="form-control input-sm" ng-model="pop.rowEntity.breedName" placeholder="品种名称">
+                      </div>
+                  </div>
+              </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="col-lg-4 control-label text-sm">母本代号</label>
+                        <div class="col-lg-8">
+                            <input type="text" class="form-control input-sm" name="tie" placeholder="母本代号" ng-model="pop.rowEntity.motherCode" required>
+                            <div ng-messages="dataForm.color.$dirty && dataForm.color.$error">
+                                <p class="help-block text-sm" ng-message="required">请选择轴色</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="col-lg-4 control-label text-sm">父本代号</label>
+                        <div class="col-lg-8">
+                            <input type="text" class="form-control input-sm" name="tie" placeholder="父本代号" ng-model="pop.rowEntity.fatherCode" required>
+                            <div ng-messages="dataForm.color.$dirty && dataForm.color.$error">
+                                <p class="help-block text-sm" ng-message="required">请选择轴色</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class=" col-sm-6 ">
+                  <div class="form-group has-feedback">
+                    <label class="control-label text-sm col-lg-4" >试验阶段</label>
+                    <div class="col-lg-8">
+                      <select class="form-control input-sm" ng-model="pop.rowEntity.experimentstage">
+                        <option value="">请选择</option>
+                        <option value="初级试验">初级试验</option>
+                        <option value="中级试验">中级试验</option>
+                        <option value="生态试验">生态试验</option>
+                        <option value="产比试验">产比试验</option>
+                        <option value="区域试验">区域试验</option>
+                        <option value="生产试验">生产试验</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class=" col-sm-6 ">
+                  <div class="form-group has-feedback">
+                      <label class="control-label text-sm col-lg-4" >试验结果</label>
+                      <div class="col-lg-8">
+                        <select class="form-control input-sm" ng-model="pop.rowEntity.experimentstage">
+                          <option value="">请选择</option>
+                          <option value="淘汰">淘汰</option>
+                          <option value="晋级">晋级</option>
+                          <option value="国审通过">国审通过</option>
+                          <option value="国审不通过">国审不通过</option>
+                        </select>
+                      </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                  <div class="col-sm-6">
+                      <div class="form-group">
+                          <label class="col-lg-4 control-label text-sm">种质用途分类</label>
+                          <div class="col-lg-8">
+                              <input type="text" class="form-control input-sm" name="tie" placeholder="种质用途分类" ng-model="pop.rowEntity.growUseType" required>
+                              <div ng-messages="dataForm.seedType.$dirty && dataForm.seedType.$error">
+                                  <p class="help-block text-sm" ng-message="required">种质用途分类</p>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-sm-6">
+                      <div class="form-group">
+                          <label class="col-lg-4 control-label text-sm">种质用途小组</label>
+                          <div class="col-lg-8">
+                              <input type="text" class="form-control input-sm" name="tie" placeholder="种质用途小组" ng-model="pop.rowEntity.growUseGroup" required>
+                              <div ng-messages="dataForm.assess.$dirty && dataForm.assess.$error">
+                                  <p class="help-block text-sm" ng-message="required">种质用途小组</p>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group has-feedback">
+                        <label class="col-lg-4 control-label text-sm">品种类别</label>
+                        <div class="col-lg-8">
+                            <input type="text" class="form-control input-sm" name="name" placeholder="品种类别" ng-model="pop.rowEntity.growType" required>
+                            <span class="fa fa-exclamation-circle form-control-feedback" ng-show="dataForm.name.$error.required"></span>
+                            <div ng-messages="dataForm.name.$dirty && dataForm.name.$error">
+                                <p class="help-block text-sm" ng-message="required">请填写品种类别</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="col-lg-4 control-label text-sm">育种家</label>
+                        <div class="col-lg-8">
+                            <input type="text" class="form-control input-sm" name="tie" placeholder="育种家" ng-model="pop.rowEntity.row" required>
+                            <div ng-messages="dataForm.row.$dirty && dataForm.row.$error">
+                                <p class="help-block text-sm" ng-message="required">请选择穗行数</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+              </div>
+              <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group has-feedback">
+                        <label class="col-lg-4 control-label text-sm">数量</label>
+                        <div class="col-lg-8">
+                            <input type="text" class="form-control input-sm" name="stocks" placeholder="数量" ng-model="pop.rowEntity.count">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group has-feedback">
+                        <label class="col-lg-4 control-label text-sm">单位</label>
+                        <div class="col-lg-8">
+                            <input type="text" class="form-control input-sm" name="address" placeholder="单位" ng-model="pop.rowEntity.unit">
+                        </div>
+                    </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="col-lg-4 control-label text-sm">组合年度</label>
+                        <div class="col-lg-8">
+                            <input type="text" class="form-control input-sm" name="tie" placeholder="组合年度" ng-model="pop.rowEntity.combineYear" required>
+                            <div ng-messages="dataForm.seedType.$dirty && dataForm.seedType.$error">
+                                <p class="help-block text-sm" ng-message="required">组合年度</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="col-lg-4 control-label text-sm">育成年度</label>
+                        <div class="col-lg-8">
+                            <input type="text" class="form-control input-sm" name="tie" placeholder="育成年度" ng-model="pop.rowEntity.matureYear" required>
+                            <div ng-messages="dataForm.assess.$dirty && dataForm.assess.$error">
+                                <p class="help-block text-sm" ng-message="required">育成年度</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="col-lg-4 control-label text-sm">审定年度</label>
+                        <div class="col-lg-8">
+                            <input type="text" class="form-control input-sm" name="tie" placeholder="审定年度" ng-model="pop.rowEntity.checkYear" required>
+                            <div ng-messages="dataForm.seedType.$dirty && dataForm.seedType.$error">
+                                <p class="help-block text-sm" ng-message="required">请选择籽粒类型</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="col-lg-4 control-label text-sm">选育单位</label>
+                        <div class="col-lg-8">
+                            <input type="text" class="form-control input-sm" name="tie" placeholder="选育单位" ng-model="pop.rowEntity.selectedOrg" required>
+                            <div ng-messages="dataForm.assess.$dirty && dataForm.assess.$error">
+                                <p class="help-block text-sm" ng-message="required">请选择田间综合评价</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class=" col-sm-12 ">
+                  <div class="form-group has-feedback">
+                      <label class="control-label text-sm col-lg-2" >存放位置</label>
+                      <div class="col-lg-10">
+                        <select class="form-control input-sm" ng-model="pop.rowEntity.experimentstage">
+                          <option value="">请选择</option>
+                          <option value="湖南">湖南</option>
+                          <option value="安徽">安徽</option>
+                          <option value="湖北">湖北</option>
+
+                        </select>
+                      </div>
+                  </div>
+                </div>
+              </div>
+        </fieldset>
+    </form>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-primary btn-sm" ng-click="pop.ok()" ng-hide="pop.formDisabled" ng-disabled="dataForm.$invalid">确定</button>
+    <button type="button" class="btn btn-info btn-sm" ng-click="pop.edit()" ng-show="pop.formDisabled" >编辑</button>
+    <button type="button" class="btn btn-default btn-sm" ng-click="pop.cancel()">取消</button>
+</div>

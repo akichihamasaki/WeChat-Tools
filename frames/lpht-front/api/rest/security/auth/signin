@@ -1,0 +1,26 @@
+{
+    "id": "0",
+    "username": "admin",
+    "password": null,
+    "authenticated": true,
+    "employee": {
+        "nodeId": "3",
+        "parentId": "01",
+        "version": 0,
+        "nodeCode": "001000001",
+        "nodeName": "人员",
+        "shortName": null,
+        "status": null,
+        "orderNo": 1,
+        "children": [],
+        "sex": null,
+        "cardId": null,
+        "empphn": null,
+        "birthDate": null,
+        "nationality": null,
+        "marriage": null,
+        "political": null,
+        "treeLevel": 0,
+        "nodeType": "03"
+    }
+}

@@ -1,0 +1,78 @@
+<div class="modal-header" ng-switch="vm.modalType">
+    <h4 class="modal-title" ng-switch-when="add">新增</h4>
+    <h4 class="modal-title" ng-switch-when="edit">修改</h4>
+    <h4 class="modal-title" ng-switch-when="view">查看详情</h4>
+</div>
+<div class="modal-body">
+    <form class="form-horizontal" name="ecotpeForm">
+        <fieldset ng-disabled="vm.formDisabled">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group has-feedback form-validation">
+                        <label class="col-lg-4 control-label text-sm">生态区名称</label>
+                        <div class="col-lg-8">
+                            <input type="text" class="form-control input-sm" name="name" placeholder="生态区名称" ng-model="vm.rowEntity.regionsName" required>
+                            <span class="fa fa-exclamation-circle form-control-feedback" ng-show="ecotpeForm.name.$error.required"></span>
+                            <div ng-messages="ecotpeForm.name.$dirty && ecotpeForm.name.$error">
+                                <p class="help-block text-sm" ng-message="required">请填写生态区名称</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group has-feedback form-validation">
+                        <label class="col-lg-4 control-label text-sm">生态区编码</label>
+                        <div class="col-lg-8">
+                            <input type="text" class="form-control input-sm" name="code" placeholder="生态区编码" ng-model="vm.rowEntity.regionsCode" required>
+                            <span class="fa fa-exclamation-circle form-control-feedback" ng-show="ecotpeForm.code.$error.required"></span>
+                            <div ng-messages="ecotpeForm.code.$dirty && ecotpeForm.code.$error">
+                                <p class="help-block text-sm" ng-message="required">请填写生态区编码</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group has-feedback">
+                        <label class="col-lg-4 control-label text-sm">生态区分布</label>
+                        <div class="col-lg-8">
+                            <input type="text" class="form-control input-sm" name="distribute" placeholder="生态区分布" ng-model="vm.rowEntity.regionsDist" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group has-feedback">
+                        <label class="col-lg-4 control-label text-sm">生态区描述</label>
+                        <div class="col-lg-8">
+                            <input type="text" class="form-control input-sm" name="description" placeholder="生态区描述" ng-model="vm.rowEntity.regionsDesc" required>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group has-feedback form-validation">
+                        <label class="col-lg-4 control-label text-sm">GIS地理信息</label>
+                        <div class="col-lg-8">
+                            <input type="text" class="form-control input-sm" name="GIS" placeholder="GIS地理信息" ng-model="vm.rowEntity.coordinates">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="col-lg-4 control-label text-sm">备注</label>
+                        <div class="col-lg-8">
+                            <input type="text" class="form-control input-sm" placeholder="备注" ng-model="vm.rowEntity.remark">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-primary btn-sm" ng-click="vm.ok()" ng-hide="vm.formDisabled" ng-disabled="ecotpeForm.$invalid">确定</button>
+    <button type="button" class="btn btn-info btn-sm" ng-click="vm.edit()" ng-show="vm.formDisabled" ng-disabled="ecotpeForm.$invalid">编辑</button>
+    <button type="button" class="btn btn-default btn-sm" ng-click="vm.cancel()">取消</button>
+</div>

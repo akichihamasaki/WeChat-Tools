@@ -1,0 +1,144 @@
+{
+  "content": [
+    {
+      "subtypesId": "1",
+      "subtypesName": "籼稻",
+      "subtypesCode": "001",
+      "serviceType": "1",
+      "remark": "籼稻，栽培稻的一个亚种，高100厘米左右，叶色淡绿"
+    },
+    {
+      "subtypesId": "2",
+      "subtypesName": "粳稻",
+      "subtypesCode": "002",
+      "serviceType": "2",
+      "remark": "粳稻，稻的一种，茎杆较矮，叶子较窄，深绿色"
+    },
+    {
+      "subtypesId": "3",
+      "subtypesName": "粳稻",
+      "subtypesCode": "003",
+      "serviceType": "1",
+      "remark": "粳稻，稻的一种，茎杆较矮，叶子较窄，深绿色"
+    },
+    {
+      "subtypesId": "4",
+      "subtypesName": "粳稻",
+      "subtypesCode": "004",
+      "serviceType": "2",
+      "remark": "粳稻，稻的一种，茎杆较矮，叶子较窄，深绿色"
+    },
+    {
+      "subtypesId": "5",
+      "subtypesName": "粳稻",
+      "subtypesCode": "005",
+      "serviceType": "1",
+      "remark": "粳稻，稻的一种，茎杆较矮，叶子较窄，深绿色"
+    },
+    {
+      "subtypesId": "6",
+      "subtypesName": "粳稻",
+      "subtypesCode": "006",
+      "serviceType": "2",
+      "remark": "粳稻，稻的一种，茎杆较矮，叶子较窄，深绿色"
+    },
+    {
+      "subtypesId": "7",
+      "subtypesName": "粳稻",
+      "subtypesCode": "007",
+      "serviceType": "1",
+      "remark": "粳稻，稻的一种，茎杆较矮，叶子较窄，深绿色"
+    },
+    {
+      "subtypesId": "8",
+      "subtypesName": "粳稻",
+      "subtypesCode": "008",
+      "serviceType": "2",
+      "remark": "粳稻，稻的一种，茎杆较矮，叶子较窄，深绿色"
+    },
+    {
+      "subtypesId": "9",
+      "subtypesName": "粳稻",
+      "subtypesCode": "009",
+      "serviceType": "1",
+      "remark": "粳稻，稻的一种，茎杆较矮，叶子较窄，深绿色"
+    },
+    {
+      "subtypesId": "10",
+      "subtypesName": "粳稻",
+      "subtypesCode": "010",
+      "serviceType": "2",
+      "remark": "粳稻，稻的一种，茎杆较矮，叶子较窄，深绿色"
+    },
+    {
+      "subtypesId": "11",
+      "subtypesName": "粳稻",
+      "subtypesCode": "011",
+      "serviceType": "1",
+      "remark": "粳稻，稻的一种，茎杆较矮，叶子较窄，深绿色"
+    },
+    {
+      "subtypesId": "12",
+      "subtypesName": "粳稻",
+      "subtypesCode": "012",
+      "serviceType": "2",
+      "remark": "粳稻，稻的一种，茎杆较矮，叶子较窄，深绿色"
+    },
+    {
+      "subtypesId": "13",
+      "subtypesName": "粳稻",
+      "subtypesCode": "013",
+      "serviceType": "1",
+      "remark": "粳稻，稻的一种，茎杆较矮，叶子较窄，深绿色"
+    },
+    {
+      "subtypesId": "14",
+      "subtypesName": "粳稻",
+      "subtypesCode": "014",
+      "serviceType": "2",
+      "remark": "粳稻，稻的一种，茎杆较矮，叶子较窄，深绿色"
+    },
+    {
+      "subtypesId": "15",
+      "subtypesName": "粳稻",
+      "subtypesCode": "015",
+      "serviceType": "1",
+      "remark": "粳稻，稻的一种，茎杆较矮，叶子较窄，深绿色"
+    },
+    {
+      "subtypesId": "16",
+      "subtypesName": "粳稻",
+      "subtypesCode": "016",
+      "serviceType": "2",
+      "remark": "粳稻，稻的一种，茎杆较矮，叶子较窄，深绿色"
+    },
+    {
+      "subtypesId": "17",
+      "subtypesName": "粳稻",
+      "subtypesCode": "017",
+      "serviceType": "1",
+      "remark": "粳稻，稻的一种，茎杆较矮，叶子较窄，深绿色"
+    },
+    {
+      "subtypesId": "18",
+      "subtypesName": "粳稻",
+      "subtypesCode": "018",
+      "serviceType": "2",
+      "remark": "粳稻，稻的一种，茎杆较矮，叶子较窄，深绿色"
+    },
+    {
+      "subtypesId": "19",
+      "subtypesName": "粳稻",
+      "subtypesCode": "019",
+      "serviceType": "1",
+      "remark": "粳稻，稻的一种，茎杆较矮，叶子较窄，深绿色"
+    },
+    {
+      "subtypesId": "20",
+      "subtypesName": "粳稻",
+      "subtypesCode": "020",
+      "serviceType": "2",
+      "remark": "粳稻，稻的一种，茎杆较矮，叶子较窄，深绿色"
+    }
+  ]
+}

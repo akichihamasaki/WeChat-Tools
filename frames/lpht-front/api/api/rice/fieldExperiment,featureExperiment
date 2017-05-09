@@ -1,0 +1,92 @@
+{
+  "fieldExperiment": [
+    {
+      "id": "1",
+      "name": "播种",
+      "state": "1",
+      "percent": "25"
+    },
+    {
+      "id": "2",
+      "name": "出苗",
+      "state": "1",
+      "percent": "50"
+    },
+    {
+      "id": "3",
+      "name": "分蘖",
+      "state": "2",
+      "percent": "100"
+    },
+    {
+      "id": "4",
+      "name": "始穗期",
+      "state": "3",
+      "percent": "75"
+    },
+    {
+      "id": "5",
+      "name": "齐穗期",
+      "state": "3",
+      "percent": "25"
+    },
+    {
+      "id": "6",
+      "name": "成熟期",
+      "state": "3",
+      "percent": "80"
+    }
+  ],
+  "featureExperiment": [
+    {
+      "id": "1",
+      "name": "稻瘟病",
+      "state": "1"
+    },
+    {
+      "id": "2",
+      "name": "白叶枯病",
+      "state": "2"
+    },
+    {
+      "id": "3",
+      "name": "纯度",
+      "state": "3"
+    },
+    {
+      "id": "4",
+      "name": "耐冷性",
+      "state": "3"
+    },
+    {
+      "id": "5",
+      "name": "耐热性",
+      "state": "2"
+    },
+    {
+      "id": "6",
+      "name": "条纹叶枯病",
+      "state": "3"
+    },
+    {
+      "id": "7",
+      "name": "稻飞虱",
+      "state": "3"
+    },
+    {
+      "id": "8",
+      "name": "米质",
+      "state": "3"
+    },
+    {
+      "id": "9",
+      "name": "DNA指纹",
+      "state": "3"
+    },
+    {
+      "id": "10",
+      "name": "抗倒伏",
+      "state": "2"
+    }
+  ]
+}

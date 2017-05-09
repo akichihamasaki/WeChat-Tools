@@ -1,0 +1,29 @@
+<div class="modal-header">
+  <h4 class="modal-title">{{fm.flowItem.name}}</h4>
+</div>
+<div class="modal-body">
+  <form class="form-horizontal form-validation" name="dataForm">
+    <div class="form-group has-feedback" ng-repeat="item in fm.formItem">
+      <label class="col-lg-2 control-label text-sm">{{item.text}}</label>
+      <div class="col-lg-10" ng-switch="item.element">
+        <input type="{{item.type}}" class="form-control input-sm" placeholder="{{item.text}}" name="{{item.name}}" ng-switch-when="input" ng-model="item.value" ng-required="item.required" ng-minlength="item.minlength" ng-maxlength="item.maxlength">
+        <select class="form-control input-sm" name="{{item.name}}" ng-switch-when="select" ng-options="o.id as o.name for o in item.options" ng-model="item.value" ng-required="item.required">
+          <option value="">请选择</option>
+        </select>
+        <span class="fa fa-exclamation-circle form-control-feedback" ng-show="dataForm.{{item.name}}.$error.required"></span>
+        <!-- <div ng-messages="dataForm.{{item.name}}.$dirty && dataForm.{{item.name}}.$error">
+          <p class="help-block text-sm" ng-message="required">请填写品种编码</p>
+          <p class="help-block text-sm" ng-message="minlength">品种编码长度不能小于3</p>
+          <p class="help-block text-sm" ng-message="maxlength">品种编码长度不能大于8</p>
+        </div> -->
+        <p class="help-block text-sm" ng-show="dataForm.{{item.name}}.$dirty && dataForm.{{item.name}}.$error.required">请填写该字段</p>
+        <p class="help-block text-sm" ng-show="dataForm.{{item.name}}.$dirty && dataForm.{{item.name}}.$error.minlength">最小长度超出范围</p>
+        <p class="help-block text-sm" ng-show="dataForm.{{item.name}}.$dirty && dataForm.{{item.name}}.$error.maxlength">最大长度超出范围</p>
+      </div>
+    </div>
+  </form>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-primary btn-sm" ng-click="fm.ok()" ng-disabled="dataForm.$invalid">确定</button>
+  <button type="button" class="btn btn-default btn-sm" ng-click="fm.cancel()">取消</button>
+</div>

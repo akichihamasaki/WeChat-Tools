@@ -1,0 +1,48 @@
+[
+	{
+		"cabinetId": "1",
+		"cabinetName": "货柜001",
+		"remark": "货柜001"
+	},
+	{
+		"cabinetId": "2",
+		"cabinetName": "货柜002",
+		"remark": "货柜002"
+	},
+	{
+		"cabinetId": "3",
+		"cabinetName": "货柜003",
+		"remark": "货柜003"
+	},
+	{
+		"cabinetId": "4",
+		"cabinetName": "货柜004",
+		"remark": "货柜004"
+	},
+	{
+		"cabinetId": "5",
+		"cabinetName": "货柜005",
+		"remark": "货柜005"
+	},
+	{
+		"cabinetId": "6",
+		"cabinetName": "货柜006",
+		"remark": "货柜006"
+	},
+	{
+		"cabinetId": "7",
+		"cabinetName": "货柜007"
+	},
+	{
+		"cabinetId": "8",
+		"cabinetName": "货柜008"
+	},
+	{
+		"cabinetId": "9",
+		"cabinetName": "货柜009"
+	},
+	{
+		"cabinetId": "10",
+		"cabinetName": "货柜010"
+	}
+]

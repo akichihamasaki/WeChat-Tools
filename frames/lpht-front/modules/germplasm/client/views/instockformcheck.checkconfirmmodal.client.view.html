@@ -1,0 +1,147 @@
+<div class="modal-header">
+  <h4>入库确认</h4>
+</div>
+<div class="modal-body" >
+  <div class="panel panel-default">
+    <div class="panel-heading">入库信息</div>
+    <div class="panel-body">
+    <form class="form-horizontal" >
+      <fieldset ng-disabled="pop.formDisabled">
+          <div class="row ">
+              <div class="col-lg-3 col-sm-6 ">
+                  <div class="form-group has-feedback">
+                      <label class="col-lg-6 control-label text-sm">入库单号</label>
+                      <div class="col-lg-6">
+                        <input type="text" class="form-control input-sm" name="name" placeholder="入库单号" ng-model="cc.rowEntity.instockId" readonly>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-lg-3 col-sm-6 ">
+                  <div class="form-group has-feedback">
+                      <label class="col-lg-6 control-label text-sm">入库单类型</label>
+                      <div class="col-lg-6">
+                          <input type="text" class="form-control input-sm" name="tie" placeholder="入库单类型" ng-model="cc.rowEntity.instockType" readonly>
+                      </div>
+                  </div>
+              </div>
+               <div class="col-lg-3 col-sm-6 ">
+                  <div class="form-group">
+                      <label class="col-lg-6 control-label text-sm">入库申请人</label>
+                      <div class="col-lg-6">
+                         <input type="text" class="form-control input-sm" name="name" placeholder="入库申请人" ng-model="cc.rowEntity.instockApplicator" readonly>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-lg-3 col-sm-6 ">
+                  <div class="form-group">
+                      <label class="col-lg-6 control-label text-sm">创建时间</label>
+                      <div class="col-lg-6">
+                          <input type="text" class="form-control input-sm" name="name" placeholder="创建时间" ng-model="cc.rowEntity.instockTime" readonly>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="row ">
+            <div class="col-lg-3 col-sm-6 ">
+              <div class="form-group has-feedback">
+                <label class="col-lg-6 control-label text-sm">审核人</label>
+                <div class="col-lg-6">
+                  <input type="text" class="form-control input-sm"  readonly ng-model="cc.rowEntity.count">
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-sm-6 ">
+              <div class="form-group has-feedback">
+                <label class="col-lg-6 control-label text-sm">审核意见</label>
+                <div class="col-lg-6">
+                  <input type="text" class="form-control input-sm"  readonly ng-model="cc.rowEntity.count">
+                </div>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+       查询条件
+    </div>
+    <div class="panel-body">
+      <form class="form-horizontal" >
+        <div class="row">
+            <div class="col-lg-3 col-sm-6">
+                <div class="form-group has-feedback">
+                  <label class="col-lg-6 control-label text-sm">单内编号从</label>
+                  <div class="col-lg-6">
+                    <input type="text" class="form-control input-sm" name="address" placeholder="编号初始值" ng-model="cc.searchData.storageArea" >
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-sm-6">
+                <div class="form-group has-feedback">
+                  <label class="col-lg-6 control-label text-sm">到</label>
+                  <div class="col-lg-6">
+                    <input type="text" class="form-control input-sm" name="address" placeholder="编号结束值" ng-model="cc.searchData.storageJia" >
+                  </div>
+                </div>
+              </div>
+            <div class="col-lg-3 col-sm-6">
+                <div class="form-group has-feedback">
+                  <label class="col-lg-6 control-label text-sm">货号</label>
+                  <div class="col-lg-6">
+                    <input type="text" class="form-control input-sm" name="address" placeholder="货号" ng-model="cc.searchData.storageArea" >
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-sm-6">
+                <div class="form-group has-feedback">
+                  <label class="col-lg-6 control-label text-sm">品种名称</label>
+                  <div class="col-lg-6">
+                    <input type="text" class="form-control input-sm" name="address" placeholder="品种名称" ng-model="cc.searchData.storageArea" >
+                  </div>
+                </div>
+              </div>
+
+          </div>
+          <!-- <div class="row">
+            <div class="col-lg-3 col-sm-6">
+                <div class="form-group has-feedback">
+                  <label class="col-lg-6 control-label text-sm">品种编码</label>
+                  <div class="col-lg-6">
+                    <input type="text" class="form-control input-sm" name="address" placeholder="品种编码" ng-model="cc.searchData.storageJia" >
+                  </div>
+                </div>
+              </div>
+          </div> -->
+      </form>
+    </div>
+    <div class="panel-footer">
+      <div class="text-right">
+        <button type="button" class="btn btn-default btn-sm m-r-sm" ng-click="cc.search()" autofocus><i class="fa fa-search"></i> 查询</button>
+        <button type="button" class="btn btn-default btn-sm m-r-sm" ng-click="cc.reset()"><i class="fa fa-refresh"></i> 重置</button>
+      </div>
+    </div>
+  </div>
+  <div class="m-b-md">
+    <div class="btn-group">
+      <button type="button" class="btn btn-info btn-sm" ng-click="cc.openChangeLocation(cc.gridApi.selection.getSelectedRows())" ng-disabled="cc.disableDelete"><i class="fa fa-download"></i> 分配存放位置</button>
+      <button type="button" class="btn btn-warning btn-sm" ng-click="cc.openCheckConfirmModal()" ng-disabled="gm.disableDelete"><i class="glyphicon glyphicon-compressed"></i> 打印标签</button>
+
+    </div>
+  </div>
+
+  <div class="m-b-md">
+    <div class="pos-rlt" ui-grid="cc.checkgrid" ui-grid-pagination ui-grid-selection ui-grid-resize-columns ui-grid-auto-resize ></div>
+  </div>
+
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-success btn-sm"><i class="glyphicon  glyphicon-print"></i> 打印入库明细</button>
+  <button type="button" class="btn btn-primary btn-sm" ng-click="cc.ok()" >入库完成</button>
+  <button type="button" class="btn btn-default btn-sm" ng-click="cc.cancel()">取消</button>
+</div>
+
+<script type="text/ng-template" id="popInStockFormChangeLocationModal">
+  <div ng-include="'modules/germplasm/client/views/instockform.changelocationmodal.client.view.html'"></div>
+</script>

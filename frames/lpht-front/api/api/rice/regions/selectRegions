@@ -1,0 +1,31 @@
+{
+  "content": [
+    {
+      "regionsName":"1",
+      "regionsCode": "基本苗",
+      "regionsDist": "数值型",
+      "regionsDesc": "N",
+      "coordinates":"基本苗",
+      "crop":"作物",
+      "remark":"备注"
+    }, 
+    {
+      "regionsName":"2",
+      "regionsCode": "分蘖时间",
+      "regionsDist": "日期型",
+      "regionsDesc": "Y",
+      "coordinates":"基本苗",
+      "crop":"作物",
+      "remark":"备注"
+    }, 
+    {
+      "regionsName":"3",
+      "regionsCode": "最高苗",
+      "regionsDist": "数值型",
+      "regionsDesc": "Y",
+      "coordinates":"分蘖时间",
+      "crop":"作物",
+      "remark":"备注"
+    }
+  ]
+}

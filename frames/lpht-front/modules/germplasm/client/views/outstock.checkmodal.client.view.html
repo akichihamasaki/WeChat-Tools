@@ -1,0 +1,359 @@
+<div class="modal-header">
+  <h4>出库确认</h4>
+</div>
+<div class="modal-body">
+  <div class="panel panel-default">
+    <div class="panel-heading">出库明细</div>
+    <div class="panel-body">
+    <form class="form-horizontal" >
+      <fieldset ng-disabled="pop.formDisabled">
+          <div class="row ">
+              <div class="col-lg-3 col-sm-6">
+                  <div class="form-group has-feedback">
+                      <label class="col-lg-6 control-label text-sm">出库单号</label>
+                      <div class="col-lg-6">
+                        <input type="text" class="form-control input-sm" name="name" placeholder="入库单号" ng-model="out.rowEntity.outstockId" readonly>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-lg-3 col-sm-6">
+                  <div class="form-group has-feedback">
+                      <label class="col-lg-6 control-label text-sm">出库单类型</label>
+                      <div class="col-lg-6">
+                          <input type="text" class="form-control input-sm" name="tie" placeholder="入库单类型" ng-model="out.rowEntity.outstockType" readonly>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-lg-3 col-sm-6">
+                  <div class="form-group">
+                      <label class="col-lg-6 control-label text-sm">出库申请人</label>
+                      <div class="col-lg-6">
+                         <input type="text" class="form-control input-sm" name="name" placeholder="入库申请人" ng-model="out.rowEntity.outstockApplicator" readonly>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-lg-3 col-sm-6">
+                  <div class="form-group">
+                      <label class="col-lg-6 control-label text-sm">创建时间</label>
+                      <div class="col-lg-6">
+                          <input type="text" class="form-control input-sm" name="name" placeholder="创建时间" ng-model="out.rowEntity.outstockTime" readonly>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <!-- <div class="row ">
+              <div class="col-sm-6">
+                  <div class="form-group">
+                      <label class="col-lg-4 control-label text-sm">材料一级分类</label>
+                      <div class="col-lg-8">
+                          <input class="form-control input-sm" name="seedType" ng-model="out.rowEntity.firstClassify" readonly>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-sm-6">
+                  <div class="form-group">
+                      <label class="col-lg-4 control-label text-sm">材料二级分类</label>
+                      <div class="col-lg-8">
+                          <input class="form-control input-sm" name="assess" ng-model="out.rowEntity.secondClassify" readonly>
+                      </div>
+                  </div>
+              </div>
+          </div> -->
+          <div class="row ">
+              <div class="col-lg-3 col-sm-6">
+                <div class="form-group has-feedback">
+                  <label class="col-lg-6 control-label text-sm">仓库</label>
+                  <div class="col-lg-6">
+                    <input type="text" class="form-control input-sm" name="stocks" placeholder="仓库" ng-model="out.rowEntity.storage" readonly>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-sm-6">
+                <div class="form-group has-feedback">
+                  <label class="col-lg-6 control-label text-sm">库房</label>
+                  <div class="col-lg-6">
+                    <input type="text" class="form-control input-sm" name="address" placeholder="库房" ng-model="out.rowEntity.storageRoom" readonly>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-sm-6">
+                  <div class="form-group has-feedback">
+                      <label class="col-lg-6 control-label text-sm">出库用途</label>
+                      <div class="col-lg-6">
+                          <input type="text" class="form-control input-sm"  readonly ng-model="out.rowEntity.meterialValue" >
+                      </div>
+                  </div>
+              </div>
+              <!-- <div class="col-sm-6">
+                <div class="form-group has-feedback">
+                  <label class="col-lg-4 control-label text-sm">库区</label>
+                  <div class="col-lg-8">
+                    <input type="text" class="form-control input-sm" name="stocks" placeholder="库区" ng-model="out.rowEntity.storageArea" readonly>
+                  </div>
+                </div>
+              </div> -->
+          </div>
+
+          <!-- 育种材料的稳定材料 -->
+          <div class="m-t-md" style="overflow:scroll; overflow-x:scroll;overflow-y:scroll; height:
+            300px;" ng-show="out.wdshow">
+              <table class="table table-hover table-bordered" >
+                <thead>
+                  <tr>
+                    <!-- <th style="width:90px">操作</th> -->
+                    <th>材料编码</th>
+                    <th>材料名称</th>
+                    <th>出库单位</th>
+                    <th>出库数量</th>
+                    <th>库存数量</th>
+                    <th>最小库存数量</th>
+                    <th>母本名称</th>
+                    <th>父本名称</th>
+
+
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="text-sm" ng-repeat="x in out.rowEntity.wd" >
+                    <!-- <td>
+                      <div>
+                        <button type="button" class="btn btn-sm btn-info" style="width:30px;" ng-show="!x.editable" ng-click="out.eidtRow(x)" title="修改"><i class="fa fa-pencil"></i></button>
+                        <button type="button" class="btn btn-sm btn-primary" style="width:30px;" ng-hide="!x.editable" ng-click="out.eidtRow(x)" title="保存"><i class="fa fa-h-square"></i></button>
+                         <button type="button" class="btn btn-sm btn-danger" style="width:30px;" ng-click="pop.delRow(x)">x</button>
+                      </div>
+                    </td> -->
+                    <td>
+                      <input type="text" class="form-control input-sm w-xs" ng-model="x.breedCode" readonly>
+                    </td>
+                    <td>
+                      <input type="text" class="form-control input-sm w-xs" ng-model="x.breedName" readonly>
+                    </td>
+                    <td>
+                      <select class="form-control input-sm w-xs" ng-model="x.unit">
+                        <option value="">请选择</option>
+                        <option value="g">g</option>
+                        <option value="粒">粒</option>
+                      </select>
+                      <!-- <input type="text" class="form-control input-sm w-xs" ng-model="x.unit" > -->
+                    </td>
+                    <td>
+                      <input type="text" class="form-control input-sm w-xs" ng-model="x.count" >
+                    </td>
+                    <td>
+                      <input type="text" class="form-control input-sm w-xs" ng-model="x.storageCount" >
+                    </td>
+                    <td>
+                      <input type="text" class="form-control input-sm w-xs" ng-model="x.minStorage">
+                    </td>
+                    <td>
+                      <input type="text" class="form-control input-sm w-xs" ng-model="x.motherCode" readonly>
+                    </td>
+                    <td>
+                      <input type="text" class="form-control input-sm w-xs" ng-model="x.fatherCode" readonly>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+          </div>
+
+          <!-- 育种材料的中间材料 -->
+          <div class="m-t-md" style="overflow:scroll; overflow-x:scroll;overflow-y:scroll; height:
+          300px;" ng-show="out.zjshow">
+              <table class="table table-hover table-bordered " >
+                <thead>
+                  <tr>
+                    <!-- <th style="width:90px">操作</th> -->
+                    <th>材料编码</th>
+                    <th>材料名称</th>
+                    <th>出库单位</th>
+                    <th>出库数量</th>
+                    <th>库存数量</th>
+                    <th>最小库存数量</th>
+                    <th>母本名称</th>
+                    <th>父本名称</th>
+                    <th>世代号</th>
+                    <th>株号</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="text-sm" ng-repeat="x in out.rowEntity.zj" >
+                    <!-- <td>
+                      <div>
+                        <button type="button" class="btn btn-sm btn-info" style="width:30px;" ng-show="!x.editable" ng-click="out.eidtRow(x)"><i class="fa fa-pencil"></i></button>
+                        <button type="button" class="btn btn-sm btn-primary" style="width:30px;" ng-hide="!x.editable" ng-click="out.eidtRow(x)"><i class="fa fa-h-square"></i></button>
+                         <button type="button" class="btn btn-sm btn-danger" style="width:30px;" ng-click="pop.delRow(x)">x</button>
+                      </div>
+                    </td> -->
+                    <td>
+                      <input type="text" class="form-control input-sm w-xs" ng-model="x.breedCode" readonly>
+                    </td>
+                    <td>
+                      <input type="text" class="form-control input-sm w-xs" ng-model="x.breedName" readonly>
+                    </td>
+                    <td>
+                      <select class="form-control input-sm w-xs" ng-model="x.unit">
+                        <option value="">请选择</option>
+                        <option value="g">g</option>
+                        <option value="粒">粒</option>
+                      </select>
+                      <!-- <input type="text" class="form-control input-sm w-xs" ng-model="x.unit" > -->
+                    </td>
+                    <td>
+                      <input type="text" class="form-control input-sm w-xs" ng-model="x.count" >
+                    </td>
+                    <td>
+                      <input type="text" class="form-control input-sm w-xs" ng-model="x.storageCount" >
+                    </td>
+                    <td>
+                      <input type="text" class="form-control input-sm w-xs" ng-model="x.minStorage" >
+                    </td>
+                    <td>
+                      <input type="text" class="form-control input-sm w-xs" ng-model="x.motherCode" readonly>
+                    </td>
+                    <td>
+                      <input type="text" class="form-control input-sm w-xs" ng-model="x.fatherCode" readonly>
+                    </td>
+                    <td>
+                      <input type="text" class="form-control input-sm w-xs" ng-model="x.generationNum" readonly>
+                    </td>
+                    <td>
+                      <input type="text" class="form-control input-sm w-xs" ng-model="x.plantNum" readonly>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+          </div>
+
+          <!-- 品种组合-->
+          <div class="m-t-md" style="overflow:scroll; overflow-x:scroll;overflow-y:scroll; height:
+          300px;" ng-show="out.pzzhshow">
+              <table class="table table-hover table-bordered " >
+                <thead>
+                  <tr>
+                    <!-- <th style="width:90px">操作</th> -->
+                    <th>品种编码</th>
+                    <th>品种名称</th>
+                    <th>出库单位</th>
+                    <th>出库数量</th>
+                    <th>库存数量</th>
+                    <th>最小库存数量</th>
+                    <th>母本名称</th>
+                    <th>父本名称</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="text-sm" ng-repeat="x in out.rowEntity.pzzh" >
+                   <!--  <td>
+                      <div>
+                        <button type="button" class="btn btn-sm btn-info" style="width:30px;" ng-show="!x.editable" ng-click="out.eidtRow(x)"><i class="fa fa-pencil"></i></button>
+                        <button type="button" class="btn btn-sm btn-primary" style="width:30px;" ng-hide="!x.editable" ng-click="out.eidtRow(x)"><i class="fa fa-h-square"></i></button>
+                       <button type="button" class="btn btn-sm btn-danger" style="width:30px;" ng-click="out.delRow(x)">x</button>
+                      </div>
+                    </td> -->
+                    <td>
+                      <input type="text" class="form-control input-sm w-xs" ng-model="x.breedCode" readonly>
+                    </td>
+                    <td>
+                      <input type="text" class="form-control input-sm w-xs" ng-model="x.breedName" readonly>
+                    </td>
+                    <td>
+                      <select class="form-control input-sm w-xs" ng-model="x.unit">
+                        <option value="">请选择</option>
+                        <option value="g">g</option>
+                        <option value="粒">粒</option>
+                      </select>
+                      <!-- <input type="text" class="form-control input-sm w-xs" ng-model="x.unit"> -->
+                    </td>
+                    <td>
+                      <input type="text" class="form-control input-sm w-xs" ng-model="x.count" >
+                    </td>
+                    <td>
+                      <input type="text" class="form-control input-sm w-xs" ng-model="x.storageCount" >
+                    </td>
+                    <td>
+                      <input type="text" class="form-control input-sm w-xs" ng-model="x.minStorage" >
+                    </td>
+                    <td>
+                      <input type="text" class="form-control input-sm w-xs" ng-model="x.motherCode" readonly>
+                    </td>
+                    <td>
+                      <input type="text" class="form-control input-sm w-xs" ng-model="x.fatherCode" readonly>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+          </div>
+
+          <!-- <div class="m-b-md">
+            <div class="pos-rlt" ui-grid="out.outStockDetailGrid" ui-grid-pagination ui-grid-selection ui-grid-resize-columns ui-grid-auto-resize ></div>
+          </div> -->
+
+        </fieldset>
+      </form>
+    </div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">出库意见</div>
+    <div class="panel-body">
+      <form class="form-horizontal" >
+      <div class="row ">
+        <div class="col-lg-3 col-sm-6">
+          <div class="form-group has-feedback">
+            <label class="col-lg-6 control-label text-sm">出库人</label>
+            <div class="col-lg-6">
+              <input type="text" class="form-control input-sm" name="stocks" placeholder="出库人" ng-model="out.rowEntity.outstockApplicator">
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-sm-6">
+          <div class="form-group has-feedback">
+            <label class="col-lg-6 control-label text-sm">领用人</label>
+            <div class="col-lg-6">
+              <input type="text" class="form-control input-sm" name="stocks" placeholder="领用人" ng-model="out.rowEntity.count">
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 ">
+          <div class="form-group has-feedback">
+            <label class="col-lg-6 control-label text-sm">领用人签名文件</label>
+            <div class="col-lg-6">
+              <input type="text" class="form-control input-sm" name="contractName" placeholder="未选择任何文件" ng-model="out.rowEntity.contractName" required readonly>
+              <span class="fa fa-exclamation-circle form-control-feedback" ng-show="contractForm.contractName.$error.required"></span>
+              <div ng-messages="contractForm.contractName.$dirty && contractForm.contractName.$error">
+                <p class="help-block text-sm" ng-message="required">请选择合同文件</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 ">
+
+            <button type="button" class="btn btn-success btn-sm btn-block" ng-model="out.file" ngf-select="out.uploadFile($file)" ngf-keep="true" ngf-multiple="false" ngf-pattern="'image/*'" ngf-accept="'image/*'"><i class="fa fa-file"></i> 浏览</button>
+          </div>
+      </div>
+      <!--  -->
+      <div class="row">
+        <div class="col-lg-3 ">
+          <div class="form-group has-feedback">
+            <label class="col-lg-6 control-label text-sm">出库说明</label>
+            <div class="col-lg-6">
+              <input type="text" class="form-control input-sm" name="stocks" ng-model="out.rowEntity.outstockmessage">
+            </div>
+          </div>
+        </div>
+      </div>
+      </form>
+    </div>
+    <!-- <div class="panel-footer">
+      <div class="text-right">
+        <button type="button" class="btn btn-primary btn-sm" ng-click="out.checkpass()" >审核通过</button>
+        <button type="button" class="btn btn-default btn-sm" ng-click="out.checkdeny()">否决</button>
+      </div>
+    </div> -->
+  </div>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-primary btn-sm" ng-click="out.ok()" >审核通过</button>
+  <button type="button" class="btn btn-danger btn-sm" ng-click="out.cancel()">否决</button>
+  <button type="button" class="btn btn-default btn-sm" ng-click="out.cancel()">取消</button>
+</div>

@@ -1,0 +1,18 @@
+<div class="modal-header">
+    <h4 class="modal-title">审核意见</h4>
+</div>
+<div class="modal-body">
+    <form class="form-horizontal" name="form">
+        <div class="row">
+            <label class="col-lg-2 control-label text-sm">审核意见</label>
+            <div class="col-lg-10">
+                <textarea class="form-control input-sm" rows="3" ng-model="cb.rowEntity.batchState" placeholder="审核意见"></textarea>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-primary btn-sm" ng-click="cb.ok()" ng-disabled="cropForm.$invalid">通过</button>
+    <button type="button" class="btn btn-info btn-sm" ng-click="cb.no()" ng-disabled="cropForm.$invalid">否决</button>
+    <button type="button" class="btn btn-default btn-sm" ng-click="cb.cancel()">取消</button>
+</div>

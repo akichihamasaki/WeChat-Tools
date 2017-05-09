@@ -1,0 +1,509 @@
+<div class="modal-header" ng-switch="pop.modalType">
+    <h4 class="modal-title" ng-switch-when="wdadd">稳定材料入库申请单</h4>
+    <h4 class="modal-title" ng-switch-when="zjadd">中间材料入库申请单</h4>
+    <h4 class="modal-title" ng-switch-when="pzzhadd">品种组合入库申请单</h4>
+    <h4 class="modal-title" ng-switch-when="edit">修改入库申请单</h4>
+    <h4 class="modal-title" ng-switch-when="view">查看入库申请单</h4>
+</div>
+<div class="modal-body" >
+    <form class="form-horizontal" name="dataForm">
+        <fieldset ng-disabled="pop.formDisabled">
+            <div class="row">
+                <!-- <div class="col-sm-6">
+                    <div class="form-group has-feedback">
+                        <label class="col-sm-4 control-label text-sm">入库单号</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control input-sm" name="name" placeholder="入库单号" ng-model="pop.rowEntity.instockId" required>
+                            <span class="fa fa-exclamation-circle form-control-feedback" ng-show="dataForm.name.$error.required"></span>
+                            <div ng-messages="dataForm.name.$dirty && dataForm.name.$error">
+                                <p class="help-block text-sm" ng-message="required">请填写入库单号</p>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+                <div class="col-lg-3 col-sm-6">
+                    <div class="form-group has-feedback">
+                        <label class="col-sm-6 control-label text-sm">入库单类型</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control input-sm" name="tie" placeholder="入库单类型" ng-model="pop.rowEntity.instockType" readonly>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="form-group ">
+                      <label class="control-label text-sm col-sm-6" >创建时间</label>
+                      <div class="col-sm-6">
+                        <div class="input-group input-group-sm">
+                          <input type="text" class="form-control"  ng-model="pop.rowEntity.instockTime" uib-datepicker-popup="yyyy-MM-dd" is-open="pop.instockTime" current-text="今天" clear-text="清除" close-text="关闭" readonly />
+                          <span class="input-group-btn">
+                            <button type="button" class="btn btn-default" ng-click="pop.instockTime = true"><i class="fa fa-calendar"></i></button>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="form-group">
+                        <label class="col-sm-6 control-label text-sm">材料一级分类</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control input-sm" name="name" placeholder="材料一级分类" ng-model="pop.rowEntity.firstClassify" readonly>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="form-group">
+                        <label class="col-sm-6 control-label text-sm">材料二级分类</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control input-sm" name="name" placeholder="材料二级分类" ng-model="pop.rowEntity.secondClassify" readonly>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group has-feedback">
+                        <label class="col-sm-4 control-label text-sm">收获地点</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control input-sm" name="stocks" placeholder="收获地点" ng-model="bd.rowEntity.stocks">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group has-feedback">
+                        <label class="col-sm-4 control-label text-sm">收获年份</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control input-sm" name="address" placeholder="收获年份" ng-model="bd.rowEntity.address">
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+            <div class="row">
+                <div class="col-lg-3 col-sm-6">
+                    <div class="form-group has-feedback">
+                        <label class="col-sm-6 control-label text-sm">育种家</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control input-sm" name="stocks" placeholder="育种家" ng-model="pop.rowEntity.breeder">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="form-group has-feedback">
+                        <label class="col-sm-6 control-label text-sm">库管员</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control input-sm" name="address" placeholder="库管员" ng-model="pop.rowEntity.meterialValue">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="form-group has-feedback">
+                      <label class="control-label text-sm col-sm-6" >仓库</label>
+                      <div class="col-sm-6">
+                        <select class="form-control input-sm" ng-model="pop.rowEntity.experimentstage">
+                          <option value="">请选择</option>
+                          <option value="安徽">安徽</option>
+                          <option value="湖南">湖南</option>
+                        </select>
+                      </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="form-group has-feedback">
+                      <label class="control-label text-sm col-sm-6" >库房</label>
+                      <div class="col-sm-6">
+                        <select class="form-control input-sm" ng-model="pop.rowEntity.experimentstage">
+                          <option value="">请选择</option>
+                          <option value="长期库">长期库</option>
+                          <option value="中期库">中期库</option>
+                          <option value="工作库">工作库</option>
+                        </select>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="row">
+              <div class="col-sm-6">
+                    <div class="form-group has-feedback">
+                        <label class="col-sm-4 control-label text-sm">库区</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control input-sm" name="address" placeholder="库区" ng-model="pop.rowEntity.storageArea">
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+
+            <div class="row">
+                <div class="col-sm-12 btn-group">
+                    <!-- <button type="button" class="btn btn-success btn-sm" ng-click="pop.openModal('add')"><i class="fa fa-plus-circle"></i> 新增</button>
+                    <button type="button" class="btn btn-info btn-sm" ng-click="pop.openModal('edit')" ng-disabled="gm.disableDelete"><i class="fa fa-pencil"></i> 修改</button>
+                    <button type="button" class="btn btn-danger btn-sm" ng-click="pop.deleteDialog()" ng-disabled="gm.disableDelete"><i class="fa fa-times-circle"></i> 删除</button> -->
+                    <button type="button" class="btn btn-primary btn-sm" ng-click="opop.openModal('view')" ng-disabled="gm.disableDelete"><i class="fa fa-download"></i> 下载模板</button>
+                    <button type="button" class="btn btn-warning btn-sm" ng-click="pop.openDetail('view')" ng-disabled="gm.disableDelete"><i class="fa fa-upload"></i> 导入</button>
+                </div>
+            </div>
+            <!-- grid
+            <div class="m-t-md">
+                <div class="pos-rlt" ui-grid="pop.grid" ui-grid-edit ui-grid-cellNav ui-grid-pagination ui-grid-selection ui-grid-resize-columns ui-grid-auto-resize ></div>
+            </div>-->
+
+            <!-- 育种材料的稳定材料 -->
+            <div class="m-t-md" style="overflow:scroll; overflow-x:scroll;overflow-y:scroll; height:
+            300px;" ng-show="pop.wdshow">
+                <table class="table table-hover table-bordered ">
+                  <thead>
+                    <tr>
+                      <th style="width:60px">操作</th>
+                      <th>材料编码</th>
+                      <th>材料名称</th>
+                      <th>母本名称</th>
+                      <th>父本名称</th>
+                      <th>收获地点</th>
+                      <th>收获年份</th>
+                      <th>小区号</th>
+                      <th>入库数量</th>
+                      <th>入库单位</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="text-sm" ng-repeat="x in pop.rowEntity.wd" >
+                      <td>
+                        <div class="btn-group">
+                          <!-- <button type="button" class="btn btn-sm btn-info" style="width:30px;" ng-show="!x.editable" ng-click="pop.eidtRow(x)"><i class="fa fa-pencil"></i></button>
+                          <button type="button" class="btn btn-sm btn-primary" style="width:30px;" ng-hide="!x.editable" ng-click="pop.eidtRow(x)"><i class="fa fa-h-square"></i></button> -->
+                          <button type="button" class="btn btn-sm btn-danger" style="width:30px;" ng-click="pop.delRow(x)">x</button>
+                        </div>
+                      </td>
+                      <td>
+                        <input type="text" class="form-control input-sm w-xs" ng-model="x.breedCode"  ng-keydown="pop.nextfocus($event)">
+                      </td>
+                      <td>
+                        <input type="text" class="form-control input-sm w-xs" ng-model="x.breedName"  ng-keydown="pop.nextfocus($event)">
+                      </td>
+                      <td>
+                        <input type="text" class="form-control input-sm w-xs" ng-model="x.motherCode"  ng-keydown="pop.nextfocus($event)">
+                      </td>
+                      <td>
+                        <input type="text" class="form-control input-sm w-xs" ng-model="x.fatherCode"  ng-keydown="pop.nextfocus($event)">
+                      </td>
+                      <td>
+                        <input type="text" class="form-control input-sm w-xs" ng-model="x.harvestLocation"  ng-keydown="pop.nextfocus($event)">
+                      </td>
+                      <td>
+                        <input type="text" class="form-control input-sm w-xs" ng-model="x.harvestTime"  ng-keydown="pop.nextfocus($event)">
+                      </td>
+                      <td>
+                        <input type="text" class="form-control input-sm w-xs" ng-model="x.areaCode"  ng-keydown="pop.nextfocus($event)">
+                      </td>
+                      <td>
+                        <input type="text" class="form-control input-sm w-xs" ng-model="x.count"  ng-keydown="pop.nextfocus($event)">
+                      </td>
+                      <td>
+                        <select class="form-control input-sm w-xs" ng-model="x.unit"  ng-keydown="pop.nextfocus($event)">
+                          <option value="">请选择</option>
+                          <option value="g">g</option>
+                          <option value="粒">粒</option>
+                        </select>
+                        <!-- <input type="text" class="form-control input-sm w-xs" ng-model="x.unit" ng-disabled="!x.editable" ng-keydown="pop.nextfocus($event)"> -->
+                      </td>
+                    </tr>
+                    <tr class="text-sm" >
+                      <td>
+                          <button type="button" class="btn btn-sm btn-success" style="width:30px;" ng-click="pop.addRow()">+</button>
+                      </td>
+                      <td>
+                        <input type="text" class="form-control input-sm w-xs" ng-model="pop.wd.breedCode" ng-keydown="pop.nextfocus($event)">
+                      </td>
+                      <td>
+                        <input type="text" class="form-control input-sm w-xs" ng-model="pop.wd.breedName" ng-keydown="pop.nextfocus($event)">
+                      </td>
+                      <td>
+                        <input type="text" class="form-control input-sm w-xs" ng-model="pop.wd.motherCode" ng-keydown="pop.nextfocus($event)">
+                      </td>
+                      <td>
+                        <input type="text" class="form-control input-sm w-xs" ng-model="pop.wd.fatherCode" ng-keydown="pop.nextfocus($event)">
+                      </td>
+                      <td>
+                        <input type="text" class="form-control input-sm w-xs" ng-model="pop.wd.harvestLocation" ng-keydown="pop.nextfocus($event)">
+                      </td>
+                      <td>
+                        <input type="text" class="form-control input-sm w-xs" ng-model="pop.wd.harvestTime" ng-keydown="pop.nextfocus($event)">
+                      </td>
+                      <td>
+                        <input type="text" class="form-control input-sm w-xs" ng-model="pop.wd.areaCode" ng-keydown="pop.nextfocus($event)">
+                      </td>
+                      <td>
+                        <input type="text" class="form-control input-sm w-xs" ng-model="pop.wd.count" ng-keydown="pop.nextfocus($event)">
+                      </td>
+                      <td>
+                        <select class="form-control input-sm w-xs" ng-model="pop.wd.unit">
+                          <option value="">请选择</option>
+                          <option value="g">g</option>
+                          <option value="粒">粒</option>
+                        </select>
+                        <!-- <input type="text" class="form-control input-sm w-xs" ng-model="pop.wd.unit" ng-keydown="pop.nextfocus($event)"> -->
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+            </div>
+
+            <!-- 育种材料的中间材料 -->
+            <div class="m-t-md" style="overflow:scroll; overflow-x:scroll;overflow-y:scroll; height:
+            300px;" ng-show="pop.zjshow">
+                <table class="table table-hover table-bordered " >
+                  <thead>
+                    <tr>
+                      <th style="width:60px">操作</th>
+                      <th>材料编码</th>
+                      <th>材料名称</th>
+                      <th>母本名称</th>
+                      <th>父本名称</th>
+                      <th>世代号</th>
+                      <th>株号</th>
+                      <th>收获地点</th>
+                      <th>收获年份</th>
+                      <th>小区号</th>
+                      <th>入库数量</th>
+                      <th>入库单位</th>
+                      <th>系谱</th>
+                      <th>上级材料编码</th>
+                      <th>上级材料名称</th>
+                      <th>穗数</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="text-sm" ng-repeat="x in pop.rowEntity.zj" >
+                      <td>
+                        <div class="btn-group">
+                          <!-- <button type="button" class="btn btn-sm btn-info" style="width:30px;" ng-show="!x.editable" ng-click="pop.eidtRow(x)"><i class="fa fa-pencil"></i></button>
+                          <button type="button" class="btn btn-sm btn-primary" style="width:30px;" ng-hide="!x.editable" ng-click="pop.eidtRow(x)"><i class="fa fa-h-square"></i></button> -->
+                          <button type="button" class="btn btn-sm btn-danger" style="width:30px;" ng-click="pop.delRow(x)">x</button>
+                        </div>
+                      </td>
+                      <td>
+                        <input type="text" class="form-control input-sm w-xs" ng-model="x.breedCode"  ng-keydown="pop.nextfocus($event)">
+                      </td>
+                      <td>
+                        <input type="text" class="form-control input-sm w-xs" ng-model="x.breedName"  ng-keydown="pop.nextfocus($event)">
+                      </td>
+                      <td>
+                        <input type="text" class="form-control input-sm w-xs" ng-model="x.motherCode"  ng-keydown="pop.nextfocus($event)">
+                      </td>
+                      <td>
+                        <input type="text" class="form-control input-sm w-xs" ng-model="x.fatherCode"  ng-keydown="pop.nextfocus($event)">
+                      </td>
+                      <td>
+                        <input type="text" class="form-control input-sm w-xs" ng-model="x.generationNum"  ng-keydown="pop.nextfocus($event)">
+                      </td>
+                      <td>
+                        <input type="text" class="form-control input-sm w-xs" ng-model="x.plantNum"  ng-keydown="pop.nextfocus($event)">
+                      </td>
+                      <td>
+                        <input type="text" class="form-control input-sm w-xs" ng-model="x.harvestLocation"  ng-keydown="pop.nextfocus($event)">
+                      </td>
+                      <td>
+                        <input type="text" class="form-control input-sm w-xs" ng-model="x.harvestTime"  ng-keydown="pop.nextfocus($event)">
+                      </td>
+                      <td>
+                        <input type="text" class="form-control input-sm w-xs" ng-model="x.areaCode"  ng-keydown="pop.nextfocus($event)">
+                      </td>
+                      <td>
+                        <input type="text" class="form-control input-sm w-xs" ng-model="x.count"  ng-keydown="pop.nextfocus($event)">
+                      </td>
+                      <td>
+                        <select class="form-control input-sm w-xs" ng-model="x.unit"  ng-keydown="pop.nextfocus($event)">
+                          <option value="">请选择</option>
+                          <option value="g">g</option>
+                          <option value="粒">粒</option>
+                        </select>
+                        <!-- <input type="text" class="form-control input-sm w-xs" ng-model="x.unit" ng-disabled="!x.editable" ng-keydown="pop.nextfocus($event)"> -->
+                      </td>
+                      <td>
+                        <input type="text" class="form-control input-sm w-xs" ng-model="x.xipu"  ng-keydown="pop.nextfocus($event)">
+                      </td>
+                      <td>
+                        <input type="text" class="form-control input-sm w-xs" ng-model="x.superiorCode"  ng-keydown="pop.nextfocus($event)">
+                      </td>
+                      <td>
+                        <input type="text" class="form-control input-sm w-xs" ng-model="x.superiorName"  ng-keydown="pop.nextfocus($event)">
+                      </td>
+                      <td>
+                        <input type="text" class="form-control input-sm w-xs" ng-model="x.suiNum"  ng-keydown="pop.nextfocus($event)">
+                      </td>
+                    </tr>
+                    <tr class="text-sm" >
+                      <td>
+                          <button type="button" class="btn btn-sm btn-success" style="width:30px;" ng-click="pop.addRow()">+</button>
+                      </td>
+                      <td>
+                        <input type="text" class="form-control input-sm w-xs" ng-model="pop.zj.breedCode" ng-keydown="pop.nextfocus($event)">
+                      </td>
+                      <td>
+                        <input type="text" class="form-control input-sm w-xs" ng-model="pop.zj.breedName" ng-keydown="pop.nextfocus($event)">
+                      </td>
+                      <td>
+                        <input type="text" class="form-control input-sm w-xs" ng-model="pop.zj.motherCode" ng-keydown="pop.nextfocus($event)">
+                      </td>
+                      <td>
+                        <input type="text" class="form-control input-sm w-xs" ng-model="pop.zj.fatherCode" ng-keydown="pop.nextfocus($event)">
+                      </td>
+                      <td>
+                        <input type="text" class="form-control input-sm w-xs" ng-model="pop.zj.generationNum" ng-keydown="pop.nextfocus($event)">
+                      </td>
+                      <td>
+                        <input type="text" class="form-control input-sm w-xs" ng-model="pop.zj.plantNum" ng-keydown="pop.nextfocus($event)">
+                      </td>
+                      <td>
+                        <input type="text" class="form-control input-sm w-xs" ng-model="pop.zj.harvestLocation" ng-keydown="pop.nextfocus($event)">
+                      </td>
+                      <td>
+                        <input type="text" class="form-control input-sm w-xs" ng-model="pop.zj.harvestTime" ng-keydown="pop.nextfocus($event)">
+                      </td>
+                      <td>
+                        <input type="text" class="form-control input-sm w-xs" ng-model="pop.zj.areaCode" ng-keydown="pop.nextfocus($event)">
+                      </td>
+                      <td>
+                        <input type="text" class="form-control input-sm w-xs" ng-model="pop.zj.count" ng-keydown="pop.nextfocus($event)">
+                      </td>
+                      <td>
+                        <select class="form-control input-sm w-xs" ng-model="pop.zj.unit"  ng-keydown="pop.nextfocus($event)">
+                          <option value="">请选择</option>
+                          <option value="g">g</option>
+                          <option value="粒">粒</option>
+                        </select>
+                        <!-- <input type="text" class="form-control input-sm w-xs" ng-model="pop.zj.unit" ng-keydown="pop.nextfocus($event)"> -->
+                      </td>
+                      <td>
+                        <input type="text" class="form-control input-sm w-xs" ng-model="pop.zj.xipu" ng-keydown="pop.nextfocus($event)">
+                      </td>
+                      <td>
+                        <input type="text" class="form-control input-sm w-xs" ng-model="pop.zj.superiorCode" ng-keydown="pop.nextfocus($event)">
+                      </td>
+                      <td>
+                        <input type="text" class="form-control input-sm w-xs" ng-model="pop.zj.superiorName" ng-keydown="pop.nextfocus($event)">
+                      </td>
+                      <td>
+                        <input type="text" class="form-control input-sm w-xs" ng-model="pop.zj.suiNum" ng-keydown="pop.nextfocus($event)">
+                      </td>
+
+                    </tr>
+                  </tbody>
+                </table>
+            </div>
+
+            <!-- 品种组合-->
+            <div class="m-t-md" style="overflow:scroll; overflow-x:scroll;overflow-y:scroll; height:
+            300px;" ng-show="pop.pzzhshow">
+                <table class="table table-hover table-bordered " >
+                  <thead>
+                    <tr>
+                      <th style="width:60px">操作</th>
+                      <th>品种编码</th>
+                      <th>品种名称</th>
+                      <th>母本名称</th>
+                      <th>父本名称</th>
+                      <th>收获地点</th>
+                      <th>收获年份</th>
+                      <th>小区号</th>
+                      <th>入库数量</th>
+                      <th>入库单位</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="text-sm" ng-repeat="x in pop.rowEntity.pzzh" >
+                      <td>
+                        <div class="btn-group">
+                          <!-- <button type="button" class="btn btn-sm btn-info" style="width:30px;" ng-show="!x.editable" ng-click="pop.eidtRow(x)"><i class="fa fa-pencil"></i></button>
+                          <button type="button" class="btn btn-sm btn-primary" style="width:30px;" ng-hide="!x.editable" ng-click="pop.eidtRow(x)"><i class="fa fa-h-square"></i></button> -->
+                          <button type="button" class="btn btn-sm btn-danger" style="width:30px;" ng-click="pop.delRow(x)">x</button>
+                        </div>
+                      </td>
+                      <!-- <td>
+                        <input type="text" class="form-control input-sm w-xs" ng-model="x.experimentstage" ng-disabled="!x.editable" ng-keydown="pop.nextfocus($event)">
+                      </td> -->
+                      <td>
+                        <input type="text" class="form-control input-sm w-xs" ng-model="x.breedCode"  ng-keydown="pop.nextfocus($event)">
+                      </td>
+                      <td>
+                        <input type="text" class="form-control input-sm w-xs" ng-model="x.breedName"  ng-keydown="pop.nextfocus($event)">
+                      </td>
+                      <td>
+                        <input type="text" class="form-control input-sm w-xs" ng-model="x.motherCode"  ng-keydown="pop.nextfocus($event)">
+                      </td>
+                      <td>
+                        <input type="text" class="form-control input-sm w-xs" ng-model="x.fatherCode"  ng-keydown="pop.nextfocus($event)">
+                      </td>
+                      <td>
+                        <input type="text" class="form-control input-sm w-xs" ng-model="x.harvestLocation"  ng-keydown="pop.nextfocus($event)">
+                      </td>
+                      <td>
+                        <input type="text" class="form-control input-sm w-xs" ng-model="x.harvestTime"  ng-keydown="pop.nextfocus($event)">
+                      </td>
+                      <td>
+                        <input type="text" class="form-control input-sm w-xs" ng-model="x.areaCode"  ng-keydown="pop.nextfocus($event)">
+                      </td>
+                      <td>
+                        <input type="text" class="form-control input-sm w-xs" ng-model="x.count"  ng-keydown="pop.nextfocus($event)">
+                      </td>
+                      <td>
+                        <select class="form-control input-sm w-xs" ng-model="x.unit">
+                          <option value="">请选择</option>
+                          <option value="g">g</option>
+                          <option value="粒">粒</option>
+                        </select>
+                        <!-- <input type="text" class="form-control input-sm w-xs" ng-model="x.unit" ng-disabled="!x.editable" ng-keydown="pop.nextfocus($event)"> -->
+                      </td>
+                    </tr>
+                    <tr class="text-sm" >
+                      <td>
+                          <button type="button" class="btn btn-sm btn-success" style="width:30px;" ng-click="pop.addRow()">+</button>
+                      </td>
+                      <!-- <td>
+                        <input type="text" class="form-control input-sm w-xs" ng-model="pop.pzzh.experimentstage" ng-keydown="pop.nextfocus($event)">
+                      </td> -->
+                      <td>
+                        <input type="text" class="form-control input-sm w-xs" ng-model="pop.pzzh.breedCode" ng-keydown="pop.nextfocus($event)">
+                      </td>
+                      <td>
+                        <input type="text" class="form-control input-sm w-xs" ng-model="pop.pzzh.breedName" ng-keydown="pop.nextfocus($event)">
+                      </td>
+                      <td>
+                        <input type="text" class="form-control input-sm w-xs" ng-model="pop.pzzh.motherCode" ng-keydown="pop.nextfocus($event)">
+                      </td>
+                      <td>
+                        <input type="text" class="form-control input-sm w-xs" ng-model="pop.pzzh.fatherCode" ng-keydown="pop.nextfocus($event)">
+                      </td>
+                      <td>
+                        <input type="text" class="form-control input-sm w-xs" ng-model="pop.pzzh.harvestLocation" ng-keydown="pop.nextfocus($event)">
+                      </td>
+                      <td>
+                        <input type="text" class="form-control input-sm w-xs" ng-model="pop.pzzh.harvestTime" ng-keydown="pop.nextfocus($event)">
+                      </td>
+                      <td>
+                        <input type="text" class="form-control input-sm w-xs" ng-model="pop.pzzh.areaCode" ng-keydown="pop.nextfocus($event)">
+                      </td>
+                      <td>
+                        <input type="text" class="form-control input-sm w-xs" ng-model="pop.pzzh.count" ng-keydown="pop.nextfocus($event)">
+                      </td>
+                      <td>
+                      <select class="form-control input-sm w-xs" ng-model="pop.pzzh.unit">
+                          <option value="">请选择</option>
+                          <option value="g">g</option>
+                          <option value="粒">粒</option>
+                        </select>
+                        <!-- <input type="text" class="form-control input-sm w-xs" ng-model="pop.pzzh.unit" ng-keydown="pop.nextfocus($event)"> -->
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+            </div>
+
+
+        </fieldset>
+    </form>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-primary btn-sm" ng-click="pop.ok()" ng-hide="pop.formDisabled" ng-disabled="dataForm.$invalid">提交</button>
+    <button type="button" class="btn btn-info btn-sm" ng-click="pop.edit()" ng-show="pop.formDisabled" >编辑</button>
+    <button type="button" class="btn btn-default btn-sm" ng-click="pop.cancel()">取消</button>
+</div>

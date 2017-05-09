@@ -1,0 +1,92 @@
+[
+	{
+		"groupId": "1",
+		"groupName": "2015年试验品种",
+		"useType": "3",
+		"useTypeText": "试验品种",
+		"groupYear": "2",
+		"groupYearText": "2015年",
+		"remark": "2015年试验品种"
+	},
+	{
+		"groupId": "2",
+		"groupName": "2014年试验品种",
+		"useType": "2",
+		"useTypeText": "育种品种",
+		"groupYear": "3",
+		"groupYearText": "2014年",
+		"remark": "2014年试验品种"
+	},
+	{
+		"groupId": "3",
+		"groupName": "2013年试验品种",
+		"useType": "2",
+		"useTypeText": "育种品种",
+		"groupYear": "4",
+		"groupYearText": "2013年",
+		"remark": "2013年试验品种"
+	},
+	{
+		"groupId": "4",
+		"groupName": "2013年试验品种",
+		"useType": "1",
+		"useTypeText": "亲本品种",
+		"groupYear": "4",
+		"groupYearText": "2013年",
+		"remark": "2013年试验品种"
+	},
+	{
+		"groupId": "1",
+		"groupName": "2015年试验品种",
+		"useType": "3",
+		"useTypeText": "试验品种",
+		"groupYear": "2",
+		"groupYearText": "2015年",
+		"remark": "2015年试验品种"
+	},
+	{
+		"groupId": "2",
+		"groupName": "2014年试验品种",
+		"useType": "2",
+		"useTypeText": "育种品种",
+		"groupYear": "3",
+		"groupYearText": "2014年",
+		"remark": "2014年试验品种"
+	},
+	{
+		"groupId": "3",
+		"groupName": "2013年试验品种",
+		"useType": "2",
+		"useTypeText": "育种品种",
+		"groupYear": "4",
+		"groupYearText": "2013年",
+		"remark": "2013年试验品种"
+	},
+	{
+		"groupId": "4",
+		"groupName": "2013年试验品种",
+		"useType": "1",
+		"useTypeText": "亲本品种",
+		"groupYear": "4",
+		"groupYearText": "2013年",
+		"remark": "2013年试验品种"
+	},
+	{
+		"groupId": "1",
+		"groupName": "2015年试验品种",
+		"useType": "3",
+		"useTypeText": "试验品种",
+		"groupYear": "2",
+		"groupYearText": "2015年",
+		"remark": "2015年试验品种"
+	},
+	{
+		"groupId": "2",
+		"groupName": "2014年试验品种",
+		"useType": "2",
+		"useTypeText": "育种品种",
+		"groupYear": "3",
+		"groupYearText": "2014年",
+		"remark": "2014年试验品种"
+	}
+]

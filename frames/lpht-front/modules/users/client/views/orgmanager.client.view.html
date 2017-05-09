@@ -1,0 +1,200 @@
+<div class="m-t-md" ng-controller="orgManagerController">
+    <div class="col-sm-5" ng-switch="org.nodeTypeValue">
+        <div class="table-responsive m-b-sm">
+            <div ui-grid="org.gridOptionsOrg" ui-grid-tree-view ui-grid-selection></div>
+        </div>
+        <div class="panel panel-default m-t-sm" ng-switch-when="01">
+            <div class="panel-heading"><strong> 机构详情</strong></div>
+            <div class="panel-body">
+                <form name="orgForm" class="form-horizontal form-validation">
+                    <div class="row">
+                        <div class="col-sm-10">
+                            <div class="form-group">
+                                <label class="col-sm-4 timeline control-label">类型:</label>
+                                <div class="col-sm-8">
+                                    <select class="form-control input-sm" ng-model="org.nodeTypeValue" ng-options="o.code as o.message for o in org.nodetype" ng-disabled="org.orgType" ng-change="org.nodeTypeChange()">
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-10">
+                            <div class="form-group ">
+                                <label class="col-sm-4 timeline control-label">名称:</label>
+                                <div class="col-sm-8">
+                                    <input class="form-control input-sm" required ng-model="org.orgEntity.nodename" ng-disabled="org.orgDisabled">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-10">
+                            <div class="form-group ">
+                                <label class="col-sm-4 timeline control-label">编码:</label>
+                                <div class="col-sm-8">
+                                    <input class="form-control input-sm" required ng-model="org.orgEntity.nodecode" ng-disabled="org.orgDisabled">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="panel-footer">
+                <div class="text-right">
+                    <div ng-show="org.orgOpera">
+                        <button type="button" class="btn btn-success btn-sm" ng-click="org.addOrg()"><i class="fa fa-plus-circle"></i> 新增</button>
+                        <button type="button" class="btn btn-info btn-sm" ng-click="org.editOrg()" ng-disabled="org.editOrgDisabled"><i class="fa fa-pencil"></i> 修改</button>
+                        <button type="submit" class="btn btn-danger btn-sm" ng-click="org.deleteOrg()" ng-disabled="org.editOrgDisabled"><i class="fa fa-times-circle"></i> 删除</button>
+                    </div>
+                    <div ng-show="org.buttonShow1">
+                        <button type="submit" class="btn btn-primary btn-sm" ng-click="org.orgSubmit()" ng-disabled="orgForm.$invalid">
+                            确定
+                        </button>
+                        <button type="button" class="btn btn-default btn-sm" ng-click="org.orgCancel()">
+                            取消
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default m-t-sm" ng-switch-when="02">
+            <div class="panel-heading"><strong> 部门详情</strong></div>
+            <div class="panel-body">
+                <form name="orgForm" class="form-horizontal form-validation">
+                    <div class="col-lg-6 col-md-12">
+                        <div class="form-group">
+                            <label class="col-md-4 col-sm-4 timeline control-label">类型:</label>
+                            <div class="col-md-8 col-sm-8">
+                                <select class="form-control input-sm" ng-model="org.nodeTypeValue" ng-options="o.code as o.message for o in org.nodetype" ng-disabled="org.orgType">
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-12">
+                        <div class="form-group ">
+                            <label class="col-md-4 col-sm-4 timeline control-label">名称:</label>
+                            <div class="col-md-8 col-sm-8">
+                                <input class="form-control input-sm" required ng-model="org.branchEntity.nodename" ng-disabled="org.orgDisabled">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-12">
+                        <div class="form-group ">
+                            <label class="col-md-4 col-sm-4 timeline control-label">编码:</label>
+                            <div class="col-md-8 col-sm-8">
+                                <input class="form-control input-sm" required ng-model="org.branchEntity.nodecode" ng-disabled="org.orgDisabled">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-12">
+                        <div class="form-group">
+                            <label class="col-md-4 col-sm-4 timeline control-label">负责人:</label>
+                            <div class="col-md-8 col-sm-8">
+                                <input class="form-control input-sm "  ng-model="org.branchEntity.manager" ng-disabled="org.orgDisabled">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-12">
+                        <div class="form-group ">
+                            <label class="col-md-4 col-sm-4 timeline control-label">电话:</label>
+                            <div class="col-md-8 col-sm-8">
+                                <input class="form-control input-sm"  ng-model="org.branchEntity.linktel" ng-disabled="org.orgDisabled" ng-pattern="/^(0|86|17951)?(13[0-9]|15[012356789]|17[678]|18[0-9]|14[57])[0-9]{8}$/" placeholder="手机号">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="panel-footer">
+                <div class="text-right">
+                    <div ng-show="org.orgOpera">
+                        <button type="button" class="btn btn-success btn-sm" ng-click="org.addBranch()"><i class="fa fa-plus-circle"></i> 新增</button>
+                        <button type="button" class="btn btn-info btn-sm" ng-click="org.editBranch()" ng-disabled="org.editOrgDisabled"><i class="fa fa-pencil"></i> 修改</button>
+                        <button type="submit" class="btn btn-danger btn-sm" ng-click="org.deleteBranch()" ng-disabled="org.editOrgDisabled"><i class="fa fa-times-circle"></i> 删除</button>
+                    </div>
+                    <div ng-show="org.buttonShow1">
+                        <button type="submit" class="btn btn-primary btn-sm" ng-click="org.BranchSubmit()" ng-disabled="orgForm.$invalid">
+                            确定
+                        </button>
+                        <button type="button" class="btn btn-default btn-sm" ng-click="org.BranchCancel()">
+                            取消
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-7 col-sm-7 col-lg-7">
+        <div class="table-responsive m-b-sm">
+            <div class="pos-rlt" ui-grid="org.gridOptionsEmployee" ui-grid-pagination ui-grid-selection></div>
+        </div>
+        <div class="panel panel-default m-t-sm">
+            <div class="panel-heading"><strong> 员工详情</strong></div>
+            <div class="panel-body">
+                <form name="employeeForm" class="form-horizontal form-validation">
+                    <div class="col-lg-6 col-md-12">
+                        <div class="form-group">
+                            <label class="col-md-4 col-sm-4 timeline control-label">姓名:</label>
+                            <div class="col-md-8 col-sm-8">
+                                <input class="form-control input-sm" required ng-model="org.employee.nodename" ng-disabled="org.employeeDisabled">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-12">
+                        <div class="form-group required">
+                            <label class="col-md-4 col-sm-4 timeline control-label">性别:</label>
+                            <div class="col-md-8 col-sm-8">
+                                <select class="form-control input-sm" ng-model="org.employee.sex" ng-disabled="org.employeeDisabled" ng-options="o.code as o.message for o in org.sex">
+                                    <option value="">请选择</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-12">
+                        <div class="form-group required">
+                            <label class="col-md-4 col-sm-4 timeline control-label">身份证:</label>
+                            <div class="col-md-8 col-sm-8">
+                                <input class="form-control input-sm " required ng-model="org.employee.cardid" ng-disabled="org.employeeDisabled" ng-pattern="/^[1-9]\d{5}[1-9]\d{3}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{4}$/" placeholder="必填真实身份证">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-12">
+                        <div class="form-group required">
+                            <label class="col-md-4 col-sm-4 timeline control-label">联系电话:</label>
+                            <div class="col-md-8 col-sm-8">
+                                <input class="form-control input-sm" required ng-model="org.employee.empphn" ng-disabled="org.employeeDisabled" ng-pattern="/^(0|86|17951)?(13[0-9]|15[012356789]|17[678]|18[0-9]|14[57])[0-9]{8}$/" placeholder="必填手机号">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-12">
+                        <div class="form-group required">
+                            <label class="col-md-4 col-sm-4 timeline control-label ">婚否:</label>
+                            <div class="col-md-8 col-sm-8">
+                                <select class="form-control input-sm" ng-model="org.employee.marriage" ng-disabled="org.employeeDisabled" ng-options="o.code as o.message for o in org.Y_N">
+                                    <option value="">请选择</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="panel-footer">
+                <div class="text-right">
+                    <div ng-show="org.employeeOpera">
+                        <button type="button" class="btn btn_minwidth btn-success btn-sm" ng-click="org.addEmployee()" ng-disabled="org.addEmployeeDisabled"><i class="fa fa-plus-circle"></i> 新增</button>
+                        <button type="button" class="btn btn_minwidth btn-info btn-sm" ng-click="org.editEmployee()" ng-disabled="org.editEmployeeDisabled"><i class="fa fa-pencil"></i> 修改</button>
+                        <button type="submit" class="btn btn-danger btn-sm" ng-click="org.deleteEmployee()" ng-disabled="org.editEmployeeDisabled"><i class="fa fa-times-circle"></i> 删除</button>
+                    </div>
+                    <div ng-show="org.buttonShow2">
+                        <button type="submit" class="btn btn_minwidth btn-primary btn-sm" ng-click="org.employeeSubmit()" ng-disabled="employeeForm.$invalid">
+                            确定
+                        </button>
+                        <button type="button" class="btn btn_minwidth btn-default btn-sm" ng-click="org.employeeCancel()">
+                            取消
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

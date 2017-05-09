@@ -1,0 +1,18 @@
+[
+  {
+    "typename": "1",
+    "remark": "单点试验"
+  },
+  {
+    "typename": "2",
+    "remark": "多点试验"
+  },
+  {
+    "typename": "3",
+    "remark": "区域试验"
+  },
+  {
+    "typename": "4",
+    "remark": "特性试验"
+  }
+]

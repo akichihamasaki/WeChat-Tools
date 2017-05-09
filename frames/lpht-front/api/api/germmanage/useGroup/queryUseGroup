@@ -1,0 +1,25 @@
+{
+	"content": [
+		{
+			"groupName": "111",
+			"useTypeStr": "亲本品种",
+			"useType": "01",
+			"groupYear": "2016",
+			"remark": "333"
+		},
+		{
+			"groupName": "444",
+			"useTypeStr": "育种品种",
+			"useType": "02",
+			"groupYear": "2016",
+			"remark": "666"
+		},
+		{
+			"groupName": "777",
+			"useTypeStr": "试验品种",
+			"useType": "03",
+			"groupYear": "2016",
+			"remark": "999"
+		}
+	]
+}

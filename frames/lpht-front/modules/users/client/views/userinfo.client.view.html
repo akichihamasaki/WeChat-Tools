@@ -1,0 +1,268 @@
+<div class="hbox hbox-auto-xs hbox-auto-sm" ng-controller="UserInfoController">
+    <div style="background:url(modules/demo/client/img/c4.jpg) center center; background-size:cover">
+        <div class="wrapper-lg bg-white-opacity">
+            <div class="row m-t">
+                <div class="col-sm-7">
+                    <a href class="thumb-lg pull-left m-r">
+                        <!-- <img src="modules/demo/client/img/a0.jpg" class="img-circle"> -->
+                        <img src="{{ui.headImg}}" class="img-circle">
+                    </a>
+                    <div class="clear m-b">
+                        <div class="m-b m-t-sm">
+                            <span class="h3 text-black">{{ui.user.employee.nodename}}</span>
+                            <!-- <small class="m-l">London, UK</small> -->
+                        </div>
+                        <div class="m-b m-t-sm">
+                            <!-- <span class="h3 text-black">Admin</span> -->
+                            <small>{{ui.user.username}}</small>
+                        </div>
+                        <!-- <p class="m-b">
+                            <a href class="btn btn-sm btn-bg btn-rounded btn-default btn-icon"><i class="fa fa-twitter"></i></a>
+                            <a href class="btn btn-sm btn-bg btn-rounded btn-default btn-icon"><i class="fa fa-facebook"></i></a>
+                            <a href class="btn btn-sm btn-bg btn-rounded btn-default btn-icon"><i class="fa fa-google-plus"></i></a>
+                        </p> -->
+                        <!-- <a href class="btn btn-sm btn-success btn-rounded">更换头像</a> -->
+                    </div>
+                </div>
+                <div class="col-sm-5">
+                    <div class="pull-right pull-none-xs text-center">
+                  <!--       <a href class="m-b-md inline m">
+                            <span class="h3 block font-bold">2k</span>
+                            <small>Followers</small>
+                        </a>
+                        <a href class="m-b-md inline m">
+                            <span class="h3 block font-bold">250</span>
+                            <small>Following</small>
+                        </a> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6">
+            <uib-tabset active="0" class="tab-container">
+                <uib-tab index="0" heading="用户详情">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <form name="form" class="form-validation">
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">用户名：</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" required ng-model="ui.user.username" readonly>
+                                    </div>
+                                </div>
+                                <div class="line line-dashed b-b line-lg pull-in"></div>
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">姓名：</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" ng-model="ui.user.employee.nodename" readonly>
+                                    </div>
+                                </div>
+                                <div class="line line-dashed b-b line-lg pull-in"></div>
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">身份证：</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" required ng-model="ui.user.employee.cardid" ng-disabled="">
+                                    </div>
+                                </div>
+                                <div class="line line-dashed b-b line-lg pull-in"></div>
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">联系方式：</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" required ng-model="ui.user.employee.empphn" ng-disabled="ui.uiDisabled">
+                                    </div>
+                                </div>
+                                <div class="line line-dashed b-b line-lg pull-in"></div>
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">联系地址：</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" required ng-model="ui.user.employee.address" ng-disabled="ui.uiDisabled">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <footer class="panel-footer text-right bg-light lter">
+                            <div>
+                                <button type="submit" class="btn btn_minwidth btn-info btn-sm" ng-click="ui.submit()"><i class="icon-check"></i> 确定
+                                </button>
+                                <button type="submit" class="btn btn_minwidth btn-default btn-sm" ng-click="ui.cancel()"><i class="icon-close"></i> 重置
+                                </button>
+                            </div>
+                        </footer>
+                    </div>
+                </uib-tab>
+                <uib-tab index="1" heading="修改密码">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <form name="pwform" class="form-validation">
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">用户名：</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" required ng-model="ui.user.username" readonly>
+                                    </div>
+                                </div>
+                                <div class="line line-dashed b-b line-lg pull-in"></div>
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">原始密码：</label>
+                                    <div class="col-sm-9">
+                                        <input type="password" name="creator" class="form-control" ng-model="ui.pw.creator" ng-pattern="/^[a-zA-Z0-9]{4,10}$/" required>
+                                        <div ng-messages="pwform.creator.$dirty && pwform.creator.$error">
+                                            <p class="help-block text-sm" ng-message="required">请填写原始密码</p>
+                                            <p class="help-block text-sm" ng-message="pattern">请填写4-10位数字或字母</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="line line-dashed b-b line-lg pull-in"></div>
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">密码：</label>
+                                    <div class="col-sm-9">
+                                        <input type="password" name="password" class="form-control" ng-model="ui.pw.password" ng-pattern="/^[a-zA-Z0-9]{4,10}$/" required>
+                                        <div ng-messages="pwform.password.$dirty && pwform.password.$error">
+                                            <p class="help-block text-sm" ng-message="required">请填写原始密码</p>
+                                            <p class="help-block text-sm" ng-message="pattern">请填写4-10位数字或字母</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="line line-dashed b-b line-lg pull-in"></div>
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">确认密码：</label>
+                                    <div class="col-sm-9">
+                                        <input type="password" name="passwordVerify" class="form-control" ng-model="ui.pw.passwordVerify" ng-pattern="/^[a-zA-Z0-9]{4,10}$/" required>
+                                        <div ng-messages="pwform.passwordVerify.$dirty && pwform.passwordVerify.$error">
+                                            <p class="help-block text-sm" ng-message="required">请填写原始密码</p>
+                                            <p class="help-block text-sm" ng-message="pattern">请填写4-10位数字或字母</p>
+                                        </div>
+                                        <div ng-show="ui.pwShow">
+                                            <p class="help-block text-sm">确认密码要一致</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <footer class="panel-footer text-right bg-light lter">
+                            <div>
+                                <button type="submit" class="btn btn_minwidth btn-info btn-sm" ng-click="ui.pwSubmit()" ng-disabled="pwform.$invalid "><i class="icon-check"></i> 确定
+                                </button>
+                                <button type="submit" class="btn btn_minwidth btn-default btn-sm" ng-click="ui.pwCancel()"><i class="icon-close"></i> 取消
+                                </button>
+                            </div>
+                        </footer>
+                    </div>
+                </uib-tab>
+                <uib-tab index="2" heading="修改头像">
+                    <div class="panel panel-default">
+                        <div class="wrapper-md">
+                            <div class="m-b">
+                                <!-- <input type="file"  /> -->
+                                <button type="button" class="btn btn-info btn-sm m-l" ng-model="ui.files" ngf-select ngf-pattern="'image/*'" ngf-accept="'image/*'" ngf-min-height="100" ng-change="ui.handleFileSelect()"><i class="fa fa-file"></i> 选择文件</button>
+                            </div>
+                            <div class="hbox hbox-auto-xs">
+                                <div class="col-lg-8">
+                                    <div class="wrapper-sm b-a bg-white m-r-xs m-b-xs">
+                                        <div class="bg-light" style="height:320px">
+                                            <img-crop image="ui.myImage" result-image="ui.myCroppedImage" result-image-size="160" area-type="circle"></img-crop>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="inline bg-white wrapper-sm b-a rounded">
+                                        <div class="bg-light rounded">
+                                            <img class="rounded" ng-src="{{ui.myCroppedImage}}" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <footer class="panel-footer text-right bg-light lter">
+                            <div>
+                                <button type="submit" class="btn btn_minwidth btn-info btn-sm" ng-click="ui.headSubmit()" ng-disabled="ui.submitDisabled"><i class="icon-check"></i> 确定
+                                </button>
+                                <button type="submit" class="btn btn_minwidth btn-default btn-sm" ng-click="ui.headCancel()"><i class="icon-close"></i> 取消
+                                </button>
+                            </div>
+                        </footer>
+                    </div>
+                </uib-tab>
+            </uib-tabset>
+        </div>
+    </div>
+    <!-- <div class="col w-lg bg-light lter b-l bg-auto">
+        <div class="wrapper">
+            <div class="">
+                <h4 class="m-t-xs m-b-xs">Who to follow</h4>
+                <ul class="list-group no-bg no-borders pull-in">
+                    <li class="list-group-item">
+                        <a herf class="pull-left thumb-sm avatar m-r">
+                            <img src="modules/demo/client/img/a4.jpg" alt="..." class="img-circle">
+                            <i class="on b-white bottom"></i>
+                        </a>
+                        <div class="clear">
+                            <div><a href>Chris Fox</a></div>
+                            <small class="text-muted">Designer, Blogger</small>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <a herf class="pull-left thumb-sm avatar m-r">
+                            <img src="modules/demo/client/img/a5.jpg" alt="..." class="img-circle">
+                            <i class="on b-white bottom"></i>
+                        </a>
+                        <div class="clear">
+                            <div><a href>Mogen Polish</a></div>
+                            <small class="text-muted">Writter, Mag Editor</small>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <a herf class="pull-left thumb-sm avatar m-r">
+                            <img src="modules/demo/client/img/a6.jpg" alt="..." class="img-circle">
+                            <i class="busy b-white bottom"></i>
+                        </a>
+                        <div class="clear">
+                            <div><a href>Joge Lucky</a></div>
+                            <small class="text-muted">Art director, Movie Cut</small>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <a herf class="pull-left thumb-sm avatar m-r">
+                            <img src="modules/demo/client/img/a7.jpg" alt="..." class="img-circle">
+                            <i class="away b-white bottom"></i>
+                        </a>
+                        <div class="clear">
+                            <div><a href>Folisise Chosielie</a></div>
+                            <small class="text-muted">Musician, Player</small>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="panel b-a">
+                <h4 class="font-thin padder">Latest Tweets</h4>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <p>Wellcome <a href class="text-info">@Drew Wllon</a> and play this web application template, have fun1 </p>
+                        <small class="block text-muted"><i class="fa fa-fw fa-clock-o"></i> 2 minuts ago</small>
+                    </li>
+                    <li class="list-group-item">
+                        <p>Morbi nec <a href class="text-info">@Jonathan George</a> nunc condimentum ipsum dolor sit amet, consectetur</p>
+                        <small class="block text-muted"><i class="fa fa-fw fa-clock-o"></i> 1 hour ago</small>
+                    </li>
+                    <li class="list-group-item">
+                        <p><a href class="text-info">@Josh Long</a> Vestibulum ullamcorper sodales nisi nec adipiscing elit. Morbi id neque quam. Aliquam sollicitudin venenatis</p>
+                        <small class="block text-muted"><i class="fa fa-fw fa-clock-o"></i> 2 hours ago</small>
+                    </li>
+                </ul>
+            </div>
+            <div class="panel b-light clearfix">
+                <div class="panel-body">
+                    <a href class="thumb pull-left m-r">
+                        <img src="modules/demo/client/img/a0.jpg" class="img-circle">
+                    </a>
+                    <div class="clear">
+                        <a href class="text-info">@Mike Mcalidek <i class="fa fa-twitter"></i></a>
+                        <small class="block text-muted">2,415 followers / 225 tweets</small>
+                        <a href class="btn btn-xs btn-success m-t-xs">Follow</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+</div>

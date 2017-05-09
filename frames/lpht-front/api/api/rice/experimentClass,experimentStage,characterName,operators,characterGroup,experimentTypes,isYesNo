@@ -1,0 +1,110 @@
+{
+  "experimentClass": [
+    {
+      "typecode": "1",
+      "typecodeName": "大田作物"
+    },
+    {
+      "typecode": "2",
+      "typecodeName": "小田作物"
+    }
+  ],
+  "experimentStage": [
+    {
+      "typecode": "1",
+      "typecodeName": "单点试验"
+    },
+    {
+      "typecode": "2",
+      "typecodeName": "多点试验"
+    },
+    {
+      "typecode": "3",
+      "typecodeName": "区域试验"
+    },
+    {
+      "typecode": "4",
+      "typecodeName": "生产试验"
+    }
+  ],
+  "characterName": [
+    {
+      "typecode": "1",
+      "typecodeName": "最高苗",
+      "dataType":"数值型",
+      "dataUnit":"cm"
+    },
+    {
+      "typecode": "2",
+      "typecodeName": "分蘖时间",
+      "dataType":"日期型",
+      "dataUnit":"YYYY-MM-DD"
+    },
+    {
+      "typecode": "3",
+      "typecodeName": "基本苗",
+      "dataType":"数值型",
+      "dataUnit":"cm"
+    }
+  ],
+  "operators": [
+    {
+      "typecode": "1",
+      "typecodeName": ">="
+    },
+    {
+      "typecode": "2",
+      "typecodeName": "<="
+    },
+    {
+      "typecode": "3",
+      "typecodeName": "<"
+    },
+    {
+      "typecode": "4",
+      "typecodeName": ">"
+    },
+    {
+      "typecode": "5",
+      "typecodeName": "="
+    },
+    {
+      "typecode": "6",
+      "typecodeName": "!="
+    }
+  ],
+  "characterGroup": [
+    {
+      "typecode": "1",
+      "typecodeName": "生育期组"
+    },
+    {
+      "typecode": "2",
+      "typecodeName": "基础属性"
+    },
+    {
+      "typecode": "3",
+      "typecodeName": "植株形态组"
+    }
+  ],
+  "experimentTypes": [
+    {
+      "typecode": "1",
+      "typecodeName": "田间测试"
+    },
+    {
+      "typecode": "2",
+      "typecodeName": "特性测试"
+    }
+  ],
+  "isYesNo": [
+    {
+      "typecode": "1",
+      "typecodeName": "Y"
+    },
+    {
+      "typecode": "2",
+      "typecodeName": "N"
+    }
+  ]
+}

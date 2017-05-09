@@ -1,0 +1,7 @@
+{
+  "registry" : {
+    "search" : [ "http://172.16.17.220:8081/repository/bower-group/" ]
+  },
+ "resolvers" : [ "bower-nexus3-resolver" ], 
+  "directory": "public/lib"
+}

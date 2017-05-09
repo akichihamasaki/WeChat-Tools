@@ -1,0 +1,49 @@
+<div class="modal-header" ng-switch="gm.buttonType">
+  <h4 class="modal-title" ng-switch-when="contract">合同</h4>
+  <h4 class="modal-title" ng-switch-when="evaluation">考评记录</h4>
+  <h4 class="modal-title" ng-switch-when="event">事件记录</h4>
+</div>
+<div class="modal-body">
+  <div ng-show="gm.buttonType == 'contract'">
+    <div class="m-b-md">
+      <div class="btn-group">
+        <button type="button" class="btn btn-success btn-sm" ng-click="gm.openContract('add')"><i class="fa fa-plus-circle"></i> 新增</button>
+        <button type="button" class="btn btn-info btn-sm" ng-click="gm.openContract('edit')" ng-disabled="ht.disableDelete"><i class="fa fa-pencil"></i> 修改</button>
+        <button type="button" class="btn btn-danger btn-sm" ng-click="gm.openDialog('contract')" ng-disabled="ht.disableDelete"><i class="fa fa-times-circle"></i> 删除</button>
+        <button type="button" class="btn btn-primary btn-sm" ng-click="gm.openContract('view')" ng-disabled="ht.disableDelete"><i class="fa fa-file-text"></i> 查看</button>
+      </div>
+    </div>
+    <div class="m-b-md">
+      <div class="pos-rlt" ui-grid="gm.contract" ui-grid-pagination ui-grid-selection ui-grid-resize-columns ui-grid-auto-resize></div>
+    </div>
+  </div>
+  <div ng-show="gm.buttonType == 'evaluation'">
+    <div class="m-b-md">
+      <div class="btn-group">
+        <button type="button" class="btn btn-success btn-sm" ng-click="gm.openEvaluation('add')"><i class="fa fa-plus-circle"></i> 新增</button>
+        <button type="button" class="btn btn-info btn-sm" ng-click="gm.openEvaluation('edit')" ng-disabled="kp.disableDelete"><i class="fa fa-pencil"></i> 修改</button>
+        <button type="button" class="btn btn-danger btn-sm" ng-click="gm.openDialog('evaluation')" ng-disabled="kp.disableDelete"><i class="fa fa-times-circle"></i> 删除</button>
+        <button type="button" class="btn btn-primary btn-sm" ng-click="gm.openEvaluation('view')" ng-disabled="kp.disableDelete"><i class="fa fa-file-text"></i> 查看</button>
+      </div>
+    </div>
+    <div class="m-b-md">
+      <div class="pos-rlt" ui-grid="gm.evaluation" ui-grid-pagination ui-grid-selection ui-grid-resize-columns ui-grid-auto-resize></div>
+    </div>
+  </div>
+  <div ng-show="gm.buttonType == 'event'">
+    <div class="m-b-md">
+      <div class="btn-group">
+        <button type="button" class="btn btn-success btn-sm" ng-click="gm.openEvent('add')"><i class="fa fa-plus-circle"></i> 新增</button>
+        <button type="button" class="btn btn-info btn-sm" ng-click="gm.openEvent('edit')" ng-disabled="sj.disableDelete"><i class="fa fa-pencil"></i> 修改</button>
+        <button type="button" class="btn btn-danger btn-sm" ng-click="gm.openDialog('event')" ng-disabled="sj.disableDelete"><i class="fa fa-times-circle"></i> 删除</button>
+        <button type="button" class="btn btn-primary btn-sm" ng-click="gm.openEvent('view')" ng-disabled="sj.disableDelete"><i class="fa fa-file-text"></i> 查看</button>
+      </div>
+    </div>
+    <div class="m-b-md">
+      <div class="pos-rlt" ui-grid="gm.event" ui-grid-pagination ui-grid-selection ui-grid-resize-columns ui-grid-auto-resize></div>
+    </div>
+  </div>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-default btn-sm" ng-click="gm.cancel()">取消</button>
+</div>

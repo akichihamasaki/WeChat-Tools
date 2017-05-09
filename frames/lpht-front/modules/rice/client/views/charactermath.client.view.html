@@ -1,0 +1,219 @@
+<div class="modal-header" >
+    <h3 class="modal-title"> 公式编辑器</h3>
+</div>
+<div class="modal-body ">
+    <div class="form form-horizontal">
+      <div class="panel panel-default">
+        <div class="panel-heading">参数选择和查询 </div>
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-sm-6 ">
+                <div class="form-group">
+                    <label class="col-sm-4  control-label text-sm" >性状组</label>
+                    <div class="col-sm-8">
+                      <select class="form-control input-sm  m-r-s " ng-model="math.group" ng-options = "y.groupName for (x,y) in math.characterGroup" ng-change="math.selGroup(math.group)">
+                        <!-- <option ng-repeat="x in characterGroup">{{x.characterGroupName}}</option> -->
+                        <option value="" class="text-sm">请选择</option>
+                        <!-- <option ng-repeat="x in characterGroup">{{x.groupName}}</option> -->
+                      </select>
+                    </div>
+                </div>
+            </div>
+            <div class=" col-sm-6 ">
+                <div class="form-group">
+                  <div class="col-sm-6  m-r-s">
+                    <input type="text" class="form-control input-sm"  ng-model="math.searchParam">
+                  </div>
+                  <div class="btn-group">
+                    <button class="btn btn-info btn-sm m-l-md" ng-click="math.search(math.group)"><i class="fa fa-search"></i> 参数查询</button>
+                    <button class="btn btn-default btn-sm m-l-md" ng-click="math.resetParams()"><i class="fa fa-refresh"></i> 重置</button>
+                  </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- <div class="panel panel-default">
+        <div class="panel-heading">编辑</div>
+        <div class="panel-body"> -->
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="panel panel-default">
+                  <div class="panel-heading">参数列表<small>&nbsp&nbsp 注:双击选中参数</small></div>
+                  <div class="panel-body">
+                    <div class="col-sm-10 col-sm-offset-1">
+                        <div class="list-group b m-b-xxs" style="height:250px;overflow:auto;">
+                          <a class="list-group-item wrapper-xs text-sm padder bg-info dk" style="color:white;">参数名称</a>
+                          <a class="list-group-item  wrapper-xs text-sm padder" ng-repeat="param in math.characterComponent"  ng-dblclick="math.dblSelParam(param)">{{param.charactersName}}</a>
+                        </div>
+                    </div>
+                    <!-- <div class="col-sm-10 col-sm-offset-1">
+                      <table class="table table-bordered wrapper-md text-center table-hover">
+                         <thead >
+                           <tr class="no-border">
+                              <th class="no-padder text-center">序号</th>
+                              <th class="no-padder text-center">参数名称</th>
+                           </tr>
+                        </thead>
+                        <tbody >
+                           <tr ng-repeat="param in group.characterComponent" class="no-padder" ng-dblclick="showParam(param.characterName)">
+                              <td class="no-padder ">{{$index+1}}</td>
+                              <td class="no-padder">{{param.characterName}}</td>
+                           </tr>
+                        </tbody>
+                      </table>
+                    </div> -->
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="col-sm-6">
+                <div class="panel panel-default">
+                  <div class="panel-heading">运算符</div>
+                  <div class="panel-body">
+                    <div class="row m-b-xs">
+                      <div class="col-sm-10 col-sm-offset-1">
+                       <div class="col-xs-4 no-padder">
+                        <button class="col-xs-11 col-xs-offset-1 text-sm btn btn-sm btn-default" ng-click="math.showParam('Max(')">Max()</button>
+                       </div>
+                       <div class="col-xs-4 no-padder">
+                        <button class="col-xs-11 col-xs-offset-1 text-sm btn btn-sm btn-default" ng-click="math.showParam('Min(')">Min()</button>
+                       </div>
+                       <div class="col-xs-4 no-padder">
+                        <button class="col-xs-11 col-xs-offset-1 text-sm btn btn-sm btn-default" ng-click="math.showParam('Avg(')">Avg()</button>
+                       </div>
+                      </div>
+                    </div>
+
+                    <div class="row m-b-xs">
+                      <div class="col-sm-10 col-sm-offset-1">
+                       <div class="col-xs-4 no-padder">
+                        <button class="col-xs-11 col-xs-offset-1 text-sm btn btn-sm btn-default" ng-click="math.showParam('1')">1</button>
+                       </div>
+                       <div class="col-xs-4 no-padder">
+                        <button class="col-xs-11 col-xs-offset-1 text-sm btn btn-sm btn-default" ng-click="math.showParam('2')">2</button>
+                       </div>
+                       <div class="col-xs-4 no-padder">
+                        <button class="col-xs-11 col-xs-offset-1 text-sm btn btn-sm btn-default" ng-click="math.showParam('3')">3</button>
+                       </div>
+                      </div>
+                    </div>
+
+                    <div class="row m-b-xs">
+                      <div class="col-sm-10 col-sm-offset-1">
+                       <div class="col-xs-4 no-padder">
+                        <button class="col-xs-11 col-xs-offset-1 text-sm btn btn-sm btn-default" ng-click="math.showParam('4')">4</button>
+                       </div>
+                       <div class="col-xs-4 no-padder">
+                        <button class="col-xs-11 col-xs-offset-1 text-sm btn btn-sm btn-default" ng-click="math.showParam('5')">5</button>
+                       </div>
+                       <div class="col-xs-4 no-padder">
+                        <button class="col-xs-11 col-xs-offset-1 text-sm btn btn-sm btn-default" ng-click="math.showParam('6')">6</button>
+                       </div>
+                      </div>
+                    </div>
+
+                    <div class="row m-b-xs">
+                      <div class="col-sm-10 col-sm-offset-1">
+                       <div class="col-xs-4 no-padder">
+                        <button class="col-xs-11 col-xs-offset-1 text-sm btn btn-sm btn-default" ng-click="math.showParam('7')">7</button>
+                       </div>
+                       <div class="col-xs-4 no-padder">
+                        <button class="col-xs-11 col-xs-offset-1 text-sm btn btn-sm btn-default" ng-click="math.showParam('8')">8</button>
+                       </div>
+                       <div class="col-xs-4 no-padder">
+                        <button class="col-xs-11 col-xs-offset-1 text-sm btn btn-sm btn-default" ng-click="math.showParam('9')">9</button>
+                       </div>
+                      </div>
+                    </div>
+
+                    <div class="row m-b-xs">
+                      <div class="col-sm-10 col-sm-offset-1">
+                       <div class="col-xs-4 no-padder">
+                        <button class="col-xs-11 col-xs-offset-1 text-sm btn btn-sm btn-default" ng-click="math.showParam('0')">0</button>
+                       </div>
+                       <div class="col-xs-4 no-padder">
+                        <button class="col-xs-11 col-xs-offset-1 text-sm btn btn-sm btn-default" ng-click="math.showParam('*')">*</button>
+                       </div>
+                       <div class="col-xs-4 no-padder">
+                        <button class="col-xs-11 col-xs-offset-1 text-sm btn btn-sm btn-default" ng-click="math.showParam('/')">/</button>
+                       </div>
+                      </div>
+                    </div>
+
+                    <div class="row m-b-xs">
+                      <div class="col-sm-10 col-sm-offset-1">
+                       <div class="col-xs-4 no-padder">
+                        <button class="col-xs-11 col-xs-offset-1 text-sm btn btn-sm btn-default" ng-click="math.showParam('+')">+</button>
+                       </div>
+                       <div class="col-xs-4 no-padder">
+                        <button class="col-xs-11 col-xs-offset-1 text-sm btn btn-sm btn-default" ng-click="math.showParam('-')">-</button>
+                       </div>
+                       <div class="col-xs-4 no-padder">
+                        <button class="col-xs-11 col-xs-offset-1 text-sm btn btn-sm btn-default" ng-click="math.showParam('(')">(</button>
+                       </div>
+                      </div>
+                    </div>
+
+                    <div class="row m-b-xs">
+                      <div class="col-sm-10 col-sm-offset-1">
+                       <div class="col-xs-4 no-padder">
+                        <button class="col-xs-11 col-xs-offset-1 text-sm btn btn-sm btn-default" ng-click="math.showParam(')')">)</button>
+                       </div>
+                       <div class="col-xs-4 no-padder">
+                        <button class="col-xs-11 col-xs-offset-1 text-sm btn btn-sm btn-default" ng-click="math.showParam('.')">.</button>
+                       </div>
+                       <div class="col-xs-4 no-padder">
+                        <!-- <button class="col-xs-11 col-xs-offset-1 text-sm btn btn-sm btn-default" ></button> -->
+                       </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+        <!-- </div>
+      </div> -->
+     <!--  <div class="panel panel-default">
+        <div class="panel-heading">公式</div>
+        <div class="panel-body"> -->
+          <div class="row ">
+            <div class="col-sm-12">
+              <div class="form-group">
+                <label class="control-label col-sm-2">公式</label>
+                <div class="col-sm-10">
+                  <textarea class="form-control " ng-model="math.calculationFormulas" readonly></textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- <div class="row " hidden>
+            <div class="col-sm-12">
+              <div class="form-group">
+                <label class="control-label col-sm-2">公式2</label>
+                <div class="col-sm-10">
+                  <textarea class="form-control " ng-model="math.expression" ng-disabled="true"></textarea>
+                </div>
+              </div>
+            </div>
+          </div> -->
+          <div class="row">
+            <div class="col-sm-12 text-right">
+              <button class="btn btn-info btn-sm" type="button" ng-click="math.backShowParam();">撤销</button>
+              <button class="btn btn-info btn-sm" type="button" ng-click="math.clearExpression()">重置</button>
+            </div>
+          </div>
+        <!-- </div>
+      </div> -->
+
+    </div>
+
+</div>
+
+<div class="modal-footer">
+    <button class="btn btn-primary btn-sm" ng-click="math.save()">保存</button>
+    <button class="btn btn-default btn-sm" ng-click="math.cancel()">取消</button>
+</div>

@@ -1,0 +1,36 @@
+{
+  "1": [
+    {
+      "element": "input",
+      "type": "number",
+      "name": "no",
+      "text": "试验编码",
+      "required": true,
+      "minlength": 3,
+      "maxlength": 8
+    },
+    {
+      "element": "select",
+      "name": "type",
+      "text": "试验类型",
+      "options": [
+  	    {
+  	      "id": "1",
+  	      "name": "田间测试"
+  	    },
+  	    {
+  	      "id": "2",
+  	      "name": "特性测试"
+  	    }
+  	  ]
+    },
+    {
+      "element": "input",
+      "type": "text",
+      "name": "seed",
+      "text": "基本苗(万/亩)",
+      "required": true,
+      "pattern": "/[a-zA-Z]/"
+    }
+  ]
+}

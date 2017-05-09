@@ -1,0 +1,158 @@
+<div class="modal-header" ng-switch="fm.modalType">
+  <h4 class="modal-title" ng-switch-when="add">新增</h4>
+  <h4 class="modal-title" ng-switch-when="edit">修改</h4>
+  <h4 class="modal-title" ng-switch-when="view">查看详情</h4>
+</div>
+<div class="modal-body">
+  <form class="form-horizontal form-validation" name="dataForm">
+    <fieldset ng-disabled="fm.formDisabled">
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="form-group has-feedback">
+            <label class="col-lg-4 control-label text-sm">品种名称</label>
+            <div class="col-lg-8">
+              <input type="text" class="form-control input-sm" name="name" placeholder="品种名称" ng-model="fm.rowEntity.name" required>
+              <span class="fa fa-exclamation-circle form-control-feedback" ng-show="dataForm.name.$error.required"></span>
+              <div ng-messages="dataForm.name.$dirty && dataForm.name.$error">
+                <p class="help-block text-sm" ng-message = "required">请填写品种名称</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="form-group has-feedback">
+            <label class="col-lg-4 control-label text-sm">亲本组合</label>
+            <div class="col-lg-8">
+              <input type="text" class="form-control input-sm" name="combination" placeholder="亲本组合" ng-model="fm.rowEntity.combination" required>
+              <span class="fa fa-exclamation-circle form-control-feedback" ng-show="dataForm.combination.$error.required"></span>
+              <div ng-messages="dataForm.combination.$dirty && dataForm.combination.$error">
+                <p class="help-block text-sm" ng-message="required">请填写亲本组合</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="form-group has-feedback">
+            <label class="col-lg-4 control-label text-sm">品种编码</label>
+            <div class="col-lg-8">
+              <input type="text" class="form-control input-sm" name="no" placeholder="品种编码" ng-model="fm.rowEntity.no" ng-minlength="3" ng-maxlength="8" required>
+              <span class="fa fa-exclamation-circle form-control-feedback" ng-show="dataForm.no.$error.required"></span>
+              <div ng-messages="dataForm.no.$dirty && dataForm.no.$error">
+                <p class="help-block text-sm" ng-message="required">请填写品种编码</p>
+                <p class="help-block text-sm" ng-message="minlength">品种编码长度不能小于3</p>
+                <p class="help-block text-sm" ng-message="maxlength">品种编码长度不能大于8</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label class="col-lg-4 control-label text-sm">品种类别</label>
+            <div class="col-lg-8">
+              <select class="form-control input-sm" name="category" ng-options="o.id as o.name for o in fm.selectData.varietyCategory" ng-model="fm.rowEntity.category" required>
+                <option value="">请选择</option>
+              </select>
+              <div ng-messages="dataForm.category.$dirty && dataForm.category.$error">
+                <p class="help-block text-sm" ng-message="required">请选择品种类别</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label class="col-lg-4 control-label text-sm">试验组别</label>
+            <div class="col-lg-8">
+              <select class="form-control input-sm" name="group" ng-options="o.id as o.name for o in fm.selectData.experimentGroups" ng-model="fm.rowEntity.group" required>
+                <option value="">请选择</option>
+              </select>
+              <div ng-messages="dataForm.group.$dirty && dataForm.group.$error">
+                <p class="help-block text-sm" ng-message="required">请选择试验组别</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label class="col-lg-4 control-label text-sm">试验年份</label>
+            <div class="col-lg-8">
+              <select class="form-control input-sm" name="year" ng-options="o.id as o.name for o in fm.selectData.experimentYears" ng-model="fm.rowEntity.year" required>
+                <option value="">请选择</option>
+              </select>
+              <div ng-messages="dataForm.year.$dirty && dataForm.year.$error">
+                <p class="help-block text-sm" ng-message="required">请选择试验年份</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label class="col-lg-4 control-label text-sm">试验类型</label>
+            <div class="col-lg-8">
+              <select class="form-control input-sm" name="type" ng-options="o.id as o.name for o in fm.selectData.experimentTypes" ng-model="fm.rowEntity.type" required>
+                <option value="">请选择</option>
+              </select>
+              <div ng-messages="dataForm.type.$dirty && dataForm.type.$error">
+                <p class="help-block text-sm" ng-message="required">请选择试验类型</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="form-group has-feedback">
+            <label class="col-lg-4 control-label text-sm">育种家</label>
+            <div class="col-lg-8">
+              <input type="text" class="form-control input-sm" name="expert" placeholder="育种家" ng-model="fm.rowEntity.expert">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="form-group has-feedback">
+            <label class="col-lg-4 control-label text-sm">育种者</label>
+            <div class="col-lg-8">
+              <input type="text" class="form-control input-sm" name="org" placeholder="育种者" ng-model="fm.rowEntity.org">
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="form-group has-feedback">
+            <label class="col-lg-4 control-label text-sm">联系人</label>
+            <div class="col-lg-8">
+              <input type="text" class="form-control input-sm" name="person" placeholder="联系人" ng-model="fm.rowEntity.person">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="form-group has-feedback">
+            <label class="col-lg-4 control-label text-sm">联系电话</label>
+            <div class="col-lg-8">
+              <input type="text" class="form-control input-sm" name="phone" placeholder="联系电话" ng-model="fm.rowEntity.phone">
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="form-group has-feedback">
+            <label class="col-lg-4 control-label text-sm">地址</label>
+            <div class="col-lg-8">
+              <input type="text" class="form-control input-sm" name="address" placeholder="地址" ng-model="fm.rowEntity.address">
+            </div>
+          </div>
+        </div>
+      </div>
+    </fieldset>
+  </form>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-primary btn-sm" ng-click="fm.ok()" ng-hide="fm.formDisabled" ng-disabled="dataForm.$invalid">确定</button>
+  <button type="button" class="btn btn-info btn-sm" ng-click="fm.edit()" ng-show="fm.formDisabled">编辑</button>
+  <button type="button" class="btn btn-default btn-sm" ng-click="fm.cancel()">取消</button>
+</div>

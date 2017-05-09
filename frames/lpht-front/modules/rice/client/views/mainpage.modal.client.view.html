@@ -1,0 +1,11 @@
+<div class="modal-header">
+  <h4 class="modal-title">{{im.publishData.infoTitle}}</h4>
+</div>
+<div class="modal-body">
+  <p>{{im.publishData.infoContent}}</p>
+  <button type="button" class="btn btn-sm btn-info" ng-show="im.attachable" ng-click="im.downloadFile()"><i class="fa fa-download"></i> 下载附件</button>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-primary btn-sm" ng-click="im.ok()">确定</button>
+  <button type="button" class="btn btn-default btn-sm" ng-click="im.cancel()">取消</button>
+</div>

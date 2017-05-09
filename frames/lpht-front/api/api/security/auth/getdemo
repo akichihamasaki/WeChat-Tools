@@ -1,0 +1,1800 @@
+[
+  {
+    "id": "100",
+    "name": null,
+    "title": "水稻",
+    "label": "水稻",
+    "url": null,
+    "description": null,
+    "orderno": 0,
+    "data": {
+      "id": "100",
+      "name": "水稻",
+      "code": null,
+      "orderno": 0,
+      "parentId": null,
+      "url": null,
+      "config": null,
+      "children": [],
+      "label": "水稻"
+    },
+    "components": [
+      {                                          
+        "id": "100100",
+        "name": null,
+        "title": "基础数据",
+        "label": "基础数据",
+        "url": "app.security",
+        "description": "glyphicon glyphicon-cog icon text-primary-dker",
+        "orderno": 0,
+        "data": {
+          "id": "100100",
+          "name": "基础数据",
+          "code": null,
+          "orderno": 0,
+          "parentId": "100",
+          "url": "app.security",
+          "config": "",
+          "children": [],
+          "label": "基础数据"
+        },
+        "components": [
+          {
+            "id": "100100100",
+            "name": null,
+            "title": "熟期",
+            "label": "熟期",
+            "url": "app.lpht.rice.cropmaturity",
+            "description": null,
+            "orderno": 1,
+            "data": {
+              "id": "100100100",
+              "name": "熟期",
+              "code": null,
+              "orderno": 1,
+              "parentId": "100100",
+              "url": "app.lpht.rice.cropmaturity",
+              "config": null,
+              "children": [],
+              "label": "熟期"
+            },
+            "components": [],
+            "parentId": "100100"
+          },
+          {
+            "id": "100100200",
+            "name": null,
+            "title": "产季",
+            "label": "产季",
+            "url": "app.lpht.rice.productseason",
+            "description": null,
+            "orderno": 2,
+            "data": {
+              "id": "100100200",
+              "name": "产季",
+              "code": null,
+              "orderno": 2,
+              "parentId": "100100",
+              "url": "app.lpht.rice.productseason",
+              "config": null,
+              "children": [],
+              "label": "产季"
+            },
+            "components": [],
+            "parentId": "100100"
+          },
+          {
+            "id": "100100300",
+            "name": null,
+            "title": "作物亚型",
+            "label": "作物亚型",
+            "url": "app.lpht.rice.cropsubtype",
+            "description": null,
+            "orderno": 3,
+            "data": {
+              "id": "100100300",
+              "name": "作物亚型",
+              "code": null,
+              "orderno": 3,
+              "parentId": "100100",
+              "url": "app.lpht.rice.cropsubtype",
+              "config": null,
+              "children": [],
+              "label": "作物亚型"
+            },
+            "components": [],
+            "parentId": "100100"
+          },
+          {
+            "id": "100100600",
+            "name": null,
+            "title": "性状管理",
+            "label": "性状管理",
+            "url": "",
+            "description": null,
+            "orderno": 6,
+            "data": {
+              "id": "100100600",
+              "name": "性状",
+              "code": null,
+              "orderno": 6,
+              "parentId": "100100",
+              "url": "app.lpht.rice.character",
+              "config": null,
+              "children": [],
+              "label": "性状"
+            },
+            "components": [
+              {
+                "id": "100100600",
+                "name": null,
+                "title": "性状",
+                "label": "性状",
+                "url": "app.lpht.rice.character",
+                "description": null,
+                "orderno": 6,
+                "data": {
+                  "id": "100100600",
+                  "name": "性状",
+                  "code": null,
+                  "orderno": 6,
+                  "parentId": "100100",
+                  "url": "app.lpht.rice.character",
+                  "config": null,
+                  "children": [],
+                  "label": "性状"
+                },
+                "components": [],
+                "parentId": "100100"
+              },
+              {
+                "id": "100100500",
+                "name": null,
+                "title": "性状组",
+                "label": "性状组",
+                "url": "app.lpht.rice.charactergroup",
+                "description": null,
+                "orderno": 5,
+                "data": {
+                  "id": "100100500",
+                  "name": "性状组",
+                  "code": null,
+                  "orderno": 5,
+                  "parentId": "100100",
+                  "url": "app.lpht.rice.charactergroup",
+                  "config": null,
+                  "children": [],
+                  "label": "性状组"
+                },
+                "components": [],
+                "parentId": "100100"
+              },
+              {
+                "id": "100100400",
+                "name": null,
+                "title": "性状单位",
+                "label": "性状单位",
+                "url": "app.lpht.rice.charactermanager",
+                "description": null,
+                "orderno": 4,
+                "data": {
+                  "id": "100100400",
+                  "name": "性状单位",
+                  "code": null,
+                  "orderno": 4,
+                  "parentId": "100100",
+                  "url": "app.lpht.rice.charactermanager",
+                  "config": null,
+                  "children": [],
+                  "label": "性状单位"
+                },
+                "components": [],
+                "parentId": "100100"
+              }
+            ],
+            "parentId": "100100"
+          },
+          {
+            "id": "100100700",
+            "name": null,
+            "title": "试验项目",
+            "label": "试验项目",
+            "url": "app.lpht.rice.experimentproject",
+            "description": null,
+            "orderno": 7,
+            "data": {
+              "id": "100100700",
+              "name": "试验项目",
+              "code": null,
+              "orderno": 7,
+              "parentId": "100100",
+              "url": "app.lpht.rice.experimentproject",
+              "config": null,
+              "children": [],
+              "label": "试验项目"
+            },
+            "components": [],
+            "parentId": "100100"
+          },
+          {
+            "id": "100100800",
+            "name": null,
+            "title": "阶段/项目",
+            "label": "阶段/项目",
+            "description": null,
+            "url": "app.lpht.rice.stageandproject",
+            "orderno": 8,
+            "data": {
+              "id": "100100800",
+              "name": "阶段/项目",
+              "code": null,
+              "orderno": 8,
+              "parentId": "100100",
+              "url": "app.lpht.rice.stageandproject",
+              "config": null,
+              "children": [],
+              "label": "阶段/项目"
+            },
+            "components": [],
+            "parentId": "100100"
+          },
+          {
+            "id": "1001001000",
+            "name": null,
+            "title": "试验点类型",
+            "label": "试验点类型",
+            "url": "app.lpht.rice.experimenttype",
+            "description": null,
+            "orderno": 10,
+            "data": {
+              "id": "1001001000",
+              "name": "试验点类型",
+              "code": null,
+              "orderno": 10,
+              "parentId": "100100",
+              "url": "app.lpht.rice.experimenttype",
+              "config": null,
+              "children": [],
+              "label": "试验点类型"
+            },
+            "components": [],
+            "parentId": "100100"
+          },
+          {
+            "id": "1001001100",
+            "name": null,
+            "title": "试验点",
+            "label": "试验点",
+            "url": "app.lpht.rice.experimentpoint",
+            "description": null,
+            "orderno": 11,
+            "data": {
+              "id": "1001001100",
+              "name": "试验点",
+              "code": null,
+              "orderno": 11,
+              "parentId": "100100",
+              "url": "app.lpht.rice.experimentpoint",
+              "config": null,
+              "children": [],
+              "label": "试验点"
+            },
+            "components": [],
+            "parentId": "100100"
+          },
+          {
+            "id": "1001001300",
+            "name": null,
+            "title": "数据采集",
+            "label": "数据采集",
+            "url": "app.lpht.rice.datacollection",
+            "description": null,
+            "orderno": 13,
+            "data": {
+              "id": "1001001300",
+              "name": "数据采集",
+              "code": null,
+              "orderno": 13,
+              "parentId": "100100",
+              "url": "app.lpht.rice.datacollection",
+              "config": null,
+              "children": [],
+              "label": "数据采集"
+            },
+            "components": [],
+            "parentId": "100100"
+          },
+          {
+            "id": "1001001400",
+            "name": null,
+            "title": "试验阶段",
+            "label": "试验阶段",
+            "url": "app.ui.tree",
+            "description": null,
+            "orderno": 14,
+            "data": {
+              "id": "1001001400",
+              "name": "试验阶段",
+              "code": null,
+              "orderno": 14,
+              "parentId": "100100",
+              "url": "app.ui.tree",
+              "config": null,
+              "children": [],
+              "label": "试验阶段"
+            },
+            "components": [],
+            "parentId": "100100"
+          },
+          {
+            "id": "1001001500",
+            "name": null,
+            "title": "生态区",
+            "label": "生态区",
+            "url": "app.lpht.rice.ecotope",
+            "description": null,
+            "orderno": 15,
+            "data": {
+              "id": "1001001400",
+              "name": "试验阶段",
+              "code": null,
+              "orderno": 14,
+              "parentId": "100200",
+              "url": "app.lpht.rice.ecotope",
+              "config": null,
+              "children": [],
+              "label": "生态区"
+            },
+            "components": [],
+            "parentId": "100100"
+          }
+        ],
+        "parentId": "100"
+      }
+    ],
+    "parentId": null
+  },
+  {
+    "id": "101",
+    "name": null,
+    "title": "系统",
+    "label": "系统",
+    "url": null,
+    "description": null,
+    "orderno": 0,
+    "data": {
+      "id": "100",
+      "name": "系统",
+      "code": null,
+      "orderno": 0,
+      "parentId": null,
+      "url": null,
+      "config": null,
+      "children": [],
+      "label": "系统"
+    },
+    "components": [
+      {
+        "id": "101100",
+        "name": null,
+        "title": "系统管理",
+        "label": "系统管理",
+        "url": "app.security",
+        "description": "glyphicon glyphicon-cog icon text-primary-dker",
+        "orderno": 0,
+        "data": {
+          "id": "101100",
+          "name": "系统管理",
+          "code": null,
+          "orderno": 0,
+          "parentId": "100",
+          "url": "app.security",
+          "config": "glyphicon glyphicon-cog icon text-primary-dker",
+          "children": [],
+          "label": "系统管理"
+        },
+        "components": [
+          {
+            "id": "101100100",
+            "name": null,
+            "title": "操作日志",
+            "label": "操作日志",
+            "url": "app.security.operationlog",
+            "description": null,
+            "orderno": 0,
+            "data": {
+              "id": "101100100",
+              "name": "操作日志",
+              "code": null,
+              "orderno": 0,
+              "parentId": "101100",
+              "url": "app.security.operationlog",
+              "config": null,
+              "children": [],
+              "label": "操作日志"
+            },
+            "components": [],
+            "parentId": "101100"
+          },
+          {
+            "id": "101100200",
+            "name": null,
+            "title": "数据字典",
+            "label": "数据字典",
+            "description": null,
+            "url": "app.security.basecode",
+            "orderno": 1,
+            "data": {
+              "id": "101100200",
+              "name": "数据字典",
+              "code": null,
+              "orderno": 1,
+              "parentId": "101100",
+              "url": "app.security.basecode",
+              "config": null,
+              "children": [],
+              "label": "数据字典"
+            },
+            "components": [],
+            "parentId": "101100"
+          },
+          {
+            "id": "101100300",
+            "name": null,
+            "title": "机构人员",
+            "label": "机构人员",
+            "url": "app.security.orgmanager",
+            "description": null,
+            "orderno": 2,
+            "data": {
+              "id": "101100300",
+              "name": "机构人员",
+              "code": null,
+              "orderno": 2,
+              "parentId": "101100",
+              "url": "app.security.orgmanager",
+              "config": null,
+              "children": [],
+              "label": "机构人员"
+            },
+            "components": [],
+            "parentId": "101100"
+          },
+          {
+            "id": "101100400",
+            "name": null,
+            "title": "用户管理",
+            "label": "用户管理",
+            "url": "app.security.usermanager",
+            "description": null,
+            "orderno": 3,
+            "data": {
+              "id": "101100400",
+              "name": "用户管理",
+              "code": null,
+              "orderno": 3,
+              "parentId": "101100",
+              "url": "app.security.usermanager",
+              "config": null,
+              "children": [],
+              "label": "用户管理"
+            },
+            "components": [],
+            "parentId": "101100"
+          },
+          {
+            "id": "101100500",
+            "name": null,
+            "title": "角色管理",
+            "label": "角色管理",
+            "url": "app.security.rolemanager",
+            "description": null,
+            "orderno": 4,
+            "data": {
+              "id": "101100500",
+              "name": "角色管理",
+              "code": null,
+              "orderno": 3,
+              "parentId": "101100",
+              "url": "app.security.rolemanager",
+              "config": null,
+              "children": [],
+              "label": "角色管理"
+            },
+            "components": [],
+            "parentId": "101100"
+          },
+          {
+            "id": "101100600",
+            "name": null,
+            "title": "菜单管理",
+            "label": "菜单管理",
+            "url": "app.security.menumanager",
+            "description": null,
+            "orderno": 5,
+            "data": {
+              "id": "101100600",
+              "name": "菜单管理",
+              "code": null,
+              "orderno": 3,
+              "parentId": "101100",
+              "url": "app.security.menumanager",
+              "config": null,
+              "children": [],
+              "label": "菜单管理"
+            },
+            "components": [],
+            "parentId": "101100"
+          }
+        ],
+        "parentId": "101"
+      }
+    ],
+    "parentId": null
+  },
+  {
+    "id": "102",
+    "name": null,
+    "title": "Navigation",
+    "label": "Navigation",
+    "url": null,
+    "description": null,
+    "orderno": 0,
+    "data": {
+      "id": "102",
+      "name": "Navigation",
+      "code": null,
+      "orderno": 0,
+      "parentId": null,
+      "url": null,
+      "config": null,
+      "children": [],
+      "label": "Navigation"
+    },
+    "components": [
+      {
+        "id": "102100",
+        "name": null,
+        "title": "DashBorad",
+        "label": "DashBorad",
+        "url": "",
+        "description": "glyphicon glyphicon-stats icon text-primary-dker",
+        "orderno": 0,
+        "data": {
+          "id": "102100",
+          "name": "DashBorad",
+          "code": null,
+          "orderno": 0,
+          "parentId": "100",
+          "url": "app.security",
+          "config": "",
+          "children": [],
+          "label": "DashBorad"
+        },
+        "components": [
+          {
+            "id": "102100100",
+            "name": null,
+            "title": "DashBorad v1",
+            "label": "DashBorad v1",
+            "url": "app.dashboard-v1",
+            "description": null,
+            "orderno": 1,
+            "data": {
+              "id": "102100100",
+              "name": "DashBorad v1",
+              "code": null,
+              "orderno": 1,
+              "parentId": "102100",
+              "url": "app.dashboard-v1",
+              "config": null,
+              "children": [],
+              "label": "熟期"
+            },
+            "components": [],
+            "parentId": "102100"
+          },
+          {
+            "id": "102100101",
+            "name": null,
+            "title": "DashBorad v2",
+            "label": "DashBorad v2",
+            "url": "app.dashboard-v2",
+            "description": null,
+            "orderno": 1,
+            "data": {
+              "id": "102100101",
+              "name": "DashBorad v2",
+              "code": null,
+              "orderno": 1,
+              "parentId": "102100",
+              "url": "app.dashboard-v2",
+              "config": null,
+              "children": [],
+              "label": "DashBorad v2"
+            },
+            "components": [],
+            "parentId": "102100"
+          }
+        ],
+        "parentId": "102"
+      },
+      {
+        "id": "102101",
+        "name": null,
+        "title": "Calender",
+        "label": "Calender",
+        "url": "app.calendar",
+        "description": "glyphicon glyphicon-calendar icon text-info-dker",
+        "orderno": 0,
+        "data": {
+          "id": "102101",
+          "name": "Calender",
+          "code": null,
+          "orderno": 0,
+          "parentId": "102",
+          "url": "",
+          "config": "",
+          "children": [],
+          "label": "Calender"
+        },
+        "components": [],
+        "parentId": "102"
+      },
+      {
+        "id": "102102",
+        "name": null,
+        "title": "Email",
+        "label": "Email",
+        "url": "app.mail.list",
+        "description": "glyphicon glyphicon-envelope icon text-info-lter",
+        "orderno": 0,
+        "data": {
+          "id": "102102",
+          "name": "Email",
+          "code": null,
+          "orderno": 0,
+          "parentId": "102",
+          "url": "",
+          "config": "",
+          "children": [],
+          "label": "Email"
+        },
+        "components": [],
+        "parentId": "102"
+      },
+      {
+        "id": "102103",
+        "name": null,
+        "title": "Apps",
+        "label": "Apps",
+        "url": "",
+        "description": "glyphicon glyphicon-th-large icon text-success",
+        "orderno": 0,
+        "data": {
+          "id": "102103",
+          "name": "Apps",
+          "code": null,
+          "orderno": 0,
+          "parentId": "100",
+          "url": "",
+          "config": "",
+          "children": [],
+          "label": "DashBorad"
+        },
+        "components": [
+          {
+            "id": "102103100",
+            "name": null,
+            "title": "Todo",
+            "label": "Todo",
+            "url": "app.todo",
+            "description": null,
+            "orderno": 1,
+            "data": {
+              "id": "102103100",
+              "name": "Todo",
+              "code": null,
+              "orderno": 1,
+              "parentId": "102100",
+              "url": "app.todo",
+              "config": null,
+              "children": [],
+              "label": "Todo"
+            },
+            "components": [],
+            "parentId": "102103"
+          },
+          {
+            "id": "102103101",
+            "name": null,
+            "title": "Note",
+            "label": "Note",
+            "url": "app.note",
+            "description": null,
+            "orderno": 1,
+            "data": {
+              "id": "102103101",
+              "name": "Note",
+              "code": null,
+              "orderno": 1,
+              "parentId": "102103",
+              "url": "app.note",
+              "config": null,
+              "children": [],
+              "label": "Note"
+            },
+            "components": [],
+            "parentId": "102103"
+          },
+          {
+            "id": "102103102",
+            "name": null,
+            "title": "Contacts",
+            "label": "Contacts",
+            "url": "apps.contact",
+            "description": null,
+            "orderno": 1,
+            "data": {
+              "id": "102103102",
+              "name": "Contacts",
+              "code": null,
+              "orderno": 1,
+              "parentId": "102103",
+              "url": "apps.contact",
+              "config": null,
+              "children": [],
+              "label": "Contacts"
+            },
+            "components": [],
+            "parentId": "102103"
+          }
+        ],
+        "parentId": "102"
+      }
+    ],
+    "parentId": null
+  },
+  {
+    "id": "103",
+    "name": null,
+    "title": "Components",
+    "label": "Components",
+    "url": null,
+    "description": null,
+    "orderno": 0,
+    "data": {
+      "id": "103",
+      "name": "Components",
+      "code": null,
+      "orderno": 0,
+      "parentId": null,
+      "url": null,
+      "config": null,
+      "children": [],
+      "label": "Components"
+    },
+    "components": [
+      {
+        "id": "103100",
+        "name": null,
+        "title": "Layout",
+        "label": "Layout",
+        "url": "",
+        "description": "glyphicon glyphicon-th",
+        "orderno": 0,
+        "data": {
+          "id": "103100",
+          "name": "Layout",
+          "code": null,
+          "orderno": 0,
+          "parentId": "103",
+          "url": "app.security",
+          "config": "",
+          "children": [],
+          "label": "Layout"
+        },
+        "components": [
+          {
+            "id": "103100100",
+            "name": null,
+            "title": "Application",
+            "label": "Application",
+            "url": "layout.app",
+            "description": null,
+            "orderno": 1,
+            "data": {
+              "id": "103100100",
+              "name": "Application",
+              "code": null,
+              "orderno": 1,
+              "parentId": "103100",
+              "url": "layout.app",
+              "config": null,
+              "children": [],
+              "label": "Application"
+            },
+            "components": [],
+            "parentId": "103100"
+          },
+          {
+            "id": "103100101",
+            "name": null,
+            "title": "Full width",
+            "label": "Full width",
+            "url": "layout.fullwidth",
+            "description": null,
+            "orderno": 1,
+            "data": {
+              "id": "103100101",
+              "name": "Full width",
+              "code": null,
+              "orderno": 1,
+              "parentId": "103100",
+              "url": "layout.fullwidth",
+              "config": null,
+              "children": [],
+              "label": "Full width"
+            },
+            "components": [],
+            "parentId": "103100"
+          },
+          {
+            "id": "103100102",
+            "name": null,
+            "title": "Mobile",
+            "label": "Mobile",
+            "url": "layout.mobile",
+            "description": null,
+            "orderno": 1,
+            "data": {
+              "id": "103100102",
+              "name": "Mobile",
+              "code": null,
+              "orderno": 1,
+              "parentId": "103100",
+              "url": "layout.mobile",
+              "config": null,
+              "children": [],
+              "label": "Mobile"
+            },
+            "components": [],
+            "parentId": "103100"
+          }
+        ],
+        "parentId": "102"
+      },
+      {
+        "id": "103101",
+        "name": null,
+        "title": "UI Kits",
+        "label": "UI Kits",
+        "url": "",
+        "description": "glyphicon glyphicon-briefcase icon",
+        "orderno": 0,
+        "data": {
+          "id": "103101",
+          "name": "UI Kits",
+          "code": null,
+          "orderno": 0,
+          "parentId": "103",
+          "url": "",
+          "config": "",
+          "children": [],
+          "label": "UI Kits"
+        },
+        "components": [
+          {
+            "id": "103101100",
+            "name": null,
+            "title": "Buttons",
+            "label": "Buttons",
+            "url": "app.ui.buttons",
+            "description": null,
+            "orderno": 1,
+            "data": {
+              "id": "103101100",
+              "name": "Buttons",
+              "code": null,
+              "orderno": 1,
+              "parentId": "103101",
+              "url": "app.ui.buttons",
+              "config": null,
+              "children": [],
+              "label": "Buttons"
+            },
+            "components": [],
+            "parentId": "103101"
+          },
+          {
+            "id": "103101101",
+            "name": null,
+            "title": "Icons",
+            "label": "Icons",
+            "url": "app.ui.icons",
+            "description": null,
+            "orderno": 1,
+            "data": {
+              "id": "103101101",
+              "name": "Icons",
+              "code": null,
+              "orderno": 1,
+              "parentId": "103101",
+              "url": "app.ui.icons",
+              "config": null,
+              "children": [],
+              "label": "Icons"
+            },
+            "components": [],
+            "parentId": "103101"
+          },
+          {
+            "id": "103101102",
+            "name": null,
+            "title": "Grid",
+            "label": "Grid",
+            "url": "app.ui.grid",
+            "description": null,
+            "orderno": 1,
+            "data": {
+              "id": "103101102",
+              "name": "Grid",
+              "code": null,
+              "orderno": 1,
+              "parentId": "103101",
+              "url": "app.ui.grid",
+              "config": null,
+              "children": [],
+              "label": "Grid"
+            },
+            "components": [],
+            "parentId": "103101"
+          },
+          {
+            "id": "103101103",
+            "name": null,
+            "title": "Widgets",
+            "label": "Widgets",
+            "url": "app.ui.widgets",
+            "description": null,
+            "orderno": 1,
+            "data": {
+              "id": "103101103",
+              "name": "Widgets",
+              "code": null,
+              "orderno": 1,
+              "parentId": "103101",
+              "url": "app.ui.widgets",
+              "config": null,
+              "children": [],
+              "label": "Widgets"
+            },
+            "components": [],
+            "parentId": "103101"
+          },
+          {
+            "id": "103101104",
+            "name": null,
+            "title": "Bootstrap",
+            "label": "Bootstrap",
+            "url": "app.ui.bootstrap",
+            "description": null,
+            "orderno": 1,
+            "data": {
+              "id": "103101104",
+              "name": "Bootstrap",
+              "code": null,
+              "orderno": 1,
+              "parentId": "103101",
+              "url": "app.ui.bootstrap",
+              "config": null,
+              "children": [],
+              "label": "Bootstrap"
+            },
+            "components": [],
+            "parentId": "103101"
+          },
+          {
+            "id": "103101105",
+            "name": null,
+            "title": "Sortable",
+            "label": "Sortable",
+            "url": "app.ui.sortable",
+            "description": null,
+            "orderno": 1,
+            "data": {
+              "id": "103101105",
+              "name": "Sortable",
+              "code": null,
+              "orderno": 1,
+              "parentId": "103101",
+              "url": "app.ui.sortable",
+              "config": null,
+              "children": [],
+              "label": "Sortable"
+            },
+            "components": [],
+            "parentId": "103101"
+          },
+          {
+            "id": "103101106",
+            "name": null,
+            "title": "Scroll",
+            "label": "Scroll",
+            "url": "app.ui.scroll",
+            "description": null,
+            "orderno": 1,
+            "data": {
+              "id": "103101106",
+              "name": "Scroll",
+              "code": null,
+              "orderno": 1,
+              "parentId": "103101",
+              "url": "app.ui.scroll",
+              "config": null,
+              "children": [],
+              "label": "Scroll"
+            },
+            "components": [],
+            "parentId": "103101"
+          },
+          {
+            "id": "103101107",
+            "name": null,
+            "title": "Portlet",
+            "label": "Portlet",
+            "url": "app.ui.portlet",
+            "description": null,
+            "orderno": 1,
+            "data": {
+              "id": "103101107",
+              "name": "Portlet",
+              "code": null,
+              "orderno": 1,
+              "parentId": "103101",
+              "url": "app.ui.portlet",
+              "config": null,
+              "children": [],
+              "label": "Portlet"
+            },
+            "components": [],
+            "parentId": "103101"
+          },
+          {
+            "id": "103101108",
+            "name": null,
+            "title": "Timeline",
+            "label": "Timeline",
+            "url": "app.ui.timeline",
+            "description": null,
+            "orderno": 1,
+            "data": {
+              "id": "103101108",
+              "name": "Timeline",
+              "code": null,
+              "orderno": 1,
+              "parentId": "103101",
+              "url": "app.ui.timeline",
+              "config": null,
+              "children": [],
+              "label": "Timeline"
+            },
+            "components": [],
+            "parentId": "103101"
+          },
+          {
+            "id": "103101109",
+            "name": null,
+            "title": "Tree",
+            "label": "Tree",
+            "url": "app.ui.tree",
+            "description": null,
+            "orderno": 1,
+            "data": {
+              "id": "103101109",
+              "name": "Tree",
+              "code": null,
+              "orderno": 1,
+              "parentId": "103101",
+              "url": "app.ui.tree",
+              "config": null,
+              "children": [],
+              "label": "Tree"
+            },
+            "components": [],
+            "parentId": "103101"
+          },
+          {
+            "id": "103101110",
+            "name": null,
+            "title": "Toaster",
+            "label": "Toaster",
+            "url": "app.ui.toaster",
+            "description": null,
+            "orderno": 1,
+            "data": {
+              "id": "103101110",
+              "name": "Toaster",
+              "code": null,
+              "orderno": 1,
+              "parentId": "103101",
+              "url": "app.ui.toaster",
+              "config": null,
+              "children": [],
+              "label": "Toaster"
+            },
+            "components": [],
+            "parentId": "103101"
+          },
+          {
+            "id": "103101111",
+            "name": null,
+            "title": "Maps",
+            "label": "Maps",
+            "url": "",
+            "description": null,
+            "orderno": 1,
+            "data": {
+              "id": "103101111",
+              "name": "Maps",
+              "code": null,
+              "orderno": 1,
+              "parentId": "103101",
+              "url": "",
+              "config": null,
+              "children": [],
+              "label": "Maps"
+            },
+            "components": [
+              {
+                "id": "103101111100",
+                "name": null,
+                "title": "Vector Map",
+                "label": "Vector Map",
+                "url": "app.ui.jvectormap",
+                "description": null,
+                "orderno": 1,
+                "data": {
+                  "id": "103101111100",
+                  "name": "Vector Map",
+                  "code": null,
+                  "orderno": 1,
+                  "parentId": "103101",
+                  "url": "app.ui.jvectormap",
+                  "config": null,
+                  "children": [],
+                  "label": "Vector Map"
+                },
+                "components": [],
+                "parentId": "103101111"
+              },
+              {
+                "id": "103101111101",
+                "name": null,
+                "title": "Google Map",
+                "label": "Google Map",
+                "url": "app.ui.googlemap",
+                "description": null,
+                "orderno": 1,
+                "data": {
+                  "id": "103101111101",
+                  "name": "Google Map",
+                  "code": null,
+                  "orderno": 1,
+                  "parentId": "103101",
+                  "url": "app.ui.googlemap",
+                  "config": null,
+                  "children": [],
+                  "label": "Google Map"
+                },
+                "components": [],
+                "parentId": "103101111"
+              }
+            ],
+            "parentId": "103101"
+          }
+        ],
+        "parentId": "103"
+      },
+      {
+        "id": "103102",
+        "name": null,
+        "title": "Table",
+        "label": "Table",
+        "url": "",
+        "description": "glyphicon glyphicon-list",
+        "orderno": 0,
+        "data": {
+          "id": "Table",
+          "name": "Email",
+          "code": null,
+          "orderno": 0,
+          "parentId": "103",
+          "url": "",
+          "config": "",
+          "children": [],
+          "label": "Table"
+        },
+        "components": [
+          {
+            "id": "103102100",
+            "name": null,
+            "title": "Table static",
+            "label": "Table static",
+            "url": "app.table.static",
+            "description": null,
+            "orderno": 1,
+            "data": {
+              "id": "103102100",
+              "name": "Table static",
+              "code": null,
+              "orderno": 1,
+              "parentId": "103102",
+              "url": "app.table.static",
+              "config": null,
+              "children": [],
+              "label": "Table static"
+            },
+            "components": [],
+            "parentId": "103102"
+          },
+          {
+            "id": "103102101",
+            "name": null,
+            "title": "Datatable",
+            "label": "Datatable",
+            "url": "app.table.datatable",
+            "description": null,
+            "orderno": 1,
+            "data": {
+              "id": "103102101",
+              "name": "Datatable",
+              "code": null,
+              "orderno": 1,
+              "parentId": "103102",
+              "url": "app.table.datatable",
+              "config": null,
+              "children": [],
+              "label": "Datatable"
+            },
+            "components": [],
+            "parentId": "103102"
+          },
+          {
+            "id": "103102102",
+            "name": null,
+            "title": "Footable",
+            "label": "Footable",
+            "url": "app.table.footable",
+            "description": null,
+            "orderno": 1,
+            "data": {
+              "id": "103102102",
+              "name": "Footable",
+              "code": null,
+              "orderno": 1,
+              "parentId": "103102",
+              "url": "app.table.footable",
+              "config": null,
+              "children": [],
+              "label": "Footable"
+            },
+            "components": [],
+            "parentId": "103102"
+          },
+          {
+            "id": "103102103",
+            "name": null,
+            "title": "uiGrid",
+            "label": "uiGrid",
+            "url": "app.table.uigrid",
+            "description": null,
+            "orderno": 1,
+            "data": {
+              "id": "103102103",
+              "name": "uiGrid",
+              "code": null,
+              "orderno": 1,
+              "parentId": "103102",
+              "url": "app.table.uigrid",
+              "config": null,
+              "children": [],
+              "label": "uiGrid"
+            },
+            "components": [],
+            "parentId": "103102"
+          },
+          {
+            "id": "103102104",
+            "name": null,
+            "title": "Smart table",
+            "label": "Smart table",
+            "url": "app.table.smart",
+            "description": null,
+            "orderno": 1,
+            "data": {
+              "id": "103102104",
+              "name": "Smart table",
+              "code": null,
+              "orderno": 1,
+              "parentId": "103102",
+              "url": "app.table.smart",
+              "config": null,
+              "children": [],
+              "label": "Smart table"
+            },
+            "components": [],
+            "parentId": "103102"
+          },
+          {
+            "id": "103102104",
+            "name": null,
+            "title": "Editable",
+            "label": "Editable",
+            "url": "app.table.editable",
+            "description": null,
+            "orderno": 1,
+            "data": {
+              "id": "103102104",
+              "name": "Editable",
+              "code": null,
+              "orderno": 1,
+              "parentId": "103102",
+              "url": "app.table.editable",
+              "config": null,
+              "children": [],
+              "label": "Editable"
+            },
+            "components": [],
+            "parentId": "103102"
+          }
+        ],
+        "parentId": "103"
+      },
+      {
+        "id": "103103",
+        "name": null,
+        "title": "Form",
+        "label": "Form",
+        "url": "",
+        "description": "glyphicon glyphicon-edit",
+        "orderno": 0,
+        "data": {
+          "id": "103103",
+          "name": "Form",
+          "code": null,
+          "orderno": 0,
+          "parentId": "103",
+          "url": "",
+          "config": "",
+          "children": [],
+          "label": "Form"
+        },
+        "components": [
+          {
+            "id": "103103100",
+            "name": null,
+            "title": "Form elements",
+            "label": "Form elements",
+            "url": "app.form.elements",
+            "description": null,
+            "orderno": 1,
+            "data": {
+              "id": "103103100",
+              "name": "Form elements",
+              "code": null,
+              "orderno": 1,
+              "parentId": "102100",
+              "url": "app.form.elements",
+              "config": null,
+              "children": [],
+              "label": "Form elements"
+            },
+            "components": [],
+            "parentId": "102103"
+          },
+          {
+            "id": "103103101",
+            "name": null,
+            "title": "Form validation",
+            "label": "Form validation",
+            "url": "app.form.validation",
+            "description": null,
+            "orderno": 1,
+            "data": {
+              "id": "103103101",
+              "name": "Form validation",
+              "code": null,
+              "orderno": 1,
+              "parentId": "102103",
+              "url": "app.form.validation",
+              "config": null,
+              "children": [],
+              "label": "Form validation"
+            },
+            "components": [],
+            "parentId": "103103"
+          },
+          {
+            "id": "103103102",
+            "name": null,
+            "title": "Form wizard",
+            "label": "Form wizard",
+            "url": "app.form.wizard",
+            "description": null,
+            "orderno": 1,
+            "data": {
+              "id": "103103102",
+              "name": "Form wizard",
+              "code": null,
+              "orderno": 1,
+              "parentId": "103103",
+              "url": "app.form.wizard",
+              "config": null,
+              "children": [],
+              "label": "Form wizard"
+            },
+            "components": [],
+            "parentId": "103103"
+          },
+          {
+            "id": "103103103",
+            "name": null,
+            "title": "File upload",
+            "label": "File upload",
+            "url": "app.form.fileupload",
+            "description": null,
+            "orderno": 1,
+            "data": {
+              "id": "103103103",
+              "name": "File upload",
+              "code": null,
+              "orderno": 1,
+              "parentId": "103103",
+              "url": "app.form.fileupload",
+              "config": null,
+              "children": [],
+              "label": "File upload"
+            },
+            "components": [],
+            "parentId": "103103"
+          },
+          {
+            "id": "103103104",
+            "name": null,
+            "title": "Image crop",
+            "label": "Image crop",
+            "url": "app.form.imagecrop",
+            "description": null,
+            "orderno": 1,
+            "data": {
+              "id": "103103104",
+              "name": "Image crop",
+              "code": null,
+              "orderno": 1,
+              "parentId": "103103",
+              "url": "app.form.imagecrop",
+              "config": null,
+              "children": [],
+              "label": "Image crop"
+            },
+            "components": [],
+            "parentId": "103103"
+          },
+          {
+            "id": "103103105",
+            "name": null,
+            "title": "Select",
+            "label": "Select",
+            "url": "app.form.select",
+            "description": null,
+            "orderno": 1,
+            "data": {
+              "id": "103103105",
+              "name": "Select",
+              "code": null,
+              "orderno": 1,
+              "parentId": "103103",
+              "url": "app.form.select",
+              "config": null,
+              "children": [],
+              "label": "Select"
+            },
+            "components": [],
+            "parentId": "103103"
+          },
+          {
+            "id": "103103106",
+            "name": null,
+            "title": "Xeditable",
+            "label": "Xeditable",
+            "url": "app.form.xeditable",
+            "description": null,
+            "orderno": 1,
+            "data": {
+              "id": "103103106",
+              "name": "Xeditable",
+              "code": null,
+              "orderno": 1,
+              "parentId": "103103",
+              "url": "app.form.xeditable",
+              "config": null,
+              "children": [],
+              "label": "Xeditable"
+            },
+            "components": [],
+            "parentId": "103103"
+          }
+        ],
+        "parentId": "102"
+      },
+      {
+        "id": "103104",
+        "name": null,
+        "title": "Chart",
+        "label": "Chart",
+        "url": "app.chart",
+        "description": "glyphicon glyphicon-signal",
+        "orderno": 0,
+        "data": {
+          "id": "103104",
+          "name": "Chart",
+          "code": null,
+          "orderno": 0,
+          "parentId": "103",
+          "url": "app.chart",
+          "config": "",
+          "children": [],
+          "label": "Chart"
+        },
+        "components": [],
+        "parentId": "103"
+      },
+      {
+        "id": "103105",
+        "name": null,
+        "title": "Pages",
+        "label": "Pages",
+        "url": "",
+        "description": "glyphicon glyphicon-file icon",
+        "orderno": 0,
+        "data": {
+          "id": "103105",
+          "name": "Pages",
+          "code": null,
+          "orderno": 0,
+          "parentId": "103",
+          "url": "",
+          "config": "",
+          "children": [],
+          "label": "Pages"
+        },
+        "components": [
+          {
+            "id": "103105100",
+            "name": null,
+            "title": "Profile",
+            "label": "Profile",
+            "url": "app.page.profile",
+            "description": null,
+            "orderno": 1,
+            "data": {
+              "id": "103105100",
+              "name": "Profile",
+              "code": null,
+              "orderno": 1,
+              "parentId": "103105",
+              "url": "app.page.profile",
+              "config": null,
+              "children": [],
+              "label": "Profile"
+            },
+            "components": [],
+            "parentId": "103105"
+          },
+          {
+            "id": "103105101",
+            "name": null,
+            "title": "Post",
+            "label": "Post",
+            "url": "app.page.post",
+            "description": null,
+            "orderno": 1,
+            "data": {
+              "id": "103105101",
+              "name": "Post",
+              "code": null,
+              "orderno": 1,
+              "parentId": "103105",
+              "url": "app.page.post",
+              "config": null,
+              "children": [],
+              "label": "Post"
+            },
+            "components": [],
+            "parentId": "103106"
+          },
+          {
+            "id": "103105102",
+            "name": null,
+            "title": "Search",
+            "label": "Search",
+            "url": "app.page.search",
+            "description": null,
+            "orderno": 1,
+            "data": {
+              "id": "103105102",
+              "name": "Search",
+              "code": null,
+              "orderno": 1,
+              "parentId": "103105",
+              "url": "app.page.search",
+              "config": null,
+              "children": [],
+              "label": "Search"
+            },
+            "components": [],
+            "parentId": "103105"
+          },
+          {
+            "id": "103105103",
+            "name": null,
+            "title": "Invoice",
+            "label": "Invoice",
+            "url": "app.page.invoice",
+            "description": null,
+            "orderno": 1,
+            "data": {
+              "id": "103105103",
+              "name": "Invoice",
+              "code": null,
+              "orderno": 1,
+              "parentId": "103105",
+              "url": "app.page.invoice",
+              "config": null,
+              "children": [],
+              "label": "Invoice"
+            },
+            "components": [],
+            "parentId": "103105"
+          },
+          {
+            "id": "103105104",
+            "name": null,
+            "title": "Price",
+            "label": "Price",
+            "url": "app.page.price",
+            "description": null,
+            "orderno": 1,
+            "data": {
+              "id": "103105104",
+              "name": "Price",
+              "code": null,
+              "orderno": 1,
+              "parentId": "103105",
+              "url": "app.page.price",
+              "config": null,
+              "children": [],
+              "label": "Price"
+            },
+            "components": [],
+            "parentId": "103105"
+          },
+          {
+            "id": "103105105",
+            "name": null,
+            "title": "Lock screen",
+            "label": "Lock screen",
+            "url": "lockme",
+            "description": null,
+            "orderno": 1,
+            "data": {
+              "id": "103105105",
+              "name": "lockme",
+              "code": null,
+              "orderno": 1,
+              "parentId": "103103",
+              "url": "app.form.select",
+              "config": null,
+              "children": [],
+              "label": "Lock screen"
+            },
+            "components": [],
+            "parentId": "103105"
+          },
+          {
+            "id": "103105106",
+            "name": null,
+            "title": "Signin",
+            "label": "Signin",
+            "url": "access.signin",
+            "description": null,
+            "orderno": 1,
+            "data": {
+              "id": "103105106",
+              "name": "Signin",
+              "code": null,
+              "orderno": 1,
+              "parentId": "103105",
+              "url": "access.signin",
+              "config": null,
+              "children": [],
+              "label": "Signin"
+            },
+            "components": [],
+            "parentId": "103105"
+          }
+        ],
+        "parentId": "103"
+      }
+    ],
+    "parentId": null
+  },
+  {
+    "id": "104",
+    "name": null,
+    "title": "Your Stuff",
+    "label": "Your Stuff",
+    "url": null,
+    "description": null,
+    "orderno": 0,
+    "data": {
+      "id": "104",
+      "name": "Your Stuff",
+      "code": null,
+      "orderno": 0,
+      "parentId": null,
+      "url": null,
+      "config": null,
+      "children": [],
+      "label": "Your Stuff"
+    },
+    "components": [
+      {
+        "id": "104100",
+        "name": null,
+        "title": "Profile",
+        "label": "Profile",
+        "url": "app.page.profile",
+        "description": "icon-user icon text-success-lter",
+        "orderno": 0,
+        "data": {
+          "id": "104100",
+          "name": "Profile",
+          "code": null,
+          "orderno": 0,
+          "parentId": "104",
+          "url": "app.page.profile",
+          "config": "",
+          "children": [],
+          "label": "Profile"
+        },
+        "components": [],
+        "parentId": "104"
+      },
+      {
+        "id": "104101",
+        "name": null,
+        "title": "Documents",
+        "label": "Documents",
+        "url": "app.docs",
+        "description": "icon-question icon",
+        "orderno": 0,
+        "data": {
+          "id": "104101",
+          "name": "Documents",
+          "code": null,
+          "orderno": 0,
+          "parentId": "104",
+          "url": "app.docs",
+          "config": "",
+          "children": [],
+          "label": "Documents"
+        },
+        "components": [],
+        "parentId": "104"
+      }
+    ],
+    "parentId": null
+  }
+]

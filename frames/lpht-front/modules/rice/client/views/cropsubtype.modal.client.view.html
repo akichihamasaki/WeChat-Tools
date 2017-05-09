@@ -1,0 +1,67 @@
+<div class="modal-header" ng-switch="vm.modalType">
+  <h4 class="modal-title" ng-switch-when="add">新增</h4>
+  <h4 class="modal-title" ng-switch-when="edit">修改</h4>
+  <h4 class="modal-title" ng-switch-when="view">查看详情</h4>
+</div>
+<div class="modal-body">
+  <form class="form-horizontal form-validation" name="cropForm">
+    <fieldset ng-disabled="vm.formDisabled">
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="form-group has-feedback">
+            <label class="col-lg-4 control-label text-sm">亚型名称</label>
+            <div class="col-lg-8">
+              <input type="text" class="form-control input-sm" name="cropName" placeholder="亚型名称" ng-model="vm.rowEntity.subtypesName" required>
+              <span class="fa fa-exclamation-circle form-control-feedback" ng-show="cropForm.cropName.$error.required"></span>
+              <div ng-messages="cropForm.cropName.$dirty && cropForm.cropName.$error">
+                <p class="help-block text-sm" ng-message = "required">请填写亚型名称</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="form-group has-feedback">
+            <label class="col-lg-4 control-label text-sm">亚型编码</label>
+            <div class="col-lg-8">
+              <input type="text" class="form-control input-sm" name="cropNo" placeholder="亚型编码" ng-model="vm.rowEntity.subtypesCode" ng-minlength="3" ng-maxlength="8" required>
+              <span class="fa fa-exclamation-circle form-control-feedback" ng-show="cropForm.cropNo.$error.required"></span>
+              <div ng-messages="cropForm.cropNo.$dirty && cropForm.cropNo.$error">
+                <p class="help-block text-sm" ng-message = "required">请填写亚型编码</p>
+                <p class="help-block text-sm" ng-message = "minlength">编码长度不能小于3</p>
+                <p class="help-block text-sm" ng-message = "maxlength">编码长度不能大于8</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label class="col-lg-4 control-label text-sm">作物业务类型</label>
+            <div class="col-lg-8">
+              <select class="form-control input-sm" name="serviceType" ng-options="o.code as o.message for o in vm.serviceTypeData" ng-model="vm.rowEntity.serviceType" required>
+                <option value="">请选择</option>
+              </select>
+              <div ng-messages="cropForm.serviceType.$dirty && cropForm.serviceType.$error">
+                <p class="help-block text-sm" ng-message="required">请选择作物业务类型</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label class="col-lg-4 control-label text-sm">亚型备注</label>
+            <div class="col-lg-8">
+              <input type="text" class="form-control input-sm" placeholder="亚型备注" ng-model="vm.rowEntity.remark">
+            </div>
+          </div>
+        </div>
+      </div>
+    </fieldset>
+  </form>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-primary btn-sm" ng-click="vm.ok()" ng-hide="vm.formDisabled" ng-disabled="cropForm.$invalid">确定</button>
+  <button type="button" class="btn btn-info btn-sm" ng-click="vm.edit()" ng-show="vm.formDisabled">编辑</button>
+  <button type="button" class="btn btn-default btn-sm" ng-click="vm.cancel()">取消</button>
+</div>

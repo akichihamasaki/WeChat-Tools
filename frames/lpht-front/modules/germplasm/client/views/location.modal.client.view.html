@@ -1,0 +1,80 @@
+<div class="modal-header">
+  <h4 class="modal-title">货位管理</h4>
+</div>
+<div class="modal-body">
+  <form class="form-horizontal form-validation" name="dataForm">
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="form-group has-feedback">
+          <label class="col-lg-4 control-label text-sm">货位名称</label>
+          <div class="col-lg-8">
+            <input type="text" class="form-control input-sm" name="locationName" placeholder="货位名称" ng-model="fm.tdItem.locationName" required>
+            <span class="fa fa-exclamation-circle form-control-feedback" ng-show="dataForm.locationName.$error.required"></span>
+            <div ng-messages="dataForm.locationName.$dirty && dataForm.locationName.$error">
+              <p class="help-block text-sm" ng-message = "required">请填写货位名称</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="form-group has-feedback">
+          <label class="col-lg-4 control-label text-sm">货号总数</label>
+          <div class="col-lg-8">
+            <input type="text" class="form-control input-sm" name="goodsNumber" placeholder="货号总数" ng-model="fm.tdItem.goodsNumber" required>
+            <span class="fa fa-exclamation-circle form-control-feedback" ng-show="dataForm.goodsNumber.$error.required"></span>
+            <div ng-messages="dataForm.goodsNumber.$dirty && dataForm.goodsNumber.$error">
+              <p class="help-block text-sm" ng-message = "required">请填写货号总数</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="form-group">
+          <label class="col-lg-4 control-label text-sm">描述</label>
+          <div class="col-lg-8">
+            <input type="text" class="form-control input-sm" name="remark" placeholder="描述" ng-model="fm.tdItem.remark">
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+  <div class="table-responsive" style="max-height:400px;overflow-y:auto;">
+    <table class="table table-bordered table-condensed m-b-none">
+      <thead>
+        <tr>
+          <th style="white-space:nowrap;">货号</th>
+          <th style="white-space:nowrap;">材料/品种编码</th>
+          <th style="white-space:nowrap;">父本名称</th>
+          <th style="white-space:nowrap;">母本名称</th>
+          <th style="white-space:nowrap;">世代号</th>
+          <th style="white-space:nowrap;">株号</th>
+          <th style="white-space:nowrap;">产地</th>
+          <th style="white-space:nowrap;">收获年份</th>
+          <th style="white-space:nowrap;">数量</th>
+          <th style="white-space:nowrap;">单位</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="g in fm.tdItem.inventoryDetailList">
+          <td style="white-space:nowrap;">{{g.goodsId}}</td>
+          <td style="white-space:nowrap;">{{g.resourceCode}}</td>
+          <td style="white-space:nowrap;">{{g.maleNo}}</td>
+          <td style="white-space:nowrap;">{{g.femaleNo}}</td>
+          <td style="white-space:nowrap;">{{g.generationNo}}</td>
+          <td style="white-space:nowrap;">{{g.cropsNo}}</td>
+          <td style="white-space:nowrap;">{{g.harvestAddress}}</td>
+          <td style="white-space:nowrap;">{{g.harvestYear}}</td>
+          <td style="white-space:nowrap;">{{g.tranNumber}}</td>
+          <td style="white-space:nowrap;">{{g.unit}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-primary btn-sm" ng-click="fm.ok()" ng-disabled="dataForm.$invalid">确定</button>
+  <button type="button" class="btn btn-default btn-sm" ng-click="fm.cancel()">取消</button>
+</div>
+

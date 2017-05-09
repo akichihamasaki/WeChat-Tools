@@ -1,0 +1,438 @@
+[
+  "experimentpoint": [
+    {
+      "id": "001",
+      "experimentpointname": "试验点1",
+      "experimentphase": "单点",
+      "experimentpointtype": "田间测试",
+      "experimentpointnature": "自建",
+      "experimentproject": "田间全部项目",
+      "ricearea": "华南",
+      "longitude": "23",
+      "latitude": "45",
+      "altitude": "233",
+      "cooperationstate": "进行中",
+      "ecotope": "长江中下游"
+    },
+    {
+      "id": "002",
+      "experimentpointname": "试验点2",
+      "experimentphase": "单点、多点",
+      "experimentpointtype": "田间测试",
+      "experimentpointnature": "自建",
+      "experimentproject": "田间全部项目",
+      "ricearea": "华南",
+      "longitude": "23",
+      "latitude": "45",
+      "altitude": "233",
+      "cooperationstate": "进行中",
+      "ecotope": "长江中下游"
+    },
+    {
+      "id": "003",
+      "experimentpointname": "试验点3",
+      "experimentphase": "单点、多点",
+      "experimentpointtype": "田间测试",
+      "experimentpointnature": "自建",
+      "experimentproject": "田间全部项目",
+      "ricearea": "华南",
+      "longitude": "23",
+      "latitude": "45",
+      "altitude": "233",
+      "cooperationstate": "进行中",
+      "ecotope": "长江中下游"
+    },
+    {
+      "id": "004",
+      "experimentpointname": "试验点4",
+      "experimentphase": "单点、多点",
+      "experimentpointtype": "田间测试",
+      "experimentpointnature": "自建",
+      "experimentproject": "田间全部项目",
+      "ricearea": "华南",
+      "longitude": "23",
+      "latitude": "45",
+      "altitude": "233",
+      "cooperationstate": "进行中",
+      "ecotope": "长江中下游"
+    },
+    {
+      "id": "005",
+      "experimentpointname": "试验点5",
+      "experimentphase": "单点、多点",
+      "experimentpointtype": "田间测试",
+      "experimentpointnature": "自建",
+      "experimentproject": "田间全部项目",
+      "ricearea": "华南",
+      "longitude": "23",
+      "latitude": "45",
+      "altitude": "233",
+      "cooperationstate": "进行中",
+      "ecotope": "长江中下游"
+    },
+    {
+      "id": "006",
+      "experimentpointname": "试验点6",
+      "experimentphase": "单点、多点",
+      "experimentpointtype": "田间测试",
+      "experimentpointnature": "自建",
+      "experimentproject": "田间全部项目",
+      "ricearea": "华南",
+      "longitude": "23",
+      "latitude": "45",
+      "altitude": "233",
+      "cooperationstate": "进行中",
+      "ecotope": "长江中下游"
+    },
+    {
+      "id": "007",
+      "experimentpointname": "试验点7",
+      "experimentphase": "单点、多点",
+      "experimentpointtype": "田间测试",
+      "experimentpointnature": "自建",
+      "experimentproject": "田间全部项目",
+      "ricearea": "华南",
+      "longitude": "23",
+      "latitude": "45",
+      "altitude": "233",
+      "cooperationstate": "进行中",
+      "ecotope": "长江中下游"
+    },
+    {
+      "id": "008",
+      "experimentpointname": "试验点8",
+      "experimentphase": "单点、多点",
+      "experimentpointtype": "田间测试",
+      "experimentpointnature": "自建",
+      "experimentproject": "田间全部项目",
+      "ricearea": "华南",
+      "longitude": "23",
+      "latitude": "45",
+      "altitude": "233",
+      "cooperationstate": "进行中",
+      "ecotope": "长江中下游"
+    },
+    {
+      "id": "009",
+      "experimentpointname": "试验点8",
+      "experimentphase": "单点、多点",
+      "experimentpointtype": "田间测试",
+      "experimentpointnature": "自建",
+      "experimentproject": "田间全部项目",
+      "ricearea": "华南",
+      "longitude": "23",
+      "latitude": "45",
+      "altitude": "233",
+      "cooperationstate": "进行中",
+      "ecotope": "长江中下游"
+    },
+    {
+      "id": "010",
+      "experimentpointname": "试验点8",
+      "experimentphase": "单点、多点",
+      "experimentpointtype": "田间测试",
+      "experimentpointnature": "自建",
+      "experimentproject": "田间全部项目",
+      "ricearea": "华南",
+      "longitude": "23",
+      "latitude": "45",
+      "altitude": "233",
+      "cooperationstate": "进行中",
+      "ecotope": "长江中下游"
+    },
+    {
+      "id": "011",
+      "experimentpointname": "试验点8",
+      "experimentphase": "单点、多点",
+      "experimentpointtype": "田间测试",
+      "experimentpointnature": "自建",
+      "experimentproject": "田间全部项目",
+      "ricearea": "华南",
+      "longitude": "23",
+      "latitude": "45",
+      "altitude": "233",
+      "cooperationstate": "进行中",
+      "ecotope": "长江中下游"
+    },
+    {
+      "id": "012",
+      "experimentpointname": "试验点8",
+      "experimentphase": "单点、多点",
+      "experimentpointtype": "田间测试",
+      "experimentpointnature": "自建",
+      "experimentproject": "田间全部项目",
+      "ricearea": "华南",
+      "longitude": "23",
+      "latitude": "45",
+      "altitude": "233",
+      "cooperationstate": "进行中",
+      "ecotope": "长江中下游"
+    },
+    {
+      "id": "013",
+      "experimentpointname": "试验点8",
+      "experimentphase": "单点、多点",
+      "experimentpointtype": "田间测试",
+      "experimentpointnature": "自建",
+      "experimentproject": "田间全部项目",
+      "ricearea": "华南",
+      "longitude": "23",
+      "latitude": "45",
+      "altitude": "233",
+      "cooperationstate": "进行中",
+      "ecotope": "长江中下游"
+    },
+    {
+      "id": "014",
+      "experimentpointname": "试验点8",
+      "experimentphase": "单点、多点",
+      "experimentpointtype": "田间测试",
+      "experimentpointnature": "自建",
+      "experimentproject": "田间全部项目",
+      "ricearea": "华南",
+      "longitude": "23",
+      "latitude": "45",
+      "altitude": "233",
+      "cooperationstate": "进行中",
+      "ecotope": "长江中下游"
+    },
+    {
+      "id": "015",
+      "experimentpointname": "试验点8",
+      "experimentphase": "单点、多点",
+      "experimentpointtype": "田间测试",
+      "experimentpointnature": "自建",
+      "experimentproject": "田间全部项目",
+      "ricearea": "华南",
+      "longitude": "23",
+      "latitude": "45",
+      "altitude": "233",
+      "cooperationstate": "进行中",
+      "ecotope": "长江中下游"
+    },
+    {
+      "id": "016",
+      "experimentpointname": "试验点8",
+      "experimentphase": "单点、多点",
+      "experimentpointtype": "田间测试",
+      "experimentpointnature": "自建",
+      "experimentproject": "田间全部项目",
+      "ricearea": "华南",
+      "longitude": "23",
+      "latitude": "45",
+      "altitude": "233",
+      "cooperationstate": "进行中",
+      "ecotope": "长江中下游"
+    },
+    {
+      "id": "017",
+      "experimentpointname": "试验点8",
+      "experimentphase": "单点、多点",
+      "experimentpointtype": "田间测试",
+      "experimentpointnature": "自建",
+      "experimentproject": "田间全部项目",
+      "ricearea": "华南",
+      "longitude": "23",
+      "latitude": "45",
+      "altitude": "233",
+      "cooperationstate": "进行中",
+      "ecotope": "长江中下游"
+    },
+    {
+      "id": "018",
+      "experimentpointname": "试验点8",
+      "experimentphase": "单点、多点",
+      "experimentpointtype": "田间测试",
+      "experimentpointnature": "自建",
+      "experimentproject": "田间全部项目",
+      "ricearea": "华南",
+      "longitude": "23",
+      "latitude": "45",
+      "altitude": "233",
+      "cooperationstate": "进行中",
+      "ecotope": "长江中下游"
+    },
+    {
+      "id": "019",
+      "experimentpointname": "试验点8",
+      "experimentphase": "单点、多点",
+      "experimentpointtype": "田间测试",
+      "experimentpointnature": "自建",
+      "experimentproject": "田间全部项目",
+      "ricearea": "华南",
+      "longitude": "23",
+      "latitude": "45",
+      "altitude": "233",
+      "cooperationstate": "进行中",
+      "ecotope": "长江中下游"
+    },
+    {
+      "id": "020",
+      "experimentpointname": "试验点8",
+      "experimentphase": "单点、多点",
+      "experimentpointtype": "田间测试",
+      "experimentpointnature": "自建",
+      "experimentproject": "田间全部项目",
+      "ricearea": "华南",
+      "longitude": "23",
+      "latitude": "45",
+      "altitude": "233",
+      "cooperationstate": "进行中",
+      "ecotope": "长江中下游"
+    },
+    {
+      "id": "021",
+      "experimentpointname": "试验点8",
+      "experimentphase": "单点、多点",
+      "experimentpointtype": "田间测试",
+      "experimentpointnature": "自建",
+      "experimentproject": "田间全部项目",
+      "ricearea": "华南",
+      "longitude": "23",
+      "latitude": "45",
+      "altitude": "233",
+      "cooperationstate": "进行中",
+      "ecotope": "长江中下游"
+    },
+    {
+      "id": "022",
+      "experimentpointname": "试验点8",
+      "experimentphase": "单点、多点",
+      "experimentpointtype": "田间测试",
+      "experimentpointnature": "自建",
+      "experimentproject": "田间全部项目",
+      "ricearea": "华南",
+      "longitude": "23",
+      "latitude": "45",
+      "altitude": "233",
+      "cooperationstate": "进行中",
+      "ecotope": "长江中下游"
+    },
+    {
+      "id": "023",
+      "experimentpointname": "试验点8",
+      "experimentphase": "单点、多点",
+      "experimentpointtype": "田间测试",
+      "experimentpointnature": "自建",
+      "experimentproject": "田间全部项目",
+      "ricearea": "华南",
+      "longitude": "23",
+      "latitude": "45",
+      "altitude": "233",
+      "cooperationstate": "进行中",
+      "ecotope": "长江中下游"
+    },
+    {
+      "id": "024",
+      "experimentpointname": "试验点8",
+      "experimentphase": "单点、多点",
+      "experimentpointtype": "田间测试",
+      "experimentpointnature": "自建",
+      "experimentproject": "田间全部项目",
+      "ricearea": "华南",
+      "longitude": "23",
+      "latitude": "45",
+      "altitude": "233",
+      "cooperationstate": "进行中",
+      "ecotope": "长江中下游"
+    },
+  ],
+  "experimentpointnature": [
+    {
+      "id": "1",
+      "name": "自建"
+    },
+    {
+      "id": "2",
+      "name": "合作共建"
+    }
+  ],
+  "experimentproject": [
+    {
+      "name": "播种期",
+      "type": "田间",
+      "stage": "单点试验",
+      "class":"大田作物"
+    }, 
+    {
+      "name": "移栽期",
+      "type": "田间",
+      "stage": "多点试验",
+      "class":"大田作物"
+    }, 
+    {
+      "name": "始穗期",
+      "type": "特性",
+      "stage": "单点试验",
+      "class":"大田作物"
+    }, 
+    {
+      "name": "齐穗期",
+      "type": "特性",
+      "stage": "区试试验",
+      "class":"大田作物"
+    }, 
+    {
+      "name": "成熟期",
+      "type": "田间",
+      "stage": "生产试验",
+      "class":"大田作物"
+    }, 
+    {
+      "name": "叶瘟",
+      "type": "特性",
+      "stage": "区试试验",
+      "class":"大田作物"
+    }, 
+    {
+      "name": "播种期",
+      "type": "田间",
+      "stage": "单点试验",
+      "class":"大田作物"
+    }, 
+    {
+      "name": "移栽期",
+      "type": "田间",
+      "stage": "多点试验",
+      "class":"大田作物"
+    }, 
+    {
+      "name": "始穗期",
+      "type": "特性",
+      "stage": "单点试验",
+      "class":"大田作物"
+    }, 
+    {
+      "name": "齐穗期",
+      "type": "特性",
+      "stage": "区试试验",
+      "class":"大田作物"
+    }, 
+    {
+      "name": "成熟期",
+      "type": "田间",
+      "stage": "生产试验",
+      "class":"大田作物"
+    }, 
+    {
+      "name": "叶瘟",
+      "type": "特性",
+      "stage": "区试试验",
+      "class":"大田作物"
+    }, 
+    {
+      "name": "叶瘟",
+      "type": "特性",
+      "stage": "区试试验",
+      "class":"大田作物"
+    }
+  ],
+  experimentphase: [
+    {
+      "experimentphase": "单点",
+      "abilityA": "试验能力1",
+      "abilityB": "1",
+      "acreage": "666.67"
+    }
+  ]
+]

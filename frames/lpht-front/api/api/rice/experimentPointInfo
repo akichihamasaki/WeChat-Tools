@@ -1,0 +1,51 @@
+{
+  "essentialInfo": [
+    {
+      "username": "张三",
+      "phone": "13512341234",
+      "address": "湖南省长沙市芙蓉区远大路930号"
+    }
+  ],
+  "financeInfo": [
+    {
+      "companyName": "隆平高科",
+      "companyPhone": "13412341234",
+      "companyAddress": "湖南省长沙市芙蓉区远大路930号",
+      "bankAccount": "隆平银行6666666666666666"
+    }
+  ],
+  "experimentAbilityInfo": [
+    {
+      "id": "1",
+      "project": "田间全部测试",
+      "abilityA": "10",
+      "experimentphase": "1",
+      "abilityB": "1",
+      "acreage": "666.67"
+    },
+    {
+      "id": "2",
+      "project": "田间全部测试",
+      "abilityA": "10",
+      "experimentphase": "2",
+      "abilityB": "2",
+      "acreage": "1333.34"
+    },
+    {
+      "id": "3",
+      "project": "田间全部测试",
+      "abilityA": "10",
+      "experimentphase": "1",
+      "abilityB": "3",
+      "acreage": "1333.34"
+    },
+    {
+      "id": "4",
+      "project": "田间全部测试",
+      "abilityA": "10",
+      "experimentphase": "2",
+      "abilityB": "4",
+      "acreage": "1333.34"
+    }
+  ]
+}

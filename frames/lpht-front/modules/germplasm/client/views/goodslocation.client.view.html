@@ -1,0 +1,94 @@
+<div class="wrapper-md" ng-controller="GoodsLocationCtrl">
+  <div class="hbox hbox-auto-xs hbox-auto-sm bg-white b-a">
+    <div class="col w-lg b-r wrapper">
+      <div class="btn-group btn-group-xs m-b-xs">
+        <button type="button" class="btn btn-success" ng-click="dm.addModal()" ng-disabled="dm.disableTreeAdd" title="新增"><i class="fa fa-plus-circle"></i></button>
+        <button type="button" class="btn btn-info" ng-click="dm.editModal()" ng-disabled="dm.disableTreeEdit" title="修改"><i class="fa fa-pencil"></i></button>
+        <button type="button" class="btn btn-danger" ng-click="dm.deleteDialog()" ng-disabled="dm.disableTreeDel" title="删除"><i class="fa fa-times-circle"></i></button>
+      </div>
+      <abn-tree tree-data="dm.treeData" icon-leaf="fa fa-tasks" icon-expand="fa fa-plus-square" icon-collapse="fa fa-minus-square" on-select="dm.treeSelect(branch)"></abn-tree>
+    </div>
+    <div class="col wrapper">
+      <div>
+        <div class="btn-group btn-group-xs m-b-xs">
+          <button type="button" class="btn btn-success" ng-click="dm.openCabinet('add')" ng-disabled="dm.disableGroupAdd" title="新增"><i class="fa fa-plus-circle"></i></button>
+          <button type="button" class="btn btn-info" ng-click="dm.openCabinet('edit')" ng-disabled="dm.disableGroupEdit" title="修改"><i class="fa fa-pencil"></i></button>
+          <button type="button" class="btn btn-danger" ng-click="dm.deleteCabinet()" ng-disabled="dm.disableGroupDel" title="删除"><i class="fa fa-times-circle"></i></button>
+        </div>
+      </div>
+      <div class="btn-group btn-group-sm">
+        <button type="button" class="btn btn-default m-l-none" ng-repeat="c in dm.cabinetData" ng-click="dm.groupSelect(c, $index)" ng-class="{'btn-info': $index == dm.cabinetIndex}">{{c.cabinetName}}</button>
+      </div>
+      <div class="line b-b"></div>
+      <form name="locationForm">
+        <div class="row">
+          <div class="col-lg-3 col-sm-6">
+            <div class="form-group">
+              <div class="input-group input-group-sm">
+                <input type="number" class="form-control input-sm" ng-model="dm.rows" required>
+                <span class="input-group-addon">行数</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6">
+            <div class="form-group">
+              <div class="input-group input-group-sm">
+                <input type="number" class="form-control input-sm" ng-model="dm.cols" required>
+                <span class="input-group-addon">列数</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6">
+            <div class="form-group">
+              <div class="input-group input-group-sm">
+                <input type="number" class="form-control input-sm" ng-model="dm.numbers" required>
+                <span class="input-group-addon">货号总数</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6">
+            <div class="form-group">
+              <button type="button" class="btn btn-info btn-sm" ng-click="dm.setLocation()" ng-disabled="locationForm.$invalid || dm.disableTableAdd"><i class="fa fa-check-circle"></i> 分配货位</button>
+            </div>
+          </div>
+        </div>
+      </form>
+      <div class="scroll-x">
+        <table class="table-bordered">
+          <tr ng-repeat="tr in dm.locationData">
+            <td ng-repeat="td in tr">
+              <button type="button" class="btn btn-sm btn-default w-xs" ng-click="dm.openLocationModal(td)">
+                <span>{{td.goodsCount}}/{{td.goodsNumber}}</span>
+                <uib-progressbar class="progress-xs progress-striped active m-b-none" max="td.goodsNumber" value="td.goodsCount"></uib-progressbar>
+              </button>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+  <script type="text/ng-template" id="linkManModal">
+    <div ng-include="'modules/germplasm/client/views/linkman.modal.client.view.html'"></div>
+  </script>
+  <script type="text/ng-template" id="managerModal">
+    <div ng-include="'modules/germplasm/client/views/manager.modal.client.view.html'"></div>
+  </script>
+  <script type="text/ng-template" id="roomModal">
+    <div ng-include="'modules/germplasm/client/views/room.modal.client.view.html'"></div>
+  </script>
+  <script type="text/ng-template" id="houseModal">
+    <div ng-include="'modules/germplasm/client/views/house.modal.client.view.html'"></div>
+  </script>
+  <script type="text/ng-template" id="areaModal">
+    <div ng-include="'modules/germplasm/client/views/area.modal.client.view.html'"></div>
+  </script>
+  <script type="text/ng-template" id="shelvesModal">
+    <div ng-include="'modules/germplasm/client/views/shelves.modal.client.view.html'"></div>
+  </script>
+  <script type="text/ng-template" id="cabinetModal">
+    <div ng-include="'modules/germplasm/client/views/cabinet.modal.client.view.html'"></div>
+  </script>
+  <script type="text/ng-template" id="locationModal">
+    <div ng-include="'modules/germplasm/client/views/location.modal.client.view.html'"></div>
+  </script>
+</div>

@@ -1,0 +1,176 @@
+<toaster-container toaster-options="{'close-button': true, 'tap-to-dibdiss': false, 'toaster-id': 1}"></toaster-container>
+<div class="wrapper-md" ng-controller="ObsoleteListCtrl">
+    <div class="panel panel-default">
+        <div class="panel-heading  h-s">
+            <b>查询条件</b>
+        </div>
+        <div class="panel-body">
+            <div class="form-horizontal ">
+                <div class="row">
+                    <div class="col-lg-3 col-sm-6 ">
+                        <div class="form-group ">
+                            <label class="control-label text-sm col-lg-6">仓库类型</label>
+                            <div class="col-lg-6">
+                                <select class="form-control input-sm" ng-model="ol.search.type" name="selType" ng-options="o.id as o.name for o in ol.house">
+                                    <option value="">请选择</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="form-group">
+                            <label class="col-lg-6 control-label text-sm">品种名称</label>
+                            <div class="col-lg-6">
+                                <input type="text" class=" form-control input-sm" ng-model="ol.search.breedingName" placeholder="品种名称">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 ">
+                        <div class="form-group ">
+                            <label class="control-label text-sm col-lg-6">二级分类</label>
+                            <div class="col-lg-6">
+                                <select class="form-control input-sm" ng-model="ol.search.secClass" name="secClass" ng-options="o.id as o.name for o in ol.secClass">
+                                    <option value="">请选择</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 ">
+                        <div class="form-group ">
+                            <label class="control-label text-sm col-lg-6">育种方法</label>
+                            <div class="col-lg-6">
+                                <select class="form-control input-sm" ng-model="ol.search.breedMethod" name="breedMethod" ng-options="o.id as o.name for o in ol.breedMethod">
+                                    <option value="">请选择</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div uib-collapse="ol.isCollapsed" class="row">
+                    <div class="col-lg-3 col-sm-6 ">
+                        <div class="form-group ">
+                            <label class="control-label text-sm col-lg-6">品种编号</label>
+                            <div class="col-lg-6">
+                                <input type="text" class="form-control input-sm" ng-model="ol.search.max" placeholder="品种编号">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 ">
+                        <div class="form-group ">
+                            <label class="control-label text-sm col-lg-6">材料价值</label>
+                            <div class="col-lg-6">
+                                <select class="form-control input-sm" ng-model="ol.search.gpValue" name="gpValue" ng-options="o.id as o.name for o in ol.gpValue">
+                                    <option value="">请选择</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 ">
+                        <div class="form-group ">
+                            <label class="control-label text-sm col-lg-6">母本代号</label>
+                            <div class="col-lg-6">
+                                <input type="text" class="form-control input-sm" ng-model="ol.search.precision" placeholder="母本代号">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 ">
+                        <div class="form-group ">
+                            <label class="control-label text-sm col-lg-6">父本代号</label>
+                            <div class="col-lg-6">
+                                <input type="text" class="form-control input-sm" ng-model="ol.search.unit" placeholder="父本代号">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 ">
+                        <div class="form-group ">
+                            <label class="control-label text-sm col-lg-6">种质类型</label>
+                            <div class="col-lg-6">
+                                <input type="text" class="form-control input-sm" ng-model="ol.search.unit" placeholder="种质类型">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 ">
+                        <div class="form-group ">
+                            <label class="control-label text-sm col-lg-6">种质属性</label>
+                            <div class="col-lg-6">
+                                <input type="text" class="form-control input-sm" ng-model="ol.search.unit" placeholder="种质属性">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 ">
+                        <div class="form-group ">
+                            <label class="control-label text-sm col-lg-6">种质价值</label>
+                            <div class="col-lg-6">
+                                <input type="text" class="form-control input-sm" ng-model="ol.search.unit" placeholder="种质价值">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 ">
+                        <div class="form-group ">
+                            <label class="control-label text-sm col-lg-6">种质用途分类</label>
+                            <div class="col-lg-6">
+                                <input type="text" class="form-control input-sm" ng-model="ol.search.unit" placeholder="种质用途分类">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 ">
+                        <div class="form-group ">
+                            <label class="control-label text-sm col-lg-6">种质用途小组</label>
+                            <div class="col-lg-6">
+                                <input type="text" class="form-control input-sm" ng-model="ol.search.unit" placeholder="种质用途小组">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 ">
+                        <div class="form-group ">
+                            <label class="control-label text-sm col-lg-6">轴色</label>
+                            <div class="col-lg-6">
+                                <input type="text" class="form-control input-sm" ng-model="ol.search.unit" placeholder="数据单位">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 ">
+                        <div class="form-group ">
+                            <label class="control-label text-sm col-lg-6">田间综合评价</label>
+                            <div class="col-lg-6">
+                                <input type="text" class="form-control input-sm" ng-model="ol.search.unit" placeholder="数据单位">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel-footer">
+            <div class="text-right">
+                <button type="button" class="btn btn-default btn-sm m-r-bd" ng-click="ol.search()" autofocus><i class="fa fa-search"></i> 查询</button>
+                <button type="button" class="btn btn-default btn-sm m-r-bd" ng-click="ol.reset()"><i class="fa fa-refresh"></i> 重置</button>
+                <button type="button" class="btn btn-default btn-sm m-r-bd" ng-click="ol.isCollapsed = !ol.isCollapsed"><i class="fa fa-expand " ng-class="{'fa-expand':ol.isCollapsed, 'fa-compress':!ol.isCollapsed}"></i> 更多</button>
+            </div>
+        </div>
+    </div>
+    <div class="m-b-md">
+        <div class="btn-group">
+            <button type="button" class="btn btn-success btn-sm" ng-click="ol.obsolete()" ng-disabled="ol.disableMuch"><i class="fa fa-plus-circle"></i> 淘汰</button>
+            <button type="button" class="btn btn-danger btn-sm" ng-click="ol.deleteDialog()" ng-disabled="ol.disableMuch"><i class="fa fa-pencil"></i> 剔除</button>
+            <button type="button" class="btn btn-primary btn-sm" ng-click="ol.openDetail('view')" ng-disabled="ol.disable"><i class="fa fa-file-text"></i> 查看</button>
+            <button type="button" class="btn btn-info btn-sm" ng-click="ol.obsoleteHistory()" ng-disabled="ol.disable"><i class="fa fa-file-text"></i> 查看历史淘汰清单</button>
+            <button type="button" class="btn btn-dark btn-sm" ng-click="" ng-disabled="ol.disable"><i class="fa fa-upload"></i> 导出</button>
+            <button type="button" class="btn btn-warning btn-sm" ng-click="" ng-disabled="ol.disable"><i class="glyphicon glyphicon-print"></i> 打印</button>
+        </div>
+        <div class="btn-group pull-right">
+            <button type="button" class="btn btn-info btn-sm" ng-model="ol.radioModel" uib-btn-radio="'sm'"><i class="fa fa-th-list"></i> 缩小</button>
+            <button type="button" class="btn btn-info btn-sm" ng-model="ol.radioModel" uib-btn-radio="'lg'"><i class="fa fa-list"></i> 放大</button>
+        </div>
+    </div>
+    <div class="m-b-md">
+        <div class="pos-rlt" ng-style="{'height': ol.radioModel == 'sm' ? '381' : '681'}" ui-grid="ol.breedingGridOptions" ui-grid-pagination ui-grid-selection ui-grid-resize-columns ui-grid-auto-resize ui-grid-pinning></div>
+    </div>
+    <!-- 新增弹出框和修改弹出框 -->
+    <script type="text/ng-template" id="obsoleteListModal">
+        <div ng-include="'modules/germplasm/client/views/obsoletelist.modal.client.view.html'"></div>
+    </script>
+    <!-- 淘汰历史弹出框 -->
+    <script type="text/ng-template" id="obsoleteHistoryModal">
+        <div ng-include="'modules/germplasm/client/views/obsoletehistory.modal.client.view.html'"></div>
+    </script>
+</div>

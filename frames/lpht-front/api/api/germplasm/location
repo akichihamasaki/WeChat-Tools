@@ -1,0 +1,489 @@
+[
+	[
+		{
+			"locationId": "1",
+			"locationName": "001",
+			"goodsNumber": 20,
+			"remark": "描述信息描述信息",
+			"inventoryDetailList": [
+				{
+					"materialName": "品种名称1",
+					"harvestAddress": "湖南",
+					"harvestYear": "2016年",
+					"tranNumber": "20",
+					"unit": "粒"
+				},
+				{
+					"materialName": "品种名称2",
+					"harvestAddress": "山东",
+					"harvestYear": "2015年",
+					"tranNumber": "500",
+					"unit": "克"
+				},
+				{
+					"materialName": "品种名称3",
+					"harvestAddress": "河北",
+					"harvestYear": "2014年",
+					"tranNumber": "1000",
+					"unit": "克"
+				},
+				{
+					"materialName": "品种名称3",
+					"harvestAddress": "河北",
+					"harvestYear": "2014年",
+					"tranNumber": "1000",
+					"unit": "克"
+				},
+				{
+					"materialName": "品种名称4",
+					"harvestAddress": "河北",
+					"harvestYear": "2014年",
+					"tranNumber": "1000",
+					"unit": "克"
+				},
+				{
+					"materialName": "品种名称5",
+					"harvestAddress": "河北",
+					"harvestYear": "2014年",
+					"tranNumber": "1000",
+					"unit": "克"
+				},
+				{
+					"materialName": "品种名称6",
+					"harvestAddress": "河北",
+					"harvestYear": "2014年",
+					"tranNumber": "1000",
+					"unit": "克"
+				},
+				{
+					"materialName": "品种名称7",
+					"harvestAddress": "河北",
+					"harvestYear": "2014年",
+					"tranNumber": "1000",
+					"unit": "克"
+				},
+				{
+					"materialName": "品种名称8",
+					"harvestAddress": "河北",
+					"harvestYear": "2014年",
+					"tranNumber": "1000",
+					"unit": "克"
+				},
+				{
+					"materialName": "品种名称9",
+					"harvestAddress": "河北",
+					"harvestYear": "2014年",
+					"tranNumber": "1000",
+					"unit": "克"
+				},
+				{
+					"materialName": "品种名称10",
+					"harvestAddress": "河北",
+					"harvestYear": "2014年",
+					"tranNumber": "1000",
+					"unit": "克"
+				},
+				{
+					"materialName": "品种名称11",
+					"harvestAddress": "河北",
+					"harvestYear": "2014年",
+					"tranNumber": "1000",
+					"unit": "克"
+				},
+				{
+					"materialName": "品种名称12",
+					"harvestAddress": "河北",
+					"harvestYear": "2014年",
+					"tranNumber": "1000",
+					"unit": "克"
+				}
+			]
+		},
+		{
+			"locationId": "2",
+			"locationName": "002",
+			"goodsNumber": 20,
+			"remark": "描述信息描述信息",
+			"inventoryDetailList": [
+				{
+					"materialName": "品种名称1",
+					"harvestAddress": "湖南",
+					"harvestYear": "2016年",
+					"tranNumber": "20",
+					"unit": "粒"
+				},
+				{
+					"materialName": "品种名称2",
+					"harvestAddress": "山东",
+					"harvestYear": "2015年",
+					"tranNumber": "500",
+					"unit": "克"
+				},
+				{
+					"materialName": "品种名称3",
+					"harvestAddress": "河北",
+					"harvestYear": "2014年",
+					"tranNumber": "1000",
+					"unit": "克"
+				}
+			]
+		},
+		{
+			"locationId": "3",
+			"locationName": "003",
+			"goodsNumber": 20,
+			"remark": "描述信息描述信息",
+			"inventoryDetailList": [
+				{
+					"materialName": "品种名称1",
+					"harvestAddress": "湖南",
+					"harvestYear": "2016年",
+					"tranNumber": "20",
+					"unit": "粒"
+				},
+				{
+					"materialName": "品种名称2",
+					"harvestAddress": "山东",
+					"harvestYear": "2015年",
+					"tranNumber": "500",
+					"unit": "克"
+				},
+				{
+					"materialName": "品种名称3",
+					"harvestAddress": "河北",
+					"harvestYear": "2014年",
+					"tranNumber": "1000",
+					"unit": "克"
+				}
+			]
+		},
+		{
+			"locationId": "4",
+			"locationName": "004",
+			"goodsNumber": 20,
+			"remark": "描述信息描述信息",
+			"inventoryDetailList": [
+				{
+					"materialName": "品种名称1",
+					"harvestAddress": "湖南",
+					"harvestYear": "2016年",
+					"tranNumber": "20",
+					"unit": "粒"
+				},
+				{
+					"materialName": "品种名称2",
+					"harvestAddress": "山东",
+					"harvestYear": "2015年",
+					"tranNumber": "500",
+					"unit": "克"
+				},
+				{
+					"materialName": "品种名称3",
+					"harvestAddress": "河北",
+					"harvestYear": "2014年",
+					"tranNumber": "1000",
+					"unit": "克"
+				}
+			]
+		},
+		{
+			"locationId": "5",
+			"locationName": "005",
+			"goodsNumber": 20,
+			"remark": "描述信息描述信息",
+			"inventoryDetailList": [
+				{
+					"materialName": "品种名称1",
+					"harvestAddress": "湖南",
+					"harvestYear": "2016年",
+					"tranNumber": "20",
+					"unit": "粒"
+				},
+				{
+					"materialName": "品种名称2",
+					"harvestAddress": "山东",
+					"harvestYear": "2015年",
+					"tranNumber": "500",
+					"unit": "克"
+				},
+				{
+					"materialName": "品种名称3",
+					"harvestAddress": "河北",
+					"harvestYear": "2014年",
+					"tranNumber": "1000",
+					"unit": "克"
+				},
+				{
+					"materialName": "品种名称1",
+					"harvestAddress": "湖南",
+					"harvestYear": "2016年",
+					"tranNumber": "20",
+					"unit": "粒"
+				},
+				{
+					"materialName": "品种名称2",
+					"harvestAddress": "山东",
+					"harvestYear": "2015年",
+					"tranNumber": "500",
+					"unit": "克"
+				},
+				{
+					"materialName": "品种名称3",
+					"harvestAddress": "河北",
+					"harvestYear": "2014年",
+					"tranNumber": "1000",
+					"unit": "克"
+				},
+				{
+					"materialName": "品种名称3",
+					"harvestAddress": "河北",
+					"harvestYear": "2014年",
+					"tranNumber": "1000",
+					"unit": "克"
+				},
+				{
+					"materialName": "品种名称1",
+					"harvestAddress": "湖南",
+					"harvestYear": "2016年",
+					"tranNumber": "20",
+					"unit": "粒"
+				},
+				{
+					"materialName": "品种名称2",
+					"harvestAddress": "山东",
+					"harvestYear": "2015年",
+					"tranNumber": "500",
+					"unit": "克"
+				},
+				{
+					"materialName": "品种名称3",
+					"harvestAddress": "河北",
+					"harvestYear": "2014年",
+					"tranNumber": "1000",
+					"unit": "克"
+				},
+				{
+					"materialName": "品种名称1",
+					"harvestAddress": "湖南",
+					"harvestYear": "2016年",
+					"tranNumber": "20",
+					"unit": "粒"
+				},
+				{
+					"materialName": "品种名称2",
+					"harvestAddress": "山东",
+					"harvestYear": "2015年",
+					"tranNumber": "500",
+					"unit": "克"
+				},
+				{
+					"materialName": "品种名称3",
+					"harvestAddress": "河北",
+					"harvestYear": "2014年",
+					"tranNumber": "1000",
+					"unit": "克"
+				},
+				{
+					"materialName": "品种名称1",
+					"harvestAddress": "湖南",
+					"harvestYear": "2016年",
+					"tranNumber": "20",
+					"unit": "粒"
+				},
+				{
+					"materialName": "品种名称2",
+					"harvestAddress": "山东",
+					"harvestYear": "2015年",
+					"tranNumber": "500",
+					"unit": "克"
+				},
+				{
+					"materialName": "品种名称3",
+					"harvestAddress": "河北",
+					"harvestYear": "2014年",
+					"tranNumber": "1000",
+					"unit": "克"
+				},
+				{
+					"materialName": "品种名称3",
+					"harvestAddress": "河北",
+					"harvestYear": "2014年",
+					"tranNumber": "1000",
+					"unit": "克"
+				},
+				{
+					"materialName": "品种名称1",
+					"harvestAddress": "湖南",
+					"harvestYear": "2016年",
+					"tranNumber": "20",
+					"unit": "粒"
+				},
+				{
+					"materialName": "品种名称2",
+					"harvestAddress": "山东",
+					"harvestYear": "2015年",
+					"tranNumber": "500",
+					"unit": "克"
+				},
+				{
+					"materialName": "品种名称3",
+					"harvestAddress": "河北",
+					"harvestYear": "2014年",
+					"tranNumber": "1000",
+					"unit": "克"
+				}
+			]
+		}
+	],
+	[
+		{
+			"locationId": "6",
+			"locationName": "006",
+			"goodsNumber": 20,
+			"inventoryDetailList": []
+		},
+		{
+			"locationId": "7",
+			"locationName": "007",
+			"goodsNumber": 20,
+			"inventoryDetailList": []
+		},
+		{
+			"locationId": "8",
+			"locationName": "008",
+			"goodsNumber": 20,
+			"inventoryDetailList": []
+		},
+		{
+			"locationId": "9",
+			"locationName": "009",
+			"goodsNumber": 20,
+			"inventoryDetailList": []
+		},
+		{
+			"locationId": "10",
+			"locationName": "010",
+			"goodsNumber": 20,
+			"inventoryDetailList": []
+		}
+	],
+	[
+		{
+			"locationId": "11",
+			"locationName": "011",
+			"goodsNumber": 20,
+			"inventoryDetailList": []
+		},
+		{
+			"locationId": "12",
+			"locationName": "012",
+			"goodsNumber": 20,
+			"inventoryDetailList": []
+		},
+		{
+			"locationId": "13",
+			"locationName": "013",
+			"goodsNumber": 20,
+			"inventoryDetailList": []
+		},
+		{
+			"locationId": "14",
+			"locationName": "014",
+			"goodsNumber": 20,
+			"inventoryDetailList": []
+		},
+		{
+			"locationId": "15",
+			"locationName": "015",
+			"goodsNumber": 20,
+			"inventoryDetailList": []
+		}
+	],
+	[
+		{
+			"locationId": "16",
+			"locationName": "016",
+			"goodsNumber": 20,
+			"remark": "描述信息描述信息",
+			"inventoryDetailList": [
+				{
+					"materialName": "品种名称1",
+					"harvestAddress": "湖南",
+					"harvestYear": "2016年",
+					"tranNumber": "20",
+					"unit": "粒"
+				},
+				{
+					"materialName": "品种名称2",
+					"harvestAddress": "山东",
+					"harvestYear": "2015年",
+					"tranNumber": "500",
+					"unit": "克"
+				},
+				{
+					"materialName": "品种名称3",
+					"harvestAddress": "河北",
+					"harvestYear": "2014年",
+					"tranNumber": "1000",
+					"unit": "克"
+				}
+			]
+		},
+		{
+			"locationId": "17",
+			"locationName": "017",
+			"goodsNumber": 20,
+			"inventoryDetailList": []
+		},
+		{
+			"locationId": "18",
+			"locationName": "018",
+			"goodsNumber": 20,
+			"inventoryDetailList": []
+		},
+		{
+			"locationId": "19",
+			"locationName": "019",
+			"goodsNumber": 20,
+			"inventoryDetailList": []
+		},
+		{
+			"locationId": "20",
+			"locationName": "020",
+			"goodsNumber": 20,
+			"inventoryDetailList": []
+		}
+	],
+	[
+		{
+			"locationId": "21",
+			"locationName": "021",
+			"goodsNumber": 20,
+			"inventoryDetailList": []
+		},
+		{
+			"locationId": "22",
+			"locationName": "022",
+			"goodsNumber": 20,
+			"inventoryDetailList": []
+		},
+		{
+			"locationId": "23",
+			"locationName": "023",
+			"goodsNumber": 20,
+			"inventoryDetailList": []
+		},
+		{
+			"locationId": "24",
+			"locationName": "024",
+			"goodsNumber": 20,
+			"inventoryDetailList": []
+		},
+		{
+			"locationId": "25",
+			"locationName": "025",
+			"goodsNumber": 20,
+			"inventoryDetailList": []
+		}
+	]
+]

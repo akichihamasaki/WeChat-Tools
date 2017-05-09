@@ -1,0 +1,25 @@
+{
+	"dataPrecision":
+	[
+        {
+           "code":"0",
+           "message":"#"
+        },
+        {
+           "code":"1",
+           "message":"#.0"
+        },
+        {
+           "code":"2",
+           "message":"#.00"
+        },
+        {
+           "code":"3",
+           "message":"#.000"
+        },
+        {
+           "code":"4",
+           "message":"#.0000"
+        }
+	]
+}

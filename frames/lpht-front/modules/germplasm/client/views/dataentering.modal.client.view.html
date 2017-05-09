@@ -1,0 +1,211 @@
+<div class="modal-header" ng-switch="cb.modalType">
+    <h4 class="modal-title" ng-switch-when="add">数据录入</h4>
+    <h4 class="modal-title" ng-switch-when="verify">数据审核</h4>
+</div>
+<div class="modal-body">
+    <div class="panel panel-default">
+        <div class="panel-heading font-bold">基本信息</div>
+        <div class="panel-body">
+            <form class="form-horizontal" name="sqForm">
+                <fieldset ng-disabled="cb.formDisabled">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group has-feedback">
+                                <label class="col-lg-4 control-label text-sm">盘点批次号</label>
+                                <div class="col-lg-8">
+                                    <input type="text" class="form-control input-sm" name="checkNo" ng-model="cb.rowEntity.checkNo" readonly>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group has-feedback">
+                                <label class="col-lg-4 control-label text-sm">盘点类型</label>
+                                <div class="col-lg-8">
+                                    <input type="text" class="form-control input-sm" name="checkTypeText" ng-model="cb.rowEntity.checkTypeText" readonly>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--                     <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group has-feedback">
+                                <label class="col-lg-4 control-label text-sm">出库申请人</label>
+                                <div class="col-lg-8">
+                                    <input type="text" class="form-control input-sm" name="applyUser" ng-model="cb.rowEntity.applyUser" readonly>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group has-feedback">
+                                <label class="col-lg-4 control-label text-sm">创建时间</label>
+                                <div class="col-lg-8">
+                                    <input type="text" class="form-control input-sm" name="timeStamp" ng-model="cb.rowEntity.timeStamp" readonly>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group has-feedback">
+                                <label class="col-lg-4 control-label text-sm">材料一级分类</label>
+                                <div class="col-lg-8">
+                                    <input type="text" class="form-control input-sm" name="firClass" ng-model="cb.rowEntity.firClass" readonly>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group has-feedback">
+                                <label class="col-lg-4 control-label text-sm">材料二级分类</label>
+                                <div class="col-lg-8">
+                                    <input type="text" class="form-control input-sm" name="secClass" ng-model="cb.rowEntity.secClass" readonly>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group has-feedback">
+                                <label class="col-lg-4 control-label text-sm">库区</label>
+                                <div class="col-lg-8">
+                                    <input type="text" class="form-control input-sm" name="house" ng-model="cb.rowEntity.houseText" readonly>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group has-feedback">
+                                <label class="col-lg-4 control-label text-sm">货架</label>
+                                <div class="col-lg-8">
+                                    <input type="text" class="form-control input-sm" name="name" ng-model="cb.rowEntity.areaText" readonly>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group has-feedback">
+                                <label class="col-lg-4 control-label text-sm">货柜</label>
+                                <div class="col-lg-8">
+                                    <input type="text" class="form-control input-sm" name="name" ng-model="cb.rowEntity.shelvesText" readonly>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group has-feedback">
+                                <label class="col-lg-4 control-label text-sm">货位</label>
+                                <div class="col-lg-8">
+                                    <input type="text" class="form-control input-sm" name="code" ng-model="cb.rowEntity.cabinetText" readonly>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                </fieldset>
+            </form>
+            <div class="table-responsive" style="max-height:760px;overflow-y:auto;">
+                <table class="table table-bordered table-hover table-condensed">
+                    <thead>
+                        <tr>
+                            <th style="white-space:nowrap;">品种编号</th>
+                            <!-- <th>品种名称</th>
+                            <th>母本代号</th>
+                            <th>父本代号</th>
+                            <th>系谱</th> -->
+                            <th style="white-space:nowrap;">库存数量</th>
+                            <th style="white-space:nowrap;">单位</th>
+                            <th style="white-space:nowrap;">实盘数量</th>
+                            <th style="white-space:nowrap;" ng-show="cb.modalType =='verify'">盈亏</th>
+                            <th style="white-space:nowrap;" ng-show="cb.modalType =='verify'">录入人</th>
+                            <th style="white-space:nowrap;">存放位置</th>
+                            <th style="white-space:nowrap;">操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="i in cb.enteringTable">
+                            <!-- ng-class="{true:'st-selected',false:'bg-primary'}[ep.active]" -->
+                            <td style="white-space:nowrap;">{{i.varietiesCode}}</td>
+                            <!-- <td>{{i.varietiesName}}</td>
+                            <td>{{i.femaleNo}}</td>
+                            <td>{{i.maleParent}}</td>
+                            <td>{{i.pedigree}}</td> -->
+                            <td style="white-space:nowrap;">{{i.matterial}}</td>
+                            <td style="white-space:nowrap;">{{i.unit}}</td>
+                            <td style="white-space:nowrap;" contenteditable="true">
+                                <input type="text" class="form-control input-sm" ng-model="i.inNumber" />
+                            </td>
+                            <td style="white-space:nowrap;" ng-show="cb.modalType =='verify'" ng-class="{'text-success':(i.inNumber-i.matterial)>0,'text-danger':(i.inNumber-i.matterial)<0}">{{i.inNumber-i.matterial}}</td>
+                            <td style="white-space:nowrap;" ng-show="cb.modalType =='verify'">{{i.inNumber}}</td>
+                            <td style="white-space:nowrap;">
+                                <div class="input-group input-group-sm">
+                                    <input type="text" class="form-control input-sm" name="checkName" placeholder="选择位置" ng-model="cb.rowEntity.checkName" readonly>
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-default" type="button" title="选择位置" ng-click="cb.selectDeposit(i)">
+                                        <i class="fa fa-search"></i></button>
+                                        </span>
+                                </div>
+                            </td>
+                            <td style="white-space:nowrap;">
+                                <button type="button" title="删除" class="btn btn-danger btn-sm" ng-click="cb.deleteData($index)"><i class="fa fa-times-circle"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="white-space:nowrap;">
+                                <input type="text" class="form-control input-sm" ng-model="cb.varietiesCode" />
+                            </td>
+                            <!-- <td>
+                                <input type="text" class="form-control input-sm" ng-model="cb.varietiesName" />
+                            </td>
+                            <td>
+                                <input type="text" class="form-control input-sm" ng-model="cb.femaleNo" />
+                            </td>
+                            <td>
+                                <input type="text" class="form-control input-sm" ng-model="cb.maleParent" />
+                            </td>
+                            <td>
+                                <input type="text" class="form-control input-sm" ng-model="cb.pedigree" />
+                            </td> -->
+                            <td style="white-space:nowrap;">
+                                <input type="text" class="form-control input-sm" ng-model="cb.matterial" />
+                            </td>
+                            <td style="white-space:nowrap;">
+                                <input type="text" class="form-control input-sm" ng-model="cb.unit" />
+                            </td>
+                            <td style="white-space:nowrap;">
+                                <input type="text" class="form-control input-sm" ng-model="cb.inNumber" />
+                            </td>
+                            <td style="white-space:nowrap;" ng-show="cb.modalType =='verify'">
+                                <input type="text" class="form-control input-sm" ng-model="cb.inNumber - cb.matterial" />
+                            </td>
+                            <td style="white-space:nowrap;" ng-show="cb.modalType =='verify'">
+                                <input type="text" class="form-control input-sm" ng-model="cb.inNumber" />
+                            </td>
+                            <td style="white-space:nowrap;">
+                                <div class="input-group input-group-sm">
+                                    <input type="text" class="form-control input-sm" name="checkName" placeholder="选择位置" ng-model="cb.rowEntity.checkName" readonly>
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-default" type="button" title="选择位置" ng-click="cb.selectDeposit(i)">
+                                        <i class="fa fa-search"></i></button>
+                                        </span>
+                                </div>
+                            </td>
+                            <td style="white-space:nowrap;">
+                                <button type="button" title="新增" class="btn btn-success btn-sm" ng-click="cb.addData()" ng-disabled="!cb.varietiesCode"><i class="fa fa-plus-circle"></i></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-primary btn-sm" ng-click="cb.ok()" ng-disabled="cropForm.$invalid">保存</button>
+    <button type="button" class="btn btn-info btn-sm" ng-click="cb.print()" ng-disabled="cropForm.$invalid" ng-hide="cb.formDisabled">打印</button>
+    <button type="button" class="btn btn-info btn-sm" ng-click="cb.verify()" ng-show="cb.formDisabled" ng-disabled="cropForm.$invalid">审核</button>
+    <button type="button" class="btn btn-default btn-sm" ng-click="cb.cancel()">取消</button>
+</div>
+<!-- 审核意见弹出框 -->
+<script type="text/ng-template" id="verifyModal">
+    <div ng-include="'modules/germplasm/client/views/checkverify.modal.client.view.html'"></div>
+</script>
+<script type="text/ng-template" id="selectDepositModal">
+    <div ng-include="'modules/germplasm/client/views/selectdeposit.modal.client.view.html'"></div>
+</script>

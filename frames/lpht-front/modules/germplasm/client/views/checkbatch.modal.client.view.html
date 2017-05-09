@@ -1,0 +1,178 @@
+<div class="modal-header" ng-switch="cb.modalType">
+    <h4 class="modal-title" ng-switch-when="add">新增</h4>
+    <h4 class="modal-title" ng-switch-when="edit">修改</h4>
+    <h4 class="modal-title" ng-switch-when="view">查看详情</h4>
+</div>
+<div class="modal-body">
+    <div class="panel panel-default">
+        <div class="panel-heading font-bold">基本信息</div>
+        <div class="panel-body">
+            <form class="form-horizontal" name="sqForm">
+                <fieldset ng-disabled="cb.formDisabled">
+                    <div class="row" ng-hide="cb.modalType=='add'">
+                        <div class="col-sm-6">
+                            <div class="form-group has-feedback">
+                                <label class="col-lg-4 control-label text-sm">盘点批次号</label>
+                                <div class="col-lg-8">
+                                    <input type="text" class="form-control input-sm" name="checkNo" placeholder="盘点批次号" ng-model="cb.rowEntity.checkNo" readonly>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group has-feedback">
+                                <label class="col-lg-4 control-label text-sm">创建人</label>
+                                <div class="col-lg-8">
+                                    <input type="text" class="form-control input-sm" name="createUser" ng-model="cb.rowEntity.createUser" readonly>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group has-feedback">
+                                <label class="col-lg-2 control-label text-sm">盘点说明</label>
+                                <div class="col-lg-10">
+                                    <textarea class="form-control input-sm" rows="3" ng-model="cb.rowEntity.batchState" placeholder="盘点说明"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group has-feedback">
+                                <label class="col-lg-4 control-label text-sm">盘点类型</label>
+                                <div class="col-lg-8">
+                                    <select class="form-control input-sm" name="checkType" ng-options="o.id as o.name for o in ps.cb.selectData.checkType" ng-model="cb.rowEntity.checkType" ng-change="cb.checkTypeChange(cb.rowEntity.checkType)">
+                                        <option value="">请选择</option>
+                                    </select>
+                                    <div ng-messages="dataForm.checkType.$dirty && dataForm.checkType.$error">
+                                        <p class="help-block text-sm" ng-message="required">请选择盘点类型</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label class="col-lg-4 control-label text-sm">盘点数据录入人</label>
+                                <div class="col-lg-8">
+                                    <div class="input-group input-group-sm">
+                                        <input type="text" class="form-control input-sm" name="checkName" placeholder="选择盘点数据录入人" ng-model="cb.rowEntity.checkName" readonly>
+                                        <span class="input-group-btn">
+                                        <button class="btn btn-default" type="button" title="选择盘点数据录入人" ng-click="cb.openCheckModal()">
+                                        <i class="fa fa-search"></i></button>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading font-bold">盘点范围</div>
+        <div class="panel-body">
+            <form class="form-horizontal" name="sqForm">
+                <fieldset ng-disabled="cb.formDisabled">
+                    <div class="row">
+                        <div class="col-sm-6" ng-hide="cb.houseHide">
+                            <div class="form-group">
+                                <label class="col-lg-4 control-label text-sm">库区</label>
+                                <div class="col-lg-8">
+                                    <select class="form-control input-sm" name="house" ng-options="o.id as o.name for o in ps.cb.selectData.area" ng-model="cb.rowEntity.house">
+                                        <option value="">请选择</option>
+                                    </select>
+                                    <div ng-messages="dataForm.house.$dirty && dataForm.house.$error">
+                                        <p class="help-block text-sm" ng-message="required">请选择库区</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6" ng-hide="cb.areaHide">
+                            <div class="form-group">
+                                <label class="col-lg-4 control-label text-sm">货架</label>
+                                <div class="col-lg-8">
+                                    <div class="input-group input-group-sm">
+                                        <input type="text" class="form-control input-sm" name="area" placeholder="选择货架" ng-model="cb.rowEntity.shelves" readonly>
+                                        <span class="input-group-btn">
+                                        <button class="btn btn-default" type="button" title="选择货柜" ng-click="cb.selectShelvesModal()">
+                                        <i class="fa fa-search"></i></button>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6" ng-hide="cb.shelvesHide">
+                            <div class="form-group">
+                                <label class="col-lg-4 control-label text-sm">货柜</label>
+                                <div class="col-lg-8">
+                                    <div class="input-group input-group-sm">
+                                        <input type="text" class="form-control input-sm" name="shelves" placeholder="选择货柜" ng-model="cb.rowEntity.cabinet" readonly>
+                                        <span class="input-group-btn">
+                                        <button class="btn btn-default" type="button" title="选择货柜" ng-click="cb.selectCabinetModal()">
+                                        <i class="fa fa-search"></i></button>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6" ng-hide="cb.cabinetHide">
+                            <div class="form-group">
+                                <label class="col-lg-4 control-label text-sm">货位</label>
+                                <div class="col-lg-8">
+                                    <div class="input-group input-group-sm">
+                                        <input type="text" class="form-control input-sm" name="cabinet" placeholder="选择货位" ng-model="cb.rowEntity.location" readonly>
+                                        <span class="input-group-btn">
+                                        <button class="btn btn-default" type="button" title="选择货位" ng-click="cb.selectLocationModal()">
+                                        <i class="fa fa-search"></i></button>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6" ng-hide="cb.varietiesHide">
+                            <div class="form-group">
+                                <label class="col-lg-4 control-label text-sm">品种</label>
+                                <div class="col-lg-8">
+                                    <div class="input-group input-group-sm">
+                                        <input type="text" class="form-control input-sm" name="varietiesName" placeholder="品种" ng-model="cb.rowEntity.varietiesName" readonly>
+                                        <span class="input-group-btn">
+                                        <button class="btn btn-default" type="button" title="选择品种" ng-click="cb.openVarietiesModal()">
+                                        <i class="fa fa-search"></i></button>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-primary btn-sm" ng-click="cb.ok()" ng-hide="cb.formDisabled" ng-disabled="cropForm.$invalid">确定</button>
+    <button type="button" class="btn btn-info btn-sm" ng-click="cb.edit()" ng-show="cb.formDisabled" ng-disabled="cropForm.$invalid">编辑</button>
+    <button type="button" class="btn btn-default btn-sm" ng-click="cb.cancel()">取消</button>
+</div>
+<!-- 盘点人选择弹出框 -->
+<script type="text/ng-template" id="checkPersonModal">
+    <div ng-include="'modules/germplasm/client/views/checkperson.modal.client.view.html'"></div>
+</script>
+<!-- 品种选择弹出框 -->
+<script type="text/ng-template" id="varietiesModal">
+    <div ng-include="'modules/germplasm/client/views/varieties.modal.client.view.html'"></div>
+</script>
+<!-- 货架选择弹出框 -->
+<script type="text/ng-template" id="selectShelvesModal">
+    <div ng-include="'modules/germplasm/client/views/selectshelves.modal.client.view.html'"></div>
+</script>
+<!-- 货柜选择弹出框 -->
+<script type="text/ng-template" id="selectCabinetModal">
+    <div ng-include="'modules/germplasm/client/views/selectcabinet.modal.client.view.html'"></div>
+</script>
+<!-- 货位选择弹出框 -->
+<script type="text/ng-template" id="selectLocationModal">
+    <div ng-include="'modules/germplasm/client/views/selectlocation.modal.client.view.html'"></div>
+</script>

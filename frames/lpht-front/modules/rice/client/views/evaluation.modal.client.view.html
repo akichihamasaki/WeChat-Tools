@@ -1,0 +1,85 @@
+<div class="modal-header" ng-switch="kp.modalType">
+  <h4 class="modal-title" ng-switch-when="add">新增</h4>
+  <h4 class="modal-title" ng-switch-when="edit">修改</h4>
+  <h4 class="modal-title" ng-switch-when="view">查看详情</h4>
+</div>
+<div class="modal-body">
+  <form class="form-horizontal" name="evaluationForm">
+    <fieldset ng-disabled="kp.formDisabled">
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label class="col-lg-4 control-label text-sm">考评年月</label>
+            <div class="col-lg-8">
+              <select class="form-control input-sm" name="evaluationMonth" ng-options="o.code as o.message for o in kp.evaluationMonth" ng-model="kp.rowEntity.appraisalCycle" required>
+                <option value="">请选择</option>
+              </select>
+              <div ng-messages="evaluationForm.evaluationMonth.$dirty && evaluationForm.evaluationMonth.$error">
+                <p class="help-block text-sm" ng-message="required">请选择考评年月</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label class="col-lg-4 control-label text-sm">考评结果</label>
+            <div class="col-lg-8">
+              <select class="form-control input-sm" name="evaluationResult" ng-options="o.code as o.message for o in kp.evaluationResult" ng-model="kp.rowEntity.appraisalResult" required>
+                <option value="">请选择</option>
+              </select>
+              <div ng-messages="evaluationForm.evaluationResult.$dirty && evaluationForm.evaluationResult.$error">
+                <p class="help-block text-sm" ng-message="required">请选择考评结果</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-8">
+          <div class="form-group has-feedback">
+            <label class="col-lg-3 control-label text-sm">附件</label>
+            <div class="col-lg-9">
+              <input type="text" class="form-control input-sm" name="enclosureName" placeholder="未选择任何文件" ng-model="kp.rowEntity.fileName" required readonly>
+              <span class="fa fa-exclamation-circle form-control-feedback" ng-show="evaluationForm.enclosureName.$error.required"></span>
+              <div ng-messages="evaluationForm.enclosureName.$dirty && evaluationForm.enclosureName.$error">
+                <p class="help-block text-sm" ng-message="required">请选择附件</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+              <button type="button" class="btn btn-success btn-sm btn-block" ng-model="kp.files" ngf-select="kp.uploadFile($file)" ngf-keep="true" ngf-multiple="false" ><i class="fa fa-file"></i> 选择文件</button>
+
+            <!-- <div class="col-lg-6">
+              <button type="button" class="btn btn-success btn-sm btn-block" ng-click="ht.upload()"><i class="fa fa-file"></i> 上传</button>
+            </div> -->
+        </div>
+      </div>
+      <!-- <div class="row">
+        <div class="col-sm-12">
+          <div class="form-group has-feedback">
+            <label class="col-lg-2 control-label text-sm">附件</label>
+            <div class="col-lg-10">
+              <textarea class="form-control input-sm" rows="3" name="enclosureName" placeholder="未选择任何文件" ng-model="kp.rowEntity.enclosureName"></textarea>
+            </div>
+          </div>
+        </div>
+      </div> -->
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="form-group has-feedback">
+            <label class="col-lg-2 control-label text-sm">考评说明</label>
+            <div class="col-lg-10">
+              <textarea class="form-control input-sm" rows="3" name="evaluationDescribe" placeholder="考评说明" ng-model="kp.rowEntity.appraisalRemark"></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+    </fieldset>
+  </form>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-primary btn-sm" ng-click="kp.ok()" ng-hide="kp.formDisabled" ng-disabled="evaluationForm.$invalid">确定</button>
+  <button type="button" class="btn btn-info btn-sm" ng-click="kp.edit()" ng-show="kp.formDisabled">编辑</button>
+  <button type="button" class="btn btn-default btn-sm" ng-click="kp.cancel()">取消</button>
+</div>

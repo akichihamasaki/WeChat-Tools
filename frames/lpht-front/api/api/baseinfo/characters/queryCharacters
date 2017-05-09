@@ -1,0 +1,46 @@
+{ "content":
+  [
+    { "charactersCode":"111",
+      "charactersName":"苗高",
+      "groupName":"抗逆性组",
+      "dataType":"数值",
+      "calculationFormulas":"成熟期-播种期",
+      "maxValue":"90",
+      "minValue":"60",   
+      "dataPrecision":"0.1",
+      "unitName":"cm",   
+      "isQuantization":"是",
+      "charactersValueRangeList":[{"low":0,"up":199,"value":1},{"low":200,"up":399,"value":3}],
+      "charactersValueEnumList":[]
+    },
+    {
+      "charactersCode":"112",
+      "charactersName":"苗高",
+      "groupName":"生育期组",
+      "dataType":"枚举",
+      "calculationFormulas":"",
+      "maxValue":"",
+      "minValue":"",
+      "dataPrecision":"",
+      "unitName":"",
+      
+      "isQuantization":"是",
+      "charactersValueRangeList":[],
+      "charactersValueEnumList":[{"enumKey":"矮苗","value":2},{"enumKey":"中苗","value":4},{"enumKey":"高苗","value":8}]
+    },
+    {
+      "charactersCode":"113",
+      "charactersName":"苗高",
+      "groupName":"抗逆性组",
+      "dataType":"数值",
+      "calculationFormulas":"成熟期+播种期",
+      "maxValue":"110",
+      "minValue":"60",
+      "dataPrecision":"0.1",
+      "unitName":"cm",
+      "isQuantization":"否",
+      "charactersValueRangeList":[],
+      "charactersValueEnumList":[]
+    }
+  ]
+}

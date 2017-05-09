@@ -1,0 +1,115 @@
+<toaster-container toaster-options="{'close-button': true, 'tap-to-dismiss': false, 'toaster-id': 1}"></toaster-container>
+<div class="wrapper-md" ng-controller="FieldLayoutCtrl" ng-mouseup="cm.mouseup()" ng-mouseleave="cm.mouseleave()">
+  <div class="panel panel-default m-b-md">
+    <div class="panel-heading font-bold">配置参数</div>
+    <div class="panel-body">
+      <form class="form-horizontal">
+        <div class="row">
+          <div class="col-lg-3 col-sm-6">
+            <div class="form-group">
+              <label class="col-lg-6 control-label text-sm">行高</label>
+              <div class="col-lg-6">
+                <input type="number" class="form-control input-sm" ng-model="cm.rowHeight" ng-change="cm.getItems()">
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6">
+            <div class="form-group">
+              <label class="col-lg-6 control-label text-sm">列宽</label>
+              <div class="col-lg-6">
+                <input type="number" class="form-control input-sm" ng-model="cm.colWidth" ng-change="cm.getItems()">
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6">
+            <div class="form-group">
+              <label class="col-lg-6 control-label text-sm">行数</label>
+              <div class="col-lg-6">
+                <input type="number" class="form-control input-sm" ng-model="cm.rows" ng-change="cm.getItems()">
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6">
+            <div class="form-group">
+              <label class="col-lg-6 control-label text-sm">列数</label>
+              <div class="col-lg-6">
+                <input type="number" class="form-control input-sm" ng-model="cm.cols" ng-change="cm.getItems()">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row" uib-collapse="cm.isCollapsed">
+          <div class="col-lg-3 col-sm-6">
+            <div class="form-group">
+              <label class="col-lg-6 control-label text-sm">颜色</label>
+              <div class="col-lg-6">
+                <!-- <div class="btn-group btn-group-sm" uib-dropdown>
+                  <button type="button" class="btn btn-default">填充</button>
+                  <button type="button" class="btn btn-default" uib-dropdown-toggle>
+                    <span class="caret"></span>
+                  </button>
+                  <ul class="dropdown-menu no-padder" uib-dropdown-menu>
+                    <li><button type="button" class="btn btn-default btn-sm btn-block no-radius">default</button></li>
+                    <li><button type="button" class="btn btn-primary btn-sm btn-block no-radius">primary</button></li>
+                    <li><button type="button" class="btn btn-success btn-sm btn-block no-radius">success</button></li>
+                    <li><button type="button" class="btn btn-info btn-sm btn-block no-radius">info</button></li>
+                    <li><button type="button" class="btn btn-warning btn-sm btn-block no-radius">warning</button></li>
+                    <li><div class="bg-danger">danger</div></li>
+                  </ul>
+                </div> -->
+                <style>
+                  .input-group-sm .form-control {
+                    height: 30px;
+                    padding: 5px 10px;
+                    font-size: 12px;
+                    line-height: 1.5;
+                    border-radius: 3px;
+                  }
+                </style>
+                <div class="input-group input-group-sm">
+                  <ui-select ng-model="cm.color" ng-change="cm.setColor()">
+                    <ui-select-match><span class="label {{$select.selected.color}}"> </span>&nbsp;<small>{{$select.selected.name}}</small></ui-select-match>
+                    <ui-select-choices repeat="item in cm.itemArray">
+                      <span class="label {{item.color}}"> </span>&nbsp;<small>{{item.name}}</small>
+                    </ui-select-choices>
+                  </ui-select>
+                  <span class="input-group-btn">
+                    <button type="button" class="btn btn-default" ng-click="cm.setColor()"><i class="fa fa-tint"></i></button>
+                  </span>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6">
+            <div class="form-group">
+              <label class="col-lg-6 control-label text-sm">填值</label>
+              <div class="col-lg-6">
+                <div class="input-group input-group-sm">
+                  <input type="text" class="form-control" ng-model="cm.value" ng-change="cm.setValue()">
+                  <span class="input-group-btn">
+                    <button type="button" class="btn btn-default" ng-click="cm.setValue()"><i class="fa fa-pencil-square"></i></button>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="panel-footer">
+      <div class="text-right">
+        <button type="button" class="btn btn-default btn-sm m-r-sm" ng-click="cm.isCollapsed = !cm.isCollapsed"><i class="fa" ng-class="{'fa-expand':cm.isCollapsed, 'fa-compress':!cm.isCollapsed}"></i> 更多</button>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-x">
+    <table class="table-bordered" onSelectStart="return false">
+      <tr ng-repeat="tr in cm.items">
+        <td ng-repeat="td in tr" ng-class="td.color">
+          <div class="text-ellipsis" ng-style="{'width': td.width, 'height': td.height, 'line-height': td.height + 'px'}" ng-class="{'bg-black-opacity': td.active}" ng-mousedown="cm.mousedown(td)" ng-mouseover="cm.mouseover(td)" ng-bind="td.value"></div>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>

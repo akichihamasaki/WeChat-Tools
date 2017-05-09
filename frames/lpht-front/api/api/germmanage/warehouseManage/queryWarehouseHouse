@@ -1,0 +1,138 @@
+[
+	{
+		"houseId": "1",
+		"houseName": "湖南仓库",
+		"address": "湖南省芙蓉区远大二路930号",
+		"linkMan": "001",
+		"linkManName": "江小坤",
+		"tel": "15827255821",
+		"label": "湖南仓库",
+		"type": "house",
+		"children": [
+			{
+				"roomId": "1",
+				"roomName": "长期库",
+				"roomType": "1",
+				"remark": "存放长时间保持货物的库房",
+				"managerName": "张三,李四",
+				"manager": [
+					{
+						"userId": "1",
+						"userName": "张三",
+						"orgName": "人事部"
+					},
+					{
+						"userId": "2",
+						"userName": "李四",
+						"orgName": "信息部"
+					}
+				],
+				"label": "长期库",
+				"type": "room",
+				"children": [
+					{
+						"areaId": "1",
+						"areaName": "库区A",
+						"remark": "专门存放玉米的库区",
+						"label": "库区A",
+						"type": "area",
+						"children": [
+							{
+								"shelvesId": "1",
+								"shelvesName": "货架001",
+								"remark": "货架001",
+								"label": "货架001",
+								"type": "shelves",
+								"hasChildren": true
+							},
+							{
+								"shelvesId": "2",
+								"shelvesName": "货架002",
+								"remark": "货架002",
+								"label": "货架002",
+								"type": "shelves",
+								"hasChildren": false
+							},
+							{
+								"shelvesId": "3",
+								"shelvesName": "货架003",
+								"remark": "货架003",
+								"label": "货架003",
+								"type": "shelves",
+								"hasChildren": false
+							},
+							{
+								"shelvesId": "4",
+								"shelvesName": "货架004",
+								"remark": "货架004",
+								"label": "货架004",
+								"type": "shelves",
+								"hasChildren": false
+							},
+							{
+								"shelvesId": "5",
+								"shelvesName": "货架005",
+								"remark": "货架005",
+								"label": "货架005",
+								"type": "shelves",
+								"hasChildren": false
+							},
+							{
+								"shelvesId": "6",
+								"shelvesName": "货架006",
+								"remark": "货架006",
+								"label": "货架006",
+								"type": "shelves",
+								"hasChildren": false
+							}
+						]
+					},
+					{
+						"areaId": "2",
+						"areaName": "库区B",
+						"label": "库区B",
+						"type": "area",
+						"noLeaf": true
+					},
+					{
+						"areaId": "3",
+						"areaName": "库区C",
+						"label": "库区C",
+						"type": "area",
+						"noLeaf": true
+					}
+				]
+			},
+			{
+				"roomId": "2",
+				"roomName": "中期库",
+				"roomType": "2",
+				"label": "中期库",
+				"type": "room",
+				"noLeaf": true
+			},
+			{
+				"roomId": "3",
+				"roomName": "短期库",
+				"roomType": "3",
+				"label": "短期库",
+				"type": "room",
+				"noLeaf": true
+			}
+		]
+	},
+	{
+		"houseId": "2",
+		"houseName": "河北仓库",
+		"label": "河北仓库",
+		"type": "house",
+		"noLeaf": true
+	},
+	{
+		"houseId": "3",
+		"houseName": "山东仓库",
+		"label": "山东仓库",
+		"type": "house",
+		"noLeaf": true
+	}
+]

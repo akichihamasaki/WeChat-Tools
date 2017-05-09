@@ -1,0 +1,183 @@
+<div class="modal-header" ng-switch="sq.modalType">
+    <h4 class="modal-title" ng-switch-when="edit">修改</h4>
+    <h4 class="modal-title" ng-switch-when="view">查看详情</h4>
+</div>
+<div class="modal-body">
+    <form class="form-horizontal" name="sqForm">
+        <fieldset ng-disabled="sq.formDisabled">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group has-feedback">
+                        <label class="col-lg-4 control-label text-sm">品种名称</label>
+                        <div class="col-lg-8">
+                            <input type="text" class="form-control input-sm" name="name" placeholder="品种名称" ng-model="sq.rowEntity.varietiesName" required>
+                            <span class="fa fa-exclamation-circle form-control-feedback" ng-show="sqForm.name.$error.required"></span>
+                            <div ng-messages="sqForm.name.$dirty && sqForm.name.$error">
+                                <p class="help-block text-sm" ng-message="required">请填写品种名称</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group has-feedback">
+                        <label class="col-lg-4 control-label text-sm">品种编号</label>
+                        <div class="col-lg-8">
+                            <input type="text" class="form-control input-sm" name="code" placeholder="品种编号" ng-model="sq.rowEntity.varietiesCode" required>
+                            <span class="fa fa-exclamation-circle form-control-feedback" ng-show="sqForm.code.$error.required"></span>
+                            <div ng-messages="sqForm.code.$dirty && sqForm.code.$error">
+                                <p class="help-block text-sm" ng-message="required">请填写品种编号</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group has-feedback">
+                        <label class="col-lg-4 control-label text-sm">母本代号</label>
+                        <div class="col-lg-8">
+                            <input type="text" class="form-control input-sm" name="tie" placeholder="母本代号" ng-model="sq.rowEntity.femaleNo" required>
+                            <span class="fa fa-exclamation-circle form-control-feedback" ng-show="sqForm.tie.$error.required"></span>
+                            <div ng-messages="sqForm.tie.$dirty && sqForm.tie.$error">
+                                <p class="help-block text-sm" ng-message="required">请填写母本代号</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group has-feedback">
+                        <label class="col-lg-4 control-label text-sm">父本代号</label>
+                        <div class="col-lg-8">
+                            <input type="text" class="form-control input-sm" name="tie" placeholder="父本代号" ng-model="sq.rowEntity.maleParent" required>
+                            <span class="fa fa-exclamation-circle form-control-feedback" ng-show="sqForm.tie.$error.required"></span>
+                            <div ng-messages="sqForm.tie.$dirty && sqForm.tie.$error">
+                                <p class="help-block text-sm" ng-message="required">请填写父本代号</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group has-feedback">
+                        <label class="col-lg-4 control-label text-sm">系谱</label>
+                        <div class="col-lg-8">
+                            <input type="text" class="form-control input-sm" name="tie" placeholder="系谱" ng-model="sq.rowEntity.pedigree" required>
+                            <span class="fa fa-exclamation-circle form-control-feedback" ng-show="sqForm.tie.$error.required"></span>
+                            <div ng-messages="sqForm.tie.$dirty && sqForm.tie.$error">
+                                <p class="help-block text-sm" ng-message="required">请填写系谱</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group has-feedback">
+                        <label class="col-lg-4 control-label text-sm">存放位置</label>
+                        <div class="col-lg-8">
+                            <select class="form-control input-sm" name="row" ng-options="o.id as o.name for o in ps.sq.selectData.deposit" ng-model="sq.rowEntity.deposit" required>
+                                <option value="">请选择</option>
+                            </select>
+                            <div ng-messages="dataForm.row.$dirty && dataForm.row.$error">
+                                <p class="help-block text-sm" ng-message="required">请选择存放位置</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group has-feedback">
+                        <label class="col-lg-4 control-label text-sm">数量</label>
+                        <div class="col-lg-8">
+                            <input type="text" class="form-control input-sm" name="stocks" placeholder="数量(粒)" ng-model="sq.rowEntity.inNumber">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group has-feedback">
+                        <label class="col-lg-4 control-label text-sm">单位</label>
+                        <div class="col-lg-8">
+                            <input type="text" class="form-control input-sm" name="address" placeholder="单位" ng-model="sq.rowEntity.unit">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="col-lg-4 control-label text-sm">收获年份</label>
+                        <div class="col-lg-8">
+                            <select class="form-control input-sm" name="row" ng-options="o.id as o.name for o in ps.sq.selectData.harvestYear" ng-model="sq.rowEntity.harvestYear" required>
+                                <option value="">请选择</option>
+                            </select>
+                            <div ng-messages="dataForm.row.$dirty && dataForm.row.$error">
+                                <p class="help-block text-sm" ng-message="required">请选择收获年份</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="col-lg-4 control-label text-sm">世代</label>
+                        <div class="col-lg-8">
+                            <select class="form-control input-sm" name="color" ng-options="o.id as o.name for o in ps.sq.selectData.generationNo" ng-model="sq.rowEntity.generationNo" required>
+                                <option value="">请选择</option>
+                            </select>
+                            <div ng-messages="dataForm.color.$dirty && dataForm.color.$error">
+                                <p class="help-block text-sm" ng-message="required">请选择世代</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="col-lg-4 control-label text-sm">二级分类</label>
+                        <div class="col-lg-8">
+                            <select class="form-control input-sm" name="seedType" ng-options="o.id as o.name for o in ps.sq.selectData.secClass" ng-model="sq.rowEntity.secClass" required>
+                                <option value="">请选择</option>
+                            </select>
+                            <div ng-messages="dataForm.seedType.$dirty && dataForm.seedType.$error">
+                                <p class="help-block text-sm" ng-message="required">请选择二级分类</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="col-lg-4 control-label text-sm">育种方法</label>
+                        <div class="col-lg-8">
+                            <select class="form-control input-sm" name="assess" ng-options="o.id as o.name for o in ps.sq.selectData.breedMethod" ng-model="sq.rowEntity.breedMethod" required>
+                                <option value="">请选择</option>
+                            </select>
+                            <div ng-messages="dataForm.assess.$dirty && dataForm.assess.$error">
+                                <p class="help-block text-sm" ng-message="required">请选择育种方法</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="col-lg-4 control-label text-sm">材料价值</label>
+                        <div class="col-lg-8">
+                            <select class="form-control input-sm" name="seedType" ng-options="o.id as o.name for o in ps.sq.selectData.gpValue" ng-model="sq.rowEntity.gpValue" required>
+                                <option value="">请选择</option>
+                            </select>
+                            <div ng-messages="dataForm.seedType.$dirty && dataForm.seedType.$error">
+                                <p class="help-block text-sm" ng-message="required">请选择材料价值</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-primary btn-sm" ng-click="sq.ok()" ng-hide="sq.formDisabled" ng-disabled="cropForm.$invalid">确定</button>
+    <button type="button" class="btn btn-info btn-sm" ng-click="sq.edit()" ng-show="sq.formDisabled" ng-disabled="cropForm.$invalid">编辑</button>
+    <button type="button" class="btn btn-default btn-sm" ng-click="sq.cancel()">取消</button>
+</div>

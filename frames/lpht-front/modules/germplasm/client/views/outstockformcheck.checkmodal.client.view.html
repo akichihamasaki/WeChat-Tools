@@ -1,0 +1,134 @@
+<div class="modal-header">
+  <h4>出库审批</h4>
+</div>
+<div class="modal-body" >
+  <div class="panel panel-default">
+    <div class="panel-heading">出库信息</div>
+    <div class="panel-body">
+    <form class="form-horizontal" >
+      <fieldset ng-disabled="pop.formDisabled">
+          <div class="row ">
+              <div class="col-sm-6">
+                  <div class="form-group has-feedback">
+                      <label class="col-lg-4 control-label text-sm">出库单号</label>
+                      <div class="col-lg-8">
+                        <input type="text" class="form-control input-sm" name="name" placeholder="出库单号" ng-model="pop.rowEntity.outstockId" readonly>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-sm-6">
+                  <div class="form-group has-feedback">
+                      <label class="col-lg-4 control-label text-sm">出库单类型</label>
+                      <div class="col-lg-8">
+                          <input type="text" class="form-control input-sm" name="tie" placeholder="出库单类型" ng-model="pop.rowEntity.outstockType" readonly>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="row ">
+              <div class="col-sm-6">
+                  <div class="form-group">
+                      <label class="col-lg-4 control-label text-sm">出库申请人</label>
+                      <div class="col-lg-8">
+                         <input type="text" class="form-control input-sm" name="name" placeholder="入库申请人" ng-model="out.rowEntity.outstockApplicator" readonly>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="col-sm-6">
+                  <div class="form-group">
+                      <label class="col-lg-4 control-label text-sm">创建时间</label>
+                      <div class="col-lg-8">
+                          <input type="text" class="form-control input-sm" name="name" placeholder="创建时间" ng-model="pop.rowEntity.outstockTime" readonly>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="row ">
+              <div class="col-sm-6">
+                <div class="form-group has-feedback">
+                  <label class="col-lg-4 control-label text-sm">仓库</label>
+                  <div class="col-lg-8">
+                    <input type="text" class="form-control input-sm" name="address" placeholder="仓库" ng-model="pop.rowEntity.storage" readonly>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group has-feedback">
+                  <label class="col-lg-4 control-label text-sm">库房</label>
+                  <div class="col-lg-8">
+                    <input type="text" class="form-control input-sm" name="stocks" placeholder="库房" ng-model="pop.rowEntity.storageRoom" readonly>
+                  </div>
+                </div>
+              </div>
+          </div>
+          <div class="row ">
+              <div class="col-sm-12">
+                  <div class="form-group">
+                      <label class="col-lg-2 control-label text-sm">出库用途</label>
+                      <div class="col-lg-10">
+                         <input type="text" class="form-control input-sm" readonly ng-model="pop.rowEntity.outstockApplicator" >
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <!-- <div class="row ">
+              <div class="col-sm-6">
+                  <div class="form-group has-feedback">
+                      <label class="col-lg-4 control-label text-sm">材料价值</label>
+                      <div class="col-lg-8">
+                          <input type="text" class="form-control input-sm" name="address" placeholder="材料价值" ng-model="pop.rowEntity.meterialValue" readonly>
+                      </div>
+                  </div>
+              </div>
+          </div> -->
+
+
+
+          <div class="m-b-md">
+            <div class="pos-rlt" ui-grid="pop.outStorageCheckgrid" ui-grid-pagination ui-grid-selection ui-grid-resize-columns ui-grid-auto-resize ></div>
+          </div>
+
+        </fieldset>
+      </form>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">审批意见</div>
+    <div class="panel-body">
+      <form class="form-horizontal" >
+      <div class="row ">
+        <div class="col-sm-12">
+          <div class="form-group has-feedback">
+            <label class="col-sm-2 control-label text-sm">审批人</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control input-sm" name="stocks" placeholder="审批人" ng-model="pop.rowEntity.count">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="form-group has-feedback">
+            <label class="col-sm-2 control-label text-sm">审批意见</label>
+            <div class="col-sm-10">
+              <textarea type="text" class="form-control input-sm" name="stocks" placeholder="审批意见" ng-model="pop.rowEntity.count"></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+      </form>
+    </div>
+    <!-- <div class="panel-footer">
+      <div class="text-right">
+        <button type="button" class="btn btn-primary btn-sm" ng-click="pop.checkpass()" >审核通过</button>
+        <button type="button" class="btn btn-default btn-sm" ng-click="pop.checkdeny()">否决</button>
+      </div>
+    </div> -->
+  </div>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-primary btn-sm" ng-click="pop.ok()" >审批通过</button>
+  <button type="button" class="btn btn-danger btn-sm" ng-click="pop.cancel()">否决</button>
+  <button type="button" class="btn btn-default btn-sm" ng-click="pop.cancel()">取消</button>
+</div>

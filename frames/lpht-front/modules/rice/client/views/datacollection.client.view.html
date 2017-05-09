@@ -1,0 +1,176 @@
+<div class="wrapper-md" ng-controller="DataCollectionCtrl" ui-jq="sortable" ui-options="{items:'.m-b-md', handle:'.panel-heading', connectWith:'.wrapper-md'}">
+  <div class="panel panel-default m-b-md">
+    <div class="panel-heading font-bold">查询条件</div>
+    <div class="panel-body">
+      <form class="form-horizontal">
+        <div class="row">
+          <div class="col-lg-3 col-sm-6">
+            <div class="form-group">
+              <label class="col-lg-6 control-label text-sm">试验组别</label>
+              <div class="col-lg-6">
+                <select class="form-control input-sm" ng-options="o.id as o.name for o in sm.experimentGroups" ng-model="sm.searchData.group">
+                  <option value="">请选择</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6">
+            <div class="form-group">
+              <label class="col-lg-6 control-label text-sm">试验年份</label>
+              <div class="col-lg-6">
+                <select class="form-control input-sm" ng-options="o.id as o.name for o in sm.experimentYears" ng-model="sm.searchData.year">
+                  <option value="">请选择</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6">
+            <div class="form-group">
+              <label class="col-lg-6 control-label text-sm">试验类型</label>
+              <div class="col-lg-6">
+                <select class="form-control input-sm" ng-options="o.id as o.name for o in sm.experimentTypes" ng-model="sm.searchData.type">
+                  <option value="">请选择</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6">
+            <div class="form-group">
+              <label class="col-lg-6 control-label text-sm">品种类别</label>
+              <div class="col-lg-6">
+                <select class="form-control input-sm" ng-options="o.id as o.name for o in sm.varietyCategory" ng-model="sm.searchData.category">
+                  <option value="">请选择</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row" uib-collapse="sm.isCollapsed">
+          <div class="col-lg-3 col-sm-6">
+            <div class="form-group">
+              <label class="col-lg-6 control-label text-sm">品种名称</label>
+              <div class="col-lg-6">
+                <input type="text" class="form-control input-sm" placeholder="品种名称" ng-model="sm.searchData.name">
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6">
+            <div class="form-group">
+              <label class="col-lg-6 control-label text-sm">亲本组合</label>
+              <div class="col-lg-6">
+                <input type="text" class="form-control input-sm" placeholder="亲本组合" ng-model="sm.searchData.combination">
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6">
+            <div class="form-group">
+              <label class="col-lg-6 control-label text-sm">品种编码</label>
+              <div class="col-lg-6">
+                <input type="text" class="form-control input-sm" placeholder="品种编码" ng-model="sm.searchData.no">
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6">
+            <div class="form-group">
+              <label class="col-lg-6 control-label text-sm">育种家</label>
+              <div class="col-lg-6">
+                <input type="text" class="form-control input-sm" placeholder="育种家" ng-model="sm.searchData.expert">
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6">
+            <div class="form-group">
+              <label class="col-lg-6 control-label text-sm">育种者</label>
+              <div class="col-lg-6">
+                <input type="text" class="form-control input-sm" placeholder="育种者" ng-model="sm.searchData.org">
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6">
+            <div class="form-group">
+              <label class="col-lg-6 control-label text-sm">联系人</label>
+              <div class="col-lg-6">
+                <input type="text" class="form-control input-sm" placeholder="联系人" ng-model="sm.searchData.person">
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6">
+            <div class="form-group">
+              <label class="col-lg-6 control-label text-sm">联系电话</label>
+              <div class="col-lg-6">
+                <input type="text" class="form-control input-sm" placeholder="联系电话" ng-model="sm.searchData.phone">
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6">
+            <div class="form-group">
+              <label class="col-lg-6 control-label text-sm">地址</label>
+              <div class="col-lg-6">
+                <input type="text" class="form-control input-sm" placeholder="地址" ng-model="sm.searchData.address">
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="panel-footer">
+      <div class="text-right">
+        <button type="button" class="btn btn-default btn-sm m-r-sm" ng-click="sm.search()" autofocus><i class="fa fa-search"></i> 查询</button>
+        <button type="button" class="btn btn-default btn-sm m-r-sm" ng-click="sm.reset()"><i class="fa fa-refresh"></i> 重置</button>
+        <button type="button" class="btn btn-default btn-sm m-r-sm" ng-click="sm.isCollapsed = !sm.isCollapsed"><i class="fa" ng-class="{'fa-expand':sm.isCollapsed, 'fa-compress':!sm.isCollapsed}"></i> 更多</button>
+      </div>
+    </div>
+  </div>
+  <div class="m-b-md">
+    <div class="btn-group">
+      <button type="button" class="btn btn-success btn-sm" ng-click="gm.openModal('add')"><i class="fa fa-plus-circle"></i> 新增</button>
+      <button type="button" class="btn btn-info btn-sm" ng-click="gm.openModal('edit')" ng-disabled="gm.disableDelete"><i class="fa fa-pencil"></i> 修改</button>
+      <button type="button" class="btn btn-danger btn-sm" ng-click="gm.deleteDialog()" ng-disabled="gm.disableDelete"><i class="fa fa-times-circle"></i> 删除</button>
+      <button type="button" class="btn btn-primary btn-sm" ng-click="gm.openModal('view')" ng-disabled="gm.disableDelete"><i class="fa fa-file-text"></i> 查看</button>
+      <button type="button" class="btn btn-warning btn-sm" ng-click="gm.export()"><i class="fa fa-download"></i> 导出</button>
+      <button type="button" class="btn btn-dark btn-sm" ng-click="gm.openReport()"><i class="fa fa-bell-o"></i> 受灾报告</button>
+    </div>
+    <div class="btn-group pull-right">
+      <button type="button" class="btn btn-info btn-sm" ng-model="gm.radioModel" uib-btn-radio="'sm'"><i class="fa fa-th-list"></i> 缩小</button>
+      <button type="button" class="btn btn-info btn-sm" ng-model="gm.radioModel" uib-btn-radio="'lg'"><i class="fa fa-list"></i> 放大</button>
+    </div>
+  </div>
+  <div class="m-b-md">
+    <div class="pos-rlt" ng-style="{'height': gm.radioModel == 'sm' ? '381' : '681'}" ui-grid="gm.gridOptions" ui-grid-pagination ui-grid-selection ui-grid-resize-columns ui-grid-auto-resize ui-grid-pinning></div>
+  </div>
+  <div class="panel panel-default m-b-md">
+    <div class="panel-heading font-bold">流程监控</div>
+    <div class="panel-body">
+      <uib-tabset active="0" class="tab-container">
+        <uib-tab index="0" heading="田间试验">
+          <div class="inline m-xs" ng-repeat="f in fm.fieldFlow">
+            <button type="button" class="btn btn-rounded" ng-class="{'btn-success':f.state == 1, 'btn-info':f.state == 2, 'btn-default':f.state == 3}" ng-click="fm.openFlow(f)">{{f.name}}</button>
+            <div class="progress progress-xxs m-t-xs m-b-none">
+              <div class="progress-bar" ng-style="{'width': (f.percent < 100 ? f.percent : 100) + '%'}"></div>
+            </div>
+          </div>
+        </uib-tab>
+        <uib-tab index="1" heading="特性试验">
+          <span ng-repeat="f in fm.featureFlow">
+            <i class="fa fa-arrow-right" ng-hide="$index == 0"></i>
+            <button type="button" class="btn btn-rounded m-xs" ng-class="{'btn-success':f.state == 1, 'btn-info':f.state == 2, 'btn-default':f.state == 3}">{{f.name}}</button>
+          </span>
+        </uib-tab>
+      </uib-tabset>
+      <div>
+        <label class="label label-success label-sm">已采集</label>
+        <label class="label label-info label-sm">待采集</label>
+        <label class="label bg-light label-sm">后期</label>
+      </div>
+    </div>
+  </div>
+  <script type="text/ng-template" id="dataCollectionModal">
+    <div ng-include="'modules/rice/client/views/datacollection.modal.client.view.html'"></div>
+  </script>
+  <script type="text/ng-template" id="dataCollectionReportModal">
+    <div ng-include="'modules/rice/client/views/datacollectionreport.modal.client.view.html'"></div>
+  </script>
+  <script type="text/ng-template" id="dataCollectionFlowModal">
+    <div ng-include="'modules/rice/client/views/datacollectionflow.modal.client.view.html'"></div>
+  </script>
+</div>

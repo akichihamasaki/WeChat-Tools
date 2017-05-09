@@ -1,0 +1,18 @@
+[
+	{
+    "id":"1",
+		"projectName":"出苗",
+		"experimentCate":"田间",
+		"precondition":"无",
+		"showRow":1,
+		"showColumn":1
+	},
+	{
+    "id":"2",
+		"projectName":"分叶",
+		"experimentCate":"田间",
+		"precondition":"出苗",
+		"showRow":1,
+		"showColumn":1
+	}
+]

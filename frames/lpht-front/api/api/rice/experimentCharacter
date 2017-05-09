@@ -1,0 +1,55 @@
+[{
+  "id":"1",
+  "characterName": "基本苗",
+  "dataType": "数值型",
+  "hasPhoto": "Y",
+  "stage": "N",
+  "preCondition":"基本苗",
+  "dataRepeat":"Y",
+  "countWay":"最大值"
+}, {
+  "id":"2",
+  "characterName": "分蘖时间",
+  "dataType": "日期型",
+  "hasPhoto": "Y",
+  "stage": "Y",
+  "preCondition":"基本苗",
+  "dataRepeat":"Y",
+  "countWay":"最小值"
+}, {
+  "id":"3",
+  "characterName": "最高苗",
+  "dataType": "数值型",
+  "hasPhoto": "Y",
+  "stage": "Y",
+  "preCondition":"分蘖时间",
+  "dataRepeat":"Y",
+  "countWay":"平均值"
+}, {
+  "id":"4",
+  "characterName": "分蘖率",
+  "dataType": "计算型",
+  "hasPhoto": "Y",
+  "stage": "N",
+  "preCondition":"最高苗",
+  "dataRepeat":"Y",
+  "countWay":"最大值"
+}, {
+  "id":"5",
+  "characterName": "基本苗",
+  "dataType": "数值型",
+  "hasPhoto": "Y",
+  "stage": "N",
+  "preCondition":"基本苗",
+  "dataRepeat":"Y",
+  "countWay":"最小值"
+}, {
+  "id":"6",
+  "characterName": "分蘖时间",
+  "dataType": "日期型",
+  "hasPhoto": "Y",
+  "stage": "Y",
+  "preCondition":"基本苗",
+  "dataRepeat":"Y",
+  "countWay":"最小值"
+}]

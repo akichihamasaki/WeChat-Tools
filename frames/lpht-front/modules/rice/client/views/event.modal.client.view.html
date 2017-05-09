@@ -1,0 +1,36 @@
+<div class="modal-header" ng-switch="sj.modalType">
+  <h4 class="modal-title" ng-switch-when="add">新增</h4>
+  <h4 class="modal-title" ng-switch-when="edit">修改</h4>
+  <h4 class="modal-title" ng-switch-when="view">查看详情</h4>
+</div>
+<div class="modal-body">
+  <form class="form-horizontal" name="eventForm">
+    <fieldset ng-disabled="sj.formDisabled">
+      <div class="form-group has-feedback">
+        <label class="col-lg-2 control-label text-sm">事件标题</label>
+        <div class="col-lg-10">
+          <input type="text" class="form-control input-sm" name="eventTitle" placeholder="事件标题" ng-model="sj.rowEntity.eventTitle" required>
+          <span class="fa fa-exclamation-circle form-control-feedback" ng-show="eventForm.eventTitle.$error.required"></span>
+          <div ng-messages="eventForm.eventTitle.$dirty && eventForm.eventTitle.$error">
+            <p class="help-block text-sm" ng-message="required">请填写事件标题</p>
+          </div>
+        </div>
+      </div>
+      <div class="form-group has-feedback">
+        <label class="col-lg-2 control-label text-sm">事件内容</label>
+        <div class="col-lg-10">
+          <input type="text" class="form-control input-sm" name="eventContent" placeholder="事件内容" ng-model="sj.rowEntity.eventContent" required>
+          <span class="fa fa-exclamation-circle form-control-feedback" ng-show="eventForm.eventContent.$error.required"></span>
+          <div ng-messages="eventForm.eventContent.$dirty && eventForm.eventContent.$error">
+            <p class="help-block text-sm" ng-message="required">请填写事件内容</p>
+          </div>
+        </div>
+      </div>
+    </fieldset>
+  </form>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-primary btn-sm" ng-click="sj.ok()" ng-hide="sj.formDisabled" ng-disabled="eventForm.$invalid">确定</button>
+  <button type="button" class="btn btn-info btn-sm" ng-click="sj.edit()" ng-show="sj.formDisabled">编辑</button>
+  <button type="button" class="btn btn-default btn-sm" ng-click="sj.cancel()">取消</button>
+</div>

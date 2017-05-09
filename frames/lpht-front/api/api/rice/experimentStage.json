@@ -1,0 +1,22 @@
+[
+  {
+    "id": "1",
+    "name": "单点试验",
+    "remark": "xxxxxxxxxxxxxx"
+  },
+  {
+    "id": "2",
+    "name": "多点试验",
+    "remark": "xxxxxxxxxxxxxx"
+  },
+  {
+    "id": "3",
+    "name": "区域试验",
+    "remark": "xxxxxxxxxxxxxx"
+  },
+  {
+    "id": "4",
+    "name": "特性试验",
+    "remark": "xxxxxxxxxxxxxx"
+  }
+]

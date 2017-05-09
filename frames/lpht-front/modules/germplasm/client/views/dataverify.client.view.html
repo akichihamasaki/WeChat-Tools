@@ -1,0 +1,137 @@
+<toaster-container toaster-options="{'close-button': true, 'tap-to-dibdiss': false, 'toaster-id': 1}"></toaster-container>
+<div class="wrapper-md" ng-controller="DataVerifyCtrl">
+    <div class="panel panel-default">
+        <div class="panel-heading  h-s">
+            <b>查询条件</b>
+        </div>
+        <div class="panel-body">
+            <div class="form-horizontal ">
+                <div class="row">
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="form-group">
+                            <label class="col-lg-6 control-label text-sm">盘点状态</label>
+                            <div class="col-lg-6">
+                                <select class="form-control input-sm" ng-model="cb.search.checkType" name="selType" ng-options="o.id as o.name for o in cb.checkType">
+                                    <option value="">请选择</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 ">
+                        <div class="form-group ">
+                            <label class="control-label text-sm col-lg-6">盘点批次号</label>
+                            <div class="col-lg-6">
+                                <input type="text" class="form-control input-sm" ng-model="cb.search.checkNo" placeholder="盘点批次号">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 ">
+                        <div class="form-group ">
+                            <label class="control-label text-sm col-lg-6">开始日期</label>
+                            <div class="col-lg-6">
+                                <div class="input-group">
+                                    <input type="text" class="form-control input-sm" uib-datepicker-popup="{{format}}" ng-model="cb.search.benginDate" is-open="cb.benginDate.opened" datepicker-options="dateOptions" ng-required="true" current-text="今天" clear-text="清除" close-text="关闭" alt-input-formats="altInputFormats" placeholder="开始日期" />
+                                    <span class="input-group-btn">
+                                    <button type="button" class="btn btn-default btn-sm" ng-click="cb.benginDateOpen()"><i class="glyphicon glyphicon-calendar"></i></button>
+                                  </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 ">
+                        <div class="form-group ">
+                            <label class="control-label text-sm col-lg-6">结束日期</label>
+                            <div class="col-lg-6">
+                                <div class="input-group">
+                                    <input type="text" class="form-control input-sm" uib-datepicker-popup="{{format}}" ng-model="cb.search.endDate" is-open="cb.endDate.opened" datepicker-options="dateOptions" ng-required="true" current-text="今天" clear-text="清除" close-text="关闭" alt-input-formats="altInputFormats" placeholder="结束日期" />
+                                    <span class="input-group-btn">
+                                    <button type="button" class="btn btn-default btn-sm" ng-click="cb.endDateOpen()"><i class="glyphicon glyphicon-calendar"></i></button>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div uib-collapse="cb.isCollapsed" class="row">
+                    <div class="col-lg-3 col-sm-6 ">
+                        <div class="form-group ">
+                            <label class="control-label text-sm col-lg-6">盘点范围</label>
+                            <div class="col-lg-6">
+                                <select class="form-control input-sm" ng-model="cb.search.checkScope" name="checkScope" ng-options="o.id as o.name for o in cb.checkScope">
+                                    <option value="">请选择</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 ">
+                        <div class="form-group ">
+                            <label class="control-label text-sm col-lg-6">状态</label>
+                            <div class="col-lg-6">
+                                <select class="form-control input-sm" ng-model="cb.search.batchStatus" name="batchStatus" ng-options="o.id as o.name for o in cb.batchStatus">
+                                    <option value="">请选择</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 ">
+                        <div class="form-group ">
+                            <label class="control-label text-sm col-lg-6">创建人</label>
+                            <div class="col-lg-6">
+                                <input type="text" class="form-control input-sm" ng-model="cb.search.createUser" placeholder="创建人">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 ">
+                        <div class="form-group ">
+                            <label class="control-label text-sm col-lg-6">盘点说明</label>
+                            <div class="col-lg-6">
+                                <input type="text" class="form-control input-sm" ng-model="cb.search.batchState" placeholder="盘点说明">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel-footer">
+            <div class="text-right">
+                <button type="button" class="btn btn-default btn-sm m-r-bd" ng-click="cb.search()" autofocus><i class="fa fa-search"></i> 查询</button>
+                <button type="button" class="btn btn-default btn-sm m-r-bd" ng-click="cb.reset()"><i class="fa fa-refresh"></i> 重置</button>
+                <button type="button" class="btn btn-default btn-sm m-r-bd" ng-click="cb.isCollapsed = !cb.isCollapsed"><i class="fa fa-expand " ng-class="{'fa-expand':cb.isCollapsed, 'fa-compress':!cb.isCollapsed}"></i> 更多</button>
+            </div>
+        </div>
+    </div>
+    <div class="m-b-md">
+        <div class="btn-group">
+            <button type="button" class="btn btn-primary btn-sm" ng-click="cb.openDetail('view')" ng-disabled="cb.disable"><i class="fa fa-file-text"></i> 查看</button>
+            <button type="button" class="btn btn-dark btn-sm" ng-click="cb.openEntering('verify')" ng-disabled="cb.disable"><i class="fa fa-calendar"></i> 数据审核</button>
+        </div>
+        <div class="btn-group pull-right">
+            <button type="button" class="btn btn-info btn-sm" ng-model="cb.radioModel" uib-btn-radio="'sm'"><i class="fa fa-th-list"></i> 缩小</button>
+            <button type="button" class="btn btn-info btn-sm" ng-model="cb.radioModel" uib-btn-radio="'lg'"><i class="fa fa-list"></i> 放大</button>
+        </div>
+    </div>
+    <div class="m-b-md">
+        <div class="pos-rlt" ng-style="{'height': cb.radioModel == 'sm' ? '381' : '681'}" ui-grid="cb.checkBatchGrid" ui-grid-pagination ui-grid-selection ui-grid-resize-columns ui-grid-auto-resize ui-grid-pinning></div>
+    </div>
+    <div class="panel panel-default" ng-show="cb.dataEnteringShow">
+        <div class="panel-heading  h-s">
+            <b>数据录入单</b>
+        </div>
+        <div class="panel-body">
+            <div class="m-b">
+                <div class="btn-group">
+                    <button type="button" class="btn btn-primary btn-sm" ng-click="cb.openDetail('view')" ng-disabled="cb.disable"><i class="fa fa-file-text"></i> 查看</button>
+                </div>
+            </div>
+            <div class="pos-rlt" ui-grid="cb.dataEnteringGrid" ui-grid-pagination ui-grid-selection ui-grid-resize-columns ui-grid-auto-resize ui-grid-pinning></div>
+        </div>
+    </div>
+    <!-- 新增弹出框和修改弹出框 -->
+    <script type="text/ng-template" id="checkBatchModal">
+        <div ng-include="'modules/germplasm/client/views/checkbatch.modal.client.view.html'"></div>
+    </script>
+    <!-- 数据录入页面弹出框 -->
+    <script type="text/ng-template" id="dataEnteringModal">
+        <div ng-include="'modules/germplasm/client/views/dataentering.modal.client.view.html'"></div>
+    </script>
+</div>

@@ -1,0 +1,47 @@
+<toaster-container toaster-options="{'close-button': true, 'tap-to-dismiss': false, 'toaster-id': 1}"></toaster-container>
+<div class="wrapper-md" ng-controller="SeedTimeCtrl">
+    <div class="panel panel-default">
+        <div class="panel-heading font-bold">查询条件</div>
+        <div class="panel-body">
+            <div class=" form-horizontal">
+                <div class="row">
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="form-group">
+                            <label class="col-lg-6 control-label text-sm">季节名称</label>
+                            <div class="col-lg-6">
+                                <input class="form-control input-sm " type="text" name="name" ng-model="vm.name" placeholder="季节名称">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="form-group">
+                            <label class="col-lg-6 control-label text-sm">备注</label>
+                            <div class="col-lg-6">
+                                <input class="form-control input-sm" type="text" name="unitName" ng-model="vm.remark" placeholder="备注">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel-footer">
+            <div class="text-right">
+                <button type="button" class="btn btn-default btn-sm m-r-sm" ng-click="vm.search()"><i class="fa fa-search"></i> 查询</button>
+                <button type="button" class="btn btn-default btn-sm m-r-sm" ng-click="vm.reset()"><i class="fa fa-refresh"></i> 重置</button>
+                <!-- <button type="button" class="btn btn-default btn-sm m-r-sm" ng-click="ep.isCollapsed = !ep.isCollapsed">更多</button> -->
+            </div>
+        </div>
+    </div>
+    <div class="btn-group">
+        <button class="btn btn-sm btn-success btn-sm" ng-click="vm.openDetail('add')"><i class="fa fa-plus-circle"></i> 新增</button>
+        <button class="btn btn-sm btn-danger btn-sm" ng-click="vm.delectCharacter()" ng-disabled="vm.gridApi.selection.getSelectedRows().length != 1"><i class="fa fa-times-circle"></i> 删除</button>
+    </div>
+    <div class="table-responsive m-t-md h-full">
+        <div ui-grid="vm.grid" class="pos-rlt" ui-grid-pagination ui-grid-selection ui-grid-auto-resize ui-grid-exporter></div>
+    </div>
+    <!-- 新增功能弹出框 -->
+    <script type="text/ng-template" id="seedTime">
+        <div ng-include="'modules/rice/client/views/seedtime.modal.client.view.html'">
+        </div>
+    </script>
+</div>

@@ -1,0 +1,37 @@
+<div class="modal-header" ng-switch="ep.modalType">
+    <h4 class="modal-title" ng-switch-when="add">新增</h4>
+    <h4 class="modal-title" ng-switch-when="edit">修改</h4>
+    <h4 class="modal-title" ng-switch-when="view">查看详情</h4>
+</div>
+<div class="modal-body">
+    <div class="row">
+        <label class="col-sm-2 control-label text-sm m-t-xs">性状组</label>
+        <div class="col-sm-3">
+            <select class="form-control input-sm" ng-options="o.groupId as o.groupName for o in ep.characterGroup" ng-model="ep.rowEntity.group">
+                <option value="">请选择</option>
+            </select>
+        </div>
+        <div class="col-sm-3">
+            <button type="button" class="btn btn-default btn-sm" ng-click="ep.search()" autofocus>查询</button>
+            <button type="button" class="btn btn-default btn-sm" ng-click="ep.reset()" >重置</button>
+        </div>
+    </div>
+    <div class="row m-t-sm">
+        <div class="col-sm-5">
+            <div ui-grid="ep.LeftCharacterGrid" ui-grid-selection ui-grid-resize-columns ui-grid-auto-resize></div>
+        </div>
+        <div class="col-sm-2 btn-group-vertical" style="margin-top:90px;">
+            <button type="button" class="btn btn-default btn-sm" ng-disabled="ep.formDisabled" ng-click="ep.turnRightAll()"><i class="glyphicon glyphicon-forward"></i></button>
+            <button type="button" class="btn btn-default btn-sm" ng-disabled="ep.turnRight||ep.formDisabled" ng-click="ep.turnRightSelect()"><i class="glyphicon glyphicon-chevron-right"></i></button>
+            <button type="button" class="btn btn-default btn-sm" ng-disabled="ep.turnLeft||ep.formDisabled" ng-click="ep.turnLeftSelect()"><i class="glyphicon glyphicon-chevron-left"></i></button>
+            <button type="button" class="btn btn-default btn-sm" ng-disabled="ep.formDisabled" ng-click="ep.turnLeftAll()"><i class="glyphicon glyphicon-backward"></i></button>
+        </div>
+        <div class="col-sm-5">
+            <div ui-grid="ep.rightCharacterGrid" ui-grid-selection ui-grid-resize-columns ui-grid-auto-resize></div>
+        </div>
+    </div>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-primary btn-sm" ng-click="ep.ok()" ng-hide="ep.formDisabled" ng-disabled="cropForm.$invalid">确定</button>
+    <button type="button" class="btn btn-default btn-sm" ng-click="ep.cancel()">取消</button>
+</div>

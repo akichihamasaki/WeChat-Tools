@@ -1,0 +1,36 @@
+[
+	{
+    "id":"1",
+		"projectName":"分叶",
+		"experimentCate":"田间",
+		"precondition":"无",
+		"showRow":1,
+		"showColumn":1
+	},
+	{
+    "id":"2",
+		"projectName":"成熟",
+		"experimentCate":"田间",
+		"precondition":"出苗",
+		"showRow":1,
+		"showColumn":1
+	},
+	{
+    "id":"3",
+		"projectName":"DUS",
+		"experimentCate":"田间",
+		"precondition":"分叶",
+		"showRow":1,
+		"showColumn":1
+
+	},
+	{
+    "id":"4",
+		"projectName":"成熟",
+		"experimentCate":"田间",
+		"precondition":"成熟",
+		"showRow":1,
+		"showColumn":1
+	}
+
+]

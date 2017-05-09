@@ -1,0 +1,23 @@
+[
+  {
+    "characterGroupCode":"2016082401",
+    "characterGroupName":"抗逆性组",
+    "groupIntro":"######",
+    "characterComponent":[{"characterName":"抗旱"},{"characterName":"抗寒"},{"characterName":"抗虫"},{"characterName":"抗旱"},{"characterName":"抗旱"},{"characterName":"抗旱"},{"characterName":"抗旱"},{"characterName":"抗旱"},{"characterName":"抗旱"},{"characterName":"抗旱"},{"characterName":"抗旱"}],
+    "groupRemark":"1111"
+  },
+  {
+    "characterGroupCode":"2016082402",
+    "characterGroupName":"生育期组",
+    "groupIntro":"######",
+    "characterComponent":[{"characterName":"发芽率"},{"characterName":"分孽率"},{"characterName":"谷重"}],
+    "groupRemark":"2222"
+  },
+  {
+    "characterGroupCode":"2016082403",
+    "characterGroupName":"基础属性组",
+    "groupIntro":"######",
+    "characterComponent":[{"characterName":"苗高"},{"characterName":"米质"}],
+    "groupRemark":"3333"
+  }
+]

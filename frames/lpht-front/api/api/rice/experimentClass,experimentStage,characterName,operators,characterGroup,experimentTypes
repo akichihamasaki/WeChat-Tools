@@ -1,0 +1,100 @@
+{
+  "experimentClass": [
+    {
+      "id": "1",
+      "name": "大田作物"
+    },
+    {
+      "id": "2",
+      "name": "小田作物"
+    }
+  ],
+  "experimentStage": [
+    {
+      "id": "1",
+      "name": "单点试验"
+    },
+    {
+      "id": "2",
+      "name": "多点试验"
+    },
+    {
+      "id": "3",
+      "name": "区域试验"
+    },
+    {
+      "id": "4",
+      "name": "生产试验"
+    }
+  ],
+  "characterName": [
+    {
+      "id": "1",
+      "name": "最高苗",
+      "dataType":"数值型",
+      "dataUnit":"cm"
+    },
+    {
+      "id": "2",
+      "name": "分蘖时间",
+      "dataType":"日期型",
+      "dataUnit":"YYYY-MM-DD"
+    },
+    {
+      "id": "3",
+      "name": "基本苗",
+      "dataType":"数值型",
+      "dataUnit":"cm"
+    }
+  ],
+  "operators": [
+    {
+      "id": "1",
+      "name": ">="
+    },
+    {
+      "id": "2",
+      "name": "<="
+    },
+    {
+      "id": "3",
+      "name": "<"
+    },
+    {
+      "id": "4",
+      "name": ">"
+    },
+    {
+      "id": "5",
+      "name": "="
+    },
+    {
+      "id": "6",
+      "name": "!="
+    }
+  ],
+  "characterGroup": [
+    {
+      "id": "1",
+      "name": "生育期组"
+    },
+    {
+      "id": "2",
+      "name": "基础属性"
+    },
+    {
+      "id": "3",
+      "name": "植株形态组"
+    }
+  ],
+  "experimentTypes": [
+    {
+      "id": "1",
+      "name": "田间测试"
+    },
+    {
+      "id": "2",
+      "name": "特性测试"
+    }
+  ]
+}

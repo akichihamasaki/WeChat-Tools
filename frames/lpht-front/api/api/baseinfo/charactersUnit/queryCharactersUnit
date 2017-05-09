@@ -1,0 +1,39 @@
+{
+  "content": [
+    {
+      "id":"1",
+      "unitName": "平方米",
+      "shorthand": "m^2"
+    },
+    {
+      "id":"2",
+      "unitName": "公斤",
+      "shorthand": "kg"
+    },
+    {
+      "id":"3",
+      "unitName": "公斤",
+      "shorthand": "kg"
+    },
+    {
+      "id":"4",
+      "unitName": "公斤",
+      "shorthand": "kg"
+    },
+    {
+      "id":"5",
+      "unitName": "公斤",
+      "shorthand": "kg"
+    },
+    {
+      "id":"6",
+      "unitName": "平方米",
+      "shorthand": "m^2"
+    },
+    {
+      "id":"7",
+      "unitName": "平方米",
+      "shorthand": "m^2"
+    }
+  ]
+}

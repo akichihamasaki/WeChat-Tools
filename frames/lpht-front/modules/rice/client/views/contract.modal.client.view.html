@@ -1,0 +1,51 @@
+<div class="modal-header" ng-switch="ht.modalType">
+  <h4 class="modal-title" ng-switch-when="add">新增</h4>
+  <h4 class="modal-title" ng-switch-when="edit">修改</h4>
+</div>
+<div class="modal-body">
+  <form class="form-horizontal" name="contractForm">
+    <fieldset ng-disabled="ht.formDisabled">
+      <div class="row">
+        <div class="col-lg-8">
+          <div class="form-group has-feedback">
+            <label class="col-lg-3 control-label text-sm">合同文件</label>
+            <div class="col-lg-9">
+              <input type="text" class="form-control input-sm" name="contractName" placeholder="未选择任何文件" ng-model="ht.rowEntity.fileName" required readonly>
+              <span class="fa fa-exclamation-circle form-control-feedback" ng-show="contractForm.contractName.$error.required"></span>
+              <div ng-messages="contractForm.contractName.$dirty && contractForm.contractName.$error">
+                <p class="help-block text-sm" ng-message="required">请选择合同文件</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+              <button type="button" class="btn btn-success btn-sm btn-block" ng-model="ht.files" ngf-select="ht.uploadFile($file)" ngf-keep="true" ngf-multiple="false"  ><i class="fa fa-file"></i> 选择文件</button>
+            <!-- <div class="col-lg-6">
+              <button type="button" class="btn btn-success btn-sm btn-block" ng-click="ht.upload()"><i class="fa fa-file"></i> 上传</button>
+            </div> -->
+        </div>
+      </div>
+      <!-- <div class="form-group has-feedback">
+        <label class="col-lg-2 control-label text-sm">合同文件</label>
+        <div class="col-lg-10">
+          <input type="text" class="form-control input-sm" name="contractName" placeholder="未选择任何文件" ng-model="ht.rowEntity.contractName" required>
+          <span class="fa fa-exclamation-circle form-control-feedback" ng-show="contractForm.contractName.$error.required"></span>
+          <div ng-messages="contractForm.contractName.$dirty && contractForm.contractName.$error">
+            <p class="help-block text-sm" ng-message="required">请选择合同文件</p>
+          </div>
+        </div>
+      </div> -->
+      <div class="form-group">
+        <label class="col-lg-2 control-label text-sm">描述</label>
+        <div class="col-lg-10">
+          <input type="text" class="form-control input-sm" placeholder="描述" ng-model="ht.rowEntity.remarks">
+        </div>
+      </div>
+    </fieldset>
+  </form>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-primary btn-sm" ng-click="ht.ok()" ng-hide="ht.formDisabled" ng-disabled="contractForm.$invalid">确定</button>
+  <button type="button" class="btn btn-info btn-sm" ng-click="ht.edit()" ng-show="ht.formDisabled">编辑</button>
+  <button type="button" class="btn btn-default btn-sm" ng-click="ht.cancel()">取消</button>
+</div>

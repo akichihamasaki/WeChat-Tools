@@ -1,0 +1,112 @@
+<div class="modal-header">
+  <h4 class="modal-title">受灾报告</h4>
+</div>
+<div class="modal-body">
+  <form class="form-horizontal" name="reportForm">
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="form-group has-feedback">
+          <label class="col-lg-4 control-label text-sm">受灾试验点</label>
+          <div class="col-lg-8">
+            <input type="text" class="form-control input-sm" name="point" placeholder="受灾试验点" ng-model="rm.formData.point">
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="form-group has-feedback">
+          <label class="col-lg-4 control-label text-sm">受灾日期</label>
+          <div class="col-lg-8">
+            <div class="input-group input-group-sm">
+              <input type="text" class="form-control" name="date" ng-model="rm.formData.date" uib-datepicker-popup="yyyy/MM/dd" current-text="今天" clear-text="清除" close-text="关闭" is-open="rm.formData.isDateOpen" readonly>
+              <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="rm.formData.isDateOpen = true"><i class="fa fa-calendar"></i></button>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="form-group has-feedback">
+          <label class="col-lg-4 control-label text-sm">受灾试验组别</label>
+          <div class="col-lg-8">
+            <input type="text" class="form-control input-sm" name="group" placeholder="受灾试验组别" ng-model="rm.formData.group">
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="form-group has-feedback">
+          <label class="col-lg-4 control-label text-sm">受灾原因</label>
+          <div class="col-lg-8">
+            <input type="text" class="form-control input-sm" name="reason" placeholder="受灾原因" ng-model="rm.formData.reason">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="form-group has-feedback">
+          <label class="col-lg-4 control-label text-sm">上报时间</label>
+          <div class="col-lg-8">
+            <div class="input-group input-group-sm">
+              <input type="text" class="form-control" name="time" ng-model="rm.formData.time" uib-datepicker-popup="yyyy/MM/dd" current-text="今天" clear-text="清除" close-text="关闭" is-open="rm.formData.isTimeOpen" readonly>
+              <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="rm.formData.isTimeOpen = true"><i class="fa fa-calendar"></i></button>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="form-group has-feedback">
+          <label class="col-lg-4 control-label text-sm">上报人</label>
+          <div class="col-lg-8">
+            <input type="text" class="form-control input-sm" name="person" placeholder="上报人" ng-model="rm.formData.person">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="form-group has-feedback">
+          <label class="col-lg-2 control-label text-sm">受灾情况描述</label>
+          <div class="col-lg-10">
+            <textarea class="form-control input-sm" name="describe" placeholder="受灾情况描述" ng-model="rm.formData.describe"></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="form-group has-feedback">
+          <label class="col-lg-4 control-label text-sm">受灾照片</label>
+          <div class="col-lg-8">
+            <button type="button" class="btn btn-success btn-sm btn-block" ng-model="rm.files" ngf-select ngf-keep="'distinct'" ngf-multiple="true" ngf-pattern="'image/*'" ngf-accept="'image/*'" ngf-min-height="100"><i class="fa fa-file"></i> 选择文件</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="form-group">
+          <label class="col-lg-2 control-label text-sm">照片预览</label>
+          <div class="col-lg-10">
+            <div class="panel panel-default">
+              <div class="panel-body text-ellipsis scroll-x">
+                <div class="inline item m-r-xs" ng-repeat="f in rm.files">
+                  <img class="img-thumbnail" ngf-src="f" ngf-resize="{height: 100}">
+                  <button type="button" class="btn btn-danger btn-xs item-overlay" ng-click="rm.delete($index)"><i class="fa fa-trash-o"></i></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-primary btn-sm" ng-click="rm.ok()">确定</button>
+  <button type="button" class="btn btn-default btn-sm" ng-click="rm.cancel()">取消</button>
+</div>

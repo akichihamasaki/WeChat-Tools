@@ -1,0 +1,14 @@
+[
+  {
+    "experimentphase": "1",
+    "abilityA": "试验能力xx",
+    "abilityB": "1",
+    "acreage": "666.67"
+  },
+  {
+    "experimentphase": "2",
+    "abilityA": "试验能力xxx",
+    "abilityB": "2",
+    "acreage": "1333.34"
+  }
+]

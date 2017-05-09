@@ -1,0 +1,44 @@
+[
+  {
+    "id":"1",
+    "unitName": "平方米",
+    "unitCode": "m^2",
+    "remark": "1"
+  },
+  {
+    "id":"2",
+    "unitName": "公斤",
+    "unitCode": "kg",
+    "remark": "2"
+  },
+  {
+    "id":"3",
+    "unitName": "公斤",
+    "unitCode": "kg",
+    "remark": "2"
+  },
+  {
+    "id":"4",
+    "unitName": "公斤",
+    "unitCode": "kg",
+    "remark": "2"
+  },
+  {
+    "id":"5",
+    "unitName": "公斤",
+    "unitCode": "kg",
+    "remark": "2"
+  },
+  {
+    "id":"6",
+    "unitName": "平方米",
+    "unitCode": "m^2",
+    "remark": "1"
+  },
+  {
+    "id":"7",
+    "unitName": "平方米",
+    "unitCode": "m^2",
+    "remark": "1"
+  }
+]

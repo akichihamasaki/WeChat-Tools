@@ -1,0 +1,57 @@
+[{
+  "id":"1",
+  "characterName": "基本苗",
+  "operator":">",
+  "comparamValue":"10",
+  "type": "数值型",
+  "dataUnit": "N",
+  "class":"基本苗"
+}, {
+  "id":"2",
+  "characterName": "分蘖时间",
+  "operator":"<",
+  "comparamValue":"10",
+  "type": "日期型",
+  "dataUnit": "Y",
+  "class":"基本苗"
+}, {
+  "id":"3",
+  "characterName": "最高苗",
+  "operator":">=",
+  "comparamValue":"10",
+  "dataType": "数值型",
+  "dataUnit": "Y",
+  "class":"分蘖时间"
+}, {
+  "id":"4",
+  "characterName": "分蘖率",
+  "operator":"<=",
+  "comparamValue":"10",
+  "dataType": "计算型",
+  "dataUnit": "N",
+  "class":"最高苗"
+}, {
+  "id":"5",
+  "characterName": "基本苗",
+  "operator":"=",
+  "comparamValue":"10",
+  "dataType": "数值型",
+  "dataUnit": "N",
+  "class":"基本苗"
+}, {
+  "id":"6",
+  "characterName": "分蘖时间",
+  "operator":"!=",
+  "comparamValue":"10",
+  "dataType": "日期型",
+  "dataUnit": "Y",
+  "class":"基本苗"
+}, {
+  "id":"7",
+  "characterName": "最高苗",
+  "operator":">",
+  "comparamValue":"10",
+  "dataType": "数值型",
+  "dataUnit": "Y",
+  "class":"分蘖时间"
+}]
